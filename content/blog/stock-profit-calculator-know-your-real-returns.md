@@ -1,5 +1,7 @@
 ---
 title: "Stock Profit Calculator: Know Your Real Returns"
+date: "2026-11-21"
+author: "Najmus Sakib"
 minutes: 4
 related: ["stock-profit-calculator", "crypto-calculator", "sip-calculator"]
 ---

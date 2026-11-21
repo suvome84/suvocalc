@@ -1,5 +1,7 @@
 ---
 title: "CGPA to Percentage: Every University Formula"
+date: "2026-11-21"
+author: "Najmus Sakib"
 minutes: 4
 related: ["cgpa-calculator", "grade-calculator", "percentage-calculator"]
 ---

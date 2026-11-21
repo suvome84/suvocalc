@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://suvocalc.com/sitemap.xml
+Sitemap: https://suvome84.github.io/suvocalc/sitemap.xml

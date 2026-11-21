@@ -2,19 +2,21 @@
   "slug": "income-tax-calculator",
   "intro": "The Income Tax Calculator works out the income tax payable in India for FY 2025-26, comparing the new regime (Budget 2025), the new regime for 2024-25, and the old regime, including the 4% health and education cess.",
   "uses": "It is used to estimate the annual tax on a salary or income, to see the monthly tax deduction, and to compare which regime — new or old — gives the lower tax for a given income.",
-  "formula": "New Regime 2025-26 slabs: 0% up to ₹4 lakh, 5% on ₹4–8 lakh, 10% on ₹8–12 lakh, 15% on ₹12–16 lakh, 20% on ₹16–20 lakh, 25% on ₹20–24 lakh, 30% above ₹24 lakh. Section 87A rebate makes the tax zero for total income up to ₹12 lakh. Total tax = tax + 4% cess. The old regime slabs are 0% up to ₹2.5 lakh, 5% to ₹5 lakh, 20% to ₹10 lakh, and 30% above ₹10 lakh.",
-  "example": "Inputs: Annual Income = ₹15,00,000, Tax Regime = New Regime 2025-26. Step 1: tax on ₹4–8 lakh at 5% = ₹20,000. Step 2: tax on ₹8–12 lakh at 10% = ₹40,000. Step 3: tax on ₹12–15 lakh at 15% = ₹45,000. Step 4: tax before cess = 20,000 + 40,000 + 45,000 = ₹1,05,000. Step 5: cess at 4% = ₹4,200. Step 6: total annual tax = ₹1,09,200, which is ₹9,100 per month.",
+  "formula": "New Regime 2025-26 slabs: 0% up to ₹4 lakh, 5% on ₹4–8 lakh, 10% on ₹8–12 lakh, 15% on ₹12–16 lakh, 20% on ₹16–20 lakh, 25% on ₹20–24 lakh, 30% above ₹24 lakh. Standard deduction: ₹75,000 for salaried/pensioner income under the new regime (₹50,000 under the old regime), so salaried taxpayers pay zero tax up to ₹12.75 lakh gross under the new regime. Section 87A rebate makes the tax zero for taxable income up to ₹12 lakh (new regime) or ₹5 lakh (old regime), with marginal relief just above those limits. Surcharge: 10% above ₹50 lakh, 15% above ₹1 crore, 25% above ₹2 crore (37% above ₹5 crore under the old regime only). Total tax = tax + surcharge + 4% cess. Old regime slabs: 0% up to ₹2.5 lakh (₹3 lakh for 60–80 years, ₹5 lakh above 80), 5% to ₹5 lakh, 20% to ₹10 lakh, 30% above ₹10 lakh; HRA and Section 80C (up to ₹1.5 lakh) reduce old-regime taxable income.",
+  "example": "Inputs: Annual Income = ₹15,00,000 (salaried), Tax Regime = New Regime 2025-26. Step 1: standard deduction ₹75,000, so taxable income = 15,00,000 − 75,000 = ₹14,25,000. Step 2: tax on ₹4–8 lakh at 5% = ₹20,000. Step 3: tax on ₹8–12 lakh at 10% = ₹40,000. Step 4: tax on ₹12–14.25 lakh at 15% = ₹33,750. Step 5: tax before cess = 20,000 + 40,000 + 33,750 = ₹93,750. Step 6: cess at 4% = ₹3,750. Step 7: total annual tax = ₹97,500, which is ₹8,125 per month.",
   "howTo": [
-    "Step 1: Enter your total annual income in the \"Annual Income (₹)\" field.",
-    "Step 2: Choose the regime from the \"Tax Regime\" dropdown — \"New Regime 2025-26\", \"New Regime 2024-25\", or \"Old Regime\".",
-    "Step 3: Tap Calculate to see your annual tax including the 4% cess.",
-    "Step 4: Read the breakdown: tax before cess, the cess amount, and the monthly tax."
+    "Enter your total annual income in the Annual Income (₹) field.",
+    "Choose the Tax Regime — New Regime 2025-26, New Regime 2024-25, or Old Regime.",
+    "Choose your Employment Type: Salaried / Pensioner gets the standard deduction; Other does not.",
+    "Choose your Age Group — it changes the basic exemption limit under the old regime.",
+    "For the old regime only, enter any HRA exemption and Section 80C deductions you claim.",
+    "Tap Calculate to see your annual tax, with the taxable income, surcharge and cess shown below the result."
   ],
   "tips": [
     "Under Budget 2025, the new regime charges zero tax up to ₹12 lakh of income because of the Section 87A rebate.",
     "The old regime can still be better if you claim large deductions such as HRA, Section 80C, and home loan interest — compare both before choosing.",
     "The 4% health and education cess is charged on the tax amount, not on your income.",
-    "This calculator gives an estimate on total income; it does not cover surcharge on very high incomes or special income such as capital gains."
+    "Surcharge is included for incomes above ₹50 lakh; special income such as capital gains is not covered — it is taxed at separate rates."
   ],
   "mistakes": [
     "Applying the top slab rate to the whole income instead of only the part that falls in that slab.",
@@ -25,7 +27,7 @@
   "faqs": [
     {
       "q": "Is there really zero income tax up to ₹12 lakh?",
-      "a": "Yes. Under the Budget 2025 new regime for FY 2025-26, the Section 87A rebate brings the tax to zero for total income up to ₹12 lakh. Above ₹12 lakh, tax is charged at the slab rates on the income in each slab."
+      "a": "Yes. Under the Budget 2025 new regime for FY 2025-26, the Section 87A rebate brings the tax to zero for taxable income up to ₹12 lakh. For salaried people the ₹75,000 standard deduction is taken first, so gross salary up to ₹12.75 lakh is tax-free. Above ₹12 lakh, marginal relief caps the tax at the amount by which income exceeds ₹12 lakh."
     },
     {
       "q": "What are the new regime tax slabs for 2025-26?",
@@ -38,11 +40,20 @@
     {
       "q": "What is the 4% cess?",
       "a": "It is the health and education cess charged at 4% of the income tax amount. For example, on a tax of ₹1,05,000 the cess is ₹4,200, making the total ₹1,09,200."
+    },
+    {
+      "q": "What is marginal relief?",
+      "a": "If your taxable income is just above ₹12 lakh, the tax cannot exceed the amount above ₹12 lakh. For example, at ₹12,05,000 taxable income the slab tax would be ₹60,750, but marginal relief caps it at ₹5,000 (plus 4% cess)."
+    },
+    {
+      "q": "Does the old regime have a standard deduction?",
+      "a": "Yes — ₹50,000 for salaried and pensioner income. The old regime also lets you reduce taxable income with HRA exemption and Section 80C deductions up to ₹1.5 lakh, and it has higher basic exemption limits for senior citizens (₹3 lakh for 60–80 years, ₹5 lakh above 80)."
     }
   ],
   "related": [
     "gst-calculator",
     "hra-exemption-calculator",
     "home-loan-tax-benefit-calculator"
-  ]
+  ],
+  "lastReviewed": "21 November 2026"
 }

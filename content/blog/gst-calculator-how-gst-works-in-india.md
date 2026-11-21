@@ -1,5 +1,7 @@
 ---
 title: "GST Calculator: How GST Works in India"
+date: "2026-11-21"
+author: "Najmus Sakib"
 minutes: 5
 related: ["gst-calculator", "income-tax-calculator", "percentage-calculator"]
 ---

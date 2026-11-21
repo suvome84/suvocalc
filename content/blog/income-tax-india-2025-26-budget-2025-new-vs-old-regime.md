@@ -1,5 +1,7 @@
 ---
 title: "Income Tax India 2025-26 (Budget 2025): New vs Old Regime"
+date: "2026-11-21"
+author: "Najmus Sakib"
 minutes: 8
 related: ["income-tax-calculator", "gst-calculator", "sip-calculator"]
 ---

@@ -1,0 +1,18 @@
+{
+  "background_color": "#f8fafc",
+  "description": "57 free online calculators for money, tax, health, study and daily life.",
+  "display": "standalone",
+  "icons": [
+    {
+      "sizes": "any",
+      "src": "/suvocalc/assets/icons/icon.svg",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "name": "SuvoCalc — Free Online Calculators",
+  "scope": "/suvocalc/",
+  "short_name": "SuvoCalc",
+  "start_url": "/suvocalc/",
+  "theme_color": "#2563eb"
+}

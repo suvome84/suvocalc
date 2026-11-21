@@ -1,5 +1,7 @@
 ---
 title: "Password Generator: Create Unbreakable Passwords"
+date: "2026-11-21"
+author: "Najmus Sakib"
 minutes: 4
 related: ["password-generator", "random-number-generator"]
 ---

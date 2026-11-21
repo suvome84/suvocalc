@@ -1,5 +1,6 @@
 ---
 title: "Frequently Asked Questions"
+description: "SuvoCalc FAQs — is it free, is my data safe, does it work offline, and more."
 ---
 
 # Frequently Asked Questions
@@ -22,11 +23,11 @@ Results are calculated with standard formulas and the rates and slabs shown on e
 
 ## Which calculators are included?
 
-57 calculators in v31, covering finance (EMI, SIP, compound interest, salary, budget), tax (GST, income tax, HRA, home-loan tax benefit), investment and savings (stock profit, PPF, fixed deposit, CAGR, retirement, net worth), health (BMI, calorie, body fat, water intake, sleep, pregnancy due date), education (CGPA, grade, matrix, Pomodoro timer, attendance), date and time, and daily utilities (electricity bill, fuel cost, unit converter, QR generator, tip, speed, and more).
+57 calculators, covering finance (EMI, SIP, compound interest, salary, budget), tax (GST, income tax, HRA, home-loan tax benefit), investment and savings (stock profit, PPF, fixed deposit, CAGR, retirement, net worth), health (BMI, calorie, body fat, water intake, sleep, pregnancy due date), education (CGPA, grade, matrix, Pomodoro timer, attendance), date and time, and daily utilities (electricity bill, fuel cost, unit converter, QR generator, tip, speed, and more).
 
 ## Does it work offline?
 
-Yes, after you install it. Open SuvoCalc in Chrome (Android) or Safari (iPhone), add it to your home screen, and it installs as a web app (PWA). After installation, the calculators work without internet. See the guide [Install SuvoCalc as a Free App — No App Store Needed](/blog/install-suvocalc-as-a-free-app-no-app-store-needed/).
+Yes. Open SuvoCalc in Chrome (Android) or Safari (iPhone), add it to your home screen, and it installs as a web app. After your first visit, the calculators work without internet. See the guide [Install SuvoCalc as a Free App — No App Store Needed](/blog/install-suvocalc-as-a-free-app-no-app-store-needed/).
 
 ## Why is GST 2.0 shown?
 

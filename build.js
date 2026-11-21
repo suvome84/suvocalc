@@ -39,7 +39,7 @@ var fs = require('fs');
 var path = require('path');
 
 var ROOT = __dirname;
-var BASE_URL = 'https://suvocalc.com';
+var BASE_URL = 'https://suvome84.github.io/suvocalc';
 var VERSION_FALLBACK = '31';
 
 /* ------------------------------------------------------------------ */
@@ -439,11 +439,11 @@ function renderPage(opts) {
   Object.keys(map).forEach(function (token) {
     html = html.split(token).join(map[token]);
   });
-  // Footer + brand version/count render from tools.json (never hardcoded).
-  html = html.replace(/<span class="brand-version">[^<]*<\/span>/,
-    '<span class="brand-version">v' + esc(siteVersion) + '</span>');
-  html = html.replace(/&mdash; v\d+ &middot; \d+ free calculators/,
-    '&mdash; v' + esc(siteVersion) + ' &middot; ' + toolCount + ' free calculators');
+  // GitHub Pages serves the site under /suvocalc/, so a root-relative
+  // href/src (from breadcrumbs and Markdown links) would 404. Rewrite
+  // every root-relative link to this page's asset prefix.
+  html = html.replace(/(href|src)="\/"/g, '$1="' + prefix + 'index.html"');
+  html = html.replace(/(href|src)="\/([^"/][^"]*)"/g, '$1="' + prefix + '$2"');
   // Page-specific body class (homepage gets .page-home for hero styling).
   if (opts.bodyClass) {
     html = html.replace('class="page-main"', 'class="page-main ' + opts.bodyClass + '"');
@@ -551,11 +551,11 @@ function fieldHtml(field, labelId) {
 /* ------------------------------------------------------------------ */
 
 // Verbatim v30 calc bodies call these legacy helpers (toasts, usage
-// tracking, streaks, haptics, gauge). v31 has none of those systems;
+// tracking, streaks, haptics, gauge). This site has none of those systems;
 // the stubs keep a calculation from throwing after it writes its result.
 var NOOP_STUBS = [
-  '/* v31 no-op stubs: the verbatim v30 calc bodies call these legacy',
-  '   helpers (toast, usage tracking, streaks, haptics, gauge). v31 has',
+  '/* no-op stubs: the verbatim v30 calc bodies call these legacy',
+  '   helpers (toast, usage tracking, streaks, haptics, gauge). This site has',
   '   none of those systems; the stubs keep a calculation from throwing',
   '   after it has written its result. */',
   'function toast(){}',
@@ -564,7 +564,7 @@ var NOOP_STUBS = [
   'function checkMilestone(){}',
   'function v21Haptic(){}',
   'function injectBMIGauge(){}',
-  '/* renderH: the sci history UI does not exist in v31; pushH() still',
+  '/* renderH: the sci history UI does not exist; pushH() still',
   '   records to localStorage, renderH() just has nothing to paint. */',
   'function renderH(){}'
 ].join('\n');
@@ -1026,7 +1026,7 @@ function buildToolPage(tool) {
 
   renderPage({
     outDir: 'calculators/' + tool.slug,
-    title: tool.title + ' | SuvoCalc v' + siteVersion,
+    title: tool.title + ' | SuvoCalc',
     description: (tool.description || tool.title + ' — free online calculator on SuvoCalc.').slice(0, 160),
     canonical: canonical,
     h1: tool.title,
@@ -1208,8 +1208,8 @@ function buildHomepage() {
 
   renderPage({
     outDir: '',
-    title: siteName + ' — ' + toolCount + ' Free Online Calculators | SuvoCalc v' + siteVersion,
-    description: (home.intro || '').slice(0, 160),
+    title: siteName + ' — ' + toolCount + ' Free Online Calculators | SuvoCalc',
+    description: home.description || (home.intro || '').slice(0, 160),
     canonical: BASE_URL + '/',
     h1: home.heroTitle || (toolCount + ' free calculators'),
     breadcrumb: '',
@@ -1247,7 +1247,7 @@ function buildToolsIndex() {
 
   renderPage({
     outDir: 'tools',
-    title: 'All Tools — ' + toolCount + ' Free Calculators | SuvoCalc v' + siteVersion,
+    title: 'All Tools — ' + toolCount + ' Free Calculators | SuvoCalc',
     description: 'Browse all ' + toolCount + ' free SuvoCalc calculators: finance, tax, investment, health, education and daily utilities. No login needed.',
     canonical: BASE_URL + '/tools/',
     h1: 'All Tools',
@@ -1281,7 +1281,7 @@ function buildCategoryPages() {
     }
     renderPage({
       outDir: 'categories/' + cat.slug,
-      title: cat.name + ' Calculators | SuvoCalc v' + siteVersion,
+      title: cat.name + ' Calculators | SuvoCalc',
       description: ('Free ' + cat.name.toLowerCase() + ' calculators on SuvoCalc: ' +
         list.slice(0, 4).map(function (t) { return t.title; }).join(', ') + '.').slice(0, 160),
       canonical: BASE_URL + '/categories/' + cat.slug + '/',
@@ -1306,6 +1306,43 @@ function buildCategoryPages() {
 }
 
 /* ------------------------------------------------------------------ */
+
+/* categories hub: /categories/ lists all 7 categories (the header and
+   bottom-nav "Categories" links point here, not at the tools list). */
+function buildCategoriesHub() {
+  var cards = categories.map(function (cat) {
+    var n = tools.filter(function (t) { return t.category === cat.slug; }).length;
+    var desc = cat.description || ('Browse ' + n + ' free ' + cat.name + ' calculators.');
+    return '<article class="card category-card">' +
+      '<h3><a href="' + encodeURIComponent(cat.slug) + '/">' + esc(cat.name) + '</a></h3>' +
+      '<p>' + esc(desc) + '</p>' +
+      '<span class="count">' + n + (n === 1 ? ' calculator' : ' calculators') + '</span>' +
+      '<a class="btn btn-secondary btn-small" href="' + encodeURIComponent(cat.slug) + '/">Browse ' + esc(cat.name) + '</a>' +
+      '</article>';
+  }).join('');
+  renderPage({
+    outDir: 'categories',
+    title: 'All Categories | SuvoCalc',
+    description: 'Browse all ' + categories.length + ' SuvoCalc calculator categories: finance, tax, investment, health, education, date and time, and daily utilities.',
+    canonical: BASE_URL + '/categories/',
+    h1: 'Browse by Category',
+    breadcrumb: breadcrumbHtml([
+      { name: 'Home', url: '/' },
+      { name: 'All Categories', url: '/categories/' }
+    ]),
+    content: '<p class="lead">Every calculator on SuvoCalc, grouped by what it is for. Pick a category to see its tools.</p>' +
+      '<div class="card-grid">' + cards + '</div>',
+    activeNav: 'categories',
+    jsonLd: [
+      { '@context': 'https://schema.org', '@type': 'WebPage', name: 'All Categories | SuvoCalc', url: BASE_URL + '/categories/' },
+      breadcrumbJsonLd([
+        { name: 'Home', url: '/' },
+        { name: 'All Categories', url: '/categories/' }
+      ])
+    ]
+  });
+}
+
 /* blog                                                                */
 /* ------------------------------------------------------------------ */
 
@@ -1317,6 +1354,42 @@ var STATIC_PAGES = [
   { slug: 'disclaimer', title: 'Disclaimer' },
   { slug: 'faq', title: 'Frequently Asked Questions' }
 ];
+
+
+// Blog TOC: the .md files carry a hardcoded TOC whose links are '#'.
+// stripBlogToc removes that block (balanced <div> scan); fixBlogToc gives
+// every <h2> an id and rebuilds the TOC from the real headings.
+function slugifyHeading(t) {
+  return String(t).toLowerCase().replace(/&[^;]+;/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') || 'section';
+}
+function stripBlogToc(s) {
+  var i = s.indexOf('<div class="blog-toc">');
+  if (i === -1) return s;
+  var j = i, depth = 0;
+  while (j < s.length) {
+    var open = s.indexOf('<div', j), close = s.indexOf('</div>', j);
+    if (close === -1) return s;
+    if (open !== -1 && open < close) { depth++; j = open + 4; }
+    else { depth--; j = close + 6; if (depth === 0) return s.slice(0, i) + s.slice(j); }
+  }
+  return s;
+}
+function fixBlogToc(html) {
+  var headings = [];
+  html = html.replace(/<h2>([^<]+)<\/h2>/g, function (m, t) {
+    var id = slugifyHeading(t);
+    if (headings.some(function (h) { return h.id === id; })) id = id + '-' + (headings.length + 1);
+    headings.push({ id: id, text: t });
+    return '<h2 id="' + id + '">' + t + '</h2>';
+  });
+  html = stripBlogToc(html);
+  if (headings.length) {
+    var toc = '<div class="blog-toc"><div class="blog-toc-ttl">Table of Contents</div>' +
+      headings.map(function (h) { return '<a href="#' + h.id + '">' + h.text + '</a>'; }).join('') + '</div>';
+    html = toc + '\n' + html;
+  }
+  return html;
+}
 
 function buildBlog() {
   var dir = path.join(ROOT, 'content', 'blog');
@@ -1339,15 +1412,15 @@ function buildBlog() {
     }
     var desc = parsed.meta.description || '';
     if (!desc) {
-      var firstPara = body.replace(/^#{1}\s+.*$/m, '').split(/\n\s*\n/).map(function (s) { return s.trim(); }).filter(Boolean)[0] || '';
-      desc = firstPara.replace(/<[^>]+>/g, '').replace(/[#*_`\[\]()]/g, '').slice(0, 160);
+      var firstPara = stripBlogToc(body).replace(/^#{1}\s+.*$/m, '').split(/\n\s*\n/).map(function (s) { return s.trim(); }).filter(Boolean)[0] || '';
+      desc = firstPara.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1').replace(/<[^>]+>/g, ' ').replace(/[#*_`]/g, '').replace(/\s+/g, ' ').trim().slice(0, 160);
     }
     var date = parsed.meta.date || '';
     var readMin = parsed.meta.minutes || parsed.meta.readMinutes || '';
     var relatedRaw = parsed.meta.related;
     var related = Array.isArray(relatedRaw) ? relatedRaw :
       (typeof relatedRaw === 'string' && relatedRaw ? relatedRaw.split(',').map(function (s) { return s.trim(); }).filter(Boolean) : []);
-    posts.push({ slug: slug, title: title, description: desc, date: date, readMin: readMin, related: related, body: body });
+    posts.push({ slug: slug, title: title, description: desc, date: date, author: parsed.meta.author || '', readMin: readMin, related: related, body: body });
   });
 
   // Article pages.
@@ -1356,10 +1429,11 @@ function buildBlog() {
     var canonical = BASE_URL + '/blog/' + post.slug + '/';
     var content = [];
     var metaBits = [];
+    if (post.author) metaBits.push('By ' + esc(post.author));
     if (post.date) metaBits.push(esc(post.date));
     if (post.readMin) metaBits.push(esc(post.readMin) + ' min read');
     if (metaBits.length) content.push('<p class="meta-line">' + metaBits.join(' &middot; ') + '</p>');
-    content.push('<div class="article-body">' + mdToHtml(stripFirstH1(post.body)) + '</div>');
+    content.push('<div class="article-body">' + fixBlogToc(mdToHtml(stripFirstH1(post.body))) + '</div>');
     var relTools = post.related.map(function (s) { return resolveToolSlug(s); })
       .filter(function (t) { return !!t; })
       .map(function (t) { return t.slug; });
@@ -1390,7 +1464,7 @@ function buildBlog() {
           description: post.description,
           url: canonical,
           datePublished: post.date || undefined,
-          author: { '@type': 'Organization', name: siteName }
+          author: { '@type': 'Person', name: post.author || siteName }
         },
         breadcrumbJsonLd([
           { name: 'Home', url: '/' },
@@ -1404,6 +1478,7 @@ function buildBlog() {
   // Blog index.
   var list = posts.map(function (post) {
     var metaBits = [];
+    if (post.author) metaBits.push('By ' + esc(post.author));
     if (post.date) metaBits.push(esc(post.date));
     if (post.readMin) metaBits.push(esc(post.readMin) + ' min read');
     return '<article class="post-card"><h2><a href="' + esc(post.slug) + '/">' + esc(post.title) + '</a></h2>' +
@@ -1413,7 +1488,7 @@ function buildBlog() {
   }).join('');
   renderPage({
     outDir: 'blog',
-    title: 'Blog & Guides | SuvoCalc v' + siteVersion,
+    title: 'Blog & Guides | SuvoCalc',
     description: 'SuvoCalc guides: how each calculator works, with formulas, examples and tips. ' + posts.length + ' guides.',
     canonical: BASE_URL + '/blog/',
     h1: 'Blog & Guides',
@@ -1453,8 +1528,8 @@ function buildStaticPages() {
     if (!parsed.meta.title && m) title = m[1].trim();
     renderPage({
       outDir: page.slug,
-      title: title + ' | SuvoCalc v' + siteVersion,
-      description: (title + ' — SuvoCalc, ' + toolCount + ' free online calculators.').slice(0, 160),
+      title: title + ' | SuvoCalc',
+      description: (parsed.meta.description || (title + ' — SuvoCalc.')).slice(0, 160),
       canonical: BASE_URL + '/' + page.slug + '/',
       h1: title,
       breadcrumb: breadcrumbHtml([
@@ -1501,6 +1576,7 @@ function buildSitemapRobots() {
 buildHomepage();
 buildToolsIndex();
 buildCategoryPages();
+buildCategoriesHub();
 allPageTools.forEach(buildToolPage);
 buildBlog();
 buildStaticPages();

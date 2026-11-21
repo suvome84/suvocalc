@@ -2,12 +2,12 @@
   "slug": "emi-calculator",
   "intro": "The EMI Calculator works out the fixed monthly payment (EMI) for a home loan, car loan, or personal loan, along with the total amount you will pay and the total interest.",
   "uses": "It is used before taking a loan to check whether the monthly instalment fits your budget, and to compare how different loan amounts, interest rates, and tenures change what you pay overall.",
-  "formula": "EMI = P × r × (1+r)^n / ((1+r)^n − 1), where P is the loan amount, r is the monthly interest rate (annual rate ÷ 12 ÷ 100), and n is the tenure in months. Total payment = EMI × n. Total interest = Total payment − P.",
-  "example": "Inputs: Loan Amount = ₹5,00,000, Annual Interest Rate = 8.5%, Tenure = 60 months. Step 1: monthly rate r = 8.5 ÷ 12 ÷ 100 = 0.007083. Step 2: (1+r)^60 = 1.527. Step 3: EMI = 5,00,000 × 0.007083 × 1.527 ÷ (1.527 − 1) = ₹10,258 per month. Step 4: total payment = 10,258 × 60 = ₹6,15,496. Step 5: total interest = 6,15,496 − 5,00,000 = ₹1,15,496.",
+  "formula": "EMI = P × r × (1+r)^n / ((1+r)^n − 1), where P is the loan amount, r is the monthly interest rate (annual rate ÷ 12 ÷ 100), and n is the tenure in months. Total payment = EMI × n. Total interest = Total payment − P. At 0% interest, EMI = P ÷ n. Enter the tenure in months, or switch the Tenure Unit to Years.",
+  "example": "Inputs: Loan Amount = ₹5,00,000, Annual Interest Rate = 8.5%, Tenure = 60 months. Step 1: monthly rate r = 8.5 ÷ 12 ÷ 100 = 0.007083. Step 2: (1+r)^60 = 1.527. Step 3: EMI = 5,00,000 × 0.007083 × 1.527 ÷ (1.527 − 1) = ₹10,258.27 per month (about ₹10,258). Step 4: total payment = 10,258.27 × 60 = ₹6,15,496. Step 5: total interest = 6,15,496 − 5,00,000 = ₹1,15,496.",
   "howTo": [
     "Step 1: Enter the amount you want to borrow in the \"Loan Amount (₹)\" field.",
     "Step 2: Enter the annual interest rate in the \"Annual Interest Rate (%)\" field.",
-    "Step 3: Enter the repayment period in the \"Tenure (Months)\" field.",
+    "Enter the repayment period and choose Months or Years for the Tenure Unit.",
     "Step 4: Tap Calculate to see your monthly EMI.",
     "Step 5: Read the breakdown below the result: total payment, total interest, principal, and interest as a percentage of the loan."
   ],
@@ -18,7 +18,7 @@
     "Keep your total EMIs within about half your monthly income so repayments stay comfortable."
   ],
   "mistakes": [
-    "Entering the tenure in years instead of months — the calculator expects months, so 5 years must be entered as 60.",
+    "Forgetting to set the Tenure Unit — if you type 5, make sure the unit is Years, not Months.",
     "Entering the monthly rate instead of the annual rate in the interest field.",
     "Choosing a loan only by the lowest EMI and ignoring the much larger total interest over a long tenure.",
     "Forgetting that the EMI does not include extra costs such as processing fees or insurance."
@@ -35,11 +35,16 @@
     {
       "q": "Can I reduce my EMI after taking a loan?",
       "a": "You can ask your lender to extend the tenure, refinance the loan at a lower rate, or make part-prepayments to reduce the principal, which lowers future interest. Each option has its own conditions, so confirm them with your lender."
+    },
+    {
+      "q": "Does the calculator work with 0% interest?",
+      "a": "Yes. At 0% interest the EMI is simply the loan amount divided by the number of months — for example, ₹5,00,000 over 60 months is ₹8,333 per month."
     }
   ],
   "related": [
     "loan-eligibility-calculator",
     "loan-affordability-calculator",
     "loan-comparison-calculator"
-  ]
+  ],
+  "lastReviewed": "21 November 2026"
 }

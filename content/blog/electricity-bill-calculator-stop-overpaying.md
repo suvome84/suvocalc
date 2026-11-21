@@ -1,5 +1,7 @@
 ---
 title: "Electricity Bill Calculator: Stop Overpaying"
+date: "2026-11-21"
+author: "Najmus Sakib"
 minutes: 4
 related: ["electricity-bill-calculator", "fuel-cost-calculator", "unit-and-currency-converter"]
 ---

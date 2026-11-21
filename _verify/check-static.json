@@ -1,5 +1,5 @@
 {
-  "page_count": 89,
+  "page_count": 90,
   "parse": {
     "about/index.html": [],
     "blog/age-calculator-find-your-exact-age-in-days-hours/index.html": [],
@@ -81,6 +81,7 @@
     "categories/education-students/index.html": [],
     "categories/finance/index.html": [],
     "categories/health-fitness/index.html": [],
+    "categories/index.html": [],
     "categories/investment-savings/index.html": [],
     "categories/tax-business/index.html": [],
     "contact/index.html": [],
@@ -413,6 +414,10 @@
       "h1": 1,
       "footer": 1
     },
+    "categories/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
     "categories/investment-savings/index.html": {
       "h1": 1,
       "footer": 1
@@ -455,351 +460,355 @@
     "external": [
       {
         "page": "about/index.html",
-        "url": "https://suvocalc.com/about/"
+        "url": "https://suvome84.github.io/suvocalc/about/"
       },
       {
         "page": "blog/age-calculator-find-your-exact-age-in-days-hours/index.html",
-        "url": "https://suvocalc.com/blog/age-calculator-find-your-exact-age-in-days-hours/"
+        "url": "https://suvome84.github.io/suvocalc/blog/age-calculator-find-your-exact-age-in-days-hours/"
       },
       {
         "page": "blog/bmi-calculator-what-your-number-really-means/index.html",
-        "url": "https://suvocalc.com/blog/bmi-calculator-what-your-number-really-means/"
+        "url": "https://suvome84.github.io/suvocalc/blog/bmi-calculator-what-your-number-really-means/"
       },
       {
         "page": "blog/cgpa-to-percentage-every-university-formula/index.html",
-        "url": "https://suvocalc.com/blog/cgpa-to-percentage-every-university-formula/"
+        "url": "https://suvome84.github.io/suvocalc/blog/cgpa-to-percentage-every-university-formula/"
       },
       {
         "page": "blog/electricity-bill-calculator-stop-overpaying/index.html",
-        "url": "https://suvocalc.com/blog/electricity-bill-calculator-stop-overpaying/"
+        "url": "https://suvome84.github.io/suvocalc/blog/electricity-bill-calculator-stop-overpaying/"
       },
       {
         "page": "blog/emi-calculator-everything-about-home-car-loans/index.html",
-        "url": "https://suvocalc.com/blog/emi-calculator-everything-about-home-car-loans/"
+        "url": "https://suvome84.github.io/suvocalc/blog/emi-calculator-everything-about-home-car-loans/"
       },
       {
         "page": "blog/gst-calculator-how-gst-works-in-india/index.html",
-        "url": "https://suvocalc.com/blog/gst-calculator-how-gst-works-in-india/"
+        "url": "https://suvome84.github.io/suvocalc/blog/gst-calculator-how-gst-works-in-india/"
       },
       {
         "page": "blog/how-to-use-the-scientific-calculator-like-a-pro/index.html",
-        "url": "https://suvocalc.com/blog/how-to-use-the-scientific-calculator-like-a-pro/"
+        "url": "https://suvome84.github.io/suvocalc/blog/how-to-use-the-scientific-calculator-like-a-pro/"
       },
       {
         "page": "blog/income-tax-india-2025-26-budget-2025-new-vs-old-regime/index.html",
-        "url": "https://suvocalc.com/blog/income-tax-india-2025-26-budget-2025-new-vs-old-regime/"
+        "url": "https://suvome84.github.io/suvocalc/blog/income-tax-india-2025-26-budget-2025-new-vs-old-regime/"
       },
       {
         "page": "blog/index.html",
-        "url": "https://suvocalc.com/blog/"
+        "url": "https://suvome84.github.io/suvocalc/blog/"
       },
       {
         "page": "blog/install-suvocalc-as-a-free-app-no-app-store-needed/index.html",
-        "url": "https://suvocalc.com/blog/install-suvocalc-as-a-free-app-no-app-store-needed/"
+        "url": "https://suvome84.github.io/suvocalc/blog/install-suvocalc-as-a-free-app-no-app-store-needed/"
       },
       {
         "page": "blog/loan-eligibility-how-much-can-you-borrow/index.html",
-        "url": "https://suvocalc.com/blog/loan-eligibility-how-much-can-you-borrow/"
+        "url": "https://suvome84.github.io/suvocalc/blog/loan-eligibility-how-much-can-you-borrow/"
       },
       {
         "page": "blog/password-generator-create-unbreakable-passwords/index.html",
-        "url": "https://suvocalc.com/blog/password-generator-create-unbreakable-passwords/"
+        "url": "https://suvome84.github.io/suvocalc/blog/password-generator-create-unbreakable-passwords/"
       },
       {
         "page": "blog/percentage-7-everyday-uses-you-must-know/index.html",
-        "url": "https://suvocalc.com/blog/percentage-7-everyday-uses-you-must-know/"
+        "url": "https://suvome84.github.io/suvocalc/blog/percentage-7-everyday-uses-you-must-know/"
       },
       {
         "page": "blog/pomodoro-technique-study-4x-more-effectively/index.html",
-        "url": "https://suvocalc.com/blog/pomodoro-technique-study-4x-more-effectively/"
+        "url": "https://suvome84.github.io/suvocalc/blog/pomodoro-technique-study-4x-more-effectively/"
       },
       {
         "page": "blog/sip-calculator-build-1-crore-with-5000-per-month/index.html",
-        "url": "https://suvocalc.com/blog/sip-calculator-build-1-crore-with-5000-per-month/"
+        "url": "https://suvome84.github.io/suvocalc/blog/sip-calculator-build-1-crore-with-5000-per-month/"
       },
       {
         "page": "blog/stock-profit-calculator-know-your-real-returns/index.html",
-        "url": "https://suvocalc.com/blog/stock-profit-calculator-know-your-real-returns/"
+        "url": "https://suvome84.github.io/suvocalc/blog/stock-profit-calculator-know-your-real-returns/"
       },
       {
         "page": "calculators/age-calculator/index.html",
-        "url": "https://suvocalc.com/calculators/age-calculator/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/age-calculator/"
       },
       {
         "page": "calculators/area-calculator/index.html",
-        "url": "https://suvocalc.com/calculators/area-calculator/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/area-calculator/"
       },
       {
         "page": "calculators/attendance-calculator/index.html",
-        "url": "https://suvocalc.com/calculators/attendance-calculator/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/attendance-calculator/"
       },
       {
         "page": "calculators/bmi-calculator/index.html",
-        "url": "https://suvocalc.com/calculators/bmi-calculator/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/bmi-calculator/"
       },
       {
         "page": "calculators/body-fat-calculator/index.html",
-        "url": "https://suvocalc.com/calculators/body-fat-calculator/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/body-fat-calculator/"
       },
       {
         "page": "calculators/break-even-calculator/index.html",
-        "url": "https://suvocalc.com/calculators/break-even-calculator/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/break-even-calculator/"
       },
       {
         "page": "calculators/budget-calculator/index.html",
-        "url": "https://suvocalc.com/calculators/budget-calculator/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/budget-calculator/"
       },
       {
         "page": "calculators/cagr-calculator/index.html",
-        "url": "https://suvocalc.com/calculators/cagr-calculator/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/cagr-calculator/"
       },
       {
         "page": "calculators/calorie-calculator/index.html",
-        "url": "https://suvocalc.com/calculators/calorie-calculator/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/calorie-calculator/"
       },
       {
         "page": "calculators/cgpa-calculator/index.html",
-        "url": "https://suvocalc.com/calculators/cgpa-calculator/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/cgpa-calculator/"
       },
       {
         "page": "calculators/compound-interest-calculator/index.html",
-        "url": "https://suvocalc.com/calculators/compound-interest-calculator/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/compound-interest-calculator/"
       },
       {
         "page": "calculators/crypto-calculator/index.html",
-        "url": "https://suvocalc.com/calculators/crypto-calculator/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/crypto-calculator/"
       },
       {
         "page": "calculators/date-difference-calculator/index.html",
-        "url": "https://suvocalc.com/calculators/date-difference-calculator/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/date-difference-calculator/"
       },
       {
         "page": "calculators/discount-calculator/index.html",
-        "url": "https://suvocalc.com/calculators/discount-calculator/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/discount-calculator/"
       },
       {
         "page": "calculators/electricity-bill-calculator/index.html",
-        "url": "https://suvocalc.com/calculators/electricity-bill-calculator/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/electricity-bill-calculator/"
       },
       {
         "page": "calculators/emi-calculator/index.html",
-        "url": "https://suvocalc.com/calculators/emi-calculator/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/emi-calculator/"
       },
       {
         "page": "calculators/fixed-deposit-calculator/index.html",
-        "url": "https://suvocalc.com/calculators/fixed-deposit-calculator/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/fixed-deposit-calculator/"
       },
       {
         "page": "calculators/fuel-cost-calculator/index.html",
-        "url": "https://suvocalc.com/calculators/fuel-cost-calculator/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/fuel-cost-calculator/"
       },
       {
         "page": "calculators/grade-calculator/index.html",
-        "url": "https://suvocalc.com/calculators/grade-calculator/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/grade-calculator/"
       },
       {
         "page": "calculators/graph-plotter/index.html",
-        "url": "https://suvocalc.com/calculators/graph-plotter/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/graph-plotter/"
       },
       {
         "page": "calculators/gst-calculator/index.html",
-        "url": "https://suvocalc.com/calculators/gst-calculator/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/gst-calculator/"
       },
       {
         "page": "calculators/heart-rate-calculator/index.html",
-        "url": "https://suvocalc.com/calculators/heart-rate-calculator/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/heart-rate-calculator/"
       },
       {
         "page": "calculators/home-loan-tax-benefit-calculator/index.html",
-        "url": "https://suvocalc.com/calculators/home-loan-tax-benefit-calculator/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/home-loan-tax-benefit-calculator/"
       },
       {
         "page": "calculators/hra-exemption-calculator/index.html",
-        "url": "https://suvocalc.com/calculators/hra-exemption-calculator/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/hra-exemption-calculator/"
       },
       {
         "page": "calculators/income-tax-calculator/index.html",
-        "url": "https://suvocalc.com/calculators/income-tax-calculator/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/income-tax-calculator/"
       },
       {
         "page": "calculators/loan-affordability-calculator/index.html",
-        "url": "https://suvocalc.com/calculators/loan-affordability-calculator/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/loan-affordability-calculator/"
       },
       {
         "page": "calculators/loan-comparison-calculator/index.html",
-        "url": "https://suvocalc.com/calculators/loan-comparison-calculator/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/loan-comparison-calculator/"
       },
       {
         "page": "calculators/loan-eligibility-calculator/index.html",
-        "url": "https://suvocalc.com/calculators/loan-eligibility-calculator/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/loan-eligibility-calculator/"
       },
       {
         "page": "calculators/love-compatibility-calculator/index.html",
-        "url": "https://suvocalc.com/calculators/love-compatibility-calculator/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/love-compatibility-calculator/"
       },
       {
         "page": "calculators/matrix-calculator/index.html",
-        "url": "https://suvocalc.com/calculators/matrix-calculator/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/matrix-calculator/"
       },
       {
         "page": "calculators/net-worth-calculator/index.html",
-        "url": "https://suvocalc.com/calculators/net-worth-calculator/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/net-worth-calculator/"
       },
       {
         "page": "calculators/numerology-calculator/index.html",
-        "url": "https://suvocalc.com/calculators/numerology-calculator/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/numerology-calculator/"
       },
       {
         "page": "calculators/overtime-pay-calculator/index.html",
-        "url": "https://suvocalc.com/calculators/overtime-pay-calculator/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/overtime-pay-calculator/"
       },
       {
         "page": "calculators/password-generator/index.html",
-        "url": "https://suvocalc.com/calculators/password-generator/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/password-generator/"
       },
       {
         "page": "calculators/percentage-calculator/index.html",
-        "url": "https://suvocalc.com/calculators/percentage-calculator/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/percentage-calculator/"
       },
       {
         "page": "calculators/pomodoro-study-timer/index.html",
-        "url": "https://suvocalc.com/calculators/pomodoro-study-timer/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/pomodoro-study-timer/"
       },
       {
         "page": "calculators/ppf-calculator/index.html",
-        "url": "https://suvocalc.com/calculators/ppf-calculator/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/ppf-calculator/"
       },
       {
         "page": "calculators/pregnancy-due-date-calculator/index.html",
-        "url": "https://suvocalc.com/calculators/pregnancy-due-date-calculator/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/pregnancy-due-date-calculator/"
       },
       {
         "page": "calculators/qr-code-generator/index.html",
-        "url": "https://suvocalc.com/calculators/qr-code-generator/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/qr-code-generator/"
       },
       {
         "page": "calculators/qr-code-scanner/index.html",
-        "url": "https://suvocalc.com/calculators/qr-code-scanner/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/qr-code-scanner/"
       },
       {
         "page": "calculators/random-number-generator/index.html",
-        "url": "https://suvocalc.com/calculators/random-number-generator/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/random-number-generator/"
       },
       {
         "page": "calculators/retirement-calculator/index.html",
-        "url": "https://suvocalc.com/calculators/retirement-calculator/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/retirement-calculator/"
       },
       {
         "page": "calculators/salary-calculator/index.html",
-        "url": "https://suvocalc.com/calculators/salary-calculator/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/salary-calculator/"
       },
       {
         "page": "calculators/savings-goal-calculator/index.html",
-        "url": "https://suvocalc.com/calculators/savings-goal-calculator/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/savings-goal-calculator/"
       },
       {
         "page": "calculators/scientific-calculator/index.html",
-        "url": "https://suvocalc.com/calculators/scientific-calculator/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/scientific-calculator/"
       },
       {
         "page": "calculators/simple-interest-calculator/index.html",
-        "url": "https://suvocalc.com/calculators/simple-interest-calculator/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/simple-interest-calculator/"
       },
       {
         "page": "calculators/sip-calculator/index.html",
-        "url": "https://suvocalc.com/calculators/sip-calculator/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/sip-calculator/"
       },
       {
         "page": "calculators/sleep-cycle-calculator/index.html",
-        "url": "https://suvocalc.com/calculators/sleep-cycle-calculator/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/sleep-cycle-calculator/"
       },
       {
         "page": "calculators/speed-distance-time-calculator/index.html",
-        "url": "https://suvocalc.com/calculators/speed-distance-time-calculator/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/speed-distance-time-calculator/"
       },
       {
         "page": "calculators/split-bill-calculator/index.html",
-        "url": "https://suvocalc.com/calculators/split-bill-calculator/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/split-bill-calculator/"
       },
       {
         "page": "calculators/statistics-calculator/index.html",
-        "url": "https://suvocalc.com/calculators/statistics-calculator/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/statistics-calculator/"
       },
       {
         "page": "calculators/stock-profit-calculator/index.html",
-        "url": "https://suvocalc.com/calculators/stock-profit-calculator/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/stock-profit-calculator/"
       },
       {
         "page": "calculators/time-zone-converter/index.html",
-        "url": "https://suvocalc.com/calculators/time-zone-converter/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/time-zone-converter/"
       },
       {
         "page": "calculators/tip-calculator/index.html",
-        "url": "https://suvocalc.com/calculators/tip-calculator/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/tip-calculator/"
       },
       {
         "page": "calculators/unit-currency-converter/index.html",
-        "url": "https://suvocalc.com/calculators/unit-currency-converter/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/unit-currency-converter/"
       },
       {
         "page": "calculators/unit-price-calculator/index.html",
-        "url": "https://suvocalc.com/calculators/unit-price-calculator/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/unit-price-calculator/"
       },
       {
         "page": "calculators/water-intake-calculator/index.html",
-        "url": "https://suvocalc.com/calculators/water-intake-calculator/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/water-intake-calculator/"
       },
       {
         "page": "calculators/world-clock/index.html",
-        "url": "https://suvocalc.com/calculators/world-clock/"
+        "url": "https://suvome84.github.io/suvocalc/calculators/world-clock/"
       },
       {
         "page": "categories/daily-utilities/index.html",
-        "url": "https://suvocalc.com/categories/daily-utilities/"
+        "url": "https://suvome84.github.io/suvocalc/categories/daily-utilities/"
       },
       {
         "page": "categories/date-time/index.html",
-        "url": "https://suvocalc.com/categories/date-time/"
+        "url": "https://suvome84.github.io/suvocalc/categories/date-time/"
       },
       {
         "page": "categories/education-students/index.html",
-        "url": "https://suvocalc.com/categories/education-students/"
+        "url": "https://suvome84.github.io/suvocalc/categories/education-students/"
       },
       {
         "page": "categories/finance/index.html",
-        "url": "https://suvocalc.com/categories/finance/"
+        "url": "https://suvome84.github.io/suvocalc/categories/finance/"
       },
       {
         "page": "categories/health-fitness/index.html",
-        "url": "https://suvocalc.com/categories/health-fitness/"
+        "url": "https://suvome84.github.io/suvocalc/categories/health-fitness/"
+      },
+      {
+        "page": "categories/index.html",
+        "url": "https://suvome84.github.io/suvocalc/categories/"
       },
       {
         "page": "categories/investment-savings/index.html",
-        "url": "https://suvocalc.com/categories/investment-savings/"
+        "url": "https://suvome84.github.io/suvocalc/categories/investment-savings/"
       },
       {
         "page": "categories/tax-business/index.html",
-        "url": "https://suvocalc.com/categories/tax-business/"
+        "url": "https://suvome84.github.io/suvocalc/categories/tax-business/"
       },
       {
         "page": "contact/index.html",
-        "url": "https://suvocalc.com/contact/"
+        "url": "https://suvome84.github.io/suvocalc/contact/"
       },
       {
         "page": "disclaimer/index.html",
-        "url": "https://suvocalc.com/disclaimer/"
+        "url": "https://suvome84.github.io/suvocalc/disclaimer/"
       },
       {
         "page": "faq/index.html",
-        "url": "https://suvocalc.com/faq/"
+        "url": "https://suvome84.github.io/suvocalc/faq/"
       },
       {
         "page": "index.html",
-        "url": "https://suvocalc.com/"
+        "url": "https://suvome84.github.io/suvocalc/"
       },
       {
         "page": "privacy/index.html",
-        "url": "https://suvocalc.com/privacy/"
+        "url": "https://suvome84.github.io/suvocalc/privacy/"
       },
       {
         "page": "privacy/index.html",
@@ -811,11 +820,11 @@
       },
       {
         "page": "terms/index.html",
-        "url": "https://suvocalc.com/terms/"
+        "url": "https://suvome84.github.io/suvocalc/terms/"
       },
       {
         "page": "tools/index.html",
-        "url": "https://suvocalc.com/tools/"
+        "url": "https://suvome84.github.io/suvocalc/tools/"
       }
     ],
     "anchors_missing": []
@@ -837,22 +846,23 @@
       "education-students",
       "finance",
       "health-fitness",
+      "index.html",
       "investment-savings",
       "tax-business"
     ],
-    "category_count": 7,
+    "category_count": 8,
     "h1_violations": {},
     "footer_violations": {},
     "registry_category_counts": {
       "daily-utilities": 16,
-      "date-time": 3,
+      "date-time": 4,
       "education-students": 5,
       "finance": 11,
-      "health-fitness": 8,
+      "health-fitness": 7,
       "investment-savings": 9,
       "tax-business": 5
     },
-    "sitemap_loc_count": 89,
+    "sitemap_loc_count": 90,
     "sitemap_missing_files": [],
     "sitemap_equals_page_count": true,
     "robots_points_to_sitemap": true
@@ -860,8 +870,8 @@
   "banned": [],
   "duplicates": {
     "homepage_sections": {
-      "unnamed@8330": [],
-      "unnamed@9392": [
+      "unnamed@9112": [],
+      "unnamed@10271": [
         "age-calculator",
         "bmi-calculator",
         "compound-interest-calculator",
@@ -871,12 +881,12 @@
         "percentage-calculator",
         "sip-calculator"
       ],
-      "unnamed@18041": [],
-      "unnamed@20380": [],
-      "unnamed@20571": [
+      "unnamed@18910": [],
+      "unnamed@21230": [],
+      "unnamed@21421": [
         "gst-calculator"
       ],
-      "unnamed@21112": [
+      "unnamed@21962": [
         "budget-calculator",
         "loan-affordability-calculator",
         "loan-eligibility-calculator",
@@ -884,30 +894,30 @@
         "salary-calculator",
         "simple-interest-calculator"
       ],
-      "unnamed@27806": [
+      "unnamed@28656": [
         "body-fat-calculator",
         "calorie-calculator",
         "pregnancy-due-date-calculator",
         "water-intake-calculator"
       ],
-      "unnamed@32307": [
+      "unnamed@33153": [
         "cgpa-calculator",
         "grade-calculator",
         "matrix-calculator",
         "pomodoro-study-timer"
       ],
-      "unnamed@36715": [
+      "unnamed@37557": [
         "electricity-bill-calculator",
         "fuel-cost-calculator",
         "password-generator",
         "random-number-generator"
       ],
-      "unnamed@41060": [
+      "unnamed@41902": [
         "scientific-calculator"
       ],
-      "unnamed@41327": [],
-      "unnamed@41854": [],
-      "unnamed@42405": []
+      "unnamed@42169": [],
+      "unnamed@42696": [],
+      "unnamed@43247": []
     },
     "homepage_slug_in_two_sections": [],
     "homepage_all_calc_slugs": [
@@ -1131,14 +1141,14 @@
   "banned_raw_hits": [
     {
       "page": "blog/cgpa-to-percentage-every-university-formula/index.html",
-      "line": 84,
+      "line": 94,
       "pattern": "6.0",
       "match": "6.0",
-      "context": "></tr><tr><td>7.0</td><td>66.5%</td><td>B+</td></tr><tr><td>6.0</td><td>57%</td><td>B</td></tr></table><h2>University-speci"
+      "context": "></tr><tr><td>7.0</td><td>66.5%</td><td>B+</td></tr><tr><td>6.0</td><td>57%</td><td>B</td></tr></table><h2 id=\"university-s"
     },
     {
       "page": "calculators/qr-code-scanner/index.html",
-      "line": 240,
+      "line": 249,
       "pattern": "v23",
       "match": "v23",
       "context": "scanLine.className='v23-qr-scan-line';"

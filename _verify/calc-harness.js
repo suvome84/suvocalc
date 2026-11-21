@@ -7,6 +7,7 @@
  * A tool with no runnable assertion is NEEDS-BROWSER, never PASS.
  */
 const vm = require('vm');
+const nodeCrypto = require('crypto');
 const fs = require('fs');
 const path = require('path');
 
@@ -66,11 +67,13 @@ function buildContext(pageHtml, fieldValues) {
   };
   const sandbox = {
     console, Math, JSON, Intl, Date, Number, String, Array, Object,
+    Uint32Array, Uint8Array,
     parseFloat, parseInt, isNaN, isFinite, Error, RegExp, Promise,
     setTimeout, clearTimeout,
     setInterval: () => 0,           // stub: never schedule (avoids hanging)
     clearInterval: () => {},
     localStorage: { getItem: () => null, setItem() {}, removeItem() {} },
+    crypto: { getRandomValues(arr) { nodeCrypto.randomFillSync(arr); return arr; } },
     addEventListener() {}, removeEventListener() {},
     navigator: { vibrate() {}, mediaDevices: undefined, userAgent: 'node-shim' },
     location: { href: '' },
@@ -132,9 +135,15 @@ function flames(n1, n2) { // independent re-implementation of the FLAMES elimina
 /* ---------- test definitions: one entry per tool id ---------- */
 const T = {};
 T.pct = { inputs: { pA: 20, pB: 500 }, check: (c) => eq(num(c.resValue), 100, 'res-value') };
-T.emi = { inputs: { eP: 500000, eR: 8.5, eN: 60 }, check: (c) => eq(num(c.resValue), Math.round(emiCalc(500000, 8.5, 60)), 'res-value') };
+T.emi = { cases: [
+  { inputs: { eP: 500000, eR: 8.5, eN: 60 }, check: (c) => eq(num(c.resValue), Math.round(emiCalc(500000, 8.5, 60)), 'res-value') },
+  { inputs: { eP: 500000, eR: 0, eN: 60 }, check: (c) => eq(num(c.resValue), 8333, 'res-value (0% interest: 500000/60)') },
+]};
 T.disc = { inputs: { dO: 1000, dP: 20 }, check: (c) => eq(num(c.resValue), 800, 'res-value') };
-T.ci = { inputs: { ciP: 100000, ciR: 8, ciN: 5, ciC: 'Yearly' }, check: (c) => eq(num(c.resValue), Math.round(100000 * Math.pow(1.08, 5)), 'res-value') };
+T.ci = { cases: [
+  { inputs: { ciP: 100000, ciR: 8, ciN: 5, ciC: 'Yearly' }, check: (c) => eq(num(c.resValue), Math.round(100000 * Math.pow(1.08, 5)), 'res-value') },
+  { inputs: { ciP: 100000, ciR: 0, ciN: 5, ciC: 'Yearly' }, check: (c) => eq(num(c.resValue), 100000, 'res-value (0% rate)') },
+]};
 T.si = { inputs: { siP: 100000, siRate: 8, siT: 5 }, check: (c) => eq(num(c.resValue), 40000, 'res-value') };
 T.sal = { inputs: { salG: 1200000, salPF1: 12, salT: 2400 }, check: (c) => eq(num(c.resValue), 87800, 'res-value') };
 T.budget = { inputs: { budInc: 100000, budExp: 50000, budSave: 20000 }, check: (c) => eq(num(c.resValue), 20000, 'res-value') };
@@ -163,7 +172,10 @@ T.gst = { cases: [
     const ok = num(c.resValue) === 400 && d.includes('₹1,400');
     return ok ? pass('GST ₹400, total ₹1,400') : fail(`value=${c.resValue} details=${d}`, ''); } },
 ]};
-T.tax = { inputs: { txI: 1500000, txR: 'New Regime 2025-26' }, check: (c) => eq(num(c.resValue), 109200, 'res-value') };
+T.tax = { cases: [
+  { inputs: { txI: 1500000, txR: 'New Regime 2025-26' }, check: (c) => eq(num(c.resValue), 97500, 'res-value (salaried: taxable 14,25,000 after 75,000 std deduction)') },
+  { inputs: { txI: 1280000, txR: 'New Regime 2025-26' }, check: (c) => eq(num(c.resValue), 5200, 'res-value (marginal relief: slab tax 60,750 capped at 5,000 + 4% cess)') },
+]};
 T.hra = { inputs: { hraSal: 50000, hraDA: 10000, hraRcv: 20000, hraRent: 15000, hraCity: 'Metro' }, check: (c) => {
   const txt = stripTags(c.custom('hraRes')); const m = txt.match(/₹\s*([\d,]+)/);
   return eq(m ? num(m[1]) : NaN, 9000, 'exemption in hraRes'); } };
@@ -174,7 +186,10 @@ T.homeloan = { inputs: { hlLoan: 5000000, hlRate: 8.5, hlTenure: 20, hlIncome: 1
   const txt = stripTags(c.custom('homeloanRes')); const m = txt.match(/₹\s*([\d,]+)/);
   return eq(m ? num(m[1]) : NaN, expected, 'annual tax saving in homeloanRes'); } };
 T.breakeven = { inputs: { beFixed: 50000, bePrice: 100, beVar: 60, beUnits: 1000 }, check: (c) => eq(num(c.resValue), 1250, 'res-value') };
-T.sip = { inputs: { siM: 5000, siR: 12, siY: 10 }, check: (c) => eq(num(c.resValue), Math.round(5000 * ((Math.pow(1.01, 120) - 1) / 0.01) * 1.01), 'res-value') };
+T.sip = { cases: [
+  { inputs: { siM: 5000, siR: 12, siY: 10 }, check: (c) => eq(num(c.resValue), Math.round(5000 * ((Math.pow(1.01, 120) - 1) / 0.01) * 1.01), 'res-value') },
+  { inputs: { siM: 5000, siR: 0, siY: 10 }, check: (c) => eq(num(c.resValue), 600000, 'res-value (0% return: 5000x120)') },
+]};
 T.stock = { inputs: { stB: 100, stQ: 10, stS: 150, stY: 1 }, check: (c) => eq(num(c.resValue), 500, 'res-value') };
 T.crypto = { inputs: { crI: 10000, crB: 50000, crN: 75000 }, check: (c) => eq(num(c.resValue), 0.2, 'res-value (coins)') };
 T.retire = { inputs: { rtA: 30, rtR: 60, rtE: 50000, rtI: 8, rtF: 6 }, check: (c) => {
@@ -295,7 +310,10 @@ T.graph = { inputs: { graphFn: 'x*x' }, check: (c, extra, sbx) => {
     const info = sbx.__getEl('graphInfo').textContent || '';
     const m = info.match(/(\d+) points plotted/);
     return m && parseInt(m[1], 10) > 0 ? pass(`f(x)=x*x, ${m[1]} points plotted`) : fail('expected ">0 points plotted"', info); } };
-T.tip = { inputs: { tipB: 1000, tipP: 15, tipS: 2 }, check: (c) => eq(num(c.resValue), 150, 'res-value') };
+T.tip = { cases: [
+  { inputs: { tipB: 1000, tipP: 15, tipS: 2 }, check: (c) => eq(num(c.resValue), 150, 'res-value') },
+  { inputs: { tipB: 1000, tipP: 0, tipS: 2 }, check: (c) => eq(num(c.resValue), 0, 'res-value (0% tip)') },
+]};
 T.qr = { inputs: { qr22Input: 'https://example.com', qr22Color: '#000000', qr22Bg: '#ffffff', qr22Size: '300' }, check: (c, extra, sbx) => {
     const src = sbx.__getEl('qr22Img').src || '';
     const ok = src.startsWith('https://api.qrserver.com/v1/create-qr-code/') && src.includes('data=https%3A%2F%2Fexample.com') && src.includes('size=300x300');
@@ -322,7 +340,10 @@ T.stats = { inputs: { statsInp: '1,2,3,4,5' }, check: (c) => {
 T.split19 = { inputs: { v19SplitTotal: 1000, v19SplitPeople: 4, v19SplitTip: 10 }, check: (c) => {
     const h = c.custom('v19SplitRes') || '';
     return h.includes('₹275.00') ? pass('each pays ₹275.00') : fail('expected ₹275.00', stripTags(h).slice(0, 200)); } };
-T.area = { inputs: { arS: 'Rectangle', arA: 10, arB: 5 }, check: (c) => eq(num(c.resValue), 50, 'res-value') };
+T.area = { cases: [
+  { inputs: { arS: 'Rectangle', arA: 10, arB: 5 }, check: (c) => eq(num(c.resValue), 50, 'res-value') },
+  { inputs: { arS: 'Trapezoid', arA: 10, arB: 6, arC: 4 }, check: (c) => eq(num(c.resValue), 32, 'res-value (trapezoid 0.5*(10+6)*4)') },
+]};
 T.numera = { inputs: { numDob: '1990-01-01', numName: 'RAM' }, check: (c) => {
     const txt = stripTags(c.custom('numeraRes'));
     return txt.includes('Life Path Number') && txt.includes('Name Number') && /\b3\b/.test(txt) && /\b7\b/.test(txt)

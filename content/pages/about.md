@@ -1,10 +1,11 @@
 ---
 title: "About SuvoCalc"
+description: "SuvoCalc is a free collection of 57 online calculators for money, tax, health, study and daily life, built by Najmus Sakib. No login, no fees."
 ---
 
 # About SuvoCalc
 
-SuvoCalc is a free calculator website. Version 31 (v31) offers 57 calculators in one place — for finance, tax, investment, health, education, date and time, and everyday calculations.
+SuvoCalc is a free calculator website. SuvoCalc offers 57 calculators in one place — for finance, tax, investment, health, education, date and time, and everyday calculations.
 
 ## What SuvoCalc is
 
@@ -16,7 +17,7 @@ SuvoCalc is a free calculator website. Version 31 (v31) offers 57 calculators in
 
 ## What you can do here
 
-Use any of the 57 calculators — EMI, SIP, income tax, GST, BMI, CGPA, electricity bill, loan eligibility, stock profit, and more — read the free guides in the Learning Hub, and install SuvoCalc on your phone as a web app (PWA) so it works offline after installation.
+Use any of the 57 calculators — EMI, SIP, income tax, GST, BMI, CGPA, electricity bill, loan eligibility, stock profit, and more — read the free guides in the Blog/Guides section, and add SuvoCalc to your phone's home screen from your browser menu — it installs as a web app, and after your first visit its calculators work offline.
 
 ## What SuvoCalc is not
 

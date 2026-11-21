@@ -1,5 +1,7 @@
 ---
 title: "How to Use the Scientific Calculator Like a Pro"
+date: "2026-11-21"
+author: "Najmus Sakib"
 minutes: 6
 related: ["scientific-calculator", "graph-plotter", "percentage-calculator"]
 ---

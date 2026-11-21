@@ -1,5 +1,7 @@
 ---
 title: "SIP Calculator: Build ₹1 Crore with ₹5000/Month"
+date: "2026-11-21"
+author: "Najmus Sakib"
 minutes: 7
 related: ["sip-calculator", "emi-calculator", "stock-profit-calculator"]
 ---

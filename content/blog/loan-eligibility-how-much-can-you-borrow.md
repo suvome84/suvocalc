@@ -1,5 +1,7 @@
 ---
 title: "Loan Eligibility: How Much Can You Borrow?"
+date: "2026-11-21"
+author: "Najmus Sakib"
 minutes: 5
 related: ["loan-eligibility-calculator", "emi-calculator", "sip-calculator"]
 ---

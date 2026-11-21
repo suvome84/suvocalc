@@ -1,5 +1,6 @@
 ---
 title: "Terms & Conditions"
+description: "SuvoCalc terms of use — free calculators provided as a guide, not professional advice."
 ---
 
 # Terms & Conditions

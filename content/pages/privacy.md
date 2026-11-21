@@ -1,5 +1,6 @@
 ---
 title: "Privacy Policy"
+description: "SuvoCalc privacy policy — calculations run in your browser, and nothing you type is sent to a server."
 ---
 
 # Privacy Policy
@@ -8,7 +9,7 @@ Last updated: November 2026
 
 ## 1. Introduction
 
-SuvoCalc ("we", "our", "us") at suvocalc.com is committed to protecting your privacy. This policy explains how we handle information.
+SuvoCalc ("we", "our", "us") at suvome84.github.io/suvocalc is committed to protecting your privacy. This policy explains how we handle information.
 
 ## 2. Data We Collect
 

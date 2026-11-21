@@ -278,4 +278,12 @@
       }
     });
   }
+  /* Service worker (PWA): cache pages so calculators work offline after
+     the first visit. Silent if the browser has no service-worker support. */
+  if ('serviceWorker' in navigator) {
+    try {
+      var swReg = navigator.serviceWorker.register(toolUrlPrefix() + 'sw.js');
+      if (swReg && swReg.catch) swReg.catch(function () { /* offline support unavailable */ });
+    } catch (e) { /* offline support unavailable */ }
+  }
 })();

@@ -1,5 +1,6 @@
 ---
 title: "Contact SuvoCalc"
+description: "Contact SuvoCalc — report a wrong result, suggest a calculator, or ask a question. Email ukin.in@yandex.com."
 ---
 
 # Contact SuvoCalc

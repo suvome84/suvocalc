@@ -4,36 +4,43 @@
     "version": "31",
     "versionLabel": "v31",
     "toolCount": 57,
-    "baseUrl": "https://suvocalc.com"
+    "baseUrl": "https://suvome84.github.io/suvocalc"
   },
   "categories": [
     {
       "slug": "finance",
-      "name": "Finance & Money"
+      "name": "Finance & Money",
+      "description": "Loans, EMI, tax and everyday money maths."
     },
     {
       "slug": "tax-business",
-      "name": "Tax & Business"
+      "name": "Tax & Business",
+      "description": "Income tax, GST, HRA and business calculations."
     },
     {
       "slug": "investment-savings",
-      "name": "Investment & Savings"
+      "name": "Investment & Savings",
+      "description": "SIP, returns, retirement and growing your money."
     },
     {
       "slug": "health-fitness",
-      "name": "Health & Fitness"
+      "name": "Health & Fitness",
+      "description": "BMI, calories, body fat and health numbers."
     },
     {
       "slug": "education-students",
-      "name": "Education & Students"
+      "name": "Education & Students",
+      "description": "CGPA, grades, attendance and study tools."
     },
     {
       "slug": "date-time",
-      "name": "Date & Time"
+      "name": "Date & Time",
+      "description": "Age, dates, time zones and calendars."
     },
     {
       "slug": "daily-utilities",
-      "name": "Daily Utilities"
+      "name": "Daily Utilities",
+      "description": "Tips, passwords, random numbers and daily helpers."
     }
   ],
   "tools": [
@@ -87,12 +94,22 @@
         },
         {
           "id": "eN",
-          "label": "Tenure (Months)",
+          "label": "Tenure",
           "type": "number",
           "placeholder": "e.g. 60"
+        },
+        {
+          "id": "eU",
+          "label": "Tenure Unit",
+          "type": "select",
+          "placeholder": "",
+          "opts": [
+            "Months",
+            "Years"
+          ]
         }
       ],
-      "calc": "const P=parseFloat(getId('eP'))||0,r=(parseFloat(getId('eR'))||8.5)/12/100,n=parseInt(getId('eN'))||60;\n     if(P<=0){showValError('emi','Loan amount must be greater than 0');return;}\n     if(r<=0){showValError('emi','Interest rate must be greater than 0');return;}\n     if(n<=0){showValError('emi','Tenure must be greater than 0 months');return;}\n     const emi=P*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);\n     if(!isValidNum(emi)){showValError('emi','Invalid values — please check inputs');return;}\n     setRes('emi',SYM()+fmt(Math.round(emi),true),'Monthly EMI',`Total Payment: ${SYM()}${fmt(Math.round(emi*n),true)}<br>Total Interest: ${SYM()}${fmt(Math.round(emi*n-P),true)}<br>Principal: ${SYM()}${fmt(P,true)}<br>Interest %: ${fmt((emi*n-P)/P*100)}%`);",
+      "calc": "const P=parseFloat(getId('eP'))||0;\nvar _er=parseFloat(getId('eR'));var rate=isNaN(_er)?8.5:_er;\nvar _en=parseInt(getId('eN'));var n=isNaN(_en)?60:_en;\nif(getId('eU')==='Years'){n=n*12;}\nvar r=rate/12/100;\nif(P<=0){showValError('emi','Loan amount must be greater than 0');return;}\nif(rate<0){showValError('emi','Interest rate cannot be negative');return;}\nif(n<=0){showValError('emi','Tenure must be greater than 0');return;}\nvar emi=(r===0)?P/n:P*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);\nif(!isValidNum(emi)){showValError('emi','Invalid values — please check inputs');return;}\nsetRes('emi',SYM()+fmt(Math.round(emi),true),'Monthly EMI',`Total Payment: ${SYM()}${fmt(Math.round(emi*n),true)}<br>Total Interest: ${SYM()}${fmt(Math.round(emi*n-P),true)}<br>Principal: ${SYM()}${fmt(P,true)}<br>Interest %: ${fmt((emi*n-P)/P*100)}%`);",
       "resultLabel": "Monthly EMI"
     },
     {
@@ -162,7 +179,7 @@
           ]
         }
       ],
-      "calc": "const P=parseFloat(getId('ciP'))||0,r=parseFloat(getId('ciR'))||8,n=parseFloat(getId('ciN'))||5;\n     if(P<=0){showValError('ci','Principal must be greater than 0');return;}\n     if(r<=0||r>100){showValError('ci','Rate must be between 0.1% and 100%');return;}\n     if(n<=0||n>100){showValError('ci','Years must be between 1 and 100');return;}\n     const compMap={'Yearly':1,'Half-Yearly':2,'Quarterly':4,'Monthly':12};const comp=compMap[getId('ciC')]||1;const A=P*Math.pow(1+r/(comp*100),comp*n);\n     if(!isValidNum(A)){showValError('ci','Invalid values — please check inputs');return;}\n     setRes('ci',SYM()+fmt(Math.round(A),true),'Maturity Amount',`Principal: ${SYM()}${fmt(P,true)}<br>Interest Earned: ${SYM()}${fmt(Math.round(A-P),true)}<br>Growth: ${fmt((A/P-1)*100)}%<br>Effective Rate: ${fmt(r)}% p.a.`);",
+      "calc": "const P=parseFloat(getId('ciP'))||0;\nvar _cr=parseFloat(getId('ciR'));var r=isNaN(_cr)?8:_cr;\nvar _cn=parseFloat(getId('ciN'));var n=isNaN(_cn)?5:_cn;\nif(P<=0){showValError('ci','Principal must be greater than 0');return;}\nif(r<0||r>100){showValError('ci','Rate must be between 0% and 100%');return;}\nif(n<=0||n>100){showValError('ci','Years must be between 1 and 100');return;}\nconst compMap={'Yearly':1,'Half-Yearly':2,'Quarterly':4,'Monthly':12};const comp=compMap[getId('ciC')]||1;const A=(r===0)?P:P*Math.pow(1+r/(comp*100),comp*n);\nif(!isValidNum(A)){showValError('ci','Invalid values — please check inputs');return;}\nsetRes('ci',SYM()+fmt(Math.round(A),true),'Maturity Amount',`Principal: ${SYM()}${fmt(P,true)}<br>Interest Earned: ${SYM()}${fmt(Math.round(A-P),true)}<br>Growth: ${fmt((A/P-1)*100)}%<br>Effective Rate: ${fmt(r)}% p.a.`);",
       "resultLabel": "Maturity Amount"
     },
     {
@@ -296,7 +313,7 @@
           "placeholder": "e.g. 20"
         }
       ],
-      "calc": "\n     const inc=parseFloat(getId('lnI'))||0,emi=parseFloat(getId('lnE'))||0,r=(parseFloat(getId('lnR'))||8.5)/12/100,n=(parseFloat(getId('lnT'))||20)*12;\n     if(inc<=0){showValError('loan','Monthly income must be greater than 0');return;}\n     if(emi<0){showValError('loan','EMI obligations cannot be negative');return;}\n     if(n<=0){showValError('loan','Tenure must be greater than 0 years');return;}\n     const maxEmi=inc*0.5-emi;\n     if(maxEmi<=0){setRes('loan','❌ Not Eligible','Loan Eligibility','Your existing EMIs exceed 50% of income.<br>Try reducing current loans or increasing income.');return;}\n     const eligible=maxEmi*(Math.pow(1+r,n)-1)/(r*Math.pow(1+r,n));\n     setRes('loan',SYM()+fmt(Math.round(eligible),true),'Max Loan Amount',`Based on 50% FOIR rule<br>Monthly Income: ${SYM()}${fmt(inc,true)}<br>Max EMI allowed: ${SYM()}${fmt(Math.round(maxEmi),true)}<br>Existing EMIs: ${SYM()}${fmt(emi,true)}<br>New EMI capacity: ${SYM()}${fmt(Math.round(maxEmi),true)}`);\n   ",
+      "calc": "\nconst inc=parseFloat(getId('lnI'))||0,emi=parseFloat(getId('lnE'))||0;\nvar _lr=parseFloat(getId('lnR'));var rate=isNaN(_lr)?8.5:_lr;\nvar _lt=parseFloat(getId('lnT'));var yrs=isNaN(_lt)?20:_lt;\nvar r=rate/12/100,n=yrs*12;\nif(inc<=0){showValError('loan','Monthly income must be greater than 0');return;}\nif(emi<0){showValError('loan','EMI obligations cannot be negative');return;}\nif(rate<0){showValError('loan','Interest rate cannot be negative');return;}\nif(n<=0){showValError('loan','Tenure must be greater than 0 years');return;}\nconst maxEmi=inc*0.5-emi;\nif(maxEmi<=0){setRes('loan','❌ Not Eligible','Loan Eligibility','Your existing EMIs exceed 50% of income.<br>Try reducing current loans or increasing income.');return;}\nconst eligible=(r===0)?maxEmi*n:maxEmi*(Math.pow(1+r,n)-1)/(r*Math.pow(1+r,n));\nsetRes('loan',SYM()+fmt(Math.round(eligible),true),'Max Loan Amount',`Based on 50% FOIR rule<br>Monthly Income: ${SYM()}${fmt(inc,true)}<br>Max EMI allowed: ${SYM()}${fmt(Math.round(maxEmi),true)}<br>Existing EMIs: ${SYM()}${fmt(emi,true)}<br>New EMI capacity: ${SYM()}${fmt(Math.round(maxEmi),true)}`);\n",
       "resultLabel": "Max Loan Amount"
     },
     {
@@ -334,7 +351,7 @@
           "placeholder": "e.g. 20"
         }
       ],
-      "calc": "\n  var inc = parseFloat(document.getElementById('emi2Inc').value)||0;\n  var existEmi = parseFloat(document.getElementById('emi2Emi').value)||0;\n  var rate = parseFloat(document.getElementById('emi2Rate').value)||9;\n  var tenure = parseFloat(document.getElementById('emi2Ten').value)||20;\n  if(!inc){ v30ShowResult('emi2Res','Enter monthly income.','error'); return; }\n  var foir = 0.5;\n  var maxEmi = inc * foir - existEmi;\n  if(maxEmi <= 0){ v30ShowResult('emi2Res','Existing EMIs exceed 50% of income. Loan may not be approved.','error'); return; }\n  var r = rate/(12*100);\n  var n = tenure*12;\n  var maxLoan = maxEmi * (Math.pow(1+r,n)-1) / (r * Math.pow(1+r,n));\n  var sym = (window.SC_GL && window.SC_GL.L) ? window.SC_GL.L.sym : '₹';\n  v30ShowResult('emi2Res',\n    '<div class=\"v30-res-main\"><span class=\"v30-rlbl\">Max Loan Eligibility</span><span class=\"v30-rnum\">'+sym+' '+v30Fmt(maxLoan)+'</span></div>'+\n    '<div class=\"v30-res-row\"><span>Max EMI you can afford</span><span>'+sym+' '+v30Fmt(maxEmi)+'</span></div>'+\n    '<div class=\"v30-res-row\"><span>50% FOIR limit</span><span>'+sym+' '+v30Fmt(inc*foir)+'</span></div>'+\n    '<div class=\"v30-res-note\">Based on 50% FOIR (Fixed Obligation to Income Ratio) used by most Indian banks.</div>'\n  );\n",
+      "calc": "\n  var inc = parseFloat(document.getElementById('emi2Inc').value)||0;\n  var existEmi = parseFloat(document.getElementById('emi2Emi').value)||0;\n  var _rate = parseFloat(document.getElementById('emi2Rate').value);var rate = isNaN(_rate)?9:_rate;\n  var tenure = parseFloat(document.getElementById('emi2Ten').value)||20;\n  if(!inc){ v30ShowResult('emi2Res','Enter monthly income.','error'); return; }\n  var foir = 0.5;\n  var maxEmi = inc * foir - existEmi;\n  if(maxEmi <= 0){ v30ShowResult('emi2Res','Existing EMIs exceed 50% of income. Loan may not be approved.','error'); return; }\n  var r = rate/(12*100);\n  var n = tenure*12;\n  var maxLoan = (r===0)?maxEmi*n:maxEmi * (Math.pow(1+r,n)-1) / (r * Math.pow(1+r,n));\n  var sym = (window.SC_GL && window.SC_GL.L) ? window.SC_GL.L.sym : '₹';\n  v30ShowResult('emi2Res',\n    '<div class=\"v30-res-main\"><span class=\"v30-rlbl\">Max Loan Eligibility</span><span class=\"v30-rnum\">'+sym+' '+v30Fmt(maxLoan)+'</span></div>'+\n    '<div class=\"v30-res-row\"><span>Max EMI you can afford</span><span>'+sym+' '+v30Fmt(maxEmi)+'</span></div>'+\n    '<div class=\"v30-res-row\"><span>50% FOIR limit</span><span>'+sym+' '+v30Fmt(inc*foir)+'</span></div>'+\n    '<div class=\"v30-res-note\">Based on 50% FOIR (Fixed Obligation to Income Ratio) used by most Indian banks.</div>'\n  );\n",
       "resultLabel": "Max Loan Eligibility"
     },
     {
@@ -416,7 +433,7 @@
           "placeholder": "e.g. 180"
         }
       ],
-      "calc": "\n            var P=safeNum(document.getElementById('lcP')&&document.getElementById('lcP').value);\n            var r1=safeNum(document.getElementById('lcR1')&&document.getElementById('lcR1').value)/12/100;\n            var n1=safeNum(document.getElementById('lcN1')&&document.getElementById('lcN1').value);\n            var r2=safeNum(document.getElementById('lcR2')&&document.getElementById('lcR2').value)/12/100;\n            var n2=safeNum(document.getElementById('lcN2')&&document.getElementById('lcN2').value);\n            if(!P||!r1||!n1||!r2||!n2){setRes('lcomp','—','Enter all values','');return;}\n            var emi1=P*r1*Math.pow(1+r1,n1)/(Math.pow(1+r1,n1)-1);\n            var emi2=P*r2*Math.pow(1+r2,n2)/(Math.pow(1+r2,n2)-1);\n            var total1=emi1*n1,total2=emi2*n2;\n            var int1=total1-P,int2=total2-P;\n            var better=total1<total2?1:2;\n            var res=document.getElementById('res-lcomp');\n            if(res)res.innerHTML='<div class=\"loan-compare-grid\">' +\n                '<div class=\"lc-card'+(better===1?' lc-better':'')+'\"><div class=\"lc-head\">Loan 1'+(better===1?'<span class=\"lc-better-badge\">BETTER</span>':'')+'</div>' +\n                '<div class=\"lc-val\">'+SYM()+Math.round(emi1).toLocaleString('en-IN')+'</div><div class=\"lc-sub\">Monthly EMI</div>' +\n                '<div style=\"margin-top:8px;font-size:11px;color:var(--tx3)\">Total: '+SYM()+Math.round(total1).toLocaleString('en-IN')+'<br>Interest: ₹'+Math.round(int1).toLocaleString('en-IN')+'</div></div>' +\n                '<div class=\"lc-card'+(better===2?' lc-better':'')+'\"><div class=\"lc-head\">Loan 2'+(better===2?'<span class=\"lc-better-badge\">BETTER</span>':'')+'</div>' +\n                '<div class=\"lc-val\">'+SYM()+Math.round(emi2).toLocaleString('en-IN')+'</div><div class=\"lc-sub\">Monthly EMI</div>' +\n                '<div style=\"margin-top:8px;font-size:11px;color:var(--tx3)\">Total: '+SYM()+Math.round(total2).toLocaleString('en-IN')+'<br>Interest: ₹'+Math.round(int2).toLocaleString('en-IN')+'</div></div>' +\n                '</div>' +\n                '<div style=\"margin-top:10px;padding:9px 11px;background:var(--g2);border-radius:8px;font-size:12px;color:var(--tx2);\">'+\n                (better===1?'Loan 1':'Loan 2')+' saves you <strong style=\\\"color:var(--gr)\\\">'+Math.abs(Math.round(total1-total2)).toLocaleString('en-IN')+'</strong> in total payment.</div>';\n        ",
+      "calc": "\n            var P=safeNum(document.getElementById('lcP')&&document.getElementById('lcP').value);\n            var r1=safeNum(document.getElementById('lcR1')&&document.getElementById('lcR1').value)/12/100;\n            var n1=safeNum(document.getElementById('lcN1')&&document.getElementById('lcN1').value);\n            var r2=safeNum(document.getElementById('lcR2')&&document.getElementById('lcR2').value)/12/100;\n            var n2=safeNum(document.getElementById('lcN2')&&document.getElementById('lcN2').value);\n            var r1v=document.getElementById('lcR1')&&document.getElementById('lcR1').value;\n            var r2v=document.getElementById('lcR2')&&document.getElementById('lcR2').value;\n            if(!P||!n1||!n2||r1v===''||r1v==null||r2v===''||r2v==null){setRes('lcomp','—','Enter all values','');return;}\n            var emi1=(r1===0)?P/n1:P*r1*Math.pow(1+r1,n1)/(Math.pow(1+r1,n1)-1);\n            var emi2=(r2===0)?P/n2:P*r2*Math.pow(1+r2,n2)/(Math.pow(1+r2,n2)-1);\n            var total1=emi1*n1,total2=emi2*n2;\n            var int1=total1-P,int2=total2-P;\n            var better=total1<total2?1:2;\n            var res=document.getElementById('res-lcomp');\n            if(res)res.innerHTML='<div class=\"loan-compare-grid\">' +\n                '<div class=\"lc-card'+(better===1?' lc-better':'')+'\"><div class=\"lc-head\">Loan 1'+(better===1?'<span class=\"lc-better-badge\">BETTER</span>':'')+'</div>' +\n                '<div class=\"lc-val\">'+SYM()+Math.round(emi1).toLocaleString('en-IN')+'</div><div class=\"lc-sub\">Monthly EMI</div>' +\n                '<div style=\"margin-top:8px;font-size:11px;color:var(--tx3)\">Total: '+SYM()+Math.round(total1).toLocaleString('en-IN')+'<br>Interest: ₹'+Math.round(int1).toLocaleString('en-IN')+'</div></div>' +\n                '<div class=\"lc-card'+(better===2?' lc-better':'')+'\"><div class=\"lc-head\">Loan 2'+(better===2?'<span class=\"lc-better-badge\">BETTER</span>':'')+'</div>' +\n                '<div class=\"lc-val\">'+SYM()+Math.round(emi2).toLocaleString('en-IN')+'</div><div class=\"lc-sub\">Monthly EMI</div>' +\n                '<div style=\"margin-top:8px;font-size:11px;color:var(--tx3)\">Total: '+SYM()+Math.round(total2).toLocaleString('en-IN')+'<br>Interest: ₹'+Math.round(int2).toLocaleString('en-IN')+'</div></div>' +\n                '</div>' +\n                '<div style=\"margin-top:10px;padding:9px 11px;background:var(--g2);border-radius:8px;font-size:12px;color:var(--tx2);\">'+\n                (better===1?'Loan 1':'Loan 2')+' saves you <strong style=\\\"color:var(--gr)\\\">'+Math.abs(Math.round(total1-total2)).toLocaleString('en-IN')+'</strong> in total payment.</div>';\n        ",
       "resultLabel": "Monthly EMI"
     },
     {
@@ -498,9 +515,42 @@
             "New Regime 2024-25",
             "Old Regime"
           ]
+        },
+        {
+          "id": "txE",
+          "label": "Employment Type",
+          "type": "select",
+          "placeholder": "",
+          "opts": [
+            "Salaried / Pensioner",
+            "Other (business / profession)"
+          ]
+        },
+        {
+          "id": "txA",
+          "label": "Age Group",
+          "type": "select",
+          "placeholder": "",
+          "opts": [
+            "Below 60",
+            "60–80",
+            "Above 80"
+          ]
+        },
+        {
+          "id": "txH",
+          "label": "HRA Exemption Claimed (₹) — old regime only",
+          "type": "number",
+          "placeholder": "e.g. 0"
+        },
+        {
+          "id": "txC",
+          "label": "Section 80C Deductions (₹) — old regime only",
+          "type": "number",
+          "placeholder": "e.g. 150000"
         }
       ],
-      "calc": "\n     const inc=parseFloat(getId('txI'))||0;const regime=getId('txR')||'New Regime 2025-26';\n     let tax=0,cess,steps='';\n     if(regime==='New Regime 2025-26'){\n       // Budget 2025 — New slabs effective FY 2025-26\n       if(inc<=400000)tax=0;\n       else if(inc<=800000)tax=(inc-400000)*.05;\n       else if(inc<=1200000)tax=20000+(inc-800000)*.10;\n       else if(inc<=1600000)tax=60000+(inc-1200000)*.15;\n       else if(inc<=2000000)tax=120000+(inc-1600000)*.20;\n       else if(inc<=2400000)tax=200000+(inc-2000000)*.25;\n       else tax=300000+(inc-2400000)*.30;\n       if(inc<=1200000)tax=0; // Section 87A rebate: zero tax up to ₹12L\n       steps='✅ Budget 2025 | New Regime FY 2025-26 | Zero tax ≤ ₹12L (Sec 87A)';\n     } else if(regime==='New Regime 2024-25'){\n       if(inc<=300000)tax=0;else if(inc<=700000)tax=(inc-300000)*.05;\n       else if(inc<=1000000)tax=20000+(inc-700000)*.10;\n       else if(inc<=1200000)tax=50000+(inc-1000000)*.15;\n       else if(inc<=1500000)tax=80000+(inc-1200000)*.20;\n       else tax=140000+(inc-1500000)*.30;\n       if(inc<=700000)tax=0;\n       steps='New Tax Regime FY 2024-25';\n     } else {\n       if(inc<=250000)tax=0;else if(inc<=500000)tax=(inc-250000)*.05;\n       else if(inc<=1000000)tax=12500+(inc-500000)*.20;\n       else tax=112500+(inc-1000000)*.30;\n       steps='Old Tax Regime slabs';\n     }\n     cess=tax*.04;\n     setRes('tax',SYM()+fmt(Math.round(tax+cess),true),'Annual Tax (incl. 4% cess)',`Tax Before Cess: ${SYM()}${fmt(Math.round(tax),true)}<br>Health & Education Cess: ${SYM()}${fmt(Math.round(cess),true)}<br>Monthly Tax: ${SYM()}${fmt(Math.round((tax+cess)/12),true)}<br>${steps}`);\n   ",
+      "calc": "\nconst gross=parseFloat(getId('txI'))||0;\nconst regime=getId('txR')||'New Regime 2025-26';\nconst emp=getId('txE')||'Salaried / Pensioner';\nconst age=getId('txA')||'Below 60';\nvar _h=parseFloat(getId('txH'));var hra=isNaN(_h)?0:Math.max(0,_h);\nvar _c=parseFloat(getId('txC'));var c80=isNaN(_c)?0:Math.max(0,Math.min(_c,150000));\nif(gross<0){showValError('tax','Income cannot be negative');return;}\nvar stdDed=0;\nif(emp==='Salaried / Pensioner'){stdDed=(regime==='Old Regime')?50000:75000;}\nvar taxable=Math.max(0,gross-stdDed);\nvar tax=0;\nif(regime==='New Regime 2025-26'){\n  if(taxable<=400000)tax=0;\n  else if(taxable<=800000)tax=(taxable-400000)*.05;\n  else if(taxable<=1200000)tax=20000+(taxable-800000)*.10;\n  else if(taxable<=1600000)tax=60000+(taxable-1200000)*.15;\n  else if(taxable<=2000000)tax=120000+(taxable-1600000)*.20;\n  else if(taxable<=2400000)tax=200000+(taxable-2000000)*.25;\n  else tax=300000+(taxable-2400000)*.30;\n  if(taxable<=1200000)tax=0;\n  if(taxable>1200000){var ex12=taxable-1200000;if(tax>ex12)tax=ex12;}\n} else if(regime==='New Regime 2024-25'){\n  if(taxable<=300000)tax=0;else if(taxable<=700000)tax=(taxable-300000)*.05;\n  else if(taxable<=1000000)tax=20000+(taxable-700000)*.10;\n  else if(taxable<=1200000)tax=50000+(taxable-1000000)*.15;\n  else if(taxable<=1500000)tax=80000+(taxable-1200000)*.20;\n  else tax=140000+(taxable-1500000)*.30;\n  if(taxable<=700000)tax=0;\n  if(taxable>700000){var ex7=taxable-700000;if(tax>ex7)tax=ex7;}\n} else {\n  var oldTaxable=Math.max(0,taxable-hra-c80);\n  var ex=250000;if(age==='60–80')ex=300000;else if(age==='Above 80')ex=500000;\n  if(oldTaxable<=ex)tax=0;\n  else if(oldTaxable<=500000)tax=(oldTaxable-ex)*.05;\n  else if(oldTaxable<=1000000)tax=(500000-ex)*.05+(oldTaxable-500000)*.20;\n  else tax=(500000-ex)*.05+100000+(oldTaxable-1000000)*.30;\n  if(oldTaxable<=500000)tax=0;\n  if(oldTaxable>500000){var ex5=oldTaxable-500000;if(tax>ex5)tax=ex5;}\n  taxable=oldTaxable;\n}\nvar sur=0;\nif(regime==='Old Regime'){\n  if(taxable>5000000)sur=tax*.37;else if(taxable>20000000)sur=tax*.25;else if(taxable>10000000)sur=tax*.15;else if(taxable>5000000)sur=tax*.10;\n}else{\n  if(taxable>20000000)sur=tax*.25;else if(taxable>10000000)sur=tax*.15;else if(taxable>5000000)sur=tax*.10;\n}\nvar cess=(tax+sur)*.04;\nvar total=tax+sur+cess;\nsetRes('tax',SYM()+fmt(Math.round(total),true),'Annual Tax (incl. surcharge + 4% cess)',`Taxable Income: ${SYM()}${fmt(Math.round(taxable),true)}<br>Tax Before Cess: ${SYM()}${fmt(Math.round(tax),true)}<br>Surcharge: ${SYM()}${fmt(Math.round(sur),true)}<br>Health & Education Cess: ${SYM()}${fmt(Math.round(cess),true)}<br>Monthly Tax: ${SYM()}${fmt(Math.round(total/12),true)}<br>Standard Deduction: ${SYM()}${fmt(stdDed,true)}`);\n",
       "resultLabel": "Annual Tax (incl. 4% cess)"
     },
     {
@@ -667,7 +717,7 @@
           "placeholder": "e.g. 10"
         }
       ],
-      "calc": "const m=parseFloat(getId('siM'))||0,r=(parseFloat(getId('siR'))||12)/12/100,n=(parseFloat(getId('siY'))||10)*12;\n     if(m<=0){showValError('sip','Monthly investment must be greater than 0');return;}\n     if(r<=0){showValError('sip','Return rate must be greater than 0%');return;}\n     if(n<=0){showValError('sip','Investment period must be greater than 0 years');return;}\n     const fv=m*((Math.pow(1+r,n)-1)/r)*(1+r);const inv=m*n;\n     if(!isValidNum(fv)){showValError('sip','Invalid values — please check inputs');return;}\n     setRes('sip',SYM()+fmt(Math.round(fv),true),'Maturity Value',`Total Invested: ${SYM()}${fmt(inv,true)}<br>Wealth Gained: ${SYM()}${fmt(Math.round(fv-inv),true)}<br>Growth: ${fmt((fv/inv-1)*100)}%<br>Monthly: ${SYM()}${fmt(m,true)} for ${n} months`);",
+      "calc": "const m=parseFloat(getId('siM'))||0;\nvar _sr=parseFloat(getId('siR'));var ret=isNaN(_sr)?12:_sr;\nvar _sy=parseFloat(getId('siY'));var yrs=isNaN(_sy)?10:_sy;\nvar r=ret/12/100,n=yrs*12;\nif(m<=0){showValError('sip','Monthly investment must be greater than 0');return;}\nif(ret<0){showValError('sip','Return rate cannot be negative');return;}\nif(n<=0){showValError('sip','Investment period must be greater than 0 years');return;}\nconst fv=(r===0)?m*n:m*((Math.pow(1+r,n)-1)/r)*(1+r);const inv=m*n;\nif(!isValidNum(fv)){showValError('sip','Invalid values — please check inputs');return;}\nsetRes('sip',SYM()+fmt(Math.round(fv),true),'Maturity Value',`Total Invested: ${SYM()}${fmt(inv,true)}<br>Wealth Gained: ${SYM()}${fmt(Math.round(fv-inv),true)}<br>Growth: ${fmt((fv/inv-1)*100)}%<br>Monthly: ${SYM()}${fmt(m,true)} for ${n} months`);",
       "resultLabel": "Maturity Value"
     },
     {
@@ -794,7 +844,7 @@
           "placeholder": "e.g. 6"
         }
       ],
-      "calc": "\n     const ca=parseInt(getId('rtA'))||30,ra=parseInt(getId('rtR'))||60,exp=parseFloat(getId('rtE'))||50000;\n     const ret=parseFloat(getId('rtI'))||8,inf=parseFloat(getId('rtF'))||6;\n     const yrs=ra-ca;const months=yrs*12;\n     const futureExp=exp*Math.pow(1+inf/100,yrs);\n     const corpusNeeded=futureExp*12/((ret-inf)/100); // simplified perpetuity\n     const r=ret/12/100;const n=months;\n     const monthlySave=corpusNeeded*r/(Math.pow(1+r,n)-1);\n     setRes('retire',SYM()+fmt(Math.round(corpusNeeded),true),'Corpus Needed',`Years to retire: ${yrs}<br>Monthly expenses today: ${SYM()}${fmt(exp,true)}<br>Inflation-adjusted expenses at ${ra}: ${SYM()}${fmt(Math.round(futureExp),true)}/mo<br>Monthly saving needed: ${SYM()}${fmt(Math.round(monthlySave),true)}<br>Start saving NOW — every year delayed costs more!`);\n   ",
+      "calc": "\nconst ca=parseInt(getId('rtA'))||30,ra=parseInt(getId('rtR'))||60,exp=parseFloat(getId('rtE'))||50000;\nvar _ri=parseFloat(getId('rtI'));var ret=isNaN(_ri)?8:_ri;\nvar _rf=parseFloat(getId('rtF'));var inf=isNaN(_rf)?6:_rf;\nconst yrs=ra-ca;const months=yrs*12;\nif(yrs<=0){showValError('retire','Retirement age must be greater than current age');return;}\nif(ret<0||inf<0){showValError('retire','Rates cannot be negative');return;}\nif(ret<=inf){showValError('retire','Expected return must be higher than inflation for this estimate');return;}\nconst futureExp=exp*Math.pow(1+inf/100,yrs);\nconst corpusNeeded=futureExp*12/((ret-inf)/100);\nconst r=ret/12/100;const n=months;\nconst monthlySave=corpusNeeded*r/(Math.pow(1+r,n)-1);\nsetRes('retire',SYM()+fmt(Math.round(corpusNeeded),true),'Corpus Needed',`Years to retire: ${yrs}<br>Monthly expenses today: ${SYM()}${fmt(exp,true)}<br>Inflation-adjusted expenses at ${ra}: ${SYM()}${fmt(Math.round(futureExp),true)}/mo<br>Monthly saving needed: ${SYM()}${fmt(Math.round(monthlySave),true)}<br>Start saving NOW — every year delayed costs more!`);\n",
       "resultLabel": "Corpus Needed"
     },
     {
@@ -1003,7 +1053,7 @@
           "placeholder": "4 (default savings rate)"
         }
       ],
-      "calc": "\n      const goal = parseFloat(document.getElementById('sgGoal')&&document.getElementById('sgGoal').value)||0;\n      const saved = parseFloat(document.getElementById('sgSaved')&&document.getElementById('sgSaved').value)||0;\n      const monthly = parseFloat(document.getElementById('sgMonthly')&&document.getElementById('sgMonthly').value)||0;\n      const months = parseFloat(document.getElementById('sgMonths')&&document.getElementById('sgMonths').value)||0;\n      const rate = (parseFloat(document.getElementById('sgRate')&&document.getElementById('sgRate').value)||4)/12/100;\n      const sym = (typeof SYM==='function')?SYM():'₹';\n      const fmt2 = v => v>=1e7?(v/1e7).toFixed(2)+' Cr':v>=1e5?(v/1e5).toFixed(2)+' L':Math.round(v).toLocaleString('en-IN');\n      if (!goal) { setRes('savgoal','—','Enter goal amount',''); return; }\n      const rem = goal - saved;\n      if (monthly > 0 && months === 0) {\n        // Find months needed (with interest)\n        let bal = saved, m = 0;\n        while (bal < goal && m < 600) { bal = bal * (1 + rate) + monthly; m++; }\n        const yrs = Math.floor(m/12), mos = m%12;\n        setRes('savgoal', `${yrs > 0 ? yrs+'y ' : ''}${mos}m`, 'Time to reach goal',\n          `Goal: ${sym}${fmt2(goal)}<br>Monthly: ${sym}${fmt2(monthly)}<br>Already saved: ${sym}${fmt2(saved)}<br>Remaining: ${sym}${fmt2(rem)}<br>Total invested: ${sym}${fmt2(monthly*m)}`);\n      } else if (months > 0 && monthly === 0) {\n        // Find monthly amount needed\n        let lo = 1, hi = goal, mo = 0;\n        for (let iter = 0; iter < 50; iter++) {\n          mo = (lo + hi) / 2;\n          let bal = saved;\n          for (let i = 0; i < months; i++) bal = bal * (1 + rate) + mo;\n          if (bal < goal) lo = mo; else hi = mo;\n        }\n        setRes('savgoal', sym + fmt2(mo), 'Monthly Savings Needed',\n          `Goal: ${sym}${fmt2(goal)}<br>Time: ${months} months (${(months/12).toFixed(1)} yrs)<br>Total invested: ${sym}${fmt2(mo*months)}<br>Interest earned: ${sym}${fmt2(goal - mo*months - saved)}`);\n      } else {\n        setRes('savgoal','—','Fill either Monthly Savings OR Target Months (not both)','');\n        return;\n      }\n      if (typeof bumpStreak==='function') bumpStreak();\n      if (typeof checkMilestone==='function') checkMilestone();\n    ",
+      "calc": "\n      const goal = parseFloat(document.getElementById('sgGoal')&&document.getElementById('sgGoal').value)||0;\n      const saved = parseFloat(document.getElementById('sgSaved')&&document.getElementById('sgSaved').value)||0;\n      const monthly = parseFloat(document.getElementById('sgMonthly')&&document.getElementById('sgMonthly').value)||0;\n      const months = parseFloat(document.getElementById('sgMonths')&&document.getElementById('sgMonths').value)||0;\n      var _sgr=parseFloat(document.getElementById('sgRate')&&document.getElementById('sgRate').value);const rate=(isNaN(_sgr)?4:_sgr)/12/100;\n      const sym = (typeof SYM==='function')?SYM():'₹';\n      const fmt2 = v => v>=1e7?(v/1e7).toFixed(2)+' Cr':v>=1e5?(v/1e5).toFixed(2)+' L':Math.round(v).toLocaleString('en-IN');\n      if (!goal) { setRes('savgoal','—','Enter goal amount',''); return; }\n      const rem = goal - saved;\n      if (monthly > 0 && months === 0) {\n        // Find months needed (with interest)\n        let bal = saved, m = 0;\n        while (bal < goal && m < 600) { bal = bal * (1 + rate) + monthly; m++; }\n        const yrs = Math.floor(m/12), mos = m%12;\n        setRes('savgoal', `${yrs > 0 ? yrs+'y ' : ''}${mos}m`, 'Time to reach goal',\n          `Goal: ${sym}${fmt2(goal)}<br>Monthly: ${sym}${fmt2(monthly)}<br>Already saved: ${sym}${fmt2(saved)}<br>Remaining: ${sym}${fmt2(rem)}<br>Total invested: ${sym}${fmt2(monthly*m)}`);\n      } else if (months > 0 && monthly === 0) {\n        // Find monthly amount needed\n        let lo = 1, hi = goal, mo = 0;\n        for (let iter = 0; iter < 50; iter++) {\n          mo = (lo + hi) / 2;\n          let bal = saved;\n          for (let i = 0; i < months; i++) bal = bal * (1 + rate) + mo;\n          if (bal < goal) lo = mo; else hi = mo;\n        }\n        setRes('savgoal', sym + fmt2(mo), 'Monthly Savings Needed',\n          `Goal: ${sym}${fmt2(goal)}<br>Time: ${months} months (${(months/12).toFixed(1)} yrs)<br>Total invested: ${sym}${fmt2(mo*months)}<br>Interest earned: ${sym}${fmt2(goal - mo*months - saved)}`);\n      } else {\n        setRes('savgoal','—','Fill either Monthly Savings OR Target Months (not both)','');\n        return;\n      }\n      if (typeof bumpStreak==='function') bumpStreak();\n      if (typeof checkMilestone==='function') checkMilestone();\n    ",
       "resultLabel": "Time to Reach Goal"
     },
     {
@@ -1036,7 +1086,7 @@
       "id": "age",
       "slug": "age-calculator",
       "title": "Age Calculator",
-      "category": "health-fitness",
+      "category": "date-time",
       "icon": "fa-cake-candles",
       "description": "Calculate exact age in years, months, and days from date of birth.",
       "featured": false,
@@ -1778,7 +1828,7 @@
           "placeholder": "e.g. 1"
         }
       ],
-      "calc": "const a=parseInt(getId('rnA'))||1,b=parseInt(getId('rnB'))||100,c=Math.min(parseInt(getId('rnC'))||1,10);const nums=Array.from({length:c},()=>Math.floor(Math.random()*(b-a+1))+a);setRes('rng',nums.join(', '),`Random (${a}–${b})`,`Count: ${c} numbers<br>Min: ${a} | Max: ${b}<br>Sum: ${nums.reduce((x,y)=>x+y,0)}<br>Average: ${fmt(nums.reduce((x,y)=>x+y,0)/c)}`);",
+      "calc": "var _a=parseInt(getId('rnA'));var a=isNaN(_a)?1:_a;\nvar _b=parseInt(getId('rnB'));var b=isNaN(_b)?100:_b;\nvar _c=parseInt(getId('rnC'));var c=isNaN(_c)?1:_c;c=Math.min(Math.max(c,1),10);\nif(a>b){showValError('rng','Minimum must be less than or equal to Maximum');return;}\nconst nums=Array.from({length:c},()=>Math.floor(Math.random()*(b-a+1))+a);setRes('rng',nums.join(', '),`Random (${a}–${b})`,`Count: ${c} numbers<br>Min: ${a} | Max: ${b}<br>Sum: ${nums.reduce((x,y)=>x+y,0)}<br>Average: ${fmt(nums.reduce((x,y)=>x+y,0)/c)}`);",
       "resultLabel": "Random Numbers"
     },
     {
@@ -1824,7 +1874,7 @@
           "checked": true
         }
       ],
-      "calc": "\n  const len=parseInt((document.getElementById('pwdLen')&&document.getElementById('pwdLen').value))||16;\n  const uc=(document.getElementById('pwUC')&&document.getElementById('pwUC').checked);const lc=(document.getElementById('pwLC')&&document.getElementById('pwLC').checked);\n  const nm=(document.getElementById('pwNM')&&document.getElementById('pwNM').checked);const sp=(document.getElementById('pwSP')&&document.getElementById('pwSP').checked);\n  let chars='';\n  if(uc)chars+='ABCDEFGHIJKLMNOPQRSTUVWXYZ';if(lc)chars+='abcdefghijklmnopqrstuvwxyz';\n  if(nm)chars+='0123456789';if(sp)chars+='!@#$%^&*()_+-=[]{}|;:,.<>?';\n  if(!chars)chars='abcdefghijklmnopqrstuvwxyz';\n  let pwd='';for(let i=0;i<len;i++)pwd+=chars[Math.floor(Math.random()*chars.length)];\n  const out=document.getElementById('pwdOut');if(out)out.textContent=pwd;\n  const str=document.getElementById('pwStr');if(str){\n    const strength=(!uc||!lc?0:1)+(!nm?0:1)+(!sp?0:1)+(len>=16?1:0);\n    const colors=['#ef4444','#f97316','#f59e0b','#22c55e'];const widths=['25%','50%','75%','100%'];\n    str.style.background=colors[strength-1]||colors[0];str.style.width=widths[strength-1]||'25%';\n  }\n",
+      "calc": "\nconst len=parseInt((document.getElementById('pwdLen')&&document.getElementById('pwdLen').value))||16;\nconst uc=(document.getElementById('pwUC')&&document.getElementById('pwUC').checked);const lc=(document.getElementById('pwLC')&&document.getElementById('pwLC').checked);\nconst nm=(document.getElementById('pwNM')&&document.getElementById('pwNM').checked);const sp=(document.getElementById('pwSP')&&document.getElementById('pwSP').checked);\nconst pools=[];\nif(uc)pools.push('ABCDEFGHIJKLMNOPQRSTUVWXYZ');if(lc)pools.push('abcdefghijklmnopqrstuvwxyz');\nif(nm)pools.push('0123456789');if(sp)pools.push('!@#$%^&*()_+-=[]{}|;:,.<>?');\nif(!pools.length)pools.push('abcdefghijklmnopqrstuvwxyz');\nconst chars=pools.join('');\nif(!(typeof window!=='undefined'&&window.crypto&&window.crypto.getRandomValues)){showValError('pwd','Secure random generator is not available in this browser — password not generated');return;}\nfunction secureIdx(n){var a=new Uint32Array(1);window.crypto.getRandomValues(a);return a[0]%n;}\nvar pwdArr=[];\npools.forEach(function(pool){pwdArr.push(pool[secureIdx(pool.length)]);});\nfor(var i=pwdArr.length;i<len;i++)pwdArr.push(chars[secureIdx(chars.length)]);\nfor(var j=pwdArr.length-1;j>0;j--){var k=secureIdx(j+1);var tmp=pwdArr[j];pwdArr[j]=pwdArr[k];pwdArr[k]=tmp;}\nvar pwd=pwdArr.join('');\nconst out=document.getElementById('pwdOut');if(out)out.textContent=pwd;\nconst str=document.getElementById('pwStr');if(str){\n  const strength=(!uc||!lc?0:1)+(!nm?0:1)+(!sp?0:1)+(len>=16?1:0);\n  const colors=['#ef4444','#f97316','#f59e0b','#22c55e'];const widths=['25%','50%','75%','100%'];\n  str.style.background=colors[strength-1]||colors[0];str.style.width=widths[strength-1]||'25%';\n}\n",
       "resultLabel": "Generated Password"
     },
     {
@@ -1913,7 +1963,7 @@
           "placeholder": "e.g. x*x or Math.sin(x)"
         }
       ],
-      "calc": "\n  const canvas=document.getElementById('graphCanvas');if(!canvas)return;\n  const fn=(document.getElementById('graphFn')&&document.getElementById('graphFn').value||'x*x');\n  const info=document.getElementById('graphInfo');\n  const ctx=canvas.getContext('2d');\n  const W=canvas.offsetWidth||300;const H=260;\n  canvas.width=W;canvas.height=H;\n  const cx=W/2,cy=H/2,scale=W/22;\n  ctx.clearRect(0,0,W,H);\n  // background\n  ctx.fillStyle='#000b1a';ctx.fillRect(0,0,W,H);\n  // grid\n  ctx.strokeStyle='rgba(37,99,235,0.12)';ctx.lineWidth=1;\n  for(let x=0;x<=W;x+=scale){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke();}\n  for(let y=0;y<=H;y+=scale){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke();}\n  // axes\n  ctx.strokeStyle='rgba(96,165,250,0.5)';ctx.lineWidth=1.5;\n  ctx.beginPath();ctx.moveTo(0,cy);ctx.lineTo(W,cy);ctx.stroke();\n  ctx.beginPath();ctx.moveTo(cx,0);ctx.lineTo(cx,H);ctx.stroke();\n  // labels\n  ctx.fillStyle='rgba(122,138,171,0.7)';ctx.font='9px JetBrains Mono,monospace';\n  for(let i=-10;i<=10;i+=2){\n    if(i!==0){\n      ctx.fillText(i,cx+i*scale-3,cy+11);\n      ctx.fillText(-i,cx+2,cy-i*scale+3);\n    }\n  }\n  // plot\n  let safeF;\n  try{safeF=new Function('x','return '+fn);}catch(e){if(info)info.textContent='⚠️ Invalid function syntax';return;}\n  ctx.strokeStyle='#60a5fa';ctx.lineWidth=2.5;ctx.beginPath();\n  let first=true;let pointsDrawn=0;\n  for(let px=0;px<W;px++){\n    const x=(px-cx)/scale;\n    let y;\n    try{y=safeF(x);}catch(e){first=true;continue;}\n    if(!isFinite(y)||isNaN(y)){first=true;continue;}\n    const py=cy-y*scale;\n    if(py<-H||py>2*H){first=true;continue;}\n    if(first){ctx.moveTo(px,py);first=false;}else{ctx.lineTo(px,py);}\n    pointsDrawn++;\n  }\n  ctx.stroke();\n  if(info)info.textContent=`f(x) = ${fn} | ${pointsDrawn} points plotted`;\n",
+      "calc": "\n  const canvas=document.getElementById('graphCanvas');if(!canvas)return;\n  const fn=(document.getElementById('graphFn')&&document.getElementById('graphFn').value||'x*x');\n  const info=document.getElementById('graphInfo');\n  const ctx=canvas.getContext('2d');\n  const W=canvas.offsetWidth||300;const H=260;\n  canvas.width=W;canvas.height=H;\n  const cx=W/2,cy=H/2,scale=W/22;\n  ctx.clearRect(0,0,W,H);\n  // background\n  ctx.fillStyle='#000b1a';ctx.fillRect(0,0,W,H);\n  // grid\n  ctx.strokeStyle='rgba(37,99,235,0.12)';ctx.lineWidth=1;\n  for(let x=0;x<=W;x+=scale){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke();}\n  for(let y=0;y<=H;y+=scale){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke();}\n  // axes\n  ctx.strokeStyle='rgba(96,165,250,0.5)';ctx.lineWidth=1.5;\n  ctx.beginPath();ctx.moveTo(0,cy);ctx.lineTo(W,cy);ctx.stroke();\n  ctx.beginPath();ctx.moveTo(cx,0);ctx.lineTo(cx,H);ctx.stroke();\n  // labels\n  ctx.fillStyle='rgba(122,138,171,0.7)';ctx.font='9px JetBrains Mono,monospace';\n  for(let i=-10;i<=10;i+=2){\n    if(i!==0){\n      ctx.fillText(i,cx+i*scale-3,cy+11);\n      ctx.fillText(-i,cx+2,cy-i*scale+3);\n    }\n  }\n  // plot\n  // Safe maths parser (no Function constructor / eval): numbers, x, + - * / % ^ **,\n  // parentheses, pi, e, and sin cos tan asin acos atan sqrt log ln abs exp.\n  // 'Math.' prefixes are accepted (Math.sin(x) -> sin(x)).\n  function makeFn(src){\n    var s=String(src||'').replace(/\\s+/g,'').replace(/Math\\./g,'');\n    var pos=0, curX=0;\n    function parseExpr(){var v=parseTerm();while(pos<s.length){if(s.charAt(pos)==='+'){pos++;v=v+parseTerm();}else if(s.charAt(pos)==='-'){pos++;v=v-parseTerm();}else{break;}}return v;}\n    function parseTerm(){var v=parseFactor();while(pos<s.length){if(s.charAt(pos)==='*'){pos++;v=v*parseFactor();}else if(s.charAt(pos)==='/'){pos++;v=v/parseFactor();}else if(s.charAt(pos)==='%'){pos++;v=v%parseFactor();}else{break;}}return v;}\n    function parseFactor(){var v=parseUnary();if(s.substr(pos,2)==='**'){pos+=2;v=Math.pow(v,parseFactor());}else if(s.charAt(pos)==='^'){pos++;v=Math.pow(v,parseFactor());}return v;}\n    function parseUnary(){if(s.charAt(pos)==='-'){pos++;return -parseUnary();}if(s.charAt(pos)==='+'){pos++;return parseUnary();}return parsePrimary();}\n    function parsePrimary(){\n      if(s.charAt(pos)==='('){pos++;var v=parseExpr();if(s.charAt(pos)!==')')throw new Error('missing )');pos++;return v;}\n      var m=/^[0-9]*\\.?[0-9]+/.exec(s.slice(pos));\n      if(m){pos+=m[0].length;return parseFloat(m[0]);}\n      var id=/^[a-zA-Z]+/.exec(s.slice(pos));\n      if(id){\n        var name=id[0].toLowerCase();pos+=id[0].length;\n        if(name==='x')return curX;\n        if(name==='pi')return Math.PI;\n        if(name==='e')return Math.E;\n        if(['sin','cos','tan','asin','acos','atan','sqrt','log','ln','abs','exp'].indexOf(name)!==-1){\n          if(s.charAt(pos)!=='(')throw new Error('expected (');\n          pos++;var arg=parseExpr();\n          if(s.charAt(pos)!==')')throw new Error('missing )');\n          pos++;\n          if(name==='sin')return Math.sin(arg);if(name==='cos')return Math.cos(arg);\n          if(name==='tan')return Math.tan(arg);if(name==='asin')return Math.asin(arg);\n          if(name==='acos')return Math.acos(arg);if(name==='atan')return Math.atan(arg);\n          if(name==='sqrt')return Math.sqrt(arg);\n          if(name==='log'||name==='ln')return Math.log(arg);\n          if(name==='abs')return Math.abs(arg);\n          if(name==='exp')return Math.exp(arg);\n        }\n        throw new Error('unknown name '+name);\n      }\n      throw new Error('unexpected '+s.charAt(pos));\n    }\n    return function(x){curX=x;pos=0;var v=parseExpr();if(pos<s.length)throw new Error('trailing input');return v;};\n  }\n  let safeF;\n  try{safeF=makeFn(fn);safeF(0);}catch(e){if(info)info.textContent='⚠️ Invalid function syntax';return;}\n  ctx.strokeStyle='#60a5fa';ctx.lineWidth=2.5;ctx.beginPath();\n  let first=true;let pointsDrawn=0;\n  for(let px=0;px<W;px++){\n    const x=(px-cx)/scale;\n    let y;\n    try{y=safeF(x);}catch(e){first=true;continue;}\n    if(!isFinite(y)||isNaN(y)){first=true;continue;}\n    const py=cy-y*scale;\n    if(py<-H||py>2*H){first=true;continue;}\n    if(first){ctx.moveTo(px,py);first=false;}else{ctx.lineTo(px,py);}\n    pointsDrawn++;\n  }\n  ctx.stroke();\n  if(info)info.textContent=`f(x) = ${fn} | ${pointsDrawn} points plotted`;\n",
       "resultLabel": "Function Plot"
     },
     {
@@ -1945,7 +1995,7 @@
           "placeholder": "e.g. 4"
         }
       ],
-      "calc": "const b=parseFloat(getId('tipB'))||0,p=parseFloat(getId('tipP'))||15,s=parseInt(getId('tipS'))||1;const tip=b*p/100;const total=b+tip;setRes('tip',SYM()+fmt(tip,true),'Tip Amount',`Bill: ${SYM()}${fmt(b,true)}<br>Tip (${p}%): ${SYM()}${fmt(tip,true)}<br>Total: ${SYM()}${fmt(total,true)}<br>Per person: ${SYM()}${fmt(total/s,true)} (split by ${s})`);",
+      "calc": "const b=parseFloat(getId('tipB'))||0;\nvar _tp=parseFloat(getId('tipP'));var p=isNaN(_tp)?15:_tp;\nvar _ts=parseInt(getId('tipS'));var s=isNaN(_ts)?1:_ts;\nif(b<0){showValError('tip','Bill amount cannot be negative');return;}\nif(p<0){showValError('tip','Tip percentage cannot be negative');return;}\nif(s<=0){showValError('tip','Split between at least 1 person');return;}\nconst tip=b*p/100;const total=b+tip;setRes('tip',SYM()+fmt(tip,true),'Tip Amount',`Bill: ${SYM()}${fmt(b,true)}<br>Tip (${p}%): ${SYM()}${fmt(tip,true)}<br>Total: ${SYM()}${fmt(total,true)}<br>Per person: ${SYM()}${fmt(total/s,true)} (split by ${s})`);",
       "resultLabel": "Tip Amount"
     },
     {
@@ -2254,9 +2304,15 @@
           "label": "Width / Height / Top-Width (b)",
           "type": "number",
           "placeholder": "e.g. 5"
+        },
+        {
+          "id": "arC",
+          "label": "Height (c) — trapezoid only",
+          "type": "number",
+          "placeholder": "e.g. 4"
         }
       ],
-      "calc": "const shape=getId('arS'),a=parseFloat(getId('arA'))||0,b=parseFloat(getId('arB'))||0;let area=0,perim=0,note='';\n     if(a<=0){showValError('area','First dimension must be greater than 0');return;}\n     if(shape!=='Square'&&shape!=='Circle'&&b<=0){showValError('area','Second dimension must be greater than 0');return;}\n     if(shape==='Square'){area=a*a;perim=4*a;note=`Side = ${a}`;}\n     else if(shape==='Rectangle'){area=a*b;perim=2*(a+b);note=`L=${a}, W=${b}`;}\n     else if(shape==='Triangle'){area=.5*a*b;perim=a+b+Math.sqrt(a*a+b*b);note=`Base=${a}, Height=${b}`;}\n     else if(shape==='Circle'){area=Math.PI*a*a;perim=2*Math.PI*a;note=`Radius=${a}`;}\n     else if(shape==='Trapezoid'){area=.5*(a+b)*b;note=`Parallel sides: a=${a}, top-width=${b}, height=${b} (use b as height)`;}\n     setRes('area',fmt(area),`Area (${shape})`,`Perimeter/Circumference: ${fmt(perim)}<br>${note}<br>Area = ${fmt(area)} sq units`);",
+      "calc": "const shape=getId('arS'),a=parseFloat(getId('arA'))||0,b=parseFloat(getId('arB'))||0;\nvar _hc=parseFloat(getId('arC'));var h=isNaN(_hc)?0:_hc;\nlet area=0,perim=0,note='';\nif(a<=0){showValError('area','First dimension must be greater than 0');return;}\nif(shape!=='Square'&&shape!=='Circle'&&b<=0){showValError('area','Second dimension must be greater than 0');return;}\nif(shape==='Trapezoid'&&h<=0){showValError('area','Height (c) is needed for a trapezoid');return;}\nif(shape==='Square'){area=a*a;perim=4*a;note=`Side = ${a}`;}\nelse if(shape==='Rectangle'){area=a*b;perim=2*(a+b);note=`L=${a}, W=${b}`;}\nelse if(shape==='Triangle'){area=.5*a*b;perim=a+b+Math.sqrt(a*a+b*b);note=`Base=${a}, Height=${b}`;}\nelse if(shape==='Circle'){area=Math.PI*a*a;perim=2*Math.PI*a;note=`Radius=${a}`;}\nelse if(shape==='Trapezoid'){area=.5*(a+b)*h;note=`Parallel sides: a=${a}, b=${b}, height=${h}`;}\nvar perimTxt=(shape==='Trapezoid')?'Perimeter: needs the two non-parallel sides':('Perimeter/Circumference: '+fmt(perim));\nsetRes('area',fmt(area),`Area (${shape})`,perimTxt+`<br>${note}<br>Area = ${fmt(area)} sq units`);",
       "resultLabel": "Area"
     },
     {

@@ -1,5 +1,7 @@
 ---
 title: "Percentage: 7 Everyday Uses You Must Know"
+date: "2026-11-21"
+author: "Najmus Sakib"
 minutes: 3
 related: ["percentage-calculator", "discount-calculator", "gst-calculator"]
 ---

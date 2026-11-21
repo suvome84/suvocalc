@@ -1,4 +1,4 @@
-/* SuvoCalc v31 — shared calculator helpers (assets/js/calc.js)
+/* SuvoCalc — shared calculator helpers (assets/js/calc.js)
  *
  * Ported from suvocalc_v30_fixed.html (v30 source). The calc bodies in
  * tools.json call these helpers exactly as the source did.

@@ -6,6 +6,14 @@
 <title>{{PAGE_TITLE}}</title>
 <meta name="description" content="{{META_DESCRIPTION}}">
 <link rel="canonical" href="{{CANONICAL}}">
+<meta property="og:title" content="{{PAGE_TITLE}}">
+<meta property="og:description" content="{{META_DESCRIPTION}}">
+<meta property="og:url" content="{{CANONICAL}}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SuvoCalc">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{{PAGE_TITLE}}">
+<meta name="twitter:description" content="{{META_DESCRIPTION}}">
 <script>
 /* Apply saved theme before CSS loads to avoid a flash. No other logic here. */
 (function () {
@@ -16,6 +24,8 @@
 })();
 </script>
 <link rel="stylesheet" href="{{ASSET_PREFIX}}assets/css/style.css">
+<link rel="manifest" href="{{ASSET_PREFIX}}manifest.json">
+<meta name="theme-color" content="#2563eb">
 {{JSON_LD}}
 {{EXTRA_HEAD}}
 </head>
@@ -29,7 +39,6 @@
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="11" x2="8" y2="11.01"/><line x1="12" y1="11" x2="12" y2="11.01"/><line x1="16" y1="11" x2="16" y2="11.01"/><line x1="8" y1="15" x2="8" y2="15.01"/><line x1="12" y1="15" x2="12" y2="15.01"/><line x1="16" y1="15" x2="16" y2="15.01"/></svg>
       </span>
       <span class="brand-name">SuvoCalc</span>
-      <span class="brand-version">v31</span>
     </a>
 
     <nav class="site-nav" id="site-nav" aria-label="Main navigation">
@@ -41,7 +50,7 @@
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
         <span>All Tools</span>
       </a>
-      <a class="nav-link" data-nav="categories" href="{{ASSET_PREFIX}}tools/index.html">
+      <a class="nav-link" data-nav="categories" href="{{ASSET_PREFIX}}categories/index.html">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
         <span>Categories</span>
       </a>
@@ -80,7 +89,7 @@
 
 <footer class="site-footer">
   <div class="footer-inner">
-    <p class="footer-copy">&copy; 2026 SuvoCalc &mdash; v31 &middot; 57 free calculators &middot; Made by Najmus Sakib</p>
+    <p class="footer-copy">&copy; 2026 SuvoCalc &middot; 57 free calculators &middot; Made by Najmus Sakib</p>
     <nav class="footer-nav" aria-label="Footer navigation">
       <a href="{{ASSET_PREFIX}}privacy/index.html">Privacy</a>
       <a href="{{ASSET_PREFIX}}terms/index.html">Terms</a>
@@ -101,7 +110,7 @@
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
     <span>Tools</span>
   </a>
-  <a class="bottom-nav-link" data-nav="categories" href="{{ASSET_PREFIX}}tools/index.html">
+  <a class="bottom-nav-link" data-nav="categories" href="{{ASSET_PREFIX}}categories/index.html">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
     <span>Categories</span>
   </a>

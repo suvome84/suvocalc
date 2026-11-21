@@ -1,5 +1,7 @@
 ---
 title: "Pomodoro Technique: Study 4x More Effectively"
+date: "2026-11-21"
+author: "Najmus Sakib"
 minutes: 4
 related: ["pomodoro-study-timer", "cgpa-calculator", "grade-calculator"]
 ---

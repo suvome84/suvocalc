@@ -1,5 +1,7 @@
 ---
 title: "EMI Calculator: Everything About Home & Car Loans"
+date: "2026-11-21"
+author: "Najmus Sakib"
 minutes: 6
 related: ["emi-calculator", "loan-eligibility-calculator", "sip-calculator"]
 ---

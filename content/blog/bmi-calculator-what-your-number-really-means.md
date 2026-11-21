@@ -1,5 +1,7 @@
 ---
 title: "BMI Calculator: What Your Number Really Means"
+date: "2026-11-21"
+author: "Najmus Sakib"
 minutes: 5
 related: ["bmi-calculator", "age-calculator", "calorie-calculator"]
 ---

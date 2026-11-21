@@ -1,1 +1,46 @@
-{"example":"Plot the function x*x (x squared). Step 1: type x*x in the function box. Step 2: tap Plot. Step 3: the curve is drawn on the canvas — it passes through (0, 0), (1, 1), and (2, 4), because at x = 2, y = 2 × 2 = 4. Step 4: try Math.sin(x) to see a wave that passes through (0, 0) and rises to 1. Final result: the parabola for x² is shown, with its lowest point at the origin.","faqs":[{"a":"Yes — sin(x), cos(x), tan(x), Math.sqrt(x), x*x, x**3, and other JavaScript-style expressions of x all work. The tool lists x², sin(x), cos(x), x³, the square root of |x|, and tan(x) as quick examples.","q":"Can I plot sin(x) or cos(x)?"},{"a":"The function must be written with x as the variable, for example x*x for x squared or Math.sin(x) for sine. Plain maths notation like 2x without the multiplication sign does not work.","q":"How do I write the function?"},{"a":"The curve runs off the top or bottom of the drawing area. That is normal for functions like tan(x) or x³ — the graph is drawn on a fixed canvas.","q":"Why does my graph disappear off the screen?"}],"formula":"Method: the tool evaluates the function you type for many x values across the canvas and joins the points into a curve. Functions are written in JavaScript style: x*x for x², x**3 for x³, Math.sin(x), Math.cos(x), Math.tan(x), Math.sqrt(Math.abs(x)) for the square root of |x|.","howTo":["Type your function of x in the input box, for example x*x or Math.sin(x).","Tap one of the quick examples (x², sin(x), cos(x), x³, √|x|, tan(x)) to fill it in automatically.","Tap Plot to draw the curve on the canvas.","Read the note under the graph for the plotted function.","Change the function and tap Plot again to compare shapes."],"intro":"The Graph Plotter draws the curve of any mathematical function of x on a canvas, so you can see its shape instead of only its numbers.","mistakes":["Typing 2x instead of 2*x — the tool needs the multiplication sign.","Using ^ for powers, which JavaScript does not understand — use x**2 or x*x instead.","Forgetting that tan(x) has gaps where the value shoots up, so the curve looks broken.","Typing a function with a different letter, like y, instead of x."],"related":["statistics-calculator","random-number-generator","speed-distance-time-calculator"],"slug":"graph-plotter","tips":["Start with the quick examples to see how the tool reads each function.","Plot x*x and x**3 side by side to see how even and odd powers differ.","Use Math.sqrt(Math.abs(x)) instead of Math.sqrt(x) if you want the curve on both sides of zero.","Zoom in your thinking by checking values at x = 0, 1, and 2 before trusting the picture."],"uses":"It is used by students to see the shape of a function — parabolas, sine waves, and polynomials — while studying maths, instead of working from a table of values alone."}
+{
+  "example": "Plot the function x*x (x squared). Step 1: type x*x in the function box. Step 2: tap Plot. Step 3: the curve is drawn on the canvas — it passes through (0, 0), (1, 1), and (2, 4), because at x = 2, y = 2 × 2 = 4. Step 4: try Math.sin(x) to see a wave that passes through (0, 0) and rises to 1. Final result: the parabola for x² is shown, with its lowest point at the origin.",
+  "faqs": [
+    {
+      "a": "Yes — sin(x), cos(x), tan(x), Math.sqrt(x), x*x, x**3, and other JavaScript-style expressions of x all work. The tool lists x², sin(x), cos(x), x³, the square root of |x|, and tan(x) as quick examples.",
+      "q": "Can I plot sin(x) or cos(x)?"
+    },
+    {
+      "a": "The function must be written with x as the variable, for example x*x for x squared or Math.sin(x) for sine. Plain maths notation like 2x without the multiplication sign does not work.",
+      "q": "How do I write the function?"
+    },
+    {
+      "a": "The curve runs off the top or bottom of the drawing area. That is normal for functions like tan(x) or x³ — the graph is drawn on a fixed canvas.",
+      "q": "Why does my graph disappear off the screen?"
+    }
+  ],
+  "formula": "Method: the tool evaluates the function you type for many x values across the canvas and joins the points into a curve. Functions are written in JavaScript style: x*x for x², x**3 for x³, Math.sin(x), Math.cos(x), Math.tan(x), Math.sqrt(Math.abs(x)) for the square root of |x|. Supported: + - * / % ^ **, parentheses, x, pi, e, and sin cos tan asin acos atan sqrt log ln abs exp. Your input is parsed as maths only — no code is ever run from it.",
+  "howTo": [
+    "Type your function of x in the input box, for example x*x or Math.sin(x).",
+    "Tap one of the quick examples (x², sin(x), cos(x), x³, √|x|, tan(x)) to fill it in automatically.",
+    "Tap Plot to draw the curve on the canvas.",
+    "Read the note under the graph for the plotted function.",
+    "Change the function and tap Plot again to compare shapes."
+  ],
+  "intro": "The Graph Plotter draws the curve of any mathematical function of x on a canvas, so you can see its shape instead of only its numbers.",
+  "mistakes": [
+    "Typing 2x instead of 2*x — the tool needs the multiplication sign.",
+    "Using ^ for powers, which JavaScript does not understand — use x**2 or x*x instead.",
+    "Forgetting that tan(x) has gaps where the value shoots up, so the curve looks broken.",
+    "Typing a function with a different letter, like y, instead of x."
+  ],
+  "related": [
+    "statistics-calculator",
+    "random-number-generator",
+    "speed-distance-time-calculator"
+  ],
+  "slug": "graph-plotter",
+  "tips": [
+    "Start with the quick examples to see how the tool reads each function.",
+    "Plot x*x and x**3 side by side to see how even and odd powers differ.",
+    "Use Math.sqrt(Math.abs(x)) instead of Math.sqrt(x) if you want the curve on both sides of zero.",
+    "Zoom in your thinking by checking values at x = 0, 1, and 2 before trusting the picture."
+  ],
+  "uses": "It is used by students to see the shape of a function — parabolas, sine waves, and polynomials — while studying maths, instead of working from a table of values alone.",
+  "lastReviewed": "21 November 2026"
+}

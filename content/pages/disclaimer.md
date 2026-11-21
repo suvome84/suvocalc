@@ -1,5 +1,6 @@
 ---
 title: "Disclaimer"
+description: "SuvoCalc disclaimer — results are estimates for education and everyday use."
 ---
 
 # Disclaimer

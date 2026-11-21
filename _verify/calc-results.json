@@ -18,10 +18,10 @@
       "id": "emi",
       "slug": "emi-calculator",
       "status": "PASS",
-      "inputs": "{\"eP\":500000,\"eR\":8.5,\"eN\":60}",
-      "expected": "res-value = 10258 (expected 10258)",
-      "actual": "res-value = 10258 (expected 10258)",
-      "note": ""
+      "inputs": "[{\"eP\":500000,\"eR\":8.5,\"eN\":60},{\"eP\":500000,\"eR\":0,\"eN\":60}]",
+      "expected": "res-value = 10258 (expected 10258) || res-value (0% interest: 500000/60) = 8333 (expected 8333)",
+      "actual": "res-value = 10258 (expected 10258) || res-value (0% interest: 500000/60) = 8333 (expected 8333)",
+      "note": "2 sub-cases"
     },
     {
       "id": "disc",
@@ -36,10 +36,10 @@
       "id": "ci",
       "slug": "compound-interest-calculator",
       "status": "PASS",
-      "inputs": "{\"ciP\":100000,\"ciR\":8,\"ciN\":5,\"ciC\":\"Yearly\"}",
-      "expected": "res-value = 146933 (expected 146933)",
-      "actual": "res-value = 146933 (expected 146933)",
-      "note": ""
+      "inputs": "[{\"ciP\":100000,\"ciR\":8,\"ciN\":5,\"ciC\":\"Yearly\"},{\"ciP\":100000,\"ciR\":0,\"ciN\":5,\"ciC\":\"Yearly\"}]",
+      "expected": "res-value = 146933 (expected 146933) || res-value (0% rate) = 100000 (expected 100000)",
+      "actual": "res-value = 146933 (expected 146933) || res-value (0% rate) = 100000 (expected 100000)",
+      "note": "2 sub-cases"
     },
     {
       "id": "si",
@@ -117,10 +117,10 @@
       "id": "tax",
       "slug": "income-tax-calculator",
       "status": "PASS",
-      "inputs": "{\"txI\":1500000,\"txR\":\"New Regime 2025-26\"}",
-      "expected": "res-value = 109200 (expected 109200)",
-      "actual": "res-value = 109200 (expected 109200)",
-      "note": ""
+      "inputs": "[{\"txI\":1500000,\"txR\":\"New Regime 2025-26\"},{\"txI\":1280000,\"txR\":\"New Regime 2025-26\"}]",
+      "expected": "res-value (salaried: taxable 14,25,000 after 75,000 std deduction) = 97500 (expected 97500) || res-value (marginal relief: slab tax 60,750 capped at 5,000 + 4% cess) = 5200 (expected 5200)",
+      "actual": "res-value (salaried: taxable 14,25,000 after 75,000 std deduction) = 97500 (expected 97500) || res-value (marginal relief: slab tax 60,750 capped at 5,000 + 4% cess) = 5200 (expected 5200)",
+      "note": "2 sub-cases"
     },
     {
       "id": "hra",
@@ -153,10 +153,10 @@
       "id": "sip",
       "slug": "sip-calculator",
       "status": "PASS",
-      "inputs": "{\"siM\":5000,\"siR\":12,\"siY\":10}",
-      "expected": "res-value = 1161695 (expected 1161695)",
-      "actual": "res-value = 1161695 (expected 1161695)",
-      "note": ""
+      "inputs": "[{\"siM\":5000,\"siR\":12,\"siY\":10},{\"siM\":5000,\"siR\":0,\"siY\":10}]",
+      "expected": "res-value = 1161695 (expected 1161695) || res-value (0% return: 5000x120) = 600000 (expected 600000)",
+      "actual": "res-value = 1161695 (expected 1161695) || res-value (0% return: 5000x120) = 600000 (expected 600000)",
+      "note": "2 sub-cases"
     },
     {
       "id": "stock",
@@ -397,8 +397,8 @@
       "slug": "random-number-generator",
       "status": "PASS",
       "inputs": "{\"rnA\":1,\"rnB\":100,\"rnC\":5}",
-      "expected": "5 numbers in [1,100]: 20, 78, 8, 96, 7",
-      "actual": "5 numbers in [1,100]: 20, 78, 8, 96, 7",
+      "expected": "5 numbers in [1,100]: 83, 67, 93, 31, 34",
+      "actual": "5 numbers in [1,100]: 83, 67, 93, 31, 34",
       "note": ""
     },
     {
@@ -432,10 +432,10 @@
       "id": "tip",
       "slug": "tip-calculator",
       "status": "PASS",
-      "inputs": "{\"tipB\":1000,\"tipP\":15,\"tipS\":2}",
-      "expected": "res-value = 150 (expected 150)",
-      "actual": "res-value = 150 (expected 150)",
-      "note": ""
+      "inputs": "[{\"tipB\":1000,\"tipP\":15,\"tipS\":2},{\"tipB\":1000,\"tipP\":0,\"tipS\":2}]",
+      "expected": "res-value = 150 (expected 150) || res-value (0% tip) = 0 (expected 0)",
+      "actual": "res-value = 150 (expected 150) || res-value (0% tip) = 0 (expected 0)",
+      "note": "2 sub-cases"
     },
     {
       "id": "qr",
@@ -493,10 +493,10 @@
       "id": "area",
       "slug": "area-calculator",
       "status": "PASS",
-      "inputs": "{\"arS\":\"Rectangle\",\"arA\":10,\"arB\":5}",
-      "expected": "res-value = 50 (expected 50)",
-      "actual": "res-value = 50 (expected 50)",
-      "note": ""
+      "inputs": "[{\"arS\":\"Rectangle\",\"arA\":10,\"arB\":5},{\"arS\":\"Trapezoid\",\"arA\":10,\"arB\":6,\"arC\":4}]",
+      "expected": "res-value = 50 (expected 50) || res-value (trapezoid 0.5*(10+6)*4) = 32 (expected 32)",
+      "actual": "res-value = 50 (expected 50) || res-value (trapezoid 0.5*(10+6)*4) = 32 (expected 32)",
+      "note": "2 sub-cases"
     },
     {
       "id": "numera",

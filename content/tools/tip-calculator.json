@@ -1,1 +1,46 @@
-{"example":"Inputs: Bill Amount ₹1,200, Tip Percentage 15%, Split Between 4 people. Step 1: tip = 1,200 × 15 ÷ 100 = ₹180. Step 2: total = 1,200 + 180 = ₹1,380. Step 3: per person = 1,380 ÷ 4 = ₹345. Final result: tip ₹180, total ₹1,380, each person pays ₹345.","faqs":[{"a":"Ten percent is a common starting point in India, and the tool defaults to 15% in its tip field. Check the bill first — some restaurants already add a service charge.","q":"What is a normal tip percentage?"},{"a":"Yes. Set Split Between to the number of people and the tool shows what each person pays including the tip.","q":"Can I split the bill between friends?"},{"a":"The tip is calculated on the bill amount you enter. If the bill already includes tax, the tip is calculated on that total.","q":"Is the tip calculated before or after tax?"}],"formula":"Tip Amount = Bill Amount × Tip Percentage ÷ 100. Total = Bill Amount + Tip Amount. Per Person = Total ÷ Number of People.","howTo":["Enter the bill total in the Bill Amount (₹) field, for example 1200.","Enter the tip percentage in the Tip Percentage (%) field, for example 15.","Enter the number of people in the Split Between (people) field, for example 4.","Tap Calculate to see the tip amount.","Read the total bill and the per-person share shown under the result."],"intro":"The Tip Calculator works out the tip amount, the total bill, and how much each person pays when the bill is split.","mistakes":["Tipping on a bill that already includes a service charge, which means paying twice.","Forgetting to change the tip percentage from the default when you want a different rate.","Dividing the bill before adding the tip, which leaves the tip out of each person's share.","Rounding each person's share down and ending up short of the total."],"related":["split-bill-calculator","fuel-cost-calculator","electricity-bill-calculator"],"slug":"tip-calculator","tips":["Check the bill for a service charge before adding a tip.","Fifteen percent is a generous tip for good service; ten percent is a common standard.","Round each person's share up to the nearest ₹10 to make settling up easy.","If one person had a much bigger order, split by what each person ordered instead of equally."],"uses":"It is used at restaurants and cafes to calculate the tip, the total to pay, and each person's share when splitting the bill."}
+{
+  "example": "Inputs: Bill Amount ₹1,200, Tip Percentage 15%, Split Between 4 people. Step 1: tip = 1,200 × 15 ÷ 100 = ₹180. Step 2: total = 1,200 + 180 = ₹1,380. Step 3: per person = 1,380 ÷ 4 = ₹345. Final result: tip ₹180, total ₹1,380, each person pays ₹345.",
+  "faqs": [
+    {
+      "a": "Ten percent is a common starting point in India, and the tool defaults to 15% in its tip field. Check the bill first — some restaurants already add a service charge.",
+      "q": "What is a normal tip percentage?"
+    },
+    {
+      "a": "Yes. Set Split Between to the number of people and the tool shows what each person pays including the tip.",
+      "q": "Can I split the bill between friends?"
+    },
+    {
+      "a": "The tip is calculated on the bill amount you enter. If the bill already includes tax, the tip is calculated on that total.",
+      "q": "Is the tip calculated before or after tax?"
+    }
+  ],
+  "formula": "Tip Amount = Bill Amount × Tip Percentage ÷ 100. Total = Bill Amount + Tip Amount. Per Person = Total ÷ Number of People.",
+  "howTo": [
+    "Enter the bill total in the Bill Amount (₹) field, for example 1200.",
+    "Enter the tip percentage in the Tip Percentage (%) field, for example 15.",
+    "Enter the number of people in the Split Between (people) field, for example 4.",
+    "Tap Calculate to see the tip amount.",
+    "Read the total bill and the per-person share shown under the result."
+  ],
+  "intro": "The Tip Calculator works out the tip amount, the total bill, and how much each person pays when the bill is split.",
+  "mistakes": [
+    "Tipping on a bill that already includes a service charge, which means paying twice.",
+    "Forgetting to change the tip percentage from the default when you want a different rate.",
+    "Dividing the bill before adding the tip, which leaves the tip out of each person's share.",
+    "Rounding each person's share down and ending up short of the total."
+  ],
+  "related": [
+    "split-bill-calculator",
+    "fuel-cost-calculator",
+    "electricity-bill-calculator"
+  ],
+  "slug": "tip-calculator",
+  "tips": [
+    "Check the bill for a service charge before adding a tip.",
+    "Fifteen percent is a generous tip for good service; ten percent is a common standard.",
+    "Round each person's share up to the nearest ₹10 to make settling up easy.",
+    "If one person had a much bigger order, split by what each person ordered instead of equally."
+  ],
+  "uses": "It is used at restaurants and cafes to calculate the tip, the total to pay, and each person's share when splitting the bill.",
+  "lastReviewed": "21 November 2026"
+}

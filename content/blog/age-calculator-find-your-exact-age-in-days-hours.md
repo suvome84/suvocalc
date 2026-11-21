@@ -1,5 +1,7 @@
 ---
 title: "Age Calculator: Find Your Exact Age in Days & Hours"
+date: "2026-11-21"
+author: "Najmus Sakib"
 minutes: 3
 related: ["age-calculator", "pregnancy-due-date-calculator", "bmi-calculator"]
 ---

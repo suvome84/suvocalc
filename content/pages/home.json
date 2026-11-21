@@ -1,1 +1,60 @@
-{"faq":[{"a":"Yes. All 57 calculators are free to use, with no charges, no subscriptions and no locked features.","q":"Is SuvoCalc really free?"},{"a":"No. There is no login and no account. You can open any calculator and use it straight away.","q":"Do I need an account to use SuvoCalc?"},{"a":"No. Calculations happen in your browser and the numbers you enter are not sent to a server or stored online. Only your theme choice and a list of calculators you recently used are kept on your own device, and you can clear them by clearing your browser data.","q":"Is my data stored anywhere?"},{"a":"57 calculators across finance, tax, investment, health, education, date and time, and daily utilities — including EMI, GST, SIP, income tax, BMI, CGPA, age, discount, and a scientific calculator.","q":"Which calculators are included?"},{"a":"Results use standard formulas and current Indian rates where they apply, such as the GST 2.0 slabs of 0%, 5%, 18% and 40%. They are meant as a guide. For a loan, tax filing or investment decision, check the figures with the bank, the official tax portal, or a qualified adviser.","q":"How accurate are the results?"},{"a":"Once a calculator page has loaded, it works without an internet connection, because the calculation runs in your browser. You need to be online the first time you open a page.","q":"Does SuvoCalc work offline?"}],"heroSubtitle":"EMI, GST, SIP, BMI and more — no login, no fees, and every calculation runs in your browser.","heroTitle":"57 free calculators for everyday maths","howTo":[{"text":"Search by name above, or browse the categories and tool list.","title":"Find a calculator"},{"text":"Fill in the fields on the calculator page and tap Calculate.","title":"Enter your numbers"},{"text":"See the answer with a short explanation, the formula, and a worked example.","title":"Read the result"}],"intro":"SuvoCalc is a free collection of 57 calculators for money, tax, health, study and daily life. Pick a calculator, enter your numbers, and get the answer with the working shown — no account, no app to install, and no personal details needed.","why":[{"text":"All 57 calculators are free to use, with no charges and no locked features.","title":"Free, always"},{"text":"You do not need an account. Nothing you type is sent to a server or stored online.","title":"No login needed"},{"text":"Once a page has loaded, its calculator runs entirely in your browser, so it works even without an internet connection.","title":"Works offline"}]}
+{
+  "faq": [
+    {
+      "a": "Yes. All 57 calculators are free to use, with no charges, no subscriptions and no locked features.",
+      "q": "Is SuvoCalc really free?"
+    },
+    {
+      "a": "No. There is no login and no account. You can open any calculator and use it straight away.",
+      "q": "Do I need an account to use SuvoCalc?"
+    },
+    {
+      "a": "No. Calculations happen in your browser and the numbers you enter are not sent to a server or stored online. Only your theme choice and a list of calculators you recently used are kept on your own device, and you can clear them by clearing your browser data.",
+      "q": "Is my data stored anywhere?"
+    },
+    {
+      "a": "57 calculators across finance, tax, investment, health, education, date and time, and daily utilities — including EMI, GST, SIP, income tax, BMI, CGPA, age, discount, and a scientific calculator.",
+      "q": "Which calculators are included?"
+    },
+    {
+      "a": "Results use standard formulas and current Indian rates where they apply, such as the GST 2.0 slabs of 0%, 5%, 18% and 40%. They are meant as a guide. For a loan, tax filing or investment decision, check the figures with the bank, the official tax portal, or a qualified adviser.",
+      "q": "How accurate are the results?"
+    },
+    {
+      "a": "Once a calculator page has loaded, it works without an internet connection, because the calculation runs in your browser. You need to be online the first time you open a page.",
+      "q": "Does SuvoCalc work offline?"
+    }
+  ],
+  "heroSubtitle": "EMI, GST, SIP, BMI and more — no login, no fees, and every calculation runs in your browser.",
+  "heroTitle": "57 free calculators for everyday maths",
+  "howTo": [
+    {
+      "text": "Search by name above, or browse the categories and tool list.",
+      "title": "Find a calculator"
+    },
+    {
+      "text": "Fill in the fields on the calculator page and tap Calculate.",
+      "title": "Enter your numbers"
+    },
+    {
+      "text": "See the answer with a short explanation, the formula, and a worked example.",
+      "title": "Read the result"
+    }
+  ],
+  "intro": "SuvoCalc is a free collection of 57 calculators for money, tax, health, study and daily life. Pick a calculator, enter your numbers, and get the answer with the working shown — no account, no app to install, and no personal details needed.",
+  "why": [
+    {
+      "text": "All 57 calculators are free to use, with no charges and no locked features.",
+      "title": "Free, always"
+    },
+    {
+      "text": "You do not need an account. Nothing you type is sent to a server or stored online.",
+      "title": "No login needed"
+    },
+    {
+      "text": "Once a page has loaded, its calculator runs entirely in your browser, so it works even without an internet connection.",
+      "title": "Works offline"
+    }
+  ],
+  "description": "57 free online calculators for money, tax, health, study and daily life. No login, no fees — every calculation runs in your browser."
+}

@@ -3,9 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Crypto Calculator | SuvoCalc v31</title>
+<title>Crypto Calculator | SuvoCalc</title>
 <meta name="description" content="Calculate crypto investment value, profit/loss and break-even price.">
-<link rel="canonical" href="https://suvocalc.com/calculators/crypto-calculator/">
+<link rel="canonical" href="https://suvome84.github.io/suvocalc/calculators/crypto-calculator/">
+<meta property="og:title" content="Crypto Calculator | SuvoCalc">
+<meta property="og:description" content="Calculate crypto investment value, profit/loss and break-even price.">
+<meta property="og:url" content="https://suvome84.github.io/suvocalc/calculators/crypto-calculator/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SuvoCalc">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Crypto Calculator | SuvoCalc">
+<meta name="twitter:description" content="Calculate crypto investment value, profit/loss and break-even price.">
 <script>
 /* Apply saved theme before CSS loads to avoid a flash. No other logic here. */
 (function () {
@@ -16,11 +24,13 @@
 })();
 </script>
 <link rel="stylesheet" href="../../assets/css/style.css">
+<link rel="manifest" href="../../manifest.json">
+<meta name="theme-color" content="#2563eb">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebApplication","name":"Crypto Calculator | SuvoCalc","url":"https://suvocalc.com/calculators/crypto-calculator/","applicationCategory":"CalculatorApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate crypto investment value, profit/loss and break-even price."}
+{"@context":"https://schema.org","@type":"WebApplication","name":"Crypto Calculator | SuvoCalc","url":"https://suvome84.github.io/suvocalc/calculators/crypto-calculator/","applicationCategory":"CalculatorApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate crypto investment value, profit/loss and break-even price."}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://suvocalc.com/"},{"@type":"ListItem","position":2,"name":"Investment & Savings","item":"https://suvocalc.com/categories/investment-savings/"},{"@type":"ListItem","position":3,"name":"Crypto Calculator","item":"https://suvocalc.com/calculators/crypto-calculator/"}]}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://suvome84.github.io/suvocalc/"},{"@type":"ListItem","position":2,"name":"Investment & Savings","item":"https://suvome84.github.io/suvocalc/categories/investment-savings/"},{"@type":"ListItem","position":3,"name":"Crypto Calculator","item":"https://suvome84.github.io/suvocalc/calculators/crypto-calculator/"}]}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many Bitcoins do I get for ₹10,000 if Bitcoin costs ₹50,00,000?","acceptedAnswer":{"@type":"Answer","text":"You get 10,000 ÷ 50,00,000 = 0.002 BTC. If the price rises to ₹60,00,000, that holding is worth ₹12,000, a profit of ₹2,000 or 20%."}},{"@type":"Question","name":"What is the break-even price in crypto?","acceptedAnswer":{"@type":"Answer","text":"It is the price at which your holding is worth exactly what you invested — the same as your buy price per coin. Above it you are in profit; below it you are in loss."}},{"@type":"Question","name":"Does this calculator include exchange fees?","acceptedAnswer":{"@type":"Answer","text":"No. It calculates from the investment amount and the buy and sell prices only. Exchange fees and taxes are not included, so your real profit will be slightly lower."}}]}
@@ -37,7 +47,6 @@
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="11" x2="8" y2="11.01"/><line x1="12" y1="11" x2="12" y2="11.01"/><line x1="16" y1="11" x2="16" y2="11.01"/><line x1="8" y1="15" x2="8" y2="15.01"/><line x1="12" y1="15" x2="12" y2="15.01"/><line x1="16" y1="15" x2="16" y2="15.01"/></svg>
       </span>
       <span class="brand-name">SuvoCalc</span>
-      <span class="brand-version">v31</span>
     </a>
 
     <nav class="site-nav" id="site-nav" aria-label="Main navigation">
@@ -49,7 +58,7 @@
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
         <span>All Tools</span>
       </a>
-      <a class="nav-link" data-nav="categories" href="../../tools/index.html">
+      <a class="nav-link" data-nav="categories" href="../../categories/index.html">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
         <span>Categories</span>
       </a>
@@ -81,7 +90,7 @@
 </header>
 
 <main id="main" class="page-main">
-<nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/categories/investment-savings/">Investment &amp; Savings</a></li><li><span aria-current="page">Crypto Calculator</span></li></ol></nav>
+<nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="../../index.html">Home</a></li><li><a href="../../categories/investment-savings/">Investment &amp; Savings</a></li><li><span aria-current="page">Crypto Calculator</span></li></ol></nav>
   <h1 class="page-title">Crypto Calculator</h1>
 <p class="lead">The Crypto Calculator works out how many coins an investment buys, what the holding is worth at a current or target price, and the profit or loss on the investment.</p>
 <section class="content-block"><h2>What it is used for</h2><p>It is used to check the value of a crypto holding, to see the gain or loss at a target price before selling, and to find the break-even price at which the investment neither gains nor loses.</p></section>
@@ -113,7 +122,7 @@
 
 <footer class="site-footer">
   <div class="footer-inner">
-    <p class="footer-copy">&copy; 2026 SuvoCalc &mdash; v31 &middot; 57 free calculators &middot; Made by Najmus Sakib</p>
+    <p class="footer-copy">&copy; 2026 SuvoCalc &middot; 57 free calculators &middot; Made by Najmus Sakib</p>
     <nav class="footer-nav" aria-label="Footer navigation">
       <a href="../../privacy/index.html">Privacy</a>
       <a href="../../terms/index.html">Terms</a>
@@ -134,7 +143,7 @@
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
     <span>Tools</span>
   </a>
-  <a class="bottom-nav-link" data-nav="categories" href="../../tools/index.html">
+  <a class="bottom-nav-link" data-nav="categories" href="../../categories/index.html">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
     <span>Categories</span>
   </a>
@@ -156,8 +165,8 @@
 <script src="../../assets/js/calc.js"></script>
 <script src="../../assets/js/main.js"></script>
 <script>
-/* v31 no-op stubs: the verbatim v30 calc bodies call these legacy
-   helpers (toast, usage tracking, streaks, haptics, gauge). v31 has
+/* no-op stubs: the verbatim v30 calc bodies call these legacy
+   helpers (toast, usage tracking, streaks, haptics, gauge). This site has
    none of those systems; the stubs keep a calculation from throwing
    after it has written its result. */
 function toast(){}
@@ -166,7 +175,7 @@ function bumpStreak(){}
 function checkMilestone(){}
 function v21Haptic(){}
 function injectBMIGauge(){}
-/* renderH: the sci history UI does not exist in v31; pushH() still
+/* renderH: the sci history UI does not exist; pushH() still
    records to localStorage, renderH() just has nothing to paint. */
 function renderH(){}
 function runToolCalc(){
