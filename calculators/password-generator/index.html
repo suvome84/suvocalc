@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Password Generator | SuvoCalc v31</title>
+<meta name="description" content="Generate strong, secure passwords with custom length and character options.">
+<link rel="canonical" href="https://suvocalc.com/calculators/password-generator/">
+<script>
+/* Apply saved theme before CSS loads to avoid a flash. No other logic here. */
+(function () {
+  try {
+    var t = localStorage.getItem('sc_theme');
+    if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+  } catch (e) { /* storage unavailable: keep light default */ }
+})();
+</script>
+<link rel="stylesheet" href="../../assets/css/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Password Generator | SuvoCalc","url":"https://suvocalc.com/calculators/password-generator/","applicationCategory":"CalculatorApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Generate strong, secure passwords with custom length and character options."}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://suvocalc.com/"},{"@type":"ListItem","position":2,"name":"Daily Utilities","item":"https://suvocalc.com/categories/daily-utilities/"},{"@type":"ListItem","position":3,"name":"Password Generator","item":"https://suvocalc.com/calculators/password-generator/"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How long should my password be?","acceptedAnswer":{"@type":"Answer","text":"Longer is better. Sixteen characters with all four character types is a good default; use 20 or more for important accounts like email and banking."}},{"@type":"Question","name":"What does the strength bar mean?","acceptedAnswer":{"@type":"Answer","text":"The strength bar is based on which character types are ticked and whether the length is 16 or more. It is a rough guide, not a guarantee of safety."}},{"@type":"Question","name":"Does the tool save my password?","acceptedAnswer":{"@type":"Answer","text":"No. The password is generated in your browser and shown on screen only. It is not saved anywhere by the tool, so copy it before leaving the page."}}]}
+</script>
+
+</head>
+<body data-active-nav="tools" data-tool-url-prefix="../../" data-tool-slug="password-generator" data-tool-title="Password Generator">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="../../index.html" aria-label="SuvoCalc home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="11" x2="8" y2="11.01"/><line x1="12" y1="11" x2="12" y2="11.01"/><line x1="16" y1="11" x2="16" y2="11.01"/><line x1="8" y1="15" x2="8" y2="15.01"/><line x1="12" y1="15" x2="12" y2="15.01"/><line x1="16" y1="15" x2="16" y2="15.01"/></svg>
+      </span>
+      <span class="brand-name">SuvoCalc</span>
+      <span class="brand-version">v31</span>
+    </a>
+
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+      <a class="nav-link" data-nav="home" href="../../index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Home</span>
+      </a>
+      <a class="nav-link" data-nav="tools" href="../../tools/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        <span>All Tools</span>
+      </a>
+      <a class="nav-link" data-nav="categories" href="../../tools/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+        <span>Categories</span>
+      </a>
+      <a class="nav-link" data-nav="blog" href="../../blog/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        <span>Blog/Guides</span>
+      </a>
+      <a class="nav-link" data-nav="about" href="../../about/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        <span>About</span>
+      </a>
+      <a class="nav-link" data-nav="contact" href="../../contact/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span>Contact</span>
+      </a>
+    </nav>
+
+    <div class="header-actions">
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch between light and dark theme">
+        <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <span class="theme-toggle-label">Theme</span>
+      </button>
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="page-main">
+<nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/categories/daily-utilities/">Daily Utilities</a></li><li><span aria-current="page">Password Generator</span></li></ol></nav>
+  <h1 class="page-title">Password Generator</h1>
+<p class="lead">The Password Generator creates random passwords of a length you choose, mixing uppercase, lowercase, numbers, and symbols, with a strength indicator.</p>
+<section class="content-block"><h2>What it is used for</h2><p>It is used to create random passwords for new accounts, replacing weak or reused passwords with a fresh one of a chosen length and character mix.</p></section>
+<section class="calc-card" aria-label="Password Generator calculator">
+<form id="calc-form" class="calc-form">
+<div class="field"><label for="pwdLen">Password Length</label><input type="range" id="pwdLen" name="pwdLen" value="16" min="8" max="64"></div>
+<div class="field field-checkbox"><label for="pwUC"><input type="checkbox" id="pwUC" name="pwUC" checked> Uppercase (A-Z)</label></div>
+<div class="field field-checkbox"><label for="pwLC"><input type="checkbox" id="pwLC" name="pwLC" checked> Lowercase (a-z)</label></div>
+<div class="field field-checkbox"><label for="pwNM"><input type="checkbox" id="pwNM" name="pwNM" checked> Numbers (0-9)</label></div>
+<div class="field field-checkbox"><label for="pwSP"><input type="checkbox" id="pwSP" name="pwSP" checked> Symbols (!@#$)</label></div>
+<button type="submit" id="calc-btn" class="btn btn-primary btn-block">Calculate</button>
+</form>
+<div class="tool-outputs"><div id="pwdOut" class="tool-output"></div>
+<div id="pwStr" class="tool-output"></div>
+<div id="pwOutput" class="tool-output"></div></div>
+<div class="share-row"><button type="button" class="btn btn-secondary btn-small" onclick="copyPwd()">Copy password</button></div>
+<p class="result-error" id="res-error" hidden></p>
+</section>
+<section class="content-block"><h2>Formula</h2><p class="formula-box">Method: the tool builds a character pool from the ticked options — Uppercase A–Z (26), Lowercase a–z (26), Numbers 0–9 (10), Symbols !@#$%^&amp;*()_+-=[]{}|;:,.&lt;&gt;? (27) — then picks characters at random from the pool, one for each position, up to the chosen length (8 to 64). Strength score: one point each for mixed case, numbers, symbols, and length of 16 or more.</p></section>
+<section class="content-block"><h2>Worked example</h2><p>Use case: a password for a new email account. Settings: Password Length 16, with Uppercase, Lowercase, Numbers, and Symbols all ticked. Step 1: the tool builds a character set of 26 uppercase + 26 lowercase + 10 digits + 27 symbols = 89 characters. Step 2: it picks 16 characters at random from that set. Step 3: the strength bar reads full, because all four character types are on and the length is 16 or more. Final result: a 16-character password mixing all four character types, ready to copy. The tool does not store it, so save it in a password manager or write it down safely.</p></section>
+<section class="content-block"><h2>How to use</h2><ol class="steps"><li>Move the Password Length slider to your chosen length — 16 is the default.</li><li>Tick or untick Uppercase (A-Z), Lowercase (a-z), Numbers (0-9), and Symbols (!@#$) as needed.</li><li>Tap Generate to create a new password.</li><li>Check the strength bar under the password.</li><li>Tap Copy and paste the password into the account or your password manager.</li></ol></section>
+<section class="content-block"><h2>Tips</h2><ul><li>Use a different password for every important account, especially email and banking.</li><li>Sixteen characters is a good default; go longer for accounts that hold money or personal data.</li><li>Store passwords in a password manager rather than in plain notes or photos.</li><li>Turn on two-factor authentication wherever it is offered — a strong password alone is not complete protection.</li><li>No password can be called unbreakable. A long, unique password plus two-factor authentication is the practical goal.</li></ul></section>
+<section class="content-block"><h2>Common mistakes</h2><ul><li>Using a short password of 8 characters for an important account.</li><li>Unticking symbols and numbers, which shrinks the character pool and weakens the password.</li><li>Reusing the same generated password on several sites.</li><li>Generating a password and then forgetting to copy it before closing the page — the tool does not save it.</li></ul></section>
+<section class="content-block faq-list"><h2>Frequently asked questions</h2><details><summary>How long should my password be?</summary><p>Longer is better. Sixteen characters with all four character types is a good default; use 20 or more for important accounts like email and banking.</p></details><details><summary>What does the strength bar mean?</summary><p>The strength bar is based on which character types are ticked and whether the length is 16 or more. It is a rough guide, not a guarantee of safety.</p></details><details><summary>Does the tool save my password?</summary><p>No. The password is generated in your browser and shown on screen only. It is not saved anywhere by the tool, so copy it before leaving the page.</p></details></section>
+<section class="content-block"><h2>Related calculators</h2><ul class="related-list"><li><a href="../../calculators/random-number-generator/">Random Number Generator</a></li><li><a href="../../calculators/qr-code-generator/">QR Code Generator</a></li><li><a href="../../calculators/qr-code-scanner/">QR Code Scanner</a></li></ul></section>
+<div class="disclaimer-box"><p>Results are a guide based on the numbers you enter. For loan, tax or investment decisions, check the figures with the bank, the official tax portal, or a qualified adviser.</p></div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-copy">&copy; 2026 SuvoCalc &mdash; v31 &middot; 57 free calculators</p>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="../../privacy/index.html">Privacy</a>
+      <a href="../../terms/index.html">Terms</a>
+      <a href="../../disclaimer/index.html">Disclaimer</a>
+      <a href="../../about/index.html">About</a>
+      <a href="../../contact/index.html">Contact</a>
+      <a href="../../faq/index.html">FAQ</a>
+    </nav>
+  </div>
+</footer>
+
+<nav class="bottom-nav" aria-label="Mobile navigation">
+  <a class="bottom-nav-link" data-nav="home" href="../../index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    <span>Home</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="tools" href="../../tools/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+    <span>Tools</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="categories" href="../../tools/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+    <span>Categories</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="blog" href="../../blog/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+    <span>Guides</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="about" href="../../about/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+    <span>About</span>
+  </a>
+</nav>
+
+<div class="cookie-banner" id="cookie-banner" hidden>
+  <p>SuvoCalc uses local storage on your device to remember your theme and recently used calculators. No account, no tracking.</p>
+  <button type="button" class="btn btn-primary btn-small" id="cookie-accept">Got it</button>
+</div>
+
+<script src="../../assets/js/calc.js"></script>
+<script src="../../assets/js/main.js"></script>
+<script>
+/* v31 no-op stubs: the verbatim v30 calc bodies call these legacy
+   helpers (toast, usage tracking, streaks, haptics, gauge). v31 has
+   none of those systems; the stubs keep a calculation from throwing
+   after it has written its result. */
+function toast(){}
+function trackTool(){}
+function bumpStreak(){}
+function checkMilestone(){}
+function v21Haptic(){}
+function injectBMIGauge(){}
+/* renderH: the sci history UI does not exist in v31; pushH() still
+   records to localStorage, renderH() just has nothing to paint. */
+function renderH(){}
+/* Companion functions/state, verbatim from the v30 source
+   (7757-7764). See companions.json. */
+function copyPwd(){
+  const el=document.getElementById('pwdOut')||document.getElementById('pwOutput');
+  const txt=el?el.textContent.trim():'';
+  if(!txt||txt==='Click Generate')return;
+  const doCopy=()=>{try{const ta=document.createElement('textarea');ta.value=txt;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);toast('🔑 Password copied!');}catch(e){toast('❌ Copy failed');}};
+  if(navigator.clipboard)navigator.clipboard.writeText(txt).then(()=>toast('🔑 Password copied!')).catch(doCopy);
+  else doCopy();
+}
+function runToolCalc(){
+
+  const len=parseInt((document.getElementById('pwdLen')&&document.getElementById('pwdLen').value))||16;
+  const uc=(document.getElementById('pwUC')&&document.getElementById('pwUC').checked);const lc=(document.getElementById('pwLC')&&document.getElementById('pwLC').checked);
+  const nm=(document.getElementById('pwNM')&&document.getElementById('pwNM').checked);const sp=(document.getElementById('pwSP')&&document.getElementById('pwSP').checked);
+  let chars='';
+  if(uc)chars+='ABCDEFGHIJKLMNOPQRSTUVWXYZ';if(lc)chars+='abcdefghijklmnopqrstuvwxyz';
+  if(nm)chars+='0123456789';if(sp)chars+='!@#$%^&*()_+-=[]{}|;:,.<>?';
+  if(!chars)chars='abcdefghijklmnopqrstuvwxyz';
+  let pwd='';for(let i=0;i<len;i++)pwd+=chars[Math.floor(Math.random()*chars.length)];
+  const out=document.getElementById('pwdOut');if(out)out.textContent=pwd;
+  const str=document.getElementById('pwStr');if(str){
+    const strength=(!uc||!lc?0:1)+(!nm?0:1)+(!sp?0:1)+(len>=16?1:0);
+    const colors=['#ef4444','#f97316','#f59e0b','#22c55e'];const widths=['25%','50%','75%','100%'];
+    str.style.background=colors[strength-1]||colors[0];str.style.width=widths[strength-1]||'25%';
+  }
+
+}
+(function(){
+try{
+var form=document.getElementById("calc-form");
+if(form){ form.addEventListener("submit",function(ev){ ev.preventDefault(); try{ runToolCalc(); }catch(err){ var e=document.getElementById("res-error"); if(e){ e.textContent="Could not calculate. Please check your numbers and try again."; e.hidden=false; } } }); }
+
+}catch(e){}
+})();
+</script>
+</body>
+</html>

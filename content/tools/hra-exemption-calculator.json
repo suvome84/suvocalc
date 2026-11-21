@@ -1,0 +1,49 @@
+{
+  "slug": "hra-exemption-calculator",
+  "intro": "The HRA Exemption Calculator works out how much of the House Rent Allowance (HRA) in your salary is exempt from income tax under Section 10(13A), for metro and non-metro cities.",
+  "uses": "It is used by salaried employees who live in rented accommodation to find the tax-free part of their HRA, the taxable part, and the annual exemption they can claim.",
+  "formula": "Exemption = the least of these three: (1) the HRA actually received, (2) 50% of Basic Salary + DA for a metro city or 40% for a non-metro city, (3) the rent paid minus 10% of Basic Salary + DA. Taxable HRA = HRA received − Exemption. Annual exemption = monthly exemption × 12.",
+  "example": "Inputs: Basic Salary = ₹40,000 per month, DA = ₹0, HRA Received = ₹16,000 per month, Rent Paid = ₹18,000 per month, City Type = Metro (Delhi/Mumbai/Chennai/Kolkata). Step 1: HRA received = ₹16,000. Step 2: 50% of Basic + DA = ₹20,000. Step 3: rent minus 10% of Basic + DA = 18,000 − 4,000 = ₹14,000. Step 4: the least of the three is ₹14,000, so the exemption is ₹14,000 per month and ₹1,68,000 per year. Step 5: taxable HRA = 16,000 − 14,000 = ₹2,000 per month.",
+  "howTo": [
+    "Step 1: Enter your monthly basic salary in the \"Basic Salary (₹/month)\" field.",
+    "Step 2: Enter your monthly dearness allowance in the \"DA (₹/month, if applicable)\" field, or leave it at 0.",
+    "Step 3: Enter the HRA your employer pays in the \"HRA Received (₹/month)\" field.",
+    "Step 4: Enter the rent you actually pay in the \"Rent Paid (₹/month)\" field.",
+    "Step 5: Choose your city type — \"Metro (Delhi/Mumbai/Chennai/Kolkata)\" or \"Non-Metro\" — then tap Calculate."
+  ],
+  "tips": [
+    "The exemption is the least of the three amounts, so raising your rent only helps up to the point where the third amount stops being the smallest.",
+    "In a metro city the limit is 50% of Basic + DA; in a non-metro city it is 40% — choosing the wrong city type changes the answer.",
+    "Keep rent receipts and, where required, the landlord's PAN details, because your employer will ask for proof of rent paid.",
+    "HRA exemption is available under the old tax regime; the new regime does not allow this deduction, so check which regime you use."
+  ],
+  "mistakes": [
+    "Using the full monthly salary instead of Basic + DA — allowances such as special allowance do not count.",
+    "Claiming the full HRA received as exempt instead of the least of the three amounts.",
+    "Using the 50% metro limit for a non-metro city, which overstates the exemption.",
+    "Entering annual figures in the monthly fields, which makes every amount twelve times too large."
+  ],
+  "faqs": [
+    {
+      "q": "Which cities count as metro for HRA?",
+      "a": "For HRA purposes, the metro cities are Delhi, Mumbai, Chennai, and Kolkata. All other cities are non-metro. The metro limit is 50% of Basic + DA, while the non-metro limit is 40%."
+    },
+    {
+      "q": "How is the HRA exemption calculated?",
+      "a": "It is the least of three amounts: the HRA actually received, 50% (metro) or 40% (non-metro) of Basic Salary plus DA, and the rent paid minus 10% of Basic Salary plus DA."
+    },
+    {
+      "q": "Can I claim HRA if I live in my own house?",
+      "a": "No. HRA exemption is only for rent actually paid for accommodation you live in. If you live in your own house, there is no rent to claim against, so the exemption is zero."
+    },
+    {
+      "q": "Is HRA exemption available in the new tax regime?",
+      "a": "No. The new tax regime does not allow the HRA exemption under Section 10(13A). It is available under the old regime, so compare both regimes before choosing."
+    }
+  ],
+  "related": [
+    "gst-calculator",
+    "income-tax-calculator",
+    "home-loan-tax-benefit-calculator"
+  ]
+}

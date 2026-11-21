@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PPF Calculator (India) | SuvoCalc v31</title>
+<meta name="description" content="Calculate Public Provident Fund (PPF) maturity amount with 7.1% interest over 15 years.">
+<link rel="canonical" href="https://suvocalc.com/calculators/ppf-calculator/">
+<script>
+/* Apply saved theme before CSS loads to avoid a flash. No other logic here. */
+(function () {
+  try {
+    var t = localStorage.getItem('sc_theme');
+    if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+  } catch (e) { /* storage unavailable: keep light default */ }
+})();
+</script>
+<link rel="stylesheet" href="../../assets/css/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"PPF Calculator (India) | SuvoCalc","url":"https://suvocalc.com/calculators/ppf-calculator/","applicationCategory":"CalculatorApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate Public Provident Fund (PPF) maturity amount with 7.1% interest over 15 years."}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://suvocalc.com/"},{"@type":"ListItem","position":2,"name":"Investment & Savings","item":"https://suvocalc.com/categories/investment-savings/"},{"@type":"ListItem","position":3,"name":"PPF Calculator (India)","item":"https://suvocalc.com/calculators/ppf-calculator/"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the current PPF interest rate?","acceptedAnswer":{"@type":"Answer","text":"The calculator uses 7.1%, which was the rate when it was built. PPF interest rates are revised by the government — check the current rate before planning, and enter it in the \"Interest Rate (%)\" field."}},{"@type":"Question","name":"How much will I get if I deposit ₹1,50,000 every year for 15 years?","acceptedAnswer":{"@type":"Answer","text":"At 7.1% interest, the maturity amount is about ₹40,68,209. You deposit ₹22,50,000 in total and earn about ₹18,18,209 in interest, all tax-free."}},{"@type":"Question","name":"Is PPF tax-free?","acceptedAnswer":{"@type":"Answer","text":"Yes. PPF has EEE status: deposits qualify for deduction under Section 80C, the interest earned is tax-free, and the maturity amount is tax-free."}},{"@type":"Question","name":"What is the maximum I can deposit in PPF each year?","acceptedAnswer":{"@type":"Answer","text":"The maximum is ₹1,50,000 per financial year. You can deposit it in one go or in instalments, but the total for the year must not exceed ₹1,50,000."}}]}
+</script>
+
+</head>
+<body data-active-nav="tools" data-tool-url-prefix="../../" data-tool-slug="ppf-calculator" data-tool-title="PPF Calculator (India)">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="../../index.html" aria-label="SuvoCalc home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="11" x2="8" y2="11.01"/><line x1="12" y1="11" x2="12" y2="11.01"/><line x1="16" y1="11" x2="16" y2="11.01"/><line x1="8" y1="15" x2="8" y2="15.01"/><line x1="12" y1="15" x2="12" y2="15.01"/><line x1="16" y1="15" x2="16" y2="15.01"/></svg>
+      </span>
+      <span class="brand-name">SuvoCalc</span>
+      <span class="brand-version">v31</span>
+    </a>
+
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+      <a class="nav-link" data-nav="home" href="../../index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Home</span>
+      </a>
+      <a class="nav-link" data-nav="tools" href="../../tools/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        <span>All Tools</span>
+      </a>
+      <a class="nav-link" data-nav="categories" href="../../tools/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+        <span>Categories</span>
+      </a>
+      <a class="nav-link" data-nav="blog" href="../../blog/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        <span>Blog/Guides</span>
+      </a>
+      <a class="nav-link" data-nav="about" href="../../about/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        <span>About</span>
+      </a>
+      <a class="nav-link" data-nav="contact" href="../../contact/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span>Contact</span>
+      </a>
+    </nav>
+
+    <div class="header-actions">
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch between light and dark theme">
+        <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <span class="theme-toggle-label">Theme</span>
+      </button>
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="page-main">
+<nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/categories/investment-savings/">Investment &amp; Savings</a></li><li><span aria-current="page">PPF Calculator (India)</span></li></ol></nav>
+  <h1 class="page-title">PPF Calculator (India)</h1>
+<p class="lead">The PPF Calculator projects the maturity amount of a Public Provident Fund account in India, with yearly deposits, interest compounded annually, and a 15-year tenure.</p>
+<section class="content-block"><h2>What it is used for</h2><p>It is used to plan long-term tax-free saving, to see how much a yearly deposit grows over 15 years, and to compare the interest earned with the total amount deposited.</p></section>
+<section class="calc-card" aria-label="PPF Calculator (India) calculator">
+<form id="calc-form" class="calc-form">
+<div class="field"><label for="ppfY">Annual Deposit (₹)</label><input type="number" id="ppfY" name="ppfY" placeholder="e.g. 150000"></div>
+<div class="field"><label for="ppfR">Interest Rate (%)</label><input type="number" id="ppfR" name="ppfR" placeholder="e.g. 7.1"></div>
+<div class="field"><label for="ppfT">Tenure (years)</label><input type="number" id="ppfT" name="ppfT" placeholder="15 (max 15)"></div>
+<button type="submit" id="calc-btn" class="btn btn-primary btn-block">Calculate</button>
+</form>
+<div class="result-box" id="res-box">
+<p class="result-label" id="res-label">PPF Maturity Amount</p>
+<p class="result-value" id="res-value">&mdash;</p>
+<p class="result-details" id="res-details"></p>
+<p class="result-error" id="res-error" hidden></p>
+<div class="share-row"><button type="button" class="btn btn-secondary btn-small" id="share-result">Share result</button><span class="share-status" id="share-status" role="status"></span></div>
+</div>
+</section>
+<section class="content-block"><h2>Formula</h2><p class="formula-box">Each year the balance grows as Balance = (Balance + Yearly Deposit) × (1 + Rate ÷ 100), repeated for the tenure. The calculator caps the yearly deposit at ₹1,50,000 and the tenure at 15 years, matching the PPF rules. Interest earned = Maturity amount − Total deposited.</p></section>
+<section class="content-block"><h2>Worked example</h2><p>Inputs: Annual Deposit = ₹1,50,000, Interest Rate = 7.1%, Tenure = 15 years. Step 1: deposit ₹1,50,000 each year for 15 years, so total invested = ₹22,50,000. Step 2: applying the yearly formula 15 times, the balance grows to ₹40,68,209. Step 3: interest earned = 40,68,209 − 22,50,000 = ₹18,18,209. The calculator uses a 7.1% rate; PPF interest rates are revised by the government — check the current rate.</p></section>
+<section class="content-block"><h2>How to use</h2><ol class="steps"><li>Step 1: Enter the amount you will deposit each year in the &quot;Annual Deposit (₹)&quot; field — the maximum is ₹1,50,000.</li><li>Step 2: Enter the interest rate in the &quot;Interest Rate (%)&quot; field — the calculator defaults to 7.1%.</li><li>Step 3: Enter the tenure in the &quot;Tenure (years)&quot; field — 15 years is the standard PPF term.</li><li>Step 4: Tap Calculate to see the maturity amount, the total invested, and the interest earned.</li></ol></section>
+<section class="content-block"><h2>Tips</h2><ul><li>PPF has EEE tax status: the deposit, the interest, and the maturity amount are all tax-free, which makes it one of the most tax-efficient savings options in India.</li><li>Depositing early in the financial year earns more interest, because PPF interest is calculated on the lowest balance between the 5th and the end of each month.</li><li>The maximum deposit is ₹1,50,000 per year — depositing more does not earn interest on the extra amount.</li><li>After 15 years the account can be extended in blocks of 5 years, with or without further deposits.</li></ul></section>
+<section class="content-block"><h2>Common mistakes</h2><ul><li>Entering a deposit above ₹1,50,000 per year — the extra amount does not earn interest.</li><li>Using an old interest rate as if it were fixed — the PPF rate is reviewed by the government and changes over time, so check the current rate.</li><li>Expecting to withdraw freely before maturity — partial withdrawals are allowed only from the 7th year and under conditions.</li><li>Confusing the 15-year tenure with a lock-in that can be shortened — the account matures after 15 years.</li></ul></section>
+<section class="content-block faq-list"><h2>Frequently asked questions</h2><details><summary>What is the current PPF interest rate?</summary><p>The calculator uses 7.1%, which was the rate when it was built. PPF interest rates are revised by the government — check the current rate before planning, and enter it in the &quot;Interest Rate (%)&quot; field.</p></details><details><summary>How much will I get if I deposit ₹1,50,000 every year for 15 years?</summary><p>At 7.1% interest, the maturity amount is about ₹40,68,209. You deposit ₹22,50,000 in total and earn about ₹18,18,209 in interest, all tax-free.</p></details><details><summary>Is PPF tax-free?</summary><p>Yes. PPF has EEE status: deposits qualify for deduction under Section 80C, the interest earned is tax-free, and the maturity amount is tax-free.</p></details><details><summary>What is the maximum I can deposit in PPF each year?</summary><p>The maximum is ₹1,50,000 per financial year. You can deposit it in one go or in instalments, but the total for the year must not exceed ₹1,50,000.</p></details></section>
+<section class="content-block"><h2>Related calculators</h2><ul class="related-list"><li><a href="../../calculators/fixed-deposit-calculator/">Fixed Deposit Calculator</a></li><li><a href="../../calculators/sip-calculator/">SIP Calculator</a></li><li><a href="../../calculators/retirement-calculator/">Retirement Calculator</a></li></ul></section>
+<div class="disclaimer-box"><p>Results are a guide based on the numbers you enter. For loan, tax or investment decisions, check the figures with the bank, the official tax portal, or a qualified adviser.</p></div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-copy">&copy; 2026 SuvoCalc &mdash; v31 &middot; 57 free calculators</p>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="../../privacy/index.html">Privacy</a>
+      <a href="../../terms/index.html">Terms</a>
+      <a href="../../disclaimer/index.html">Disclaimer</a>
+      <a href="../../about/index.html">About</a>
+      <a href="../../contact/index.html">Contact</a>
+      <a href="../../faq/index.html">FAQ</a>
+    </nav>
+  </div>
+</footer>
+
+<nav class="bottom-nav" aria-label="Mobile navigation">
+  <a class="bottom-nav-link" data-nav="home" href="../../index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    <span>Home</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="tools" href="../../tools/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+    <span>Tools</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="categories" href="../../tools/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+    <span>Categories</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="blog" href="../../blog/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+    <span>Guides</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="about" href="../../about/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+    <span>About</span>
+  </a>
+</nav>
+
+<div class="cookie-banner" id="cookie-banner" hidden>
+  <p>SuvoCalc uses local storage on your device to remember your theme and recently used calculators. No account, no tracking.</p>
+  <button type="button" class="btn btn-primary btn-small" id="cookie-accept">Got it</button>
+</div>
+
+<script src="../../assets/js/calc.js"></script>
+<script src="../../assets/js/main.js"></script>
+<script>
+/* v31 no-op stubs: the verbatim v30 calc bodies call these legacy
+   helpers (toast, usage tracking, streaks, haptics, gauge). v31 has
+   none of those systems; the stubs keep a calculation from throwing
+   after it has written its result. */
+function toast(){}
+function trackTool(){}
+function bumpStreak(){}
+function checkMilestone(){}
+function v21Haptic(){}
+function injectBMIGauge(){}
+/* renderH: the sci history UI does not exist in v31; pushH() still
+   records to localStorage, renderH() just has nothing to paint. */
+function renderH(){}
+function runToolCalc(){
+
+     const y=Math.min(parseFloat(getId('ppfY'))||150000,150000);
+     const r=(parseFloat(getId('ppfR'))||7.1)/100;
+     const t=Math.min(parseInt(getId('ppfT'))||15,15);
+     let bal=0,totalInvested=0;
+     const rows=[];
+     for(let i=1;i<=t;i++){
+       bal=(bal+y)*(1+r);
+       totalInvested+=y;
+       if(i===t||i<=3||i%5===0)rows.push(`Yr ${i}: ${SYM()}${fmt(Math.round(bal),true)}`);
+     }
+     const interest=bal-totalInvested;
+     setRes('ppf',SYM()+fmt(Math.round(bal),true),'PPF Maturity Amount',`Total Invested: ${SYM()}${fmt(totalInvested,true)}<br>Interest Earned: ${SYM()}${fmt(Math.round(interest),true)}<br>Tax Status: ✅ EEE (completely tax-free)<br>Rate: ${(parseFloat(getId('ppfR'))||7.1)}% | Tenure: ${t} yrs<br><small>${rows.slice(-3).join(' → ')}</small>`);
+   
+}
+(function(){
+try{
+var form=document.getElementById("calc-form");
+if(form){ form.addEventListener("submit",function(ev){ ev.preventDefault(); try{ runToolCalc(); }catch(err){ var e=document.getElementById("res-error"); if(e){ e.textContent="Could not calculate. Please check your numbers and try again."; e.hidden=false; } } }); }
+
+}catch(e){}
+})();
+</script>
+</body>
+</html>

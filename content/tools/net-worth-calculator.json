@@ -1,0 +1,45 @@
+{
+  "slug": "net-worth-calculator",
+  "intro": "The Net Worth Calculator adds up everything you own — cash, investments, property, and other assets — and subtracts everything you owe — home loans, personal and car loans, and credit card dues — to give your net worth.",
+  "uses": "It is used to take a snapshot of your financial position, to track whether your wealth is growing over time, and to see how much of your assets is funded by debt through the debt-to-asset ratio.",
+  "formula": "Total Assets = Cash & Savings + Investments & Stocks + Property Value + Other Assets. Total Liabilities = Home Loan Outstanding + Personal / Car Loans + Credit Card Dues. Net Worth = Total Assets − Total Liabilities. Debt-to-Asset Ratio = Total Liabilities ÷ Total Assets × 100.",
+  "example": "Inputs: Cash & Savings = ₹2,00,000, Investments & Stocks = ₹5,00,000, Property Value = ₹30,00,000, Other Assets = ₹50,000, Home Loan Outstanding = ₹20,00,000, Personal / Car Loans = ₹3,00,000, Credit Card Dues = ₹50,000. Step 1: total assets = 2,00,000 + 5,00,000 + 30,00,000 + 50,000 = ₹37,50,000. Step 2: total liabilities = 20,00,000 + 3,00,000 + 50,000 = ₹23,50,000. Step 3: net worth = 37,50,000 − 23,50,000 = ₹14,00,000. Step 4: debt-to-asset ratio = 23,50,000 ÷ 37,50,000 × 100 = 62.7%.",
+  "howTo": [
+    "Step 1: Enter your bank balance and cash in the \"Cash & Savings (₹)\" field.",
+    "Step 2: Enter shares, mutual funds, and other investments in the \"Investments & Stocks (₹)\" field.",
+    "Step 3: Enter the current market value of your property in the \"Property Value (₹)\" field.",
+    "Step 4: Enter any other assets in the \"Other Assets (₹)\" field.",
+    "Step 5: Enter what you still owe in \"Home Loan Outstanding (₹)\", \"Personal / Car Loans (₹)\", and \"Credit Card Dues (₹)\", then tap Calculate to see your net worth."
+  ],
+  "tips": [
+    "Recalculate your net worth once or twice a year — the trend matters more than any single number.",
+    "Value property at a realistic market price, not at the price you paid or the price you hope for.",
+    "A negative net worth is a starting point, not a verdict — paying down the most expensive debt first moves it up fastest.",
+    "A debt-to-asset ratio above 50% means more than half your assets are funded by debt, which is worth watching closely."
+  ],
+  "mistakes": [
+    "Leaving out a loan or credit card balance, which makes the net worth look higher than it is.",
+    "Counting the full property value but forgetting the home loan owed on it.",
+    "Using the purchase price of an asset instead of its current value.",
+    "Counting money you expect to receive, such as a future salary or bonus, as an asset you already own."
+  ],
+  "faqs": [
+    {
+      "q": "What is net worth?",
+      "a": "Net worth is what you own minus what you owe. Add up all your assets — cash, investments, property, and other assets — and subtract all your liabilities — loans and credit card dues. The result is your net worth."
+    },
+    {
+      "q": "What is a good debt-to-asset ratio?",
+      "a": "Lower is better. A ratio below 50% means you own more than half of your assets outright. Above 50% means most of your assets are funded by debt, which leaves less room for setbacks."
+    },
+    {
+      "q": "Can my net worth be negative?",
+      "a": "Yes. If what you owe is more than what you own, your net worth is negative. It is common early in life, for example with a large home loan, and it improves as you repay debt and build assets."
+    }
+  ],
+  "related": [
+    "savings-goal-calculator",
+    "retirement-calculator",
+    "sip-calculator"
+  ]
+}

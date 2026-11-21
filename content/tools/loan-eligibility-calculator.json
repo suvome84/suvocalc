@@ -1,0 +1,45 @@
+{
+  "slug": "loan-eligibility-calculator",
+  "intro": "The Loan Eligibility Calculator estimates the maximum loan amount a bank is likely to offer you, based on your monthly income, existing EMIs, interest rate, and tenure.",
+  "uses": "It is used before applying for a home loan, car loan, or personal loan to find a realistic borrowing limit, and to see how paying off an existing EMI or choosing a longer tenure changes that limit.",
+  "formula": "Maximum EMI you can afford = (Monthly Income × 50%) − Existing Monthly EMIs. Maximum loan = Max EMI × ((1+r)^n − 1) ÷ (r × (1+r)^n), where r is the monthly interest rate (annual rate ÷ 12 ÷ 100) and n is the tenure in months. This uses the 50% FOIR (Fixed Obligation to Income Ratio) rule most Indian banks apply.",
+  "example": "Inputs: Monthly Income = ₹50,000, Monthly EMI Obligations = ₹5,000, Annual Interest Rate = 8.5%, Loan Tenure = 20 years. Step 1: maximum EMI = 50,000 × 50% − 5,000 = ₹20,000. Step 2: monthly rate r = 8.5 ÷ 12 ÷ 100 = 0.007083, n = 240 months. Step 3: maximum loan = 20,000 × ((1.007083)^240 − 1) ÷ (0.007083 × (1.007083)^240) = ₹23,04,617.",
+  "howTo": [
+    "Step 1: Enter your monthly income in the \"Monthly Income (₹)\" field.",
+    "Step 2: Enter all EMIs you already pay each month in the \"Monthly EMI Obligations (₹)\" field.",
+    "Step 3: Enter the expected annual interest rate in the \"Annual Interest Rate (%)\" field.",
+    "Step 4: Enter the repayment period in the \"Loan Tenure (Years)\" field.",
+    "Step 5: Tap Calculate to see the maximum loan amount and the maximum EMI allowed."
+  ],
+  "tips": [
+    "Paying off or closing an existing loan raises your eligibility more than a small salary rise, because it frees up EMI capacity directly.",
+    "A longer tenure raises the eligible amount, but it also means paying much more interest over the life of the loan.",
+    "Banks also check your credit score, job stability, and the property value — this calculator shows the income-based limit only.",
+    "Borrowing the maximum you are eligible for is not always wise; leave room in your budget for emergencies."
+  ],
+  "mistakes": [
+    "Leaving out existing EMIs such as a bike loan or credit card EMI, which makes the eligible amount look higher than the bank will offer.",
+    "Entering gross salary instead of the monthly income the bank will count.",
+    "Entering the tenure in months instead of years — this calculator expects years.",
+    "Assuming the calculated amount is guaranteed — it is an estimate, and the bank's final sanction can be lower."
+  ],
+  "faqs": [
+    {
+      "q": "How much loan can I get on a ₹50,000 monthly income?",
+      "a": "With no other EMIs at 8.5% over 20 years, the 50% FOIR rule allows a maximum EMI of ₹25,000, which supports a loan of about ₹28.8 lakh. With ₹5,000 of existing EMIs, the limit falls to about ₹23.0 lakh."
+    },
+    {
+      "q": "What is the FOIR rule?",
+      "a": "FOIR stands for Fixed Obligation to Income Ratio. Most Indian banks allow total fixed monthly obligations — all EMIs together — up to about 50% of your monthly income. This calculator uses that 50% limit."
+    },
+    {
+      "q": "Does my credit score affect loan eligibility?",
+      "a": "Yes. This calculator only checks the income-based limit. Banks also look at your credit score, repayment history, employment type, and the value of the property or asset before sanctioning a loan."
+    }
+  ],
+  "related": [
+    "emi-calculator",
+    "loan-affordability-calculator",
+    "loan-comparison-calculator"
+  ]
+}

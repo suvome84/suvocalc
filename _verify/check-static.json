@@ -1,0 +1,1148 @@
+{
+  "page_count": 89,
+  "parse": {
+    "about/index.html": [],
+    "blog/age-calculator-find-your-exact-age-in-days-hours/index.html": [],
+    "blog/bmi-calculator-what-your-number-really-means/index.html": [],
+    "blog/cgpa-to-percentage-every-university-formula/index.html": [],
+    "blog/electricity-bill-calculator-stop-overpaying/index.html": [],
+    "blog/emi-calculator-everything-about-home-car-loans/index.html": [],
+    "blog/gst-calculator-how-gst-works-in-india/index.html": [],
+    "blog/how-to-use-the-scientific-calculator-like-a-pro/index.html": [],
+    "blog/income-tax-india-2025-26-budget-2025-new-vs-old-regime/index.html": [],
+    "blog/index.html": [],
+    "blog/install-suvocalc-as-a-free-app-no-app-store-needed/index.html": [],
+    "blog/loan-eligibility-how-much-can-you-borrow/index.html": [],
+    "blog/password-generator-create-unbreakable-passwords/index.html": [],
+    "blog/percentage-7-everyday-uses-you-must-know/index.html": [],
+    "blog/pomodoro-technique-study-4x-more-effectively/index.html": [],
+    "blog/sip-calculator-build-1-crore-with-5000-per-month/index.html": [],
+    "blog/stock-profit-calculator-know-your-real-returns/index.html": [],
+    "calculators/age-calculator/index.html": [],
+    "calculators/area-calculator/index.html": [],
+    "calculators/attendance-calculator/index.html": [],
+    "calculators/bmi-calculator/index.html": [],
+    "calculators/body-fat-calculator/index.html": [],
+    "calculators/break-even-calculator/index.html": [],
+    "calculators/budget-calculator/index.html": [],
+    "calculators/cagr-calculator/index.html": [],
+    "calculators/calorie-calculator/index.html": [],
+    "calculators/cgpa-calculator/index.html": [],
+    "calculators/compound-interest-calculator/index.html": [],
+    "calculators/crypto-calculator/index.html": [],
+    "calculators/date-difference-calculator/index.html": [],
+    "calculators/discount-calculator/index.html": [],
+    "calculators/electricity-bill-calculator/index.html": [],
+    "calculators/emi-calculator/index.html": [],
+    "calculators/fixed-deposit-calculator/index.html": [],
+    "calculators/fuel-cost-calculator/index.html": [],
+    "calculators/grade-calculator/index.html": [],
+    "calculators/graph-plotter/index.html": [],
+    "calculators/gst-calculator/index.html": [],
+    "calculators/heart-rate-calculator/index.html": [],
+    "calculators/home-loan-tax-benefit-calculator/index.html": [],
+    "calculators/hra-exemption-calculator/index.html": [],
+    "calculators/income-tax-calculator/index.html": [],
+    "calculators/loan-affordability-calculator/index.html": [],
+    "calculators/loan-comparison-calculator/index.html": [],
+    "calculators/loan-eligibility-calculator/index.html": [],
+    "calculators/love-compatibility-calculator/index.html": [],
+    "calculators/matrix-calculator/index.html": [],
+    "calculators/net-worth-calculator/index.html": [],
+    "calculators/numerology-calculator/index.html": [],
+    "calculators/overtime-pay-calculator/index.html": [],
+    "calculators/password-generator/index.html": [],
+    "calculators/percentage-calculator/index.html": [],
+    "calculators/pomodoro-study-timer/index.html": [],
+    "calculators/ppf-calculator/index.html": [],
+    "calculators/pregnancy-due-date-calculator/index.html": [],
+    "calculators/qr-code-generator/index.html": [],
+    "calculators/qr-code-scanner/index.html": [],
+    "calculators/random-number-generator/index.html": [],
+    "calculators/retirement-calculator/index.html": [],
+    "calculators/salary-calculator/index.html": [],
+    "calculators/savings-goal-calculator/index.html": [],
+    "calculators/scientific-calculator/index.html": [],
+    "calculators/simple-interest-calculator/index.html": [],
+    "calculators/sip-calculator/index.html": [],
+    "calculators/sleep-cycle-calculator/index.html": [],
+    "calculators/speed-distance-time-calculator/index.html": [],
+    "calculators/split-bill-calculator/index.html": [],
+    "calculators/statistics-calculator/index.html": [],
+    "calculators/stock-profit-calculator/index.html": [],
+    "calculators/time-zone-converter/index.html": [],
+    "calculators/tip-calculator/index.html": [],
+    "calculators/unit-currency-converter/index.html": [],
+    "calculators/unit-price-calculator/index.html": [],
+    "calculators/water-intake-calculator/index.html": [],
+    "calculators/world-clock/index.html": [],
+    "categories/daily-utilities/index.html": [],
+    "categories/date-time/index.html": [],
+    "categories/education-students/index.html": [],
+    "categories/finance/index.html": [],
+    "categories/health-fitness/index.html": [],
+    "categories/investment-savings/index.html": [],
+    "categories/tax-business/index.html": [],
+    "contact/index.html": [],
+    "disclaimer/index.html": [],
+    "faq/index.html": [],
+    "index.html": [],
+    "privacy/index.html": [],
+    "terms/index.html": [],
+    "tools/index.html": []
+  },
+  "tokens": {},
+  "h1_footer": {
+    "about/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "blog/age-calculator-find-your-exact-age-in-days-hours/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "blog/bmi-calculator-what-your-number-really-means/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "blog/cgpa-to-percentage-every-university-formula/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "blog/electricity-bill-calculator-stop-overpaying/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "blog/emi-calculator-everything-about-home-car-loans/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "blog/gst-calculator-how-gst-works-in-india/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "blog/how-to-use-the-scientific-calculator-like-a-pro/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "blog/income-tax-india-2025-26-budget-2025-new-vs-old-regime/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "blog/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "blog/install-suvocalc-as-a-free-app-no-app-store-needed/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "blog/loan-eligibility-how-much-can-you-borrow/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "blog/password-generator-create-unbreakable-passwords/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "blog/percentage-7-everyday-uses-you-must-know/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "blog/pomodoro-technique-study-4x-more-effectively/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "blog/sip-calculator-build-1-crore-with-5000-per-month/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "blog/stock-profit-calculator-know-your-real-returns/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/age-calculator/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/area-calculator/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/attendance-calculator/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/bmi-calculator/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/body-fat-calculator/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/break-even-calculator/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/budget-calculator/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/cagr-calculator/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/calorie-calculator/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/cgpa-calculator/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/compound-interest-calculator/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/crypto-calculator/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/date-difference-calculator/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/discount-calculator/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/electricity-bill-calculator/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/emi-calculator/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/fixed-deposit-calculator/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/fuel-cost-calculator/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/grade-calculator/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/graph-plotter/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/gst-calculator/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/heart-rate-calculator/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/home-loan-tax-benefit-calculator/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/hra-exemption-calculator/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/income-tax-calculator/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/loan-affordability-calculator/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/loan-comparison-calculator/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/loan-eligibility-calculator/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/love-compatibility-calculator/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/matrix-calculator/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/net-worth-calculator/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/numerology-calculator/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/overtime-pay-calculator/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/password-generator/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/percentage-calculator/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/pomodoro-study-timer/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/ppf-calculator/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/pregnancy-due-date-calculator/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/qr-code-generator/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/qr-code-scanner/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/random-number-generator/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/retirement-calculator/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/salary-calculator/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/savings-goal-calculator/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/scientific-calculator/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/simple-interest-calculator/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/sip-calculator/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/sleep-cycle-calculator/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/speed-distance-time-calculator/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/split-bill-calculator/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/statistics-calculator/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/stock-profit-calculator/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/time-zone-converter/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/tip-calculator/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/unit-currency-converter/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/unit-price-calculator/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/water-intake-calculator/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "calculators/world-clock/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "categories/daily-utilities/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "categories/date-time/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "categories/education-students/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "categories/finance/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "categories/health-fitness/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "categories/investment-savings/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "categories/tax-business/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "contact/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "disclaimer/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "faq/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "privacy/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "terms/index.html": {
+      "h1": 1,
+      "footer": 1
+    },
+    "tools/index.html": {
+      "h1": 1,
+      "footer": 1
+    }
+  },
+  "links": {
+    "broken": [],
+    "external": [
+      {
+        "page": "about/index.html",
+        "url": "https://suvocalc.com/about/"
+      },
+      {
+        "page": "blog/age-calculator-find-your-exact-age-in-days-hours/index.html",
+        "url": "https://suvocalc.com/blog/age-calculator-find-your-exact-age-in-days-hours/"
+      },
+      {
+        "page": "blog/bmi-calculator-what-your-number-really-means/index.html",
+        "url": "https://suvocalc.com/blog/bmi-calculator-what-your-number-really-means/"
+      },
+      {
+        "page": "blog/cgpa-to-percentage-every-university-formula/index.html",
+        "url": "https://suvocalc.com/blog/cgpa-to-percentage-every-university-formula/"
+      },
+      {
+        "page": "blog/electricity-bill-calculator-stop-overpaying/index.html",
+        "url": "https://suvocalc.com/blog/electricity-bill-calculator-stop-overpaying/"
+      },
+      {
+        "page": "blog/emi-calculator-everything-about-home-car-loans/index.html",
+        "url": "https://suvocalc.com/blog/emi-calculator-everything-about-home-car-loans/"
+      },
+      {
+        "page": "blog/gst-calculator-how-gst-works-in-india/index.html",
+        "url": "https://suvocalc.com/blog/gst-calculator-how-gst-works-in-india/"
+      },
+      {
+        "page": "blog/how-to-use-the-scientific-calculator-like-a-pro/index.html",
+        "url": "https://suvocalc.com/blog/how-to-use-the-scientific-calculator-like-a-pro/"
+      },
+      {
+        "page": "blog/income-tax-india-2025-26-budget-2025-new-vs-old-regime/index.html",
+        "url": "https://suvocalc.com/blog/income-tax-india-2025-26-budget-2025-new-vs-old-regime/"
+      },
+      {
+        "page": "blog/index.html",
+        "url": "https://suvocalc.com/blog/"
+      },
+      {
+        "page": "blog/install-suvocalc-as-a-free-app-no-app-store-needed/index.html",
+        "url": "https://suvocalc.com/blog/install-suvocalc-as-a-free-app-no-app-store-needed/"
+      },
+      {
+        "page": "blog/loan-eligibility-how-much-can-you-borrow/index.html",
+        "url": "https://suvocalc.com/blog/loan-eligibility-how-much-can-you-borrow/"
+      },
+      {
+        "page": "blog/password-generator-create-unbreakable-passwords/index.html",
+        "url": "https://suvocalc.com/blog/password-generator-create-unbreakable-passwords/"
+      },
+      {
+        "page": "blog/percentage-7-everyday-uses-you-must-know/index.html",
+        "url": "https://suvocalc.com/blog/percentage-7-everyday-uses-you-must-know/"
+      },
+      {
+        "page": "blog/pomodoro-technique-study-4x-more-effectively/index.html",
+        "url": "https://suvocalc.com/blog/pomodoro-technique-study-4x-more-effectively/"
+      },
+      {
+        "page": "blog/sip-calculator-build-1-crore-with-5000-per-month/index.html",
+        "url": "https://suvocalc.com/blog/sip-calculator-build-1-crore-with-5000-per-month/"
+      },
+      {
+        "page": "blog/stock-profit-calculator-know-your-real-returns/index.html",
+        "url": "https://suvocalc.com/blog/stock-profit-calculator-know-your-real-returns/"
+      },
+      {
+        "page": "calculators/age-calculator/index.html",
+        "url": "https://suvocalc.com/calculators/age-calculator/"
+      },
+      {
+        "page": "calculators/area-calculator/index.html",
+        "url": "https://suvocalc.com/calculators/area-calculator/"
+      },
+      {
+        "page": "calculators/attendance-calculator/index.html",
+        "url": "https://suvocalc.com/calculators/attendance-calculator/"
+      },
+      {
+        "page": "calculators/bmi-calculator/index.html",
+        "url": "https://suvocalc.com/calculators/bmi-calculator/"
+      },
+      {
+        "page": "calculators/body-fat-calculator/index.html",
+        "url": "https://suvocalc.com/calculators/body-fat-calculator/"
+      },
+      {
+        "page": "calculators/break-even-calculator/index.html",
+        "url": "https://suvocalc.com/calculators/break-even-calculator/"
+      },
+      {
+        "page": "calculators/budget-calculator/index.html",
+        "url": "https://suvocalc.com/calculators/budget-calculator/"
+      },
+      {
+        "page": "calculators/cagr-calculator/index.html",
+        "url": "https://suvocalc.com/calculators/cagr-calculator/"
+      },
+      {
+        "page": "calculators/calorie-calculator/index.html",
+        "url": "https://suvocalc.com/calculators/calorie-calculator/"
+      },
+      {
+        "page": "calculators/cgpa-calculator/index.html",
+        "url": "https://suvocalc.com/calculators/cgpa-calculator/"
+      },
+      {
+        "page": "calculators/compound-interest-calculator/index.html",
+        "url": "https://suvocalc.com/calculators/compound-interest-calculator/"
+      },
+      {
+        "page": "calculators/crypto-calculator/index.html",
+        "url": "https://suvocalc.com/calculators/crypto-calculator/"
+      },
+      {
+        "page": "calculators/date-difference-calculator/index.html",
+        "url": "https://suvocalc.com/calculators/date-difference-calculator/"
+      },
+      {
+        "page": "calculators/discount-calculator/index.html",
+        "url": "https://suvocalc.com/calculators/discount-calculator/"
+      },
+      {
+        "page": "calculators/electricity-bill-calculator/index.html",
+        "url": "https://suvocalc.com/calculators/electricity-bill-calculator/"
+      },
+      {
+        "page": "calculators/emi-calculator/index.html",
+        "url": "https://suvocalc.com/calculators/emi-calculator/"
+      },
+      {
+        "page": "calculators/fixed-deposit-calculator/index.html",
+        "url": "https://suvocalc.com/calculators/fixed-deposit-calculator/"
+      },
+      {
+        "page": "calculators/fuel-cost-calculator/index.html",
+        "url": "https://suvocalc.com/calculators/fuel-cost-calculator/"
+      },
+      {
+        "page": "calculators/grade-calculator/index.html",
+        "url": "https://suvocalc.com/calculators/grade-calculator/"
+      },
+      {
+        "page": "calculators/graph-plotter/index.html",
+        "url": "https://suvocalc.com/calculators/graph-plotter/"
+      },
+      {
+        "page": "calculators/gst-calculator/index.html",
+        "url": "https://suvocalc.com/calculators/gst-calculator/"
+      },
+      {
+        "page": "calculators/heart-rate-calculator/index.html",
+        "url": "https://suvocalc.com/calculators/heart-rate-calculator/"
+      },
+      {
+        "page": "calculators/home-loan-tax-benefit-calculator/index.html",
+        "url": "https://suvocalc.com/calculators/home-loan-tax-benefit-calculator/"
+      },
+      {
+        "page": "calculators/hra-exemption-calculator/index.html",
+        "url": "https://suvocalc.com/calculators/hra-exemption-calculator/"
+      },
+      {
+        "page": "calculators/income-tax-calculator/index.html",
+        "url": "https://suvocalc.com/calculators/income-tax-calculator/"
+      },
+      {
+        "page": "calculators/loan-affordability-calculator/index.html",
+        "url": "https://suvocalc.com/calculators/loan-affordability-calculator/"
+      },
+      {
+        "page": "calculators/loan-comparison-calculator/index.html",
+        "url": "https://suvocalc.com/calculators/loan-comparison-calculator/"
+      },
+      {
+        "page": "calculators/loan-eligibility-calculator/index.html",
+        "url": "https://suvocalc.com/calculators/loan-eligibility-calculator/"
+      },
+      {
+        "page": "calculators/love-compatibility-calculator/index.html",
+        "url": "https://suvocalc.com/calculators/love-compatibility-calculator/"
+      },
+      {
+        "page": "calculators/matrix-calculator/index.html",
+        "url": "https://suvocalc.com/calculators/matrix-calculator/"
+      },
+      {
+        "page": "calculators/net-worth-calculator/index.html",
+        "url": "https://suvocalc.com/calculators/net-worth-calculator/"
+      },
+      {
+        "page": "calculators/numerology-calculator/index.html",
+        "url": "https://suvocalc.com/calculators/numerology-calculator/"
+      },
+      {
+        "page": "calculators/overtime-pay-calculator/index.html",
+        "url": "https://suvocalc.com/calculators/overtime-pay-calculator/"
+      },
+      {
+        "page": "calculators/password-generator/index.html",
+        "url": "https://suvocalc.com/calculators/password-generator/"
+      },
+      {
+        "page": "calculators/percentage-calculator/index.html",
+        "url": "https://suvocalc.com/calculators/percentage-calculator/"
+      },
+      {
+        "page": "calculators/pomodoro-study-timer/index.html",
+        "url": "https://suvocalc.com/calculators/pomodoro-study-timer/"
+      },
+      {
+        "page": "calculators/ppf-calculator/index.html",
+        "url": "https://suvocalc.com/calculators/ppf-calculator/"
+      },
+      {
+        "page": "calculators/pregnancy-due-date-calculator/index.html",
+        "url": "https://suvocalc.com/calculators/pregnancy-due-date-calculator/"
+      },
+      {
+        "page": "calculators/qr-code-generator/index.html",
+        "url": "https://suvocalc.com/calculators/qr-code-generator/"
+      },
+      {
+        "page": "calculators/qr-code-scanner/index.html",
+        "url": "https://suvocalc.com/calculators/qr-code-scanner/"
+      },
+      {
+        "page": "calculators/random-number-generator/index.html",
+        "url": "https://suvocalc.com/calculators/random-number-generator/"
+      },
+      {
+        "page": "calculators/retirement-calculator/index.html",
+        "url": "https://suvocalc.com/calculators/retirement-calculator/"
+      },
+      {
+        "page": "calculators/salary-calculator/index.html",
+        "url": "https://suvocalc.com/calculators/salary-calculator/"
+      },
+      {
+        "page": "calculators/savings-goal-calculator/index.html",
+        "url": "https://suvocalc.com/calculators/savings-goal-calculator/"
+      },
+      {
+        "page": "calculators/scientific-calculator/index.html",
+        "url": "https://suvocalc.com/calculators/scientific-calculator/"
+      },
+      {
+        "page": "calculators/simple-interest-calculator/index.html",
+        "url": "https://suvocalc.com/calculators/simple-interest-calculator/"
+      },
+      {
+        "page": "calculators/sip-calculator/index.html",
+        "url": "https://suvocalc.com/calculators/sip-calculator/"
+      },
+      {
+        "page": "calculators/sleep-cycle-calculator/index.html",
+        "url": "https://suvocalc.com/calculators/sleep-cycle-calculator/"
+      },
+      {
+        "page": "calculators/speed-distance-time-calculator/index.html",
+        "url": "https://suvocalc.com/calculators/speed-distance-time-calculator/"
+      },
+      {
+        "page": "calculators/split-bill-calculator/index.html",
+        "url": "https://suvocalc.com/calculators/split-bill-calculator/"
+      },
+      {
+        "page": "calculators/statistics-calculator/index.html",
+        "url": "https://suvocalc.com/calculators/statistics-calculator/"
+      },
+      {
+        "page": "calculators/stock-profit-calculator/index.html",
+        "url": "https://suvocalc.com/calculators/stock-profit-calculator/"
+      },
+      {
+        "page": "calculators/time-zone-converter/index.html",
+        "url": "https://suvocalc.com/calculators/time-zone-converter/"
+      },
+      {
+        "page": "calculators/tip-calculator/index.html",
+        "url": "https://suvocalc.com/calculators/tip-calculator/"
+      },
+      {
+        "page": "calculators/unit-currency-converter/index.html",
+        "url": "https://suvocalc.com/calculators/unit-currency-converter/"
+      },
+      {
+        "page": "calculators/unit-price-calculator/index.html",
+        "url": "https://suvocalc.com/calculators/unit-price-calculator/"
+      },
+      {
+        "page": "calculators/water-intake-calculator/index.html",
+        "url": "https://suvocalc.com/calculators/water-intake-calculator/"
+      },
+      {
+        "page": "calculators/world-clock/index.html",
+        "url": "https://suvocalc.com/calculators/world-clock/"
+      },
+      {
+        "page": "categories/daily-utilities/index.html",
+        "url": "https://suvocalc.com/categories/daily-utilities/"
+      },
+      {
+        "page": "categories/date-time/index.html",
+        "url": "https://suvocalc.com/categories/date-time/"
+      },
+      {
+        "page": "categories/education-students/index.html",
+        "url": "https://suvocalc.com/categories/education-students/"
+      },
+      {
+        "page": "categories/finance/index.html",
+        "url": "https://suvocalc.com/categories/finance/"
+      },
+      {
+        "page": "categories/health-fitness/index.html",
+        "url": "https://suvocalc.com/categories/health-fitness/"
+      },
+      {
+        "page": "categories/investment-savings/index.html",
+        "url": "https://suvocalc.com/categories/investment-savings/"
+      },
+      {
+        "page": "categories/tax-business/index.html",
+        "url": "https://suvocalc.com/categories/tax-business/"
+      },
+      {
+        "page": "contact/index.html",
+        "url": "https://suvocalc.com/contact/"
+      },
+      {
+        "page": "disclaimer/index.html",
+        "url": "https://suvocalc.com/disclaimer/"
+      },
+      {
+        "page": "faq/index.html",
+        "url": "https://suvocalc.com/faq/"
+      },
+      {
+        "page": "index.html",
+        "url": "https://suvocalc.com/"
+      },
+      {
+        "page": "privacy/index.html",
+        "url": "https://suvocalc.com/privacy/"
+      },
+      {
+        "page": "privacy/index.html",
+        "url": "https://policies.google.com/privacy"
+      },
+      {
+        "page": "privacy/index.html",
+        "url": "https://www.google.com/settings/ads"
+      },
+      {
+        "page": "terms/index.html",
+        "url": "https://suvocalc.com/terms/"
+      },
+      {
+        "page": "tools/index.html",
+        "url": "https://suvocalc.com/tools/"
+      }
+    ],
+    "anchors_missing": []
+  },
+  "counts": {
+    "registry_total": 58,
+    "registry_counted": 57,
+    "registry_uncounted": [
+      "scientific-calculator"
+    ],
+    "calculator_pages_on_disk": 58,
+    "calculator_slugs_missing": [],
+    "calculator_dirs_extra": [],
+    "blog_articles_on_disk": 15,
+    "blog_index": true,
+    "category_pages": [
+      "daily-utilities",
+      "date-time",
+      "education-students",
+      "finance",
+      "health-fitness",
+      "investment-savings",
+      "tax-business"
+    ],
+    "category_count": 7,
+    "h1_violations": {},
+    "footer_violations": {},
+    "registry_category_counts": {
+      "daily-utilities": 16,
+      "date-time": 3,
+      "education-students": 5,
+      "finance": 11,
+      "health-fitness": 8,
+      "investment-savings": 9,
+      "tax-business": 5
+    },
+    "sitemap_loc_count": 89,
+    "sitemap_missing_files": [],
+    "sitemap_equals_page_count": true,
+    "robots_points_to_sitemap": true
+  },
+  "banned": [],
+  "duplicates": {
+    "homepage_sections": {
+      "unnamed@8330": [],
+      "unnamed@9392": [
+        "age-calculator",
+        "bmi-calculator",
+        "compound-interest-calculator",
+        "discount-calculator",
+        "emi-calculator",
+        "income-tax-calculator",
+        "percentage-calculator",
+        "sip-calculator"
+      ],
+      "unnamed@18041": [],
+      "unnamed@20380": [],
+      "unnamed@20571": [
+        "gst-calculator"
+      ],
+      "unnamed@21112": [
+        "budget-calculator",
+        "loan-affordability-calculator",
+        "loan-eligibility-calculator",
+        "overtime-pay-calculator",
+        "salary-calculator",
+        "simple-interest-calculator"
+      ],
+      "unnamed@27806": [
+        "body-fat-calculator",
+        "calorie-calculator",
+        "pregnancy-due-date-calculator",
+        "water-intake-calculator"
+      ],
+      "unnamed@32307": [
+        "cgpa-calculator",
+        "grade-calculator",
+        "matrix-calculator",
+        "pomodoro-study-timer"
+      ],
+      "unnamed@36715": [
+        "electricity-bill-calculator",
+        "fuel-cost-calculator",
+        "password-generator",
+        "random-number-generator"
+      ],
+      "unnamed@41060": [
+        "scientific-calculator"
+      ],
+      "unnamed@41327": [],
+      "unnamed@41854": [],
+      "unnamed@42405": []
+    },
+    "homepage_slug_in_two_sections": [],
+    "homepage_all_calc_slugs": [
+      "age-calculator",
+      "bmi-calculator",
+      "body-fat-calculator",
+      "budget-calculator",
+      "calorie-calculator",
+      "cgpa-calculator",
+      "compound-interest-calculator",
+      "discount-calculator",
+      "electricity-bill-calculator",
+      "emi-calculator",
+      "fuel-cost-calculator",
+      "grade-calculator",
+      "gst-calculator",
+      "income-tax-calculator",
+      "loan-affordability-calculator",
+      "loan-eligibility-calculator",
+      "matrix-calculator",
+      "overtime-pay-calculator",
+      "password-generator",
+      "percentage-calculator",
+      "pomodoro-study-timer",
+      "pregnancy-due-date-calculator",
+      "random-number-generator",
+      "salary-calculator",
+      "scientific-calculator",
+      "simple-interest-calculator",
+      "sip-calculator",
+      "water-intake-calculator"
+    ],
+    "tools_page_card_hrefs": 114,
+    "tools_page_distinct_slugs": 57,
+    "tools_page_duplicated_slugs": [
+      "age-calculator",
+      "area-calculator",
+      "attendance-calculator",
+      "bmi-calculator",
+      "body-fat-calculator",
+      "break-even-calculator",
+      "budget-calculator",
+      "cagr-calculator",
+      "calorie-calculator",
+      "cgpa-calculator",
+      "compound-interest-calculator",
+      "crypto-calculator",
+      "date-difference-calculator",
+      "discount-calculator",
+      "electricity-bill-calculator",
+      "emi-calculator",
+      "fixed-deposit-calculator",
+      "fuel-cost-calculator",
+      "grade-calculator",
+      "graph-plotter",
+      "gst-calculator",
+      "heart-rate-calculator",
+      "home-loan-tax-benefit-calculator",
+      "hra-exemption-calculator",
+      "income-tax-calculator",
+      "loan-affordability-calculator",
+      "loan-comparison-calculator",
+      "loan-eligibility-calculator",
+      "love-compatibility-calculator",
+      "matrix-calculator",
+      "net-worth-calculator",
+      "numerology-calculator",
+      "overtime-pay-calculator",
+      "password-generator",
+      "percentage-calculator",
+      "pomodoro-study-timer",
+      "ppf-calculator",
+      "pregnancy-due-date-calculator",
+      "qr-code-generator",
+      "qr-code-scanner",
+      "random-number-generator",
+      "retirement-calculator",
+      "salary-calculator",
+      "savings-goal-calculator",
+      "simple-interest-calculator",
+      "sip-calculator",
+      "sleep-cycle-calculator",
+      "speed-distance-time-calculator",
+      "split-bill-calculator",
+      "statistics-calculator",
+      "stock-profit-calculator",
+      "time-zone-converter",
+      "tip-calculator",
+      "unit-currency-converter",
+      "unit-price-calculator",
+      "water-intake-calculator",
+      "world-clock"
+    ],
+    "tools_page_has_scientific": false
+  },
+  "blog": {
+    "source_related_counts": {
+      "age-calculator-find-your-exact-age-in-days-hours.md": 3,
+      "bmi-calculator-what-your-number-really-means.md": 3,
+      "cgpa-to-percentage-every-university-formula.md": 3,
+      "electricity-bill-calculator-stop-overpaying.md": 3,
+      "emi-calculator-everything-about-home-car-loans.md": 3,
+      "gst-calculator-how-gst-works-in-india.md": 3,
+      "how-to-use-the-scientific-calculator-like-a-pro.md": 3,
+      "income-tax-india-2025-26-budget-2025-new-vs-old-regime.md": 3,
+      "install-suvocalc-as-a-free-app-no-app-store-needed.md": 0,
+      "loan-eligibility-how-much-can-you-borrow.md": 3,
+      "password-generator-create-unbreakable-passwords.md": 2,
+      "percentage-7-everyday-uses-you-must-know.md": 3,
+      "pomodoro-technique-study-4x-more-effectively.md": 3,
+      "sip-calculator-build-1-crore-with-5000-per-month.md": 3,
+      "stock-profit-calculator-know-your-real-returns.md": 3
+    },
+    "generated_related": {
+      "age-calculator-find-your-exact-age-in-days-hours": [],
+      "bmi-calculator-what-your-number-really-means": [],
+      "cgpa-to-percentage-every-university-formula": [],
+      "electricity-bill-calculator-stop-overpaying": [],
+      "emi-calculator-everything-about-home-car-loans": [],
+      "gst-calculator-how-gst-works-in-india": [],
+      "how-to-use-the-scientific-calculator-like-a-pro": [],
+      "income-tax-india-2025-26-budget-2025-new-vs-old-regime": [],
+      "install-suvocalc-as-a-free-app-no-app-store-needed": [],
+      "loan-eligibility-how-much-can-you-borrow": [],
+      "password-generator-create-unbreakable-passwords": [],
+      "percentage-7-everyday-uses-you-must-know": [],
+      "pomodoro-technique-study-4x-more-effectively": [],
+      "sip-calculator-build-1-crore-with-5000-per-month": [],
+      "stock-profit-calculator-know-your-real-returns": []
+    },
+    "source_titles": {
+      "age-calculator-find-your-exact-age-in-days-hours.md": "Age Calculator: Find Your Exact Age in Days & Hours",
+      "bmi-calculator-what-your-number-really-means.md": "BMI Calculator: What Your Number Really Means",
+      "cgpa-to-percentage-every-university-formula.md": "CGPA to Percentage: Every University Formula",
+      "electricity-bill-calculator-stop-overpaying.md": "Electricity Bill Calculator: Stop Overpaying",
+      "emi-calculator-everything-about-home-car-loans.md": "EMI Calculator: Everything About Home & Car Loans",
+      "gst-calculator-how-gst-works-in-india.md": "GST Calculator: How GST Works in India",
+      "how-to-use-the-scientific-calculator-like-a-pro.md": "How to Use the Scientific Calculator Like a Pro",
+      "income-tax-india-2025-26-budget-2025-new-vs-old-regime.md": "Income Tax India 2025-26 (Budget 2025): New vs Old Regime",
+      "install-suvocalc-as-a-free-app-no-app-store-needed.md": "Install SuvoCalc as a Free App \u2014 No App Store Needed",
+      "loan-eligibility-how-much-can-you-borrow.md": "Loan Eligibility: How Much Can You Borrow?",
+      "password-generator-create-unbreakable-passwords.md": "Password Generator: Create Unbreakable Passwords",
+      "percentage-7-everyday-uses-you-must-know.md": "Percentage: 7 Everyday Uses You Must Know",
+      "pomodoro-technique-study-4x-more-effectively.md": "Pomodoro Technique: Study 4x More Effectively",
+      "sip-calculator-build-1-crore-with-5000-per-month.md": "SIP Calculator: Build \u20b91 Crore with \u20b95000/Month",
+      "stock-profit-calculator-know-your-real-returns.md": "Stock Profit Calculator: Know Your Real Returns"
+    },
+    "source_related": {
+      "age-calculator-find-your-exact-age-in-days-hours.md": [
+        "age-calculator",
+        "pregnancy-due-date-calculator",
+        "bmi-calculator"
+      ],
+      "bmi-calculator-what-your-number-really-means.md": [
+        "bmi-calculator",
+        "age-calculator",
+        "calorie-calculator"
+      ],
+      "cgpa-to-percentage-every-university-formula.md": [
+        "cgpa-calculator",
+        "grade-calculator",
+        "percentage-calculator"
+      ],
+      "electricity-bill-calculator-stop-overpaying.md": [
+        "electricity-bill-calculator",
+        "fuel-cost-calculator",
+        "unit-and-currency-converter"
+      ],
+      "emi-calculator-everything-about-home-car-loans.md": [
+        "emi-calculator",
+        "loan-eligibility-calculator",
+        "sip-calculator"
+      ],
+      "gst-calculator-how-gst-works-in-india.md": [
+        "gst-calculator",
+        "income-tax-calculator",
+        "percentage-calculator"
+      ],
+      "how-to-use-the-scientific-calculator-like-a-pro.md": [
+        "scientific-calculator",
+        "graph-plotter",
+        "percentage-calculator"
+      ],
+      "income-tax-india-2025-26-budget-2025-new-vs-old-regime.md": [
+        "income-tax-calculator",
+        "gst-calculator",
+        "sip-calculator"
+      ],
+      "install-suvocalc-as-a-free-app-no-app-store-needed.md": [],
+      "loan-eligibility-how-much-can-you-borrow.md": [
+        "loan-eligibility-calculator",
+        "emi-calculator",
+        "sip-calculator"
+      ],
+      "password-generator-create-unbreakable-passwords.md": [
+        "password-generator",
+        "random-number-generator"
+      ],
+      "percentage-7-everyday-uses-you-must-know.md": [
+        "percentage-calculator",
+        "discount-calculator",
+        "gst-calculator"
+      ],
+      "pomodoro-technique-study-4x-more-effectively.md": [
+        "pomodoro-study-timer",
+        "cgpa-calculator",
+        "grade-calculator"
+      ],
+      "sip-calculator-build-1-crore-with-5000-per-month.md": [
+        "sip-calculator",
+        "emi-calculator",
+        "stock-profit-calculator"
+      ],
+      "stock-profit-calculator-know-your-real-returns.md": [
+        "stock-profit-calculator",
+        "crypto-calculator",
+        "sip-calculator"
+      ]
+    }
+  },
+  "banned_raw_hits": [
+    {
+      "page": "blog/cgpa-to-percentage-every-university-formula/index.html",
+      "line": 84,
+      "pattern": "6.0",
+      "match": "6.0",
+      "context": "></tr><tr><td>7.0</td><td>66.5%</td><td>B+</td></tr><tr><td>6.0</td><td>57%</td><td>B</td></tr></table><h2>University-speci"
+    },
+    {
+      "page": "calculators/qr-code-scanner/index.html",
+      "line": 240,
+      "pattern": "v23",
+      "match": "v23",
+      "context": "scanLine.className='v23-qr-scan-line';"
+    }
+  ],
+  "banned_hit_count": 2
+}

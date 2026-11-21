@@ -1,0 +1,45 @@
+{
+  "slug": "emi-calculator",
+  "intro": "The EMI Calculator works out the fixed monthly payment (EMI) for a home loan, car loan, or personal loan, along with the total amount you will pay and the total interest.",
+  "uses": "It is used before taking a loan to check whether the monthly instalment fits your budget, and to compare how different loan amounts, interest rates, and tenures change what you pay overall.",
+  "formula": "EMI = P × r × (1+r)^n / ((1+r)^n − 1), where P is the loan amount, r is the monthly interest rate (annual rate ÷ 12 ÷ 100), and n is the tenure in months. Total payment = EMI × n. Total interest = Total payment − P.",
+  "example": "Inputs: Loan Amount = ₹5,00,000, Annual Interest Rate = 8.5%, Tenure = 60 months. Step 1: monthly rate r = 8.5 ÷ 12 ÷ 100 = 0.007083. Step 2: (1+r)^60 = 1.527. Step 3: EMI = 5,00,000 × 0.007083 × 1.527 ÷ (1.527 − 1) = ₹10,258 per month. Step 4: total payment = 10,258 × 60 = ₹6,15,496. Step 5: total interest = 6,15,496 − 5,00,000 = ₹1,15,496.",
+  "howTo": [
+    "Step 1: Enter the amount you want to borrow in the \"Loan Amount (₹)\" field.",
+    "Step 2: Enter the annual interest rate in the \"Annual Interest Rate (%)\" field.",
+    "Step 3: Enter the repayment period in the \"Tenure (Months)\" field.",
+    "Step 4: Tap Calculate to see your monthly EMI.",
+    "Step 5: Read the breakdown below the result: total payment, total interest, principal, and interest as a percentage of the loan."
+  ],
+  "tips": [
+    "A longer tenure lowers the EMI but increases the total interest you pay — check the total interest, not just the EMI.",
+    "Even a 0.5% lower interest rate can save a large amount on a long home loan, so compare rates from more than one lender.",
+    "If you can afford a slightly higher EMI, a shorter tenure saves the most interest.",
+    "Keep your total EMIs within about half your monthly income so repayments stay comfortable."
+  ],
+  "mistakes": [
+    "Entering the tenure in years instead of months — the calculator expects months, so 5 years must be entered as 60.",
+    "Entering the monthly rate instead of the annual rate in the interest field.",
+    "Choosing a loan only by the lowest EMI and ignoring the much larger total interest over a long tenure.",
+    "Forgetting that the EMI does not include extra costs such as processing fees or insurance."
+  ],
+  "faqs": [
+    {
+      "q": "What is EMI?",
+      "a": "EMI stands for Equated Monthly Instalment — the fixed amount you pay every month to repay a loan. Each EMI has two parts: interest on the outstanding loan and a part of the principal. Early EMIs are mostly interest; later EMIs repay more principal."
+    },
+    {
+      "q": "Does a longer tenure always mean a lower EMI?",
+      "a": "Yes, spreading the loan over more months lowers the monthly EMI, but you pay interest for longer, so the total interest — and the total amount paid — goes up."
+    },
+    {
+      "q": "Can I reduce my EMI after taking a loan?",
+      "a": "You can ask your lender to extend the tenure, refinance the loan at a lower rate, or make part-prepayments to reduce the principal, which lowers future interest. Each option has its own conditions, so confirm them with your lender."
+    }
+  ],
+  "related": [
+    "loan-eligibility-calculator",
+    "loan-affordability-calculator",
+    "loan-comparison-calculator"
+  ]
+}

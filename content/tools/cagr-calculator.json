@@ -1,0 +1,44 @@
+{
+  "slug": "cagr-calculator",
+  "intro": "The CAGR Calculator finds the Compound Annual Growth Rate — the steady yearly rate at which an investment, business, or any value grew from a starting amount to an ending amount.",
+  "uses": "It is used to compare investments held for different lengths of time, to judge a fund or stock by its annualised growth rather than its total gain, and to measure how fast a business metric such as revenue has grown.",
+  "formula": "CAGR = (Ending Value ÷ Starting Value)^(1 ÷ Number of Years) − 1, shown as a percentage. Absolute return = (Ending Value − Starting Value) ÷ Starting Value × 100. Total gain = Ending Value − Starting Value.",
+  "example": "Inputs: Starting Value = ₹50,000, Ending Value = ₹1,20,000, Number of Years = 5. Step 1: ratio = 1,20,000 ÷ 50,000 = 2.4. Step 2: CAGR = 2.4^(1 ÷ 5) − 1 = 2.4^0.2 − 1 = 0.1914, or 19.14% per year. Step 3: total gain = 1,20,000 − 50,000 = ₹70,000. Step 4: absolute return = 70,000 ÷ 50,000 × 100 = 140%.",
+  "howTo": [
+    "Step 1: Enter the value at the start of the period in the \"Starting Value (₹)\" field.",
+    "Step 2: Enter the value at the end of the period in the \"Ending Value (₹)\" field.",
+    "Step 3: Enter the length of the period in the \"Number of Years\" field.",
+    "Step 4: Tap Calculate to see the CAGR, the absolute return, the total gain, and the period."
+  ],
+  "tips": [
+    "CAGR smooths out the ups and downs — it shows the steady rate that would produce the same result, not the actual return in any single year.",
+    "Use CAGR to compare two investments held for different periods; total return alone is misleading when the periods differ.",
+    "A high CAGR over a short period is less meaningful than a steady CAGR over many years.",
+    "CAGR only needs the start value, end value, and time — it ignores any money added or withdrawn in between, so use it only when there were no extra deposits."
+  ],
+  "mistakes": [
+    "Comparing total returns instead of CAGR when the holding periods are different.",
+    "Treating CAGR as the return earned every year — real yearly returns vary around it.",
+    "Using CAGR when money was added or withdrawn during the period, which makes the result wrong.",
+    "Entering the number of years as months, which makes the CAGR far too low."
+  ],
+  "faqs": [
+    {
+      "q": "What is CAGR?",
+      "a": "CAGR is the Compound Annual Growth Rate — the constant yearly growth rate that would take a starting value to an ending value over a given number of years. For example, ₹50,000 growing to ₹1,20,000 in 5 years is a CAGR of 19.14%."
+    },
+    {
+      "q": "What is the difference between CAGR and absolute return?",
+      "a": "Absolute return is the total gain as a percentage of the starting value, without considering time — 140% in the example above. CAGR spreads that growth over the years, giving 19.14% per year over 5 years."
+    },
+    {
+      "q": "Is a higher CAGR always better?",
+      "a": "Not always. A higher CAGR is better for the same period and the same risk, but a very high CAGR over one year may come with high risk or luck. Compare CAGR over similar periods and consider the risk taken."
+    }
+  ],
+  "related": [
+    "stock-profit-calculator",
+    "sip-calculator",
+    "crypto-calculator"
+  ]
+}

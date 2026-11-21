@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Loan Comparison Calculator | SuvoCalc v31</title>
+<meta name="description" content="Compare two loan options side by side — different rates, tenures or amounts. Find which loan saves you more.">
+<link rel="canonical" href="https://suvocalc.com/calculators/loan-comparison-calculator/">
+<script>
+/* Apply saved theme before CSS loads to avoid a flash. No other logic here. */
+(function () {
+  try {
+    var t = localStorage.getItem('sc_theme');
+    if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+  } catch (e) { /* storage unavailable: keep light default */ }
+})();
+</script>
+<link rel="stylesheet" href="../../assets/css/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Loan Comparison Calculator | SuvoCalc","url":"https://suvocalc.com/calculators/loan-comparison-calculator/","applicationCategory":"CalculatorApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Compare two loan options side by side — different rates, tenures or amounts. Find which loan saves you more."}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://suvocalc.com/"},{"@type":"ListItem","position":2,"name":"Finance & Money","item":"https://suvocalc.com/categories/finance/"},{"@type":"ListItem","position":3,"name":"Loan Comparison Calculator","item":"https://suvocalc.com/calculators/loan-comparison-calculator/"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is a lower EMI always the better loan?","acceptedAnswer":{"@type":"Answer","text":"No. A lower EMI usually comes from a longer tenure, and the extra months of interest can make the loan much more expensive overall. Compare the total payment, not just the EMI."}},{"@type":"Question","name":"How do I compare two home loans with different rates and tenures?","acceptedAnswer":{"@type":"Answer","text":"Enter the same loan amount for both, then each offer's rate and tenure in months. The calculator shows both EMIs, total payments, and total interest, and marks the cheaper one."}},{"@type":"Question","name":"Why can a loan with a higher interest rate cost less in total?","acceptedAnswer":{"@type":"Answer","text":"Because the tenure matters as much as the rate. A shorter tenure means fewer months of interest, which can outweigh a higher rate — in the worked example, the 9% loan over 15 years costs ₹2,57,096 less than the 8.5% loan over 20 years."}}]}
+</script>
+
+</head>
+<body data-active-nav="tools" data-tool-url-prefix="../../" data-tool-slug="loan-comparison-calculator" data-tool-title="Loan Comparison Calculator">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="../../index.html" aria-label="SuvoCalc home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="11" x2="8" y2="11.01"/><line x1="12" y1="11" x2="12" y2="11.01"/><line x1="16" y1="11" x2="16" y2="11.01"/><line x1="8" y1="15" x2="8" y2="15.01"/><line x1="12" y1="15" x2="12" y2="15.01"/><line x1="16" y1="15" x2="16" y2="15.01"/></svg>
+      </span>
+      <span class="brand-name">SuvoCalc</span>
+      <span class="brand-version">v31</span>
+    </a>
+
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+      <a class="nav-link" data-nav="home" href="../../index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Home</span>
+      </a>
+      <a class="nav-link" data-nav="tools" href="../../tools/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        <span>All Tools</span>
+      </a>
+      <a class="nav-link" data-nav="categories" href="../../tools/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+        <span>Categories</span>
+      </a>
+      <a class="nav-link" data-nav="blog" href="../../blog/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        <span>Blog/Guides</span>
+      </a>
+      <a class="nav-link" data-nav="about" href="../../about/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        <span>About</span>
+      </a>
+      <a class="nav-link" data-nav="contact" href="../../contact/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span>Contact</span>
+      </a>
+    </nav>
+
+    <div class="header-actions">
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch between light and dark theme">
+        <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <span class="theme-toggle-label">Theme</span>
+      </button>
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="page-main">
+<nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/categories/finance/">Finance &amp; Money</a></li><li><span aria-current="page">Loan Comparison Calculator</span></li></ol></nav>
+  <h1 class="page-title">Loan Comparison Calculator</h1>
+<p class="lead">The Loan Comparison Calculator places two loan offers side by side using the same loan amount, and shows each one&#39;s EMI, total payment, and total interest so you can see which offer costs less overall.</p>
+<section class="content-block"><h2>What it is used for</h2><p>It is used to compare two home loan or car loan offers with different rates or tenures, to test whether a lower EMI is really cheaper, and to see how much money the better offer saves you.</p></section>
+<section class="calc-card" aria-label="Loan Comparison Calculator calculator">
+<form id="calc-form" class="calc-form">
+<div class="field"><label for="lcP">Loan Amount (₹)</label><input type="number" id="lcP" name="lcP" placeholder="e.g. 1000000"></div>
+<div class="field"><label for="lcR1">Loan 1 Rate (%)</label><input type="number" id="lcR1" name="lcR1" placeholder="e.g. 8.5"></div>
+<div class="field"><label for="lcN1">Loan 1 Tenure (months)</label><input type="number" id="lcN1" name="lcN1" placeholder="e.g. 240"></div>
+<div class="field"><label for="lcR2">Loan 2 Rate (%)</label><input type="number" id="lcR2" name="lcR2" placeholder="e.g. 9.0"></div>
+<div class="field"><label for="lcN2">Loan 2 Tenure (months)</label><input type="number" id="lcN2" name="lcN2" placeholder="e.g. 180"></div>
+<button type="submit" id="calc-btn" class="btn btn-primary btn-block">Calculate</button>
+</form>
+<div class="tool-outputs"><div id="res-lcomp" class="tool-output"></div></div>
+<div class="result-box" id="res-box">
+<p class="result-label" id="res-label">Monthly EMI</p>
+<p class="result-value" id="res-value">&mdash;</p>
+<p class="result-details" id="res-details"></p>
+<p class="result-error" id="res-error" hidden></p>
+<div class="share-row"><button type="button" class="btn btn-secondary btn-small" id="share-result">Share result</button><span class="share-status" id="share-status" role="status"></span></div>
+</div>
+</section>
+<section class="content-block"><h2>Formula</h2><p class="formula-box">Each loan&#39;s EMI is calculated as EMI = P × r × (1+r)^n / ((1+r)^n − 1), where P is the loan amount, r is the monthly rate, and n is the tenure in months. Total payment = EMI × n. Total interest = Total payment − P. The loan with the lower total payment is marked better.</p></section>
+<section class="content-block"><h2>Worked example</h2><p>Inputs: Loan Amount = ₹10,00,000. Loan 1: Rate 8.5%, Tenure 240 months. Loan 2: Rate 9%, Tenure 180 months. Step 1: Loan 1 EMI = ₹8,678, total payment = ₹20,82,776, interest = ₹10,82,776. Step 2: Loan 2 EMI = ₹10,143, total payment = ₹18,25,680, interest = ₹8,25,680. Step 3: Loan 2 costs ₹2,57,096 less in total, even though its monthly EMI is higher — the shorter tenure saves the interest.</p></section>
+<section class="content-block"><h2>How to use</h2><ol class="steps"><li>Step 1: Enter the amount you want to borrow in the &quot;Loan Amount (₹)&quot; field — both loans use this same amount.</li><li>Step 2: Enter the first offer&#39;s rate in &quot;Loan 1 Rate (%)&quot; and its tenure in &quot;Loan 1 Tenure (months)&quot;.</li><li>Step 3: Enter the second offer&#39;s rate in &quot;Loan 2 Rate (%)&quot; and its tenure in &quot;Loan 2 Tenure (months)&quot;.</li><li>Step 4: Tap Calculate to see both EMIs, totals, and interest side by side.</li><li>Step 5: Read which loan is marked better and how much it saves you in total payment.</li></ol></section>
+<section class="content-block"><h2>Tips</h2><ul><li>Judge a loan by its total payment, not by its EMI — a lower EMI over a longer tenure usually costs much more in interest.</li><li>A slightly higher rate with a shorter tenure can still be the cheaper loan, as the example above shows.</li><li>Compare offers with the same loan amount so the comparison is fair.</li><li>Ask about processing fees and prepayment charges too — they are not included in this comparison.</li></ul></section>
+<section class="content-block"><h2>Common mistakes</h2><ul><li>Comparing loans with different amounts, which makes the EMIs meaningless next to each other.</li><li>Entering the tenure in years instead of months — this calculator expects months for both loans.</li><li>Choosing the loan with the lowest EMI without checking the total interest.</li><li>Ignoring that a shorter tenure means a higher EMI, which must still fit your monthly budget.</li></ul></section>
+<section class="content-block faq-list"><h2>Frequently asked questions</h2><details><summary>Is a lower EMI always the better loan?</summary><p>No. A lower EMI usually comes from a longer tenure, and the extra months of interest can make the loan much more expensive overall. Compare the total payment, not just the EMI.</p></details><details><summary>How do I compare two home loans with different rates and tenures?</summary><p>Enter the same loan amount for both, then each offer&#39;s rate and tenure in months. The calculator shows both EMIs, total payments, and total interest, and marks the cheaper one.</p></details><details><summary>Why can a loan with a higher interest rate cost less in total?</summary><p>Because the tenure matters as much as the rate. A shorter tenure means fewer months of interest, which can outweigh a higher rate — in the worked example, the 9% loan over 15 years costs ₹2,57,096 less than the 8.5% loan over 20 years.</p></details></section>
+<section class="content-block"><h2>Related calculators</h2><ul class="related-list"><li><a href="../../calculators/emi-calculator/">EMI / Loan Calculator</a></li><li><a href="../../calculators/loan-eligibility-calculator/">Loan Eligibility Calculator</a></li><li><a href="../../calculators/loan-affordability-calculator/">Loan Affordability Calculator</a></li></ul></section>
+<div class="disclaimer-box"><p>Results are a guide based on the numbers you enter. For loan, tax or investment decisions, check the figures with the bank, the official tax portal, or a qualified adviser.</p></div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-copy">&copy; 2026 SuvoCalc &mdash; v31 &middot; 57 free calculators</p>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="../../privacy/index.html">Privacy</a>
+      <a href="../../terms/index.html">Terms</a>
+      <a href="../../disclaimer/index.html">Disclaimer</a>
+      <a href="../../about/index.html">About</a>
+      <a href="../../contact/index.html">Contact</a>
+      <a href="../../faq/index.html">FAQ</a>
+    </nav>
+  </div>
+</footer>
+
+<nav class="bottom-nav" aria-label="Mobile navigation">
+  <a class="bottom-nav-link" data-nav="home" href="../../index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    <span>Home</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="tools" href="../../tools/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+    <span>Tools</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="categories" href="../../tools/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+    <span>Categories</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="blog" href="../../blog/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+    <span>Guides</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="about" href="../../about/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+    <span>About</span>
+  </a>
+</nav>
+
+<div class="cookie-banner" id="cookie-banner" hidden>
+  <p>SuvoCalc uses local storage on your device to remember your theme and recently used calculators. No account, no tracking.</p>
+  <button type="button" class="btn btn-primary btn-small" id="cookie-accept">Got it</button>
+</div>
+
+<script src="../../assets/js/calc.js"></script>
+<script src="../../assets/js/main.js"></script>
+<script>
+/* v31 no-op stubs: the verbatim v30 calc bodies call these legacy
+   helpers (toast, usage tracking, streaks, haptics, gauge). v31 has
+   none of those systems; the stubs keep a calculation from throwing
+   after it has written its result. */
+function toast(){}
+function trackTool(){}
+function bumpStreak(){}
+function checkMilestone(){}
+function v21Haptic(){}
+function injectBMIGauge(){}
+/* renderH: the sci history UI does not exist in v31; pushH() still
+   records to localStorage, renderH() just has nothing to paint. */
+function renderH(){}
+function runToolCalc(){
+
+            var P=safeNum(document.getElementById('lcP')&&document.getElementById('lcP').value);
+            var r1=safeNum(document.getElementById('lcR1')&&document.getElementById('lcR1').value)/12/100;
+            var n1=safeNum(document.getElementById('lcN1')&&document.getElementById('lcN1').value);
+            var r2=safeNum(document.getElementById('lcR2')&&document.getElementById('lcR2').value)/12/100;
+            var n2=safeNum(document.getElementById('lcN2')&&document.getElementById('lcN2').value);
+            if(!P||!r1||!n1||!r2||!n2){setRes('lcomp','—','Enter all values','');return;}
+            var emi1=P*r1*Math.pow(1+r1,n1)/(Math.pow(1+r1,n1)-1);
+            var emi2=P*r2*Math.pow(1+r2,n2)/(Math.pow(1+r2,n2)-1);
+            var total1=emi1*n1,total2=emi2*n2;
+            var int1=total1-P,int2=total2-P;
+            var better=total1<total2?1:2;
+            var res=document.getElementById('res-lcomp');
+            if(res)res.innerHTML='<div class="loan-compare-grid">' +
+                '<div class="lc-card'+(better===1?' lc-better':'')+'"><div class="lc-head">Loan 1'+(better===1?'<span class="lc-better-badge">BETTER</span>':'')+'</div>' +
+                '<div class="lc-val">'+SYM()+Math.round(emi1).toLocaleString('en-IN')+'</div><div class="lc-sub">Monthly EMI</div>' +
+                '<div style="margin-top:8px;font-size:11px;color:var(--tx3)">Total: '+SYM()+Math.round(total1).toLocaleString('en-IN')+'<br>Interest: ₹'+Math.round(int1).toLocaleString('en-IN')+'</div></div>' +
+                '<div class="lc-card'+(better===2?' lc-better':'')+'"><div class="lc-head">Loan 2'+(better===2?'<span class="lc-better-badge">BETTER</span>':'')+'</div>' +
+                '<div class="lc-val">'+SYM()+Math.round(emi2).toLocaleString('en-IN')+'</div><div class="lc-sub">Monthly EMI</div>' +
+                '<div style="margin-top:8px;font-size:11px;color:var(--tx3)">Total: '+SYM()+Math.round(total2).toLocaleString('en-IN')+'<br>Interest: ₹'+Math.round(int2).toLocaleString('en-IN')+'</div></div>' +
+                '</div>' +
+                '<div style="margin-top:10px;padding:9px 11px;background:var(--g2);border-radius:8px;font-size:12px;color:var(--tx2);">'+
+                (better===1?'Loan 1':'Loan 2')+' saves you <strong style=\"color:var(--gr)\">'+Math.abs(Math.round(total1-total2)).toLocaleString('en-IN')+'</strong> in total payment.</div>';
+        
+}
+(function(){
+try{
+var form=document.getElementById("calc-form");
+if(form){ form.addEventListener("submit",function(ev){ ev.preventDefault(); try{ runToolCalc(); }catch(err){ var e=document.getElementById("res-error"); if(e){ e.textContent="Could not calculate. Please check your numbers and try again."; e.hidden=false; } } }); }
+
+}catch(e){}
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Attendance Calculator | SuvoCalc v31</title>
+<meta name="description" content="Check if you meet the required attendance %, how many classes you can miss, or how many you must attend.">
+<link rel="canonical" href="https://suvocalc.com/calculators/attendance-calculator/">
+<script>
+/* Apply saved theme before CSS loads to avoid a flash. No other logic here. */
+(function () {
+  try {
+    var t = localStorage.getItem('sc_theme');
+    if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+  } catch (e) { /* storage unavailable: keep light default */ }
+})();
+</script>
+<link rel="stylesheet" href="../../assets/css/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Attendance Calculator | SuvoCalc","url":"https://suvocalc.com/calculators/attendance-calculator/","applicationCategory":"CalculatorApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Check if you meet the required attendance %, how many classes you can miss, or how many you must attend."}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://suvocalc.com/"},{"@type":"ListItem","position":2,"name":"Education & Students","item":"https://suvocalc.com/categories/education-students/"},{"@type":"ListItem","position":3,"name":"Attendance Calculator","item":"https://suvocalc.com/calculators/attendance-calculator/"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why is 75% the default?","acceptedAnswer":{"@type":"Answer","text":"Most colleges in India require 75%, and this tool uses 75 as its default. But the real rule is your college's — enter your own required percentage if it is different."}},{"@type":"Question","name":"What does it show when my attendance is already safe?","acceptedAnswer":{"@type":"Answer","text":"If you are above the requirement, the tool tells you how many more classes you can miss and still stay above it."}},{"@type":"Question","name":"Does it work for any subject?","acceptedAnswer":{"@type":"Answer","text":"Yes, as long as every class counts the same. If your college weighs theory and practical classes differently, the result is only an estimate."}}]}
+</script>
+
+</head>
+<body data-active-nav="tools" data-tool-url-prefix="../../" data-tool-slug="attendance-calculator" data-tool-title="Attendance Calculator">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="../../index.html" aria-label="SuvoCalc home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="11" x2="8" y2="11.01"/><line x1="12" y1="11" x2="12" y2="11.01"/><line x1="16" y1="11" x2="16" y2="11.01"/><line x1="8" y1="15" x2="8" y2="15.01"/><line x1="12" y1="15" x2="12" y2="15.01"/><line x1="16" y1="15" x2="16" y2="15.01"/></svg>
+      </span>
+      <span class="brand-name">SuvoCalc</span>
+      <span class="brand-version">v31</span>
+    </a>
+
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+      <a class="nav-link" data-nav="home" href="../../index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Home</span>
+      </a>
+      <a class="nav-link" data-nav="tools" href="../../tools/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        <span>All Tools</span>
+      </a>
+      <a class="nav-link" data-nav="categories" href="../../tools/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+        <span>Categories</span>
+      </a>
+      <a class="nav-link" data-nav="blog" href="../../blog/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        <span>Blog/Guides</span>
+      </a>
+      <a class="nav-link" data-nav="about" href="../../about/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        <span>About</span>
+      </a>
+      <a class="nav-link" data-nav="contact" href="../../contact/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span>Contact</span>
+      </a>
+    </nav>
+
+    <div class="header-actions">
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch between light and dark theme">
+        <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <span class="theme-toggle-label">Theme</span>
+      </button>
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="page-main">
+<nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/categories/education-students/">Education &amp; Students</a></li><li><span aria-current="page">Attendance Calculator</span></li></ol></nav>
+  <h1 class="page-title">Attendance Calculator</h1>
+<p class="lead">The Attendance Calculator checks whether your attendance meets the required percentage, and tells you how many classes you can miss — or how many in a row you must attend to catch up.</p>
+<section class="content-block"><h2>What it is used for</h2><p>It is used by college students to check if they meet the minimum attendance rule, plan how many classes they can safely miss, or work out how many classes they must attend to reach the required percentage.</p></section>
+<section class="calc-card" aria-label="Attendance Calculator calculator">
+<form id="calc-form" class="calc-form">
+<div class="field"><label for="attTotal">Total Classes Held</label><input type="number" id="attTotal" name="attTotal" placeholder="e.g. 80"></div>
+<div class="field"><label for="attAttended">Classes Attended</label><input type="number" id="attAttended" name="attAttended" placeholder="e.g. 55"></div>
+<div class="field"><label for="attReq">Required % (default 75)</label><input type="number" id="attReq" name="attReq" placeholder="75"></div>
+<button type="submit" id="calc-btn" class="btn btn-primary btn-block">Calculate</button>
+</form>
+<div class="result-box" id="res-box">
+<p class="result-label" id="res-label">Your Attendance</p>
+<p class="result-value" id="res-value">&mdash;</p>
+<p class="result-details" id="res-details"></p>
+<p class="result-error" id="res-error" hidden></p>
+<div class="share-row"><button type="button" class="btn btn-secondary btn-small" id="share-result">Share result</button><span class="share-status" id="share-status" role="status"></span></div>
+</div>
+</section>
+<section class="content-block"><h2>Formula</h2><p class="formula-box">Current attendance % = classes attended ÷ total classes held × 100. If current % ≥ required %, classes you can miss = the largest number m where attended ÷ (total + m) × 100 stays at or above the required %. If current % &lt; required %, classes you must attend = the smallest number a where (attended + a) ÷ (total + a) × 100 reaches the required %.</p></section>
+<section class="content-block"><h2>Worked example</h2><p>Inputs: Total Classes Held 80, Classes Attended 55, Required % 75. Step 1: current percentage = 55 ÷ 80 × 100 = 68.8%. Step 2: 68.8% is below the required 75%, so the status is SHORTAGE. Step 3: find how many consecutive classes must be attended: (55 + a) ÷ (80 + a) ≥ 0.75. Solving gives a ≥ 20. Check: (55 + 20) ÷ (80 + 20) = 75 ÷ 100 = 75%. Final result: 68.8%, SHORTAGE — you must attend the next 20 classes in a row to reach 75%.</p></section>
+<section class="content-block"><h2>How to use</h2><ol class="steps"><li>Enter the number of classes held so far in the Total Classes Held field, for example 80.</li><li>Enter how many of those you attended in the Classes Attended field, for example 55.</li><li>Enter the required percentage in the Required % field — it defaults to 75.</li><li>Tap Calculate to see your current percentage and SAFE or SHORTAGE status.</li><li>Read the result: either how many classes you can still miss, or how many in a row you must attend.</li></ol></section>
+<section class="content-block"><h2>Tips</h2><ul><li>Update the numbers weekly so the can-miss figure stays accurate.</li><li>If you are in shortage, attend every class until you are back above the requirement — skipping even one makes the gap bigger.</li><li>Count practical and lab classes separately if your college tracks them separately.</li><li>Keep your own tally of attended classes; attendance sheets are sometimes wrong, and your own count is your evidence.</li></ul></section>
+<section class="content-block"><h2>Common mistakes</h2><ul><li>Entering attended classes greater than total classes, which the calculator rejects.</li><li>Using the total for the whole semester instead of the classes held so far.</li><li>Leaving the required percentage at 75 when your college requires a different figure.</li><li>Counting holidays or cancelled classes as held classes.</li></ul></section>
+<section class="content-block faq-list"><h2>Frequently asked questions</h2><details><summary>Why is 75% the default?</summary><p>Most colleges in India require 75%, and this tool uses 75 as its default. But the real rule is your college&#39;s — enter your own required percentage if it is different.</p></details><details><summary>What does it show when my attendance is already safe?</summary><p>If you are above the requirement, the tool tells you how many more classes you can miss and still stay above it.</p></details><details><summary>Does it work for any subject?</summary><p>Yes, as long as every class counts the same. If your college weighs theory and practical classes differently, the result is only an estimate.</p></details></section>
+<section class="content-block"><h2>Related calculators</h2><ul class="related-list"><li><a href="../../calculators/cgpa-calculator/">CGPA / GPA Calculator</a></li><li><a href="../../calculators/grade-calculator/">Grade Calculator</a></li><li><a href="../../calculators/pomodoro-study-timer/">Pomodoro Study Timer</a></li></ul></section>
+<div class="disclaimer-box"><p>Results are a guide based on the numbers you enter. For loan, tax or investment decisions, check the figures with the bank, the official tax portal, or a qualified adviser.</p></div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-copy">&copy; 2026 SuvoCalc &mdash; v31 &middot; 57 free calculators</p>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="../../privacy/index.html">Privacy</a>
+      <a href="../../terms/index.html">Terms</a>
+      <a href="../../disclaimer/index.html">Disclaimer</a>
+      <a href="../../about/index.html">About</a>
+      <a href="../../contact/index.html">Contact</a>
+      <a href="../../faq/index.html">FAQ</a>
+    </nav>
+  </div>
+</footer>
+
+<nav class="bottom-nav" aria-label="Mobile navigation">
+  <a class="bottom-nav-link" data-nav="home" href="../../index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    <span>Home</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="tools" href="../../tools/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+    <span>Tools</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="categories" href="../../tools/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+    <span>Categories</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="blog" href="../../blog/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+    <span>Guides</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="about" href="../../about/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+    <span>About</span>
+  </a>
+</nav>
+
+<div class="cookie-banner" id="cookie-banner" hidden>
+  <p>SuvoCalc uses local storage on your device to remember your theme and recently used calculators. No account, no tracking.</p>
+  <button type="button" class="btn btn-primary btn-small" id="cookie-accept">Got it</button>
+</div>
+
+<script src="../../assets/js/calc.js"></script>
+<script src="../../assets/js/main.js"></script>
+<script>
+/* v31 no-op stubs: the verbatim v30 calc bodies call these legacy
+   helpers (toast, usage tracking, streaks, haptics, gauge). v31 has
+   none of those systems; the stubs keep a calculation from throwing
+   after it has written its result. */
+function toast(){}
+function trackTool(){}
+function bumpStreak(){}
+function checkMilestone(){}
+function v21Haptic(){}
+function injectBMIGauge(){}
+/* renderH: the sci history UI does not exist in v31; pushH() still
+   records to localStorage, renderH() just has nothing to paint. */
+function renderH(){}
+function runToolCalc(){
+
+      const total = parseFloat(document.getElementById('attTotal')&&document.getElementById('attTotal').value)||0;
+      const attended = parseFloat(document.getElementById('attAttended')&&document.getElementById('attAttended').value)||0;
+      const req = parseFloat(document.getElementById('attReq')&&document.getElementById('attReq').value)||75;
+      if (!total || attended > total) { setRes('attend','—','Enter valid values',''); return; }
+      const curPct = (attended/total*100).toFixed(1);
+      const status = curPct >= req ? '✅ SAFE' : '❌ SHORTAGE';
+      const color = curPct >= req ? 'var(--gr)' : 'var(--re)';
+      // How many more classes can be missed and still meet req
+      let canMiss = 0, needAttend = 0;
+      if (curPct >= req) {
+        // Max classes can miss: attended + future - req*(total+future) >= 0 → solve
+        // canMiss: (attended - req*(total+canMiss)) / (1-req) ≤ 0 ... binary approach
+        for (let m = 0; m <= 200; m++) {
+          if ((attended / (total + m)) * 100 < req) { canMiss = m - 1; break; }
+          if (m === 200) canMiss = 200;
+        }
+      } else {
+        // How many consecutive classes to attend
+        for (let a = 0; a <= 500; a++) {
+          if (((attended + a) / (total + a)) * 100 >= req) { needAttend = a; break; }
+          if (a === 500) needAttend = -1;
+        }
+      }
+      const sub = curPct >= req
+        ? `Current: ${attended}/${total}<br>Required: ${req}%<br>Can miss: ${canMiss} more classes<br>Status: Safe zone ✅`
+        : `Current: ${attended}/${total}<br>Required: ${req}%<br>Must attend next: ${needAttend} classes<br>Status: Shortage ❌`;
+      setRes('attend', curPct + '%', 'Your Attendance — ' + status, sub);
+      if (typeof bumpStreak==='function') bumpStreak();
+      if (typeof checkMilestone==='function') checkMilestone();
+    
+}
+(function(){
+try{
+var form=document.getElementById("calc-form");
+if(form){ form.addEventListener("submit",function(ev){ ev.preventDefault(); try{ runToolCalc(); }catch(err){ var e=document.getElementById("res-error"); if(e){ e.textContent="Could not calculate. Please check your numbers and try again."; e.hidden=false; } } }); }
+
+}catch(e){}
+})();
+</script>
+</body>
+</html>

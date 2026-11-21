@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Time Zone Converter | SuvoCalc v31</title>
+<meta name="description" content="Convert time between major world time zones instantly.">
+<link rel="canonical" href="https://suvocalc.com/calculators/time-zone-converter/">
+<script>
+/* Apply saved theme before CSS loads to avoid a flash. No other logic here. */
+(function () {
+  try {
+    var t = localStorage.getItem('sc_theme');
+    if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+  } catch (e) { /* storage unavailable: keep light default */ }
+})();
+</script>
+<link rel="stylesheet" href="../../assets/css/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Time Zone Converter | SuvoCalc","url":"https://suvocalc.com/calculators/time-zone-converter/","applicationCategory":"CalculatorApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Convert time between major world time zones instantly."}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://suvocalc.com/"},{"@type":"ListItem","position":2,"name":"Date & Time","item":"https://suvocalc.com/categories/date-time/"},{"@type":"ListItem","position":3,"name":"Time Zone Converter","item":"https://suvocalc.com/calculators/time-zone-converter/"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does it handle daylight saving time?","acceptedAnswer":{"@type":"Answer","text":"The tool uses fixed offsets for each zone, such as IST at UTC+5:30 and EST at UTC−5. It does not adjust for daylight saving time, so zones that observe DST can be off by an hour during part of the year."}},{"@type":"Question","name":"Which time zones can I choose?","acceptedAnswer":{"@type":"Answer","text":"The tool lists 15 zones: UTC, IST, EST, PST, CST, GMT, CET, JST, AEST, BDT, PKT, MST, BST, SGT, and HKT."}},{"@type":"Question","name":"Can the converted time be on a different day?","acceptedAnswer":{"@type":"Answer","text":"The converted time may fall on a different date. Read the full result, which shows the date change when it happens."}}]}
+</script>
+
+</head>
+<body data-active-nav="tools" data-tool-url-prefix="../../" data-tool-slug="time-zone-converter" data-tool-title="Time Zone Converter">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="../../index.html" aria-label="SuvoCalc home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="11" x2="8" y2="11.01"/><line x1="12" y1="11" x2="12" y2="11.01"/><line x1="16" y1="11" x2="16" y2="11.01"/><line x1="8" y1="15" x2="8" y2="15.01"/><line x1="12" y1="15" x2="12" y2="15.01"/><line x1="16" y1="15" x2="16" y2="15.01"/></svg>
+      </span>
+      <span class="brand-name">SuvoCalc</span>
+      <span class="brand-version">v31</span>
+    </a>
+
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+      <a class="nav-link" data-nav="home" href="../../index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Home</span>
+      </a>
+      <a class="nav-link" data-nav="tools" href="../../tools/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        <span>All Tools</span>
+      </a>
+      <a class="nav-link" data-nav="categories" href="../../tools/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+        <span>Categories</span>
+      </a>
+      <a class="nav-link" data-nav="blog" href="../../blog/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        <span>Blog/Guides</span>
+      </a>
+      <a class="nav-link" data-nav="about" href="../../about/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        <span>About</span>
+      </a>
+      <a class="nav-link" data-nav="contact" href="../../contact/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span>Contact</span>
+      </a>
+    </nav>
+
+    <div class="header-actions">
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch between light and dark theme">
+        <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <span class="theme-toggle-label">Theme</span>
+      </button>
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="page-main">
+<nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/categories/date-time/">Date &amp; Time</a></li><li><span aria-current="page">Time Zone Converter</span></li></ol></nav>
+  <h1 class="page-title">Time Zone Converter</h1>
+<p class="lead">The Time Zone Converter converts a date and time between 15 major world time zones, using their fixed UTC offsets.</p>
+<section class="content-block"><h2>What it is used for</h2><p>It is used to convert meeting times, flight times, and call times between time zones, so everyone joins at the right local hour.</p></section>
+<section class="calc-card" aria-label="Time Zone Converter calculator">
+<form id="calc-form" class="calc-form">
+<div class="field"><label for="tzTime">Your Time</label><input type="datetime-local" id="tzTime" name="tzTime"></div>
+<div class="field"><label for="tzFrom">From Zone</label><select id="tzFrom" name="tzFrom"><option value="UTC+0">UTC (UTC+0)</option><option value="UTC+5:30">IST (UTC+5:30)</option><option value="UTC-5">EST (UTC-5)</option><option value="UTC-8">PST (UTC-8)</option><option value="UTC-6">CST (UTC-6)</option><option value="UTC+0">GMT (UTC+0)</option><option value="UTC+1">CET (UTC+1)</option><option value="UTC+9">JST (UTC+9)</option><option value="UTC+10">AEST (UTC+10)</option><option value="UTC+6">BDT (UTC+6)</option><option value="UTC+5">PKT (UTC+5)</option><option value="UTC-7">MST (UTC-7)</option><option value="UTC+1">BST (UTC+1)</option><option value="UTC+8">SGT (UTC+8)</option><option value="UTC+8">HKT (UTC+8)</option></select></div>
+<div class="field"><label for="tzTo">To Zone</label><select id="tzTo" name="tzTo"><option value="UTC+0">UTC (UTC+0)</option><option value="UTC+5:30">IST (UTC+5:30)</option><option value="UTC-5">EST (UTC-5)</option><option value="UTC-8">PST (UTC-8)</option><option value="UTC-6">CST (UTC-6)</option><option value="UTC+0">GMT (UTC+0)</option><option value="UTC+1">CET (UTC+1)</option><option value="UTC+9">JST (UTC+9)</option><option value="UTC+10">AEST (UTC+10)</option><option value="UTC+6">BDT (UTC+6)</option><option value="UTC+5">PKT (UTC+5)</option><option value="UTC-7">MST (UTC-7)</option><option value="UTC+1">BST (UTC+1)</option><option value="UTC+8">SGT (UTC+8)</option><option value="UTC+8">HKT (UTC+8)</option></select></div>
+<button type="submit" id="calc-btn" class="btn btn-primary btn-block">Calculate</button>
+</form>
+<div class="tool-outputs"><div id="res-tzc" class="tool-output"></div></div>
+<p class="result-error" id="res-error" hidden></p>
+</section>
+<section class="content-block"><h2>Formula</h2><p class="formula-box">Converted time = your time + (offset of the To zone − offset of the From zone). Offsets used by the tool: UTC+0, IST +5:30, EST −5, PST −8, CST −6, GMT +0, CET +1, JST +9, AEST +10, BDT +6, PKT +5, MST −7, BST +1, SGT +8, HKT +8.</p></section>
+<section class="content-block"><h2>Worked example</h2><p>Inputs: Your Time 10:00, From Zone IST (UTC+5:30), To Zone EST (UTC−5). Step 1: the offset difference is 5.5 − (−5) = 10.5 hours. Step 2: subtract 10.5 hours from 10:00, which gives 23:30 on the previous day. Final result: 10:00 IST is 23:30 EST the previous day.</p></section>
+<section class="content-block"><h2>How to use</h2><ol class="steps"><li>Enter your date and time in the Your Time field.</li><li>Choose the starting zone in the From Zone dropdown, for example IST (UTC+5:30).</li><li>Choose the target zone in the To Zone dropdown, for example EST (UTC−5).</li><li>Tap Convert to see the time in the other zone.</li><li>Check the date as well as the time — the result can fall on the previous or next day.</li></ol></section>
+<section class="content-block"><h2>Tips</h2><ul><li>For meetings, confirm the time with the other person in their own local time to avoid DST surprises.</li><li>IST is always UTC+5:30 and never changes, which makes it a reliable anchor zone.</li><li>When the converted time crosses midnight, note the new date clearly in your message.</li><li>For exact scheduling with DST zones, cross-check with a clock that knows the current DST rules.</li></ul></section>
+<section class="content-block"><h2>Common mistakes</h2><ul><li>Forgetting that zones with daylight saving time shift by an hour in summer — the tool uses fixed offsets only.</li><li>Mixing up AM and PM when entering the time.</li><li>Assuming the date stays the same when the converted time crosses midnight.</li><li>Choosing the wrong zone, for example CST (US Central) instead of IST, when the abbreviations look similar.</li></ul></section>
+<section class="content-block faq-list"><h2>Frequently asked questions</h2><details><summary>Does it handle daylight saving time?</summary><p>The tool uses fixed offsets for each zone, such as IST at UTC+5:30 and EST at UTC−5. It does not adjust for daylight saving time, so zones that observe DST can be off by an hour during part of the year.</p></details><details><summary>Which time zones can I choose?</summary><p>The tool lists 15 zones: UTC, IST, EST, PST, CST, GMT, CET, JST, AEST, BDT, PKT, MST, BST, SGT, and HKT.</p></details><details><summary>Can the converted time be on a different day?</summary><p>The converted time may fall on a different date. Read the full result, which shows the date change when it happens.</p></details></section>
+<section class="content-block"><h2>Related calculators</h2><ul class="related-list"><li><a href="../../calculators/date-difference-calculator/">Date Difference Calculator</a></li><li><a href="../../calculators/world-clock/">World Clock</a></li><li><a href="../../calculators/unit-currency-converter/">Unit &amp; Currency Converter</a></li></ul></section>
+<div class="disclaimer-box"><p>Results are a guide based on the numbers you enter. For loan, tax or investment decisions, check the figures with the bank, the official tax portal, or a qualified adviser.</p></div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-copy">&copy; 2026 SuvoCalc &mdash; v31 &middot; 57 free calculators</p>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="../../privacy/index.html">Privacy</a>
+      <a href="../../terms/index.html">Terms</a>
+      <a href="../../disclaimer/index.html">Disclaimer</a>
+      <a href="../../about/index.html">About</a>
+      <a href="../../contact/index.html">Contact</a>
+      <a href="../../faq/index.html">FAQ</a>
+    </nav>
+  </div>
+</footer>
+
+<nav class="bottom-nav" aria-label="Mobile navigation">
+  <a class="bottom-nav-link" data-nav="home" href="../../index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    <span>Home</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="tools" href="../../tools/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+    <span>Tools</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="categories" href="../../tools/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+    <span>Categories</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="blog" href="../../blog/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+    <span>Guides</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="about" href="../../about/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+    <span>About</span>
+  </a>
+</nav>
+
+<div class="cookie-banner" id="cookie-banner" hidden>
+  <p>SuvoCalc uses local storage on your device to remember your theme and recently used calculators. No account, no tracking.</p>
+  <button type="button" class="btn btn-primary btn-small" id="cookie-accept">Got it</button>
+</div>
+
+<script src="../../assets/js/calc.js"></script>
+<script src="../../assets/js/main.js"></script>
+<script>
+/* v31 no-op stubs: the verbatim v30 calc bodies call these legacy
+   helpers (toast, usage tracking, streaks, haptics, gauge). v31 has
+   none of those systems; the stubs keep a calculation from throwing
+   after it has written its result. */
+function toast(){}
+function trackTool(){}
+function bumpStreak(){}
+function checkMilestone(){}
+function v21Haptic(){}
+function injectBMIGauge(){}
+/* renderH: the sci history UI does not exist in v31; pushH() still
+   records to localStorage, renderH() just has nothing to paint. */
+function renderH(){}
+/* Companion functions/state, verbatim from the v30 source
+   (7767). See companions.json. */
+const tzOffsets={'UTC+0':0,'UTC+5:30':5.5,'UTC-5':-5,'UTC-8':-8,'UTC-6':-6,'UTC+1':1,'UTC+9':9,'UTC+10':10,'UTC+6':6,'UTC+5':5,'UTC-7':-7,'UTC+8':8};
+function doTZ(){
+
+  try{
+    const t=(document.getElementById('tzTime')&&document.getElementById('tzTime').value);if(!t)return;
+    const from=(document.getElementById('tzFrom')&&document.getElementById('tzFrom').value||'UTC+0');const to=(document.getElementById('tzTo')&&document.getElementById('tzTo').value||'UTC+5:30');
+    const ms=new Date(t).getTime();const fromOff=(tzOffsets[from]||0)*3600000;const toOff=(tzOffsets[to]||0)*3600000;
+    const converted=new Date(ms-fromOff+toOff);const el=document.getElementById('res-tzc');
+    if(el)el.innerHTML=`<div class="rnum">${converted.toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit'})}</div><div class="rlbl">${to}</div><div class="rsub">${converted.toDateString()}<br>From ${from} → To ${to}<br>Difference: ${((tzOffsets[to]||0)-(tzOffsets[from]||0)).toFixed(1)} hours</div>`;
+  }catch(e){}
+
+}
+function runToolCalc(){ doTZ(); }
+(function(){
+try{
+var form=document.getElementById("calc-form");
+if(form){ form.addEventListener("submit",function(ev){ ev.preventDefault(); try{ runToolCalc(); }catch(err){ var e=document.getElementById("res-error"); if(e){ e.textContent="Could not calculate. Please check your numbers and try again."; e.hidden=false; } } }); }
+
+}catch(e){}
+})();
+</script>
+</body>
+</html>

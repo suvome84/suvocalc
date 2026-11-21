@@ -1,0 +1,45 @@
+{
+  "slug": "loan-affordability-calculator",
+  "intro": "The Loan Affordability Calculator tells you the maximum loan you can afford from your monthly net income and existing EMIs, using the 50% FOIR rule that most Indian banks follow.",
+  "uses": "It is used when planning a home or personal loan to find a safe borrowing limit before talking to a bank, and to test how a higher income, a lower rate, or a longer tenure changes what you can afford.",
+  "formula": "Maximum EMI = (Monthly Net Income × 50%) − Existing EMIs. Maximum loan = Max EMI × ((1+r)^n − 1) ÷ (r × (1+r)^n), where r is the monthly interest rate (expected rate ÷ 12 ÷ 100) and n is the tenure in months.",
+  "example": "Inputs: Monthly Net Income = ₹60,000, Existing EMIs = ₹5,000 per month, Expected Interest Rate = 9%, Desired Tenure = 20 years. Step 1: 50% FOIR limit = 60,000 × 50% = ₹30,000. Step 2: maximum EMI = 30,000 − 5,000 = ₹25,000. Step 3: monthly rate r = 9 ÷ 12 ÷ 100 = 0.0075, n = 240 months. Step 4: maximum loan = 25,000 × ((1.0075)^240 − 1) ÷ (0.0075 × (1.0075)^240) = ₹27,78,624.",
+  "howTo": [
+    "Step 1: Enter your take-home pay in the \"Monthly Net Income (₹)\" field.",
+    "Step 2: Enter EMIs you already pay in the \"Existing EMIs (₹/month)\" field.",
+    "Step 3: Enter the interest rate you expect in the \"Expected Interest Rate (%)\" field.",
+    "Step 4: Enter how long you want to repay over in the \"Desired Tenure (Years)\" field.",
+    "Step 5: Tap Calculate to see the maximum loan amount and the maximum EMI you can afford."
+  ],
+  "tips": [
+    "Use your net (take-home) income, not your gross salary — banks judge affordability on what actually reaches you.",
+    "If your existing EMIs already cross 50% of your income, the calculator will warn you that a new loan may not be approved.",
+    "A longer tenure raises the affordable amount but adds a lot of interest, so check the EMI calculator for the total cost too.",
+    "Keeping one or two EMIs below the 50% limit leaves room for rate rises and unexpected expenses."
+  ],
+  "mistakes": [
+    "Entering gross monthly salary instead of net take-home income, which overstates affordability.",
+    "Forgetting a credit card EMI or a small personal loan in the existing EMIs field.",
+    "Entering the tenure in months instead of years.",
+    "Treating the maximum as a target — affording a loan and comfortably repaying it are not the same thing."
+  ],
+  "faqs": [
+    {
+      "q": "What is the 50% FOIR rule?",
+      "a": "FOIR is the Fixed Obligation to Income Ratio. Most Indian banks will not let your total monthly loan obligations exceed about 50% of your monthly income. This calculator applies that 50% limit to your net income after subtracting existing EMIs."
+    },
+    {
+      "q": "How much loan can I afford on a ₹60,000 monthly income?",
+      "a": "With ₹5,000 of existing EMIs at 9% over 20 years, you can afford a maximum EMI of ₹25,000 and a loan of about ₹27.8 lakh. With no existing EMIs, the limit rises to about ₹33.3 lakh."
+    },
+    {
+      "q": "What is the difference between loan affordability and loan eligibility?",
+      "a": "They use the same 50% FOIR idea, but this calculator starts from your monthly net (take-home) income, while the loan eligibility calculator starts from monthly income and also shows the bank's view. Use both and take the lower figure as your safe limit."
+    }
+  ],
+  "related": [
+    "emi-calculator",
+    "loan-eligibility-calculator",
+    "loan-comparison-calculator"
+  ]
+}

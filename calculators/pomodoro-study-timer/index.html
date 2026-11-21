@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pomodoro Study Timer | SuvoCalc v31</title>
+<meta name="description" content="Classic Pomodoro technique timer. Focus 25 min, break 5 min. Boost study productivity.">
+<link rel="canonical" href="https://suvocalc.com/calculators/pomodoro-study-timer/">
+<script>
+/* Apply saved theme before CSS loads to avoid a flash. No other logic here. */
+(function () {
+  try {
+    var t = localStorage.getItem('sc_theme');
+    if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+  } catch (e) { /* storage unavailable: keep light default */ }
+})();
+</script>
+<link rel="stylesheet" href="../../assets/css/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Pomodoro Study Timer | SuvoCalc","url":"https://suvocalc.com/calculators/pomodoro-study-timer/","applicationCategory":"CalculatorApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Classic Pomodoro technique timer. Focus 25 min, break 5 min. Boost study productivity."}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://suvocalc.com/"},{"@type":"ListItem","position":2,"name":"Education & Students","item":"https://suvocalc.com/categories/education-students/"},{"@type":"ListItem","position":3,"name":"Pomodoro Study Timer","item":"https://suvocalc.com/calculators/pomodoro-study-timer/"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the Pomodoro technique?","acceptedAnswer":{"@type":"Answer","text":"The classic Pomodoro method is 25 minutes of focused work followed by a 5-minute break, with a longer 15-minute break after four sessions. This tool uses exactly that pattern."}},{"@type":"Question","name":"How do I stop or reset the timer?","acceptedAnswer":{"@type":"Answer","text":"Tap Reset to stop the current timer and return it to the start of the selected mode."}},{"@type":"Question","name":"Can I use it just as a break timer?","acceptedAnswer":{"@type":"Answer","text":"Yes. Tap Short Break for a 5-minute break or Long Break for a 15-minute break, then tap Start."}}]}
+</script>
+
+</head>
+<body data-active-nav="tools" data-tool-url-prefix="../../" data-tool-slug="pomodoro-study-timer" data-tool-title="Pomodoro Study Timer">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="../../index.html" aria-label="SuvoCalc home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="11" x2="8" y2="11.01"/><line x1="12" y1="11" x2="12" y2="11.01"/><line x1="16" y1="11" x2="16" y2="11.01"/><line x1="8" y1="15" x2="8" y2="15.01"/><line x1="12" y1="15" x2="12" y2="15.01"/><line x1="16" y1="15" x2="16" y2="15.01"/></svg>
+      </span>
+      <span class="brand-name">SuvoCalc</span>
+      <span class="brand-version">v31</span>
+    </a>
+
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+      <a class="nav-link" data-nav="home" href="../../index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Home</span>
+      </a>
+      <a class="nav-link" data-nav="tools" href="../../tools/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        <span>All Tools</span>
+      </a>
+      <a class="nav-link" data-nav="categories" href="../../tools/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+        <span>Categories</span>
+      </a>
+      <a class="nav-link" data-nav="blog" href="../../blog/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        <span>Blog/Guides</span>
+      </a>
+      <a class="nav-link" data-nav="about" href="../../about/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        <span>About</span>
+      </a>
+      <a class="nav-link" data-nav="contact" href="../../contact/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span>Contact</span>
+      </a>
+    </nav>
+
+    <div class="header-actions">
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch between light and dark theme">
+        <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <span class="theme-toggle-label">Theme</span>
+      </button>
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="page-main">
+<nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/categories/education-students/">Education &amp; Students</a></li><li><span aria-current="page">Pomodoro Study Timer</span></li></ol></nav>
+  <h1 class="page-title">Pomodoro Study Timer</h1>
+<p class="lead">The Pomodoro Study Timer runs the classic Pomodoro technique: 25 minutes of focused study, then a 5-minute break, with a longer break after four sessions.</p>
+<section class="content-block"><h2>What it is used for</h2><p>It is used by students to study in focused 25-minute blocks with regular breaks, so long study sessions stay productive instead of drifting.</p></section>
+<section class="calc-card" aria-label="Pomodoro Study Timer calculator">
+<form id="calc-form" class="calc-form">
+<div class="field"><label for="pomMode">Mode</label><select id="pomMode" name="pomMode"><option value="Pomodoro (25 min)">Pomodoro (25 min)</option><option value="Short Break (5 min)">Short Break (5 min)</option><option value="Long Break (15 min)">Long Break (15 min)</option></select></div>
+<button type="submit" id="calc-btn" class="btn btn-primary btn-block">Calculate</button>
+</form>
+<div class="tool-outputs"><div id="pomStatus" class="tool-output"></div>
+<div id="pomCount" class="tool-output"></div>
+<div id="pomTime" class="tool-output"></div>
+<div id="pomCircle" class="tool-output"></div></div>
+<p class="result-error" id="res-error" hidden></p>
+</section>
+<section class="content-block"><h2>Formula</h2><p class="formula-box">Method, not a formula: one Pomodoro = 25 minutes of focused work + 5 minutes of short break. After four Pomodoros, take a 15-minute long break. The tool shows a progress ring, the time remaining, and a count of completed sessions.</p></section>
+<section class="content-block"><h2>Worked example</h2><p>Use case: you have a 2-hour study session for an exam. Step 1: choose Pomodoro mode and tap Start — the timer runs for 25 minutes of focus. Step 2: when it ends, switch to Short Break for 5 minutes. Step 3: repeat the cycle — after four focus sessions you have done 4 × 25 = 100 minutes of focused study with 15 minutes of short breaks. Step 4: after the fourth session, take the Long Break of 15 minutes. Final result: 2 hours used, 100 minutes of real focus, and the sessions counter shows 4 completed sessions.</p></section>
+<section class="content-block"><h2>How to use</h2><ol class="steps"><li>Tap the Pomodoro button to choose the 25-minute focus mode, or pick Short Break (5 min) or Long Break (15 min).</li><li>Tap Start to begin the countdown shown in the ring.</li><li>Work on one task only until the timer ends — no phone, no switching tasks.</li><li>When the focus time ends, take the short break before starting the next Pomodoro.</li><li>Watch the Sessions completed counter to track how many focus blocks you finished.</li></ol></section>
+<section class="content-block"><h2>Tips</h2><ul><li>Pick one clear task before starting the timer, for example &#39;finish 20 maths problems&#39;.</li><li>Put your phone on silent during the 25 minutes so nothing interrupts the session.</li><li>Use the 5-minute break to stretch, drink water, or look away from the screen.</li><li>After four Pomodoros, take the full 15-minute long break — it keeps the next round productive.</li><li>If 25 minutes feels too long at first, start with two sessions a day and build up.</li></ul></section>
+<section class="content-block"><h2>Common mistakes</h2><ul><li>Working through the break — the break is part of the method, not wasted time.</li><li>Starting a new Pomodoro while still thinking about the last task instead of resetting focus.</li><li>Choosing tasks that need more than 25 minutes and getting frustrated when the timer ends mid-task — split big tasks first.</li><li>Using the timer with the phone&#39;s notifications on, which breaks focus.</li></ul></section>
+<section class="content-block faq-list"><h2>Frequently asked questions</h2><details><summary>What is the Pomodoro technique?</summary><p>The classic Pomodoro method is 25 minutes of focused work followed by a 5-minute break, with a longer 15-minute break after four sessions. This tool uses exactly that pattern.</p></details><details><summary>How do I stop or reset the timer?</summary><p>Tap Reset to stop the current timer and return it to the start of the selected mode.</p></details><details><summary>Can I use it just as a break timer?</summary><p>Yes. Tap Short Break for a 5-minute break or Long Break for a 15-minute break, then tap Start.</p></details></section>
+<section class="content-block"><h2>Related calculators</h2><ul class="related-list"><li><a href="../../calculators/attendance-calculator/">Attendance Calculator</a></li><li><a href="../../calculators/grade-calculator/">Grade Calculator</a></li><li><a href="../../calculators/cgpa-calculator/">CGPA / GPA Calculator</a></li></ul></section>
+<div class="disclaimer-box"><p>Results are a guide based on the numbers you enter. For loan, tax or investment decisions, check the figures with the bank, the official tax portal, or a qualified adviser.</p></div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-copy">&copy; 2026 SuvoCalc &mdash; v31 &middot; 57 free calculators</p>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="../../privacy/index.html">Privacy</a>
+      <a href="../../terms/index.html">Terms</a>
+      <a href="../../disclaimer/index.html">Disclaimer</a>
+      <a href="../../about/index.html">About</a>
+      <a href="../../contact/index.html">Contact</a>
+      <a href="../../faq/index.html">FAQ</a>
+    </nav>
+  </div>
+</footer>
+
+<nav class="bottom-nav" aria-label="Mobile navigation">
+  <a class="bottom-nav-link" data-nav="home" href="../../index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    <span>Home</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="tools" href="../../tools/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+    <span>Tools</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="categories" href="../../tools/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+    <span>Categories</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="blog" href="../../blog/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+    <span>Guides</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="about" href="../../about/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+    <span>About</span>
+  </a>
+</nav>
+
+<div class="cookie-banner" id="cookie-banner" hidden>
+  <p>SuvoCalc uses local storage on your device to remember your theme and recently used calculators. No account, no tracking.</p>
+  <button type="button" class="btn btn-primary btn-small" id="cookie-accept">Got it</button>
+</div>
+
+<script src="../../assets/js/calc.js"></script>
+<script src="../../assets/js/main.js"></script>
+<script>
+/* v31 no-op stubs: the verbatim v30 calc bodies call these legacy
+   helpers (toast, usage tracking, streaks, haptics, gauge). v31 has
+   none of those systems; the stubs keep a calculation from throwing
+   after it has written its result. */
+function toast(){}
+function trackTool(){}
+function bumpStreak(){}
+function checkMilestone(){}
+function v21Haptic(){}
+function injectBMIGauge(){}
+/* renderH: the sci history UI does not exist in v31; pushH() still
+   records to localStorage, renderH() just has nothing to paint. */
+function renderH(){}
+/* Companion functions/state, verbatim from the v30 source
+   (7847-7856, 7871-7876). See companions.json. */
+let pomInterval=null,pomLeft=1500,pomTotal=1500,pomRunning=false,pomSessions=0;
+function initPom(){pomLeft=1500;pomTotal=1500;pomRunning=false;updatePomDisplay();}
+function setPomMode(focus,brk,el){
+  clearInterval(pomInterval);pomRunning=false;
+  pomTotal=focus*60;pomLeft=focus*60;
+  el.closest('.pom-mode').querySelectorAll('.pom-m').forEach(b=>b.classList.remove('on'));
+  el.classList.add('on');
+  updatePomDisplay();
+  const st=document.getElementById('pomStatus');if(st)st.textContent='Ready';
+}
+function pomReset(){clearInterval(pomInterval);pomRunning=false;const m=document.querySelector('.pom-m.on');if(m)m.click();else initPom();}
+function updatePomDisplay(){
+  const m=Math.floor(pomLeft/60),s=pomLeft%60;
+  const el=document.getElementById('pomTime');if(el)el.textContent=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+  const circ=document.getElementById('pomCircle');if(circ){const total=358.14;circ.style.strokeDashoffset=total*(1-(pomLeft/pomTotal));}
+}
+function pomStart(){
+
+  if(pomRunning){clearInterval(pomInterval);pomRunning=false;const st=document.getElementById('pomStatus');if(st)st.textContent='Paused';return;}
+  pomRunning=true;const st=document.getElementById('pomStatus');if(st)st.textContent='🎯 Focus!';
+  pomInterval=setInterval(()=>{
+    pomLeft--;updatePomDisplay();
+    if(pomLeft<=0){
+      clearInterval(pomInterval);pomRunning=false;pomSessions++;
+      const cnt=document.getElementById('pomCount');if(cnt)cnt.textContent=pomSessions;
+      const sts=document.getElementById('pomStatus');if(sts)sts.textContent='✅ Session complete!';
+      try{new Audio('data:audio/wav;base64,UklGRl9vT19XQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YU'+Array(100).join('A')).play();}catch(e){}
+      toast('🍅 Pomodoro complete! Take a break.');
+    }
+  },1000);
+
+}
+function runToolCalc(){ pomStart(); }
+(function(){
+try{
+var form=document.getElementById("calc-form");
+if(form){ form.addEventListener("submit",function(ev){ ev.preventDefault(); try{ runToolCalc(); }catch(err){ var e=document.getElementById("res-error"); if(e){ e.textContent="Could not calculate. Please check your numbers and try again."; e.hidden=false; } } }); }
+var pm=document.getElementById("pomMode");
+if(pm){ pm.addEventListener("change",function(){ var n=parseInt((pm.value.match(/\d+/)||[])[0],10); if(!isNaN(n)&&n>0){ clearInterval(pomInterval); pomRunning=false; pomTotal=n*60; pomLeft=n*60; updatePomDisplay(); var st=document.getElementById("pomStatus"); if(st)st.textContent="Ready"; } }); }
+try{ initPom(); }catch(e){}
+}catch(e){}
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Date Difference Calculator | SuvoCalc v31</title>
+<meta name="description" content="Calculate exact days, weeks, months between any two dates.">
+<link rel="canonical" href="https://suvocalc.com/calculators/date-difference-calculator/">
+<script>
+/* Apply saved theme before CSS loads to avoid a flash. No other logic here. */
+(function () {
+  try {
+    var t = localStorage.getItem('sc_theme');
+    if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+  } catch (e) { /* storage unavailable: keep light default */ }
+})();
+</script>
+<link rel="stylesheet" href="../../assets/css/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Date Difference Calculator | SuvoCalc","url":"https://suvocalc.com/calculators/date-difference-calculator/","applicationCategory":"CalculatorApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate exact days, weeks, months between any two dates."}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://suvocalc.com/"},{"@type":"ListItem","position":2,"name":"Date & Time","item":"https://suvocalc.com/categories/date-time/"},{"@type":"ListItem","position":3,"name":"Date Difference Calculator","item":"https://suvocalc.com/calculators/date-difference-calculator/"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does the order of the two dates matter?","acceptedAnswer":{"@type":"Answer","text":"It counts the number of days between the two dates. Changing the order does not change the answer, because the tool uses the absolute difference."}},{"@type":"Question","name":"How are business days counted?","acceptedAnswer":{"@type":"Answer","text":"The business-day figure is an estimate: total days × 5 ÷ 7. It does not remove public holidays, so treat it as approximate."}},{"@type":"Question","name":"Can I enter a date like 31 February?","acceptedAnswer":{"@type":"Answer","text":"No, the tool only accepts dates from the date picker, which keeps the month lengths and leap years correct automatically."}}]}
+</script>
+
+</head>
+<body data-active-nav="tools" data-tool-url-prefix="../../" data-tool-slug="date-difference-calculator" data-tool-title="Date Difference Calculator">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="../../index.html" aria-label="SuvoCalc home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="11" x2="8" y2="11.01"/><line x1="12" y1="11" x2="12" y2="11.01"/><line x1="16" y1="11" x2="16" y2="11.01"/><line x1="8" y1="15" x2="8" y2="15.01"/><line x1="12" y1="15" x2="12" y2="15.01"/><line x1="16" y1="15" x2="16" y2="15.01"/></svg>
+      </span>
+      <span class="brand-name">SuvoCalc</span>
+      <span class="brand-version">v31</span>
+    </a>
+
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+      <a class="nav-link" data-nav="home" href="../../index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Home</span>
+      </a>
+      <a class="nav-link" data-nav="tools" href="../../tools/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        <span>All Tools</span>
+      </a>
+      <a class="nav-link" data-nav="categories" href="../../tools/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+        <span>Categories</span>
+      </a>
+      <a class="nav-link" data-nav="blog" href="../../blog/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        <span>Blog/Guides</span>
+      </a>
+      <a class="nav-link" data-nav="about" href="../../about/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        <span>About</span>
+      </a>
+      <a class="nav-link" data-nav="contact" href="../../contact/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span>Contact</span>
+      </a>
+    </nav>
+
+    <div class="header-actions">
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch between light and dark theme">
+        <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <span class="theme-toggle-label">Theme</span>
+      </button>
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="page-main">
+<nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/categories/date-time/">Date &amp; Time</a></li><li><span aria-current="page">Date Difference Calculator</span></li></ol></nav>
+  <h1 class="page-title">Date Difference Calculator</h1>
+<p class="lead">The Date Difference Calculator finds the exact number of days, weeks, and months between any two dates.</p>
+<section class="content-block"><h2>What it is used for</h2><p>It is used to count the days, weeks, or months between two dates — for deadlines, countdowns, age gaps, project planning, and leave calculations.</p></section>
+<section class="calc-card" aria-label="Date Difference Calculator calculator">
+<form id="calc-form" class="calc-form">
+<div class="field"><label for="dd1">Start Date</label><input type="date" id="dd1" name="dd1"></div>
+<div class="field"><label for="dd2">End Date</label><input type="date" id="dd2" name="dd2"></div>
+<button type="submit" id="calc-btn" class="btn btn-primary btn-block">Calculate</button>
+</form>
+<div class="result-box" id="res-box">
+<p class="result-label" id="res-label">Date Difference</p>
+<p class="result-value" id="res-value">&mdash;</p>
+<p class="result-details" id="res-details"></p>
+<p class="result-error" id="res-error" hidden></p>
+<div class="share-row"><button type="button" class="btn btn-secondary btn-small" id="share-result">Share result</button><span class="share-status" id="share-status" role="status"></span></div>
+</div>
+</section>
+<section class="content-block"><h2>Formula</h2><p class="formula-box">Days = absolute difference between the two dates, in whole days. Weeks = days ÷ 7. Years and months = calendar difference between the two dates. Business days (approx) = days × 5 ÷ 7.</p></section>
+<section class="content-block"><h2>Worked example</h2><p>Inputs: Start Date 1 January 2026, End Date 21 November 2026. Step 1: count the days between the two dates: 324 days. Step 2: whole weeks: 324 ÷ 7 = 46 weeks with 2 days left over. Step 3: months: 10 months. Step 4: business days (approx): 324 × 5 ÷ 7 ≈ 231. Final result: 324 days, 10 months, 46 weeks, about 231 business days.</p></section>
+<section class="content-block"><h2>How to use</h2><ol class="steps"><li>Tap the Start Date field and pick the first date from the calendar.</li><li>Tap the End Date field and pick the second date.</li><li>Tap Calculate to see the difference.</li><li>Read the result in days, years and months, and total weeks.</li><li>Use the approximate business-days figure when you need a working-days estimate.</li></ol></section>
+<section class="content-block"><h2>Tips</h2><ul><li>Use it to count days to a deadline, an exam, or a birthday.</li><li>For project planning, use the business-days figure for work estimates and the total days for calendar dates.</li><li>If you need the difference including both the start and end day, add 1 to the result.</li><li>Check the year first if the answer looks far too large or too small.</li></ul></section>
+<section class="content-block"><h2>Common mistakes</h2><ul><li>Entering the dates the wrong way round and thinking the result is negative — the tool always gives a positive difference.</li><li>Counting the start and end days twice when adding the difference to a deadline.</li><li>Treating the approximate business-days figure as exact when holidays fall in between.</li><li>Forgetting leap years when counting long gaps by hand.</li></ul></section>
+<section class="content-block faq-list"><h2>Frequently asked questions</h2><details><summary>Does the order of the two dates matter?</summary><p>It counts the number of days between the two dates. Changing the order does not change the answer, because the tool uses the absolute difference.</p></details><details><summary>How are business days counted?</summary><p>The business-day figure is an estimate: total days × 5 ÷ 7. It does not remove public holidays, so treat it as approximate.</p></details><details><summary>Can I enter a date like 31 February?</summary><p>No, the tool only accepts dates from the date picker, which keeps the month lengths and leap years correct automatically.</p></details></section>
+<section class="content-block"><h2>Related calculators</h2><ul class="related-list"><li><a href="../../calculators/time-zone-converter/">Time Zone Converter</a></li><li><a href="../../calculators/world-clock/">World Clock</a></li><li><a href="../../calculators/age-calculator/">Age Calculator</a></li></ul></section>
+<div class="disclaimer-box"><p>Results are a guide based on the numbers you enter. For loan, tax or investment decisions, check the figures with the bank, the official tax portal, or a qualified adviser.</p></div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-copy">&copy; 2026 SuvoCalc &mdash; v31 &middot; 57 free calculators</p>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="../../privacy/index.html">Privacy</a>
+      <a href="../../terms/index.html">Terms</a>
+      <a href="../../disclaimer/index.html">Disclaimer</a>
+      <a href="../../about/index.html">About</a>
+      <a href="../../contact/index.html">Contact</a>
+      <a href="../../faq/index.html">FAQ</a>
+    </nav>
+  </div>
+</footer>
+
+<nav class="bottom-nav" aria-label="Mobile navigation">
+  <a class="bottom-nav-link" data-nav="home" href="../../index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    <span>Home</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="tools" href="../../tools/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+    <span>Tools</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="categories" href="../../tools/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+    <span>Categories</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="blog" href="../../blog/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+    <span>Guides</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="about" href="../../about/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+    <span>About</span>
+  </a>
+</nav>
+
+<div class="cookie-banner" id="cookie-banner" hidden>
+  <p>SuvoCalc uses local storage on your device to remember your theme and recently used calculators. No account, no tracking.</p>
+  <button type="button" class="btn btn-primary btn-small" id="cookie-accept">Got it</button>
+</div>
+
+<script src="../../assets/js/calc.js"></script>
+<script src="../../assets/js/main.js"></script>
+<script>
+/* v31 no-op stubs: the verbatim v30 calc bodies call these legacy
+   helpers (toast, usage tracking, streaks, haptics, gauge). v31 has
+   none of those systems; the stubs keep a calculation from throwing
+   after it has written its result. */
+function toast(){}
+function trackTool(){}
+function bumpStreak(){}
+function checkMilestone(){}
+function v21Haptic(){}
+function injectBMIGauge(){}
+/* renderH: the sci history UI does not exist in v31; pushH() still
+   records to localStorage, renderH() just has nothing to paint. */
+function renderH(){}
+function runToolCalc(){
+const d1=new Date(getId('dd1')),d2=new Date(getId('dd2'));if(isNaN(d1)||isNaN(d2)){setRes('date','—','Enter Dates','');return;}const diff=Math.abs(d2-d1);const days=Math.floor(diff/86400000);const weeks=Math.floor(days/7);let y=0,mo=0;const s=d1<d2?d1:d2,e=d1<d2?d2:d1;y=e.getFullYear()-s.getFullYear();mo=e.getMonth()-s.getMonth();if(mo<0){y--;mo+=12;}setRes('date',`${days} days`,`Date Difference`,`${y} years, ${mo} months<br>Total days: ${days.toLocaleString('en-IN')}<br>Total weeks: ${weeks}<br>Business days (approx): ${Math.round(days*5/7)}`);
+}
+(function(){
+try{
+var form=document.getElementById("calc-form");
+if(form){ form.addEventListener("submit",function(ev){ ev.preventDefault(); try{ runToolCalc(); }catch(err){ var e=document.getElementById("res-error"); if(e){ e.textContent="Could not calculate. Please check your numbers and try again."; e.hidden=false; } } }); }
+
+}catch(e){}
+})();
+</script>
+</body>
+</html>

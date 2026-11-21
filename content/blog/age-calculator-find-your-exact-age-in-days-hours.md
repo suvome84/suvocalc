@@ -1,0 +1,6 @@
+---
+title: "Age Calculator: Find Your Exact Age in Days & Hours"
+minutes: 3
+related: ["age-calculator", "pregnancy-due-date-calculator", "bmi-calculator"]
+---
+<div class="blog-toc"><div class="blog-toc-ttl">Table of Contents</div><a href="#">How Age is Calculated</a><a href="#">Leap Years</a><a href="#">Age in Days</a><a href="#">Life Milestones</a><a href="#">Fun Facts</a></div><h2>How Exact Age is Calculated</h2><div class="formula-box"><code>Age = Today's Date - Birth Date (years, months, days)</code></div><div class="tip-box tip"><div class="tb-lbl"><i class="fa-solid fa-lightbulb"></i>Leap Year Rule</div><p>Year divisible by 400 = leap. Divisible by 100 but not 400 = NOT leap. Year 2000 WAS; 1900 was NOT.</p></div><h2>Age in Days & Hours</h2><table><tr><th>Age</th><th>Days</th><th>Hours</th></tr><tr><td>20 years</td><td>7,305</td><td>175,320</td></tr><tr><td>25 years</td><td>9,131</td><td>219,145</td></tr><tr><td>30 years</td><td>10,957</td><td>262,980</td></tr></table><h2>Life Milestones in India</h2><ul><li>18 — Voting age, legal adult</li><li>21 — Car driving license</li><li>25 — Lok Sabha candidacy</li><li>60 — Senior citizen benefits</li><li>80 — Super senior citizen tax benefits</li></ul>

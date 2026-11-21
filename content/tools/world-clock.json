@@ -1,0 +1,45 @@
+{
+  "example": "Example reading: when it is 15:30 in Kolkata (IST, UTC+5:30), the clock shows 10:00 in London (GMT, UTC+0), 05:00 in New York (EST, UTC−5), and 02:00 in Los Angeles (PST, UTC−8). Step 1: subtract 5 hours 30 minutes from 15:30 to get 10:00 UTC. Step 2: New York is 5 hours behind UTC in standard time, so 10:00 − 5:00 = 05:00. Step 3: Los Angeles is 8 hours behind UTC, so 10:00 − 8:00 = 02:00. Final result: the same moment reads 15:30 in Kolkata, 10:00 in London, 05:00 in New York, and 02:00 in Los Angeles.",
+  "faqs": [
+    {
+      "a": "Ten: New York, London, Dubai, Kolkata, Dhaka, Singapore, Tokyo, Sydney, Los Angeles, and Paris.",
+      "q": "Which cities does the World Clock show?"
+    },
+    {
+      "a": "Yes. The times refresh every second, so the clock keeps moving while the tool is open.",
+      "q": "Does it update live?"
+    },
+    {
+      "a": "During daylight saving time, London, New York, and Los Angeles shift by an hour. The tool reads your device's time-zone data, so it follows the current rules for each city.",
+      "q": "What happens during daylight saving time?"
+    }
+  ],
+  "formula": "Method: the clock takes the current moment and displays it in each city's time zone, using the device's time-zone database. Each city's time = the current UTC time + that city's current offset from UTC.",
+  "howTo": [
+    "Open the World Clock tool — no inputs are needed.",
+    "Find your city in the list of 10 major cities.",
+    "Compare its time with the city you need.",
+    "Remember the day can differ: a city ahead of you may already be on tomorrow.",
+    "Refresh or reopen the tool if you need the latest time after a long gap."
+  ],
+  "intro": "The World Clock shows the live current time in 10 major cities around the world, updating every second.",
+  "mistakes": [
+    "Forgetting that the date can be different in another city, not just the hour.",
+    "Using the clock to schedule a meeting without checking whether the other city is on daylight saving time.",
+    "Assuming all cities in one country share a time — the USA alone has several zones.",
+    "Reading a stale screenshot of the clock instead of opening it live."
+  ],
+  "related": [
+    "time-zone-converter",
+    "date-difference-calculator",
+    "pomodoro-study-timer"
+  ],
+  "slug": "world-clock",
+  "tips": [
+    "For a quick meeting check, find both cities in the list and read the hour difference directly.",
+    "Kolkata (IST) is 5 hours 30 minutes ahead of UTC and never changes for daylight saving.",
+    "If a city is 10 or more hours ahead, the other person may already be on the next day.",
+    "Use the Time Zone Converter when you need to convert one specific meeting time rather than just seeing the current time."
+  ],
+  "uses": "It is used to see the current time in major world cities at a glance, before calling, messaging, or scheduling across countries."
+}

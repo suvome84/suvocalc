@@ -1,0 +1,6 @@
+---
+title: "Loan Eligibility: How Much Can You Borrow?"
+minutes: 5
+related: ["loan-eligibility-calculator", "emi-calculator", "sip-calculator"]
+---
+<div class="blog-toc"><div class="blog-toc-ttl">Table of Contents</div><a href="#">FOIR Rule</a><a href="#">How Banks Calculate</a><a href="#">Factors</a><a href="#">Tips to Increase Eligibility</a></div><h2>The FOIR Rule</h2><p>FOIR (Fixed Obligation to Income Ratio) — banks allow 50-60% of net monthly income for all EMIs.</p><div class="formula-box"><code>Max EMI = Net Monthly Income × 0.50</code></div><h2>Example</h2><p>Salary ₹50,000, existing EMIs ₹5,000:<br>Available EMI = ₹25,000 - ₹5,000 = ₹20,000<br>At 8.5% for 20 years → Max loan ≈ <strong>₹20.5 Lakhs</strong></p><h2>Factors Banks Consider</h2><table><tr><th>Factor</th><th>Impact</th></tr><tr><td>CIBIL Score 750+</td><td>Better rate + higher limit</td></tr><tr><td>Job Stability</td><td>3+ years preferred</td></tr><tr><td>Co-applicant</td><td>Combined income = higher loan</td></tr><tr><td>Existing Loans</td><td>Each reduces available EMI</td></tr></table><h2>Tips to Increase Eligibility</h2><ol><li>Close existing small loans before applying</li><li>Improve CIBIL score — pay all EMIs on time</li><li>Add co-applicant to combine income</li><li>Choose longer tenure (lower EMI = higher loan)</li></ol>

@@ -1,0 +1,44 @@
+{
+  "slug": "discount-calculator",
+  "intro": "The Discount Calculator finds the final sale price after a percentage discount and shows exactly how much money you save.",
+  "uses": "It is used while shopping to check a sale price before buying, to compare two offers with different discount percentages, and to work out the real saving on a marked-down item.",
+  "formula": "Discount amount = Original Price × Discount ÷ 100. Sale Price = Original Price − Discount amount.",
+  "example": "Inputs: Original Price = ₹1,200, Discount = 25%. Step 1: discount amount = 1,200 × 25 ÷ 100 = ₹300. Step 2: sale price = 1,200 − 300 = ₹900. You save ₹300 and pay ₹900.",
+  "howTo": [
+    "Step 1: Enter the price before any discount in the \"Original Price (₹)\" field.",
+    "Step 2: Enter the discount percentage in the \"Discount (%)\" field — for example, 25.",
+    "Step 3: Tap Calculate to see the sale price.",
+    "Step 4: Read the breakdown: how much you save, the original price, and the final price."
+  ],
+  "tips": [
+    "A 25% discount on a ₹1,200 item saves ₹300, but the same 25% on a ₹400 item saves only ₹100 — always check the rupee saving, not just the percentage.",
+    "Two successive discounts are not added together: 20% off then 10% off is 28% off in total, not 30%.",
+    "Compare the final price across shops rather than the discount percentage — a bigger percentage off a higher marked price can still cost more.",
+    "Check whether the discount applies before or after tax, because that changes the final amount you pay."
+  ],
+  "mistakes": [
+    "Adding two discounts together (20% + 10% = 30%) instead of applying them one after the other.",
+    "Assuming a higher discount percentage always means a lower price — the marked price may be inflated.",
+    "Entering the discount as a rupee amount instead of a percentage.",
+    "Forgetting that the discount percentage must be between 0 and 100."
+  ],
+  "faqs": [
+    {
+      "q": "How do I calculate a 25% discount on ₹1,200?",
+      "a": "Multiply 1,200 by 25 and divide by 100 to get the saving of ₹300, then subtract it from 1,200. The sale price is ₹900."
+    },
+    {
+      "q": "What is the sale price if something costs ₹2,000 with a 40% discount?",
+      "a": "The discount is 2,000 × 40 ÷ 100 = ₹800, so the sale price is 2,000 − 800 = ₹1,200."
+    },
+    {
+      "q": "How do I find the discount percentage from the original and sale price?",
+      "a": "Subtract the sale price from the original price, divide by the original price, and multiply by 100. For example, (1,200 − 900) ÷ 1,200 × 100 = 25%."
+    }
+  ],
+  "related": [
+    "percentage-calculator",
+    "budget-calculator",
+    "simple-interest-calculator"
+  ]
+}

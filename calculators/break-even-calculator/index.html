@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Break-Even Calculator | SuvoCalc v31</title>
+<meta name="description" content="Find the break-even point for your business — units needed to cover all costs and start profiting.">
+<link rel="canonical" href="https://suvocalc.com/calculators/break-even-calculator/">
+<script>
+/* Apply saved theme before CSS loads to avoid a flash. No other logic here. */
+(function () {
+  try {
+    var t = localStorage.getItem('sc_theme');
+    if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+  } catch (e) { /* storage unavailable: keep light default */ }
+})();
+</script>
+<link rel="stylesheet" href="../../assets/css/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Break-Even Calculator | SuvoCalc","url":"https://suvocalc.com/calculators/break-even-calculator/","applicationCategory":"CalculatorApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Find the break-even point for your business — units needed to cover all costs and start profiting."}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://suvocalc.com/"},{"@type":"ListItem","position":2,"name":"Tax & Business","item":"https://suvocalc.com/categories/tax-business/"},{"@type":"ListItem","position":3,"name":"Break-Even Calculator","item":"https://suvocalc.com/calculators/break-even-calculator/"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the break-even point?","acceptedAnswer":{"@type":"Answer","text":"It is the number of units you must sell for total revenue to exactly equal total costs. Below it you make a loss; above it you make a profit. For example, with ₹50,000 of fixed costs and a ₹300 contribution per unit, the break-even point is 167 units per month."}},{"@type":"Question","name":"How do I calculate the break-even point?","acceptedAnswer":{"@type":"Answer","text":"Subtract the variable cost per unit from the selling price to get the contribution margin, then divide your fixed costs by that margin. Fixed costs of ₹50,000 divided by a ₹300 margin gives 167 units."}},{"@type":"Question","name":"What is contribution margin?","acceptedAnswer":{"@type":"Answer","text":"It is the amount each unit sold contributes toward covering fixed costs and then profit: selling price minus variable cost per unit. A ₹500 item costing ₹200 to make has a contribution margin of ₹300, or 60%."}}]}
+</script>
+
+</head>
+<body data-active-nav="tools" data-tool-url-prefix="../../" data-tool-slug="break-even-calculator" data-tool-title="Break-Even Calculator">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="../../index.html" aria-label="SuvoCalc home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="11" x2="8" y2="11.01"/><line x1="12" y1="11" x2="12" y2="11.01"/><line x1="16" y1="11" x2="16" y2="11.01"/><line x1="8" y1="15" x2="8" y2="15.01"/><line x1="12" y1="15" x2="12" y2="15.01"/><line x1="16" y1="15" x2="16" y2="15.01"/></svg>
+      </span>
+      <span class="brand-name">SuvoCalc</span>
+      <span class="brand-version">v31</span>
+    </a>
+
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+      <a class="nav-link" data-nav="home" href="../../index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Home</span>
+      </a>
+      <a class="nav-link" data-nav="tools" href="../../tools/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        <span>All Tools</span>
+      </a>
+      <a class="nav-link" data-nav="categories" href="../../tools/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+        <span>Categories</span>
+      </a>
+      <a class="nav-link" data-nav="blog" href="../../blog/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        <span>Blog/Guides</span>
+      </a>
+      <a class="nav-link" data-nav="about" href="../../about/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        <span>About</span>
+      </a>
+      <a class="nav-link" data-nav="contact" href="../../contact/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span>Contact</span>
+      </a>
+    </nav>
+
+    <div class="header-actions">
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch between light and dark theme">
+        <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <span class="theme-toggle-label">Theme</span>
+      </button>
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="page-main">
+<nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/categories/tax-business/">Tax &amp; Business</a></li><li><span aria-current="page">Break-Even Calculator</span></li></ol></nav>
+  <h1 class="page-title">Break-Even Calculator</h1>
+<p class="lead">The Break-Even Calculator finds how many units a business must sell each month to cover all its costs — the point where it stops losing money and starts making a profit.</p>
+<section class="content-block"><h2>What it is used for</h2><p>It is used by small business owners and shopkeepers to set a sales target, to test whether a price covers costs, and to see the monthly profit or loss at the current level of sales.</p></section>
+<section class="calc-card" aria-label="Break-Even Calculator calculator">
+<form id="calc-form" class="calc-form">
+<div class="field"><label for="beFixed">Fixed Costs (₹/month)</label><input type="number" id="beFixed" name="beFixed" placeholder="e.g. 50000"></div>
+<div class="field"><label for="bePrice">Selling Price per Unit (₹)</label><input type="number" id="bePrice" name="bePrice" placeholder="e.g. 500"></div>
+<div class="field"><label for="beVar">Variable Cost per Unit (₹)</label><input type="number" id="beVar" name="beVar" placeholder="e.g. 200"></div>
+<div class="field"><label for="beUnits">Current Units Sold/Month</label><input type="number" id="beUnits" name="beUnits" placeholder="e.g. 150"></div>
+<button type="submit" id="calc-btn" class="btn btn-primary btn-block">Calculate</button>
+</form>
+<div class="result-box" id="res-box">
+<p class="result-label" id="res-label">Break-Even Point</p>
+<p class="result-value" id="res-value">&mdash;</p>
+<p class="result-details" id="res-details"></p>
+<p class="result-error" id="res-error" hidden></p>
+<div class="share-row"><button type="button" class="btn btn-secondary btn-small" id="share-result">Share result</button><span class="share-status" id="share-status" role="status"></span></div>
+</div>
+</section>
+<section class="content-block"><h2>Formula</h2><p class="formula-box">Contribution margin per unit = Selling Price per Unit − Variable Cost per Unit. Break-even units = Fixed Costs ÷ Contribution margin per unit (rounded up). Break-even revenue = Break-even units × Selling Price. Contribution margin % = Contribution margin ÷ Selling Price × 100. Current monthly profit = (Current Units × Contribution margin) − Fixed Costs.</p></section>
+<section class="content-block"><h2>Worked example</h2><p>Inputs: Fixed Costs = ₹50,000 per month, Selling Price per Unit = ₹500, Variable Cost per Unit = ₹200, Current Units Sold = 150 per month. Step 1: contribution margin = 500 − 200 = ₹300 per unit, which is 60% of the price. Step 2: break-even units = 50,000 ÷ 300 = 166.7, rounded up to 167 units. Step 3: break-even revenue = 167 × 500 = ₹83,500 per month. Step 4: current profit = 150 × 300 − 50,000 = −₹5,000, so the business is below break-even by 17 units.</p></section>
+<section class="content-block"><h2>How to use</h2><ol class="steps"><li>Step 1: Enter your monthly fixed costs — rent, salaries, electricity — in the &quot;Fixed Costs (₹/month)&quot; field.</li><li>Step 2: Enter what you charge for one item in the &quot;Selling Price per Unit (₹)&quot; field.</li><li>Step 3: Enter what one item costs you to make or buy in the &quot;Variable Cost per Unit (₹)&quot; field.</li><li>Step 4: Enter how many units you sell now in the &quot;Current Units Sold/Month&quot; field.</li><li>Step 5: Tap Calculate to see the break-even point in units, the break-even revenue, and your current monthly profit.</li></ol></section>
+<section class="content-block"><h2>Tips</h2><ul><li>Fixed costs stay the same whether you sell 10 units or 1,000, while variable costs grow with every unit — keep the two separate.</li><li>Raising the price or lowering the variable cost both raise the contribution margin and bring the break-even point down.</li><li>The break-even point is a monthly target: selling 167 units in a month means the month breaks even, not that each day does.</li><li>If you are below break-even, check first whether the price, the volume, or the fixed costs are the problem — each has a different fix.</li></ul></section>
+<section class="content-block"><h2>Common mistakes</h2><ul><li>Putting variable costs such as raw material into the fixed costs field, which distorts the break-even point.</li><li>Setting the selling price at or below the variable cost — then every sale loses money and there is no break-even point.</li><li>Forgetting fixed costs such as rent or salaries when adding up monthly costs.</li><li>Treating the break-even point as a profit target — it is only the point where profit is zero.</li></ul></section>
+<section class="content-block faq-list"><h2>Frequently asked questions</h2><details><summary>What is the break-even point?</summary><p>It is the number of units you must sell for total revenue to exactly equal total costs. Below it you make a loss; above it you make a profit. For example, with ₹50,000 of fixed costs and a ₹300 contribution per unit, the break-even point is 167 units per month.</p></details><details><summary>How do I calculate the break-even point?</summary><p>Subtract the variable cost per unit from the selling price to get the contribution margin, then divide your fixed costs by that margin. Fixed costs of ₹50,000 divided by a ₹300 margin gives 167 units.</p></details><details><summary>What is contribution margin?</summary><p>It is the amount each unit sold contributes toward covering fixed costs and then profit: selling price minus variable cost per unit. A ₹500 item costing ₹200 to make has a contribution margin of ₹300, or 60%.</p></details></section>
+<section class="content-block"><h2>Related calculators</h2><ul class="related-list"><li><a href="../../calculators/gst-calculator/">GST Calculator (India) / জিএসটি ক্যালকুলেটর (ভারত)</a></li><li><a href="../../calculators/income-tax-calculator/">Income Tax Calculator (India)</a></li><li><a href="../../calculators/home-loan-tax-benefit-calculator/">Home Loan Tax Benefit Calculator</a></li></ul></section>
+<div class="disclaimer-box"><p>Results are a guide based on the numbers you enter. For loan, tax or investment decisions, check the figures with the bank, the official tax portal, or a qualified adviser.</p></div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-copy">&copy; 2026 SuvoCalc &mdash; v31 &middot; 57 free calculators</p>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="../../privacy/index.html">Privacy</a>
+      <a href="../../terms/index.html">Terms</a>
+      <a href="../../disclaimer/index.html">Disclaimer</a>
+      <a href="../../about/index.html">About</a>
+      <a href="../../contact/index.html">Contact</a>
+      <a href="../../faq/index.html">FAQ</a>
+    </nav>
+  </div>
+</footer>
+
+<nav class="bottom-nav" aria-label="Mobile navigation">
+  <a class="bottom-nav-link" data-nav="home" href="../../index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    <span>Home</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="tools" href="../../tools/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+    <span>Tools</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="categories" href="../../tools/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+    <span>Categories</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="blog" href="../../blog/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+    <span>Guides</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="about" href="../../about/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+    <span>About</span>
+  </a>
+</nav>
+
+<div class="cookie-banner" id="cookie-banner" hidden>
+  <p>SuvoCalc uses local storage on your device to remember your theme and recently used calculators. No account, no tracking.</p>
+  <button type="button" class="btn btn-primary btn-small" id="cookie-accept">Got it</button>
+</div>
+
+<script src="../../assets/js/calc.js"></script>
+<script src="../../assets/js/main.js"></script>
+<script>
+/* v31 no-op stubs: the verbatim v30 calc bodies call these legacy
+   helpers (toast, usage tracking, streaks, haptics, gauge). v31 has
+   none of those systems; the stubs keep a calculation from throwing
+   after it has written its result. */
+function toast(){}
+function trackTool(){}
+function bumpStreak(){}
+function checkMilestone(){}
+function v21Haptic(){}
+function injectBMIGauge(){}
+/* renderH: the sci history UI does not exist in v31; pushH() still
+   records to localStorage, renderH() just has nothing to paint. */
+function renderH(){}
+function runToolCalc(){
+
+     const fixed=parseFloat(getId('beFixed'))||0;
+     const price=parseFloat(getId('bePrice'))||0;
+     const varCost=parseFloat(getId('beVar'))||0;
+     const units=parseFloat(getId('beUnits'))||0;
+     if(fixed<0){showValError('breakeven','Fixed costs cannot be negative');return;}
+     if(price<=0){showValError('breakeven','Selling price must be greater than 0');return;}
+     if(varCost<0){showValError('breakeven','Variable cost cannot be negative');return;}
+     if(price<=varCost){showValError('breakeven','Selling price must be higher than variable cost');return;}
+     const contrib=price-varCost;
+     const bep=Math.ceil(fixed/contrib);
+     const margin=(contrib/price*100).toFixed(1);
+     const currentProfit=units*contrib-fixed;
+     const status=units>=bep?'✅ Profitable':'⚠️ Below break-even';
+     setRes('breakeven',bep.toLocaleString('en-IN')+' units','Break-Even Point',`Contribution Margin: ${SYM()}${fmt(contrib)}/unit (${margin}%)<br>Fixed Cost Recovery: ${SYM()}${fmt(Math.round(fixed),true)}<br>Break-Even Revenue: ${SYM()}${fmt(Math.round(bep*price),true)}<br>Current Monthly Profit: ${SYM()}${fmt(Math.round(currentProfit),true)} — ${status}`);
+   
+}
+(function(){
+try{
+var form=document.getElementById("calc-form");
+if(form){ form.addEventListener("submit",function(ev){ ev.preventDefault(); try{ runToolCalc(); }catch(err){ var e=document.getElementById("res-error"); if(e){ e.textContent="Could not calculate. Please check your numbers and try again."; e.hidden=false; } } }); }
+
+}catch(e){}
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calorie / TDEE Calculator | SuvoCalc v31</title>
+<meta name="description" content="Calculate daily calorie needs (TDEE) and calories to lose or gain weight.">
+<link rel="canonical" href="https://suvocalc.com/calculators/calorie-calculator/">
+<script>
+/* Apply saved theme before CSS loads to avoid a flash. No other logic here. */
+(function () {
+  try {
+    var t = localStorage.getItem('sc_theme');
+    if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+  } catch (e) { /* storage unavailable: keep light default */ }
+})();
+</script>
+<link rel="stylesheet" href="../../assets/css/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Calorie / TDEE Calculator | SuvoCalc","url":"https://suvocalc.com/calculators/calorie-calculator/","applicationCategory":"CalculatorApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate daily calorie needs (TDEE) and calories to lose or gain weight."}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://suvocalc.com/"},{"@type":"ListItem","position":2,"name":"Health & Fitness","item":"https://suvocalc.com/categories/health-fitness/"},{"@type":"ListItem","position":3,"name":"Calorie / TDEE Calculator","item":"https://suvocalc.com/calculators/calorie-calculator/"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the difference between BMR and TDEE?","acceptedAnswer":{"@type":"Answer","text":"BMR is the calories your body burns at complete rest. TDEE is BMR multiplied by your activity level, so it is the calories you burn on a normal day."}},{"@type":"Question","name":"How many calories should I eat to lose weight?","acceptedAnswer":{"@type":"Answer","text":"The calculator suggests TDEE minus 500 kcal a day, which aims for about 0.5 kg a week. This is a general estimate, not medical advice."}},{"@type":"Question","name":"Why does gender change the result?","acceptedAnswer":{"@type":"Answer","text":"The Mifflin-St Jeor equation uses different constants for men and women because average body composition differs. The tool applies +5 for men and −161 for women."}}]}
+</script>
+
+</head>
+<body data-active-nav="tools" data-tool-url-prefix="../../" data-tool-slug="calorie-calculator" data-tool-title="Calorie / TDEE Calculator">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="../../index.html" aria-label="SuvoCalc home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="11" x2="8" y2="11.01"/><line x1="12" y1="11" x2="12" y2="11.01"/><line x1="16" y1="11" x2="16" y2="11.01"/><line x1="8" y1="15" x2="8" y2="15.01"/><line x1="12" y1="15" x2="12" y2="15.01"/><line x1="16" y1="15" x2="16" y2="15.01"/></svg>
+      </span>
+      <span class="brand-name">SuvoCalc</span>
+      <span class="brand-version">v31</span>
+    </a>
+
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+      <a class="nav-link" data-nav="home" href="../../index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Home</span>
+      </a>
+      <a class="nav-link" data-nav="tools" href="../../tools/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        <span>All Tools</span>
+      </a>
+      <a class="nav-link" data-nav="categories" href="../../tools/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+        <span>Categories</span>
+      </a>
+      <a class="nav-link" data-nav="blog" href="../../blog/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        <span>Blog/Guides</span>
+      </a>
+      <a class="nav-link" data-nav="about" href="../../about/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        <span>About</span>
+      </a>
+      <a class="nav-link" data-nav="contact" href="../../contact/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span>Contact</span>
+      </a>
+    </nav>
+
+    <div class="header-actions">
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch between light and dark theme">
+        <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <span class="theme-toggle-label">Theme</span>
+      </button>
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="page-main">
+<nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/categories/health-fitness/">Health &amp; Fitness</a></li><li><span aria-current="page">Calorie / TDEE Calculator</span></li></ol></nav>
+  <h1 class="page-title">Calorie / TDEE Calculator</h1>
+<p class="lead">The Calorie Calculator estimates your daily calorie needs (TDEE) from your age, weight, height, gender, and activity level, using the Mifflin-St Jeor equation.</p>
+<section class="content-block"><h2>What it is used for</h2><p>It is used to plan how many calories to eat each day to maintain weight, lose about 0.5 kg a week, or gain about 0.5 kg a week, and to see a daily protein target.</p></section>
+<section class="calc-card" aria-label="Calorie / TDEE Calculator calculator">
+<form id="calc-form" class="calc-form">
+<div class="field"><label for="clA">Age</label><input type="number" id="clA" name="clA" placeholder="e.g. 25"></div>
+<div class="field"><label for="clW">Weight (kg)</label><input type="number" id="clW" name="clW" placeholder="e.g. 70"></div>
+<div class="field"><label for="clH">Height (cm)</label><input type="number" id="clH" name="clH" placeholder="e.g. 170"></div>
+<div class="field"><label for="clG">Gender</label><select id="clG" name="clG"><option value="Male">Male</option><option value="Female">Female</option></select></div>
+<div class="field"><label for="clAc">Activity Level</label><select id="clAc" name="clAc"><option value="Sedentary (desk job)">Sedentary (desk job)</option><option value="Light (1-3 days/wk)">Light (1-3 days/wk)</option><option value="Moderate (3-5 days/wk)">Moderate (3-5 days/wk)</option><option value="Active (6-7 days/wk)">Active (6-7 days/wk)</option><option value="Very Active (athlete)">Very Active (athlete)</option></select></div>
+<button type="submit" id="calc-btn" class="btn btn-primary btn-block">Calculate</button>
+</form>
+<div class="result-box" id="res-box">
+<p class="result-label" id="res-label">Daily Calories (TDEE)</p>
+<p class="result-value" id="res-value">&mdash;</p>
+<p class="result-details" id="res-details"></p>
+<p class="result-error" id="res-error" hidden></p>
+<div class="share-row"><button type="button" class="btn btn-secondary btn-small" id="share-result">Share result</button><span class="share-status" id="share-status" role="status"></span></div>
+</div>
+</section>
+<section class="content-block"><h2>Formula</h2><p class="formula-box">BMR (men) = 10 × weight (kg) + 6.25 × height (cm) − 5 × age + 5. BMR (women) = 10 × weight (kg) + 6.25 × height (cm) − 5 × age − 161. TDEE = BMR × activity multiplier (Sedentary 1.2, Light 1.375, Moderate 1.55, Active 1.725, Very Active 1.9). Lose 0.5 kg/week: TDEE − 500. Gain 0.5 kg/week: TDEE + 500.</p></section>
+<section class="content-block"><h2>Worked example</h2><p>Inputs: Age 25, Weight 70 kg, Height 170 cm, Gender Male, Activity Moderate (3–5 days/week). Step 1: BMR = 10 × 70 + 6.25 × 170 − 5 × 25 + 5 = 700 + 1062.5 − 125 + 5 = 1642.5 kcal. Step 2: TDEE = 1642.5 × 1.55 = 2545.9, rounded to 2546 kcal. Step 3: to lose 0.5 kg a week, 2546 − 500 = 2046 kcal a day. Final result: daily need about 2,546 kcal, with a protein target of about 126 g a day (70 × 1.8). These are estimates, not medical advice.</p></section>
+<section class="content-block"><h2>How to use</h2><ol class="steps"><li>Enter your age in the Age field, for example 25.</li><li>Enter your weight in the Weight (kg) field and your height in the Height (cm) field.</li><li>Choose your gender from the Gender dropdown.</li><li>Pick the Activity Level that best matches your week, from Sedentary to Very Active.</li><li>Tap Calculate and read your BMR, TDEE, and the lose/gain calorie figures.</li></ol></section>
+<section class="content-block"><h2>Tips</h2><ul><li>Be honest about activity level — most desk workers are Sedentary or Light, not Moderate.</li><li>Use the TDEE as a starting point and adjust after two or three weeks of watching your actual weight change.</li><li>A 500 kcal daily deficit is the calculator&#39;s rule for about 0.5 kg a week; faster loss is harder to sustain.</li><li>Count calories for a week or two to learn portion sizes, then you can estimate by eye.</li><li>If you have a medical condition, ask a doctor or dietitian before changing your diet.</li></ul></section>
+<section class="content-block"><h2>Common mistakes</h2><ul><li>Picking a higher activity level than you really have, which overstates your calorie needs.</li><li>Treating TDEE as exact — it is an estimate, and real needs vary by several hundred calories.</li><li>Cutting far below the lose-weight figure, which leaves you tired and hungry.</li><li>Forgetting that drinks, cooking oil, and snacks count toward the daily total.</li></ul></section>
+<section class="content-block faq-list"><h2>Frequently asked questions</h2><details><summary>What is the difference between BMR and TDEE?</summary><p>BMR is the calories your body burns at complete rest. TDEE is BMR multiplied by your activity level, so it is the calories you burn on a normal day.</p></details><details><summary>How many calories should I eat to lose weight?</summary><p>The calculator suggests TDEE minus 500 kcal a day, which aims for about 0.5 kg a week. This is a general estimate, not medical advice.</p></details><details><summary>Why does gender change the result?</summary><p>The Mifflin-St Jeor equation uses different constants for men and women because average body composition differs. The tool applies +5 for men and −161 for women.</p></details></section>
+<section class="content-block"><h2>Related calculators</h2><ul class="related-list"><li><a href="../../calculators/bmi-calculator/">BMI Calculator</a></li><li><a href="../../calculators/body-fat-calculator/">Body Fat % Calculator</a></li><li><a href="../../calculators/water-intake-calculator/">Water Intake Calculator</a></li></ul></section>
+<div class="disclaimer-box"><p>Results are a guide based on the numbers you enter. For loan, tax or investment decisions, check the figures with the bank, the official tax portal, or a qualified adviser.</p></div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-copy">&copy; 2026 SuvoCalc &mdash; v31 &middot; 57 free calculators</p>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="../../privacy/index.html">Privacy</a>
+      <a href="../../terms/index.html">Terms</a>
+      <a href="../../disclaimer/index.html">Disclaimer</a>
+      <a href="../../about/index.html">About</a>
+      <a href="../../contact/index.html">Contact</a>
+      <a href="../../faq/index.html">FAQ</a>
+    </nav>
+  </div>
+</footer>
+
+<nav class="bottom-nav" aria-label="Mobile navigation">
+  <a class="bottom-nav-link" data-nav="home" href="../../index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    <span>Home</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="tools" href="../../tools/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+    <span>Tools</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="categories" href="../../tools/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+    <span>Categories</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="blog" href="../../blog/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+    <span>Guides</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="about" href="../../about/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+    <span>About</span>
+  </a>
+</nav>
+
+<div class="cookie-banner" id="cookie-banner" hidden>
+  <p>SuvoCalc uses local storage on your device to remember your theme and recently used calculators. No account, no tracking.</p>
+  <button type="button" class="btn btn-primary btn-small" id="cookie-accept">Got it</button>
+</div>
+
+<script src="../../assets/js/calc.js"></script>
+<script src="../../assets/js/main.js"></script>
+<script>
+/* v31 no-op stubs: the verbatim v30 calc bodies call these legacy
+   helpers (toast, usage tracking, streaks, haptics, gauge). v31 has
+   none of those systems; the stubs keep a calculation from throwing
+   after it has written its result. */
+function toast(){}
+function trackTool(){}
+function bumpStreak(){}
+function checkMilestone(){}
+function v21Haptic(){}
+function injectBMIGauge(){}
+/* renderH: the sci history UI does not exist in v31; pushH() still
+   records to localStorage, renderH() just has nothing to paint. */
+function renderH(){}
+function runToolCalc(){
+
+     const age=parseFloat(getId('clA'))||25,w=parseFloat(getId('clW'))||70,h=parseFloat(getId('clH'))||170,g=getId('clG'),ac=getId('clAc');
+     if(age<1||age>120){showValError('calorie','Age must be between 1 and 120');return;}
+     if(w<=0||w>500){showValError('calorie','Weight must be between 1 and 500 kg');return;}
+     if(h<=0||h>300){showValError('calorie','Height must be between 50 and 300 cm');return;}
+     let bmr;
+     if(g==='Male')bmr=10*w+6.25*h-5*age+5;
+     else bmr=10*w+6.25*h-5*age-161;
+     const actMap={'Sedentary (desk job)':1.2,'Light (1-3 days/wk)':1.375,'Moderate (3-5 days/wk)':1.55,'Active (6-7 days/wk)':1.725,'Very Active (athlete)':1.9};
+     const mult=actMap[ac]||1.55;const tdee=Math.round(bmr*mult);
+     setRes('calorie',tdee+' kcal','Daily Calories (TDEE)',`BMR (at rest): ${Math.round(bmr)} kcal<br>To lose 0.5kg/week: ${tdee-500} kcal/day<br>To gain 0.5kg/week: ${tdee+500} kcal/day<br>Protein target: ${Math.round(w*1.8)}g/day`);
+   
+}
+(function(){
+try{
+var form=document.getElementById("calc-form");
+if(form){ form.addEventListener("submit",function(ev){ ev.preventDefault(); try{ runToolCalc(); }catch(err){ var e=document.getElementById("res-error"); if(e){ e.textContent="Could not calculate. Please check your numbers and try again."; e.hidden=false; } } }); }
+
+}catch(e){}
+})();
+</script>
+</body>
+</html>

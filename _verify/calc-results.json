@@ -1,0 +1,529 @@
+{
+  "counts": {
+    "PASS": 57,
+    "FAIL": 0,
+    "NEEDS-BROWSER": 1
+  },
+  "rows": [
+    {
+      "id": "pct",
+      "slug": "percentage-calculator",
+      "status": "PASS",
+      "inputs": "{\"pA\":20,\"pB\":500}",
+      "expected": "res-value = 100 (expected 100)",
+      "actual": "res-value = 100 (expected 100)",
+      "note": ""
+    },
+    {
+      "id": "emi",
+      "slug": "emi-calculator",
+      "status": "PASS",
+      "inputs": "{\"eP\":500000,\"eR\":8.5,\"eN\":60}",
+      "expected": "res-value = 10258 (expected 10258)",
+      "actual": "res-value = 10258 (expected 10258)",
+      "note": ""
+    },
+    {
+      "id": "disc",
+      "slug": "discount-calculator",
+      "status": "PASS",
+      "inputs": "{\"dO\":1000,\"dP\":20}",
+      "expected": "res-value = 800 (expected 800)",
+      "actual": "res-value = 800 (expected 800)",
+      "note": ""
+    },
+    {
+      "id": "ci",
+      "slug": "compound-interest-calculator",
+      "status": "PASS",
+      "inputs": "{\"ciP\":100000,\"ciR\":8,\"ciN\":5,\"ciC\":\"Yearly\"}",
+      "expected": "res-value = 146933 (expected 146933)",
+      "actual": "res-value = 146933 (expected 146933)",
+      "note": ""
+    },
+    {
+      "id": "si",
+      "slug": "simple-interest-calculator",
+      "status": "PASS",
+      "inputs": "{\"siP\":100000,\"siRate\":8,\"siT\":5}",
+      "expected": "res-value = 40000 (expected 40000)",
+      "actual": "res-value = 40000 (expected 40000)",
+      "note": ""
+    },
+    {
+      "id": "sal",
+      "slug": "salary-calculator",
+      "status": "PASS",
+      "inputs": "{\"salG\":1200000,\"salPF1\":12,\"salT\":2400}",
+      "expected": "res-value = 87800 (expected 87800)",
+      "actual": "res-value = 87800 (expected 87800)",
+      "note": ""
+    },
+    {
+      "id": "budget",
+      "slug": "budget-calculator",
+      "status": "PASS",
+      "inputs": "{\"budInc\":100000,\"budExp\":50000,\"budSave\":20000}",
+      "expected": "res-value = 20000 (expected 20000)",
+      "actual": "res-value = 20000 (expected 20000)",
+      "note": ""
+    },
+    {
+      "id": "loan",
+      "slug": "loan-eligibility-calculator",
+      "status": "PASS",
+      "inputs": "{\"lnI\":60000,\"lnE\":5000,\"lnR\":9,\"lnT\":20}",
+      "expected": "res-value = 2778624 (expected 2778624)",
+      "actual": "res-value = 2778624 (expected 2778624)",
+      "note": ""
+    },
+    {
+      "id": "emi2",
+      "slug": "loan-affordability-calculator",
+      "status": "PASS",
+      "inputs": "{\"emi2Inc\":60000,\"emi2Emi\":5000,\"emi2Rate\":9,\"emi2Ten\":20}",
+      "expected": "max loan in emi2Res = 2778624 (expected 2778624)",
+      "actual": "max loan in emi2Res = 2778624 (expected 2778624)",
+      "note": ""
+    },
+    {
+      "id": "overtime",
+      "slug": "overtime-pay-calculator",
+      "status": "PASS",
+      "inputs": "{\"otRate\":200,\"otHours\":40,\"otOTHours\":10,\"otMulti\":1.5}",
+      "expected": "res-value = 11000 (expected 11000)",
+      "actual": "res-value = 11000 (expected 11000)",
+      "note": ""
+    },
+    {
+      "id": "lcomp",
+      "slug": "loan-comparison-calculator",
+      "status": "PASS",
+      "inputs": "{\"lcP\":500000,\"lcR1\":9,\"lcN1\":240,\"lcR2\":8.5,\"lcN2\":180}",
+      "expected": "EMI1 ₹4,499, EMI2 ₹4,924, Loan 2 saves",
+      "actual": "EMI1 ₹4,499, EMI2 ₹4,924, Loan 2 saves",
+      "note": ""
+    },
+    {
+      "id": "gst",
+      "slug": "gst-calculator",
+      "status": "PASS",
+      "inputs": "[{\"gA\":1000,\"gR\":18,\"gM\":\"Add GST\",\"gT\":\"Within state (CGST + SGST)\"},{\"gA\":1180,\"gR\":18,\"gM\":\"Remove GST\",\"gT\":\"Within state (CGST + SGST)\"},{\"gA\":1000,\"gR\":40,\"gM\":\"Add GST\",\"gT\":\"Within state (CGST + SGST)\"}]",
+      "expected": "GST ₹180, total ₹1,180, CGST ₹90, SGST ₹90 || base ₹1,000, GST ₹180 || GST ₹400, total ₹1,400",
+      "actual": "GST ₹180, total ₹1,180, CGST ₹90, SGST ₹90 || base ₹1,000, GST ₹180 || GST ₹400, total ₹1,400",
+      "note": "3 sub-cases"
+    },
+    {
+      "id": "tax",
+      "slug": "income-tax-calculator",
+      "status": "PASS",
+      "inputs": "{\"txI\":1500000,\"txR\":\"New Regime 2025-26\"}",
+      "expected": "res-value = 109200 (expected 109200)",
+      "actual": "res-value = 109200 (expected 109200)",
+      "note": ""
+    },
+    {
+      "id": "hra",
+      "slug": "hra-exemption-calculator",
+      "status": "PASS",
+      "inputs": "{\"hraSal\":50000,\"hraDA\":10000,\"hraRcv\":20000,\"hraRent\":15000,\"hraCity\":\"Metro\"}",
+      "expected": "exemption in hraRes = 9000 (expected 9000)",
+      "actual": "exemption in hraRes = 9000 (expected 9000)",
+      "note": ""
+    },
+    {
+      "id": "homeloan",
+      "slug": "home-loan-tax-benefit-calculator",
+      "status": "PASS",
+      "inputs": "{\"hlLoan\":5000000,\"hlRate\":8.5,\"hlTenure\":20,\"hlIncome\":1500000,\"hlSlab\":30}",
+      "expected": "annual tax saving in homeloanRes = 105000 (expected 105000)",
+      "actual": "annual tax saving in homeloanRes = 105000 (expected 105000)",
+      "note": ""
+    },
+    {
+      "id": "breakeven",
+      "slug": "break-even-calculator",
+      "status": "PASS",
+      "inputs": "{\"beFixed\":50000,\"bePrice\":100,\"beVar\":60,\"beUnits\":1000}",
+      "expected": "res-value = 1250 (expected 1250)",
+      "actual": "res-value = 1250 (expected 1250)",
+      "note": ""
+    },
+    {
+      "id": "sip",
+      "slug": "sip-calculator",
+      "status": "PASS",
+      "inputs": "{\"siM\":5000,\"siR\":12,\"siY\":10}",
+      "expected": "res-value = 1161695 (expected 1161695)",
+      "actual": "res-value = 1161695 (expected 1161695)",
+      "note": ""
+    },
+    {
+      "id": "stock",
+      "slug": "stock-profit-calculator",
+      "status": "PASS",
+      "inputs": "{\"stB\":100,\"stQ\":10,\"stS\":150,\"stY\":1}",
+      "expected": "res-value = 500 (expected 500)",
+      "actual": "res-value = 500 (expected 500)",
+      "note": ""
+    },
+    {
+      "id": "crypto",
+      "slug": "crypto-calculator",
+      "status": "PASS",
+      "inputs": "{\"crI\":10000,\"crB\":50000,\"crN\":75000}",
+      "expected": "res-value (coins) = 0.2 (expected 0.2)",
+      "actual": "res-value (coins) = 0.2 (expected 0.2)",
+      "note": ""
+    },
+    {
+      "id": "retire",
+      "slug": "retirement-calculator",
+      "status": "PASS",
+      "inputs": "{\"rtA\":30,\"rtR\":60,\"rtE\":50000,\"rtI\":8,\"rtF\":6}",
+      "expected": "res-value = 172304735 (expected 172304735)",
+      "actual": "res-value = 172304735 (expected 172304735)",
+      "note": ""
+    },
+    {
+      "id": "ppf",
+      "slug": "ppf-calculator",
+      "status": "PASS",
+      "inputs": "{\"ppfY\":150000,\"ppfR\":7.1,\"ppfT\":15}",
+      "expected": "res-value = 4068209 (expected 4068209)",
+      "actual": "res-value = 4068209 (expected 4068209)",
+      "note": ""
+    },
+    {
+      "id": "fd",
+      "slug": "fixed-deposit-calculator",
+      "status": "PASS",
+      "inputs": "{\"fdP\":100000,\"fdR\":7,\"fdT\":5,\"fdFreq\":\"Quarterly\"}",
+      "expected": "maturity in fdRes = 141478 (expected 141478)",
+      "actual": "maturity in fdRes = 141478 (expected 141478)",
+      "note": ""
+    },
+    {
+      "id": "cagr",
+      "slug": "cagr-calculator",
+      "status": "PASS",
+      "inputs": "{\"cagrStart\":100000,\"cagrEnd\":200000,\"cagrYrs\":5}",
+      "expected": "CAGR 14.87%",
+      "actual": "CAGR 14.87%",
+      "note": ""
+    },
+    {
+      "id": "networth",
+      "slug": "net-worth-calculator",
+      "status": "PASS",
+      "inputs": "{\"nwCash\":100000,\"nwInvest\":500000,\"nwProperty\":2000000,\"nwOther\":50000,\"nwHomeLoan\":1000000,\"nwPersonal\":100000,\"nwCC\":50000}",
+      "expected": "net worth in networthRes = 1500000 (expected 1500000)",
+      "actual": "net worth in networthRes = 1500000 (expected 1500000)",
+      "note": ""
+    },
+    {
+      "id": "savgoal",
+      "slug": "savings-goal-calculator",
+      "status": "PASS",
+      "inputs": "{\"sgGoal\":100000,\"sgSaved\":0,\"sgMonthly\":5000,\"sgMonths\":0,\"sgRate\":4}",
+      "expected": "time to goal 1y 8m (20 months)",
+      "actual": "time to goal 1y 8m (20 months)",
+      "note": ""
+    },
+    {
+      "id": "bmi",
+      "slug": "bmi-calculator",
+      "status": "PASS",
+      "inputs": "{\"bH\":170,\"bW\":70}",
+      "expected": "res-value = 24.2214532872 (expected ≈24.2215)",
+      "actual": "res-value = 24.2214532872 (expected ≈24.2215)",
+      "note": ""
+    },
+    {
+      "id": "age",
+      "slug": "age-calculator",
+      "status": "PASS",
+      "inputs": "{\"aD\":\"2000-01-15\"}",
+      "expected": "26 yrs, 10 mo, 6 d",
+      "actual": "26 yrs, 10 mo, 6 d",
+      "note": ""
+    },
+    {
+      "id": "preg",
+      "slug": "pregnancy-due-date-calculator",
+      "status": "PASS",
+      "inputs": "{\"prD\":\"2026-01-01\",\"prC\":28}",
+      "expected": "EDD Thu Oct 08 2026",
+      "actual": "EDD Thu Oct 08 2026",
+      "note": ""
+    },
+    {
+      "id": "calorie",
+      "slug": "calorie-calculator",
+      "status": "PASS",
+      "inputs": "{\"clA\":30,\"clW\":70,\"clH\":170,\"clG\":\"Male\",\"clAc\":\"Moderate (3-5 days/wk)\"}",
+      "expected": "res-value = 2507 (expected 2507)",
+      "actual": "res-value = 2507 (expected 2507)",
+      "note": ""
+    },
+    {
+      "id": "bodyfat",
+      "slug": "body-fat-calculator",
+      "status": "PASS",
+      "inputs": "{\"bfG\":\"Male\",\"bfH\":175,\"bfW\":85,\"bfN\":38,\"bfHp\":95}",
+      "expected": "res-value = 16.9380273317 (expected ≈16.9380)",
+      "actual": "res-value = 16.9380273317 (expected ≈16.9380)",
+      "note": ""
+    },
+    {
+      "id": "wtr",
+      "slug": "water-intake-calculator",
+      "status": "PASS",
+      "inputs": "{\"wtrW\":70,\"wtrA\":\"Moderately Active (3–5 days/wk)\",\"wtrC\":\"Temperate / Normal\"}",
+      "expected": "2.5 L / 2520 ml",
+      "actual": "2.5 L / 2520 ml",
+      "note": ""
+    },
+    {
+      "id": "sleep",
+      "slug": "sleep-cycle-calculator",
+      "status": "PASS",
+      "inputs": "[{\"sleepMode\":\"I want to wake at…\",\"sleepTime\":\"07:00\"},{\"sleepMode\":\"I want to sleep at…\",\"sleepTime\":\"22:00\"}]",
+      "expected": "wake 07:00 → sleep 21:46 (6c, best), 23:16 (5c), 00:46 (4c) || sleep 22:00 → wake 04:14 (4c), 05:44 (5c), 07:14 (6c, best)",
+      "actual": "wake 07:00 → sleep 21:46 (6c, best), 23:16 (5c), 00:46 (4c) || sleep 22:00 → wake 04:14 (4c), 05:44 (5c), 07:14 (6c, best)",
+      "note": "2 sub-cases"
+    },
+    {
+      "id": "heartrate",
+      "slug": "heart-rate-calculator",
+      "status": "PASS",
+      "inputs": "{\"hrAge\":30,\"hrRest\":60}",
+      "expected": "max 190 bpm, Zone 1 125-138",
+      "actual": "max 190 bpm, Zone 1 125-138",
+      "note": ""
+    },
+    {
+      "id": "cgpa",
+      "slug": "cgpa-calculator",
+      "status": "PASS",
+      "inputs": "{\"cgS1\":8,\"cgS2\":9,\"cgS3\":7,\"cgS4\":8}",
+      "expected": "res-value = 8 (expected 8)",
+      "actual": "res-value = 8 (expected 8)",
+      "note": ""
+    },
+    {
+      "id": "grade",
+      "slug": "grade-calculator",
+      "status": "PASS",
+      "inputs": "{\"grM\":85,\"grT\":100}",
+      "expected": "grade A, 85%",
+      "actual": "grade A, 85%",
+      "note": ""
+    },
+    {
+      "id": "matrix",
+      "slug": "matrix-calculator",
+      "status": "PASS",
+      "inputs": "{\"ma00\":1,\"ma01\":2,\"ma10\":3,\"ma11\":4,\"mb00\":5,\"mb01\":6,\"mb10\":7,\"mb11\":8}",
+      "expected": "add [6,8]/[10,12]; mul [19,22]/[43,50]",
+      "actual": "add [6,8]/[10,12]; mul [19,22]/[43,50]",
+      "note": ""
+    },
+    {
+      "id": "pomo",
+      "slug": "pomodoro-study-timer",
+      "status": "PASS",
+      "inputs": "{\"pomMode\":\"Pomodoro (25 min)\"}",
+      "expected": "pomStart → running, status \"🎯 Focus!\" (1s ticking needs browser)",
+      "actual": "pomStart → running, status \"🎯 Focus!\" (1s ticking needs browser)",
+      "note": ""
+    },
+    {
+      "id": "attend",
+      "slug": "attendance-calculator",
+      "status": "PASS",
+      "inputs": "{\"attTotal\":100,\"attAttended\":80,\"attReq\":75}",
+      "expected": "80.0%, SAFE, can miss 6",
+      "actual": "80.0%, SAFE, can miss 6",
+      "note": ""
+    },
+    {
+      "id": "date",
+      "slug": "date-difference-calculator",
+      "status": "PASS",
+      "inputs": "{\"dd1\":\"2026-01-01\",\"dd2\":\"2026-02-01\"}",
+      "expected": "res-value (days) = 31 (expected 31)",
+      "actual": "res-value (days) = 31 (expected 31)",
+      "note": ""
+    },
+    {
+      "id": "tzc",
+      "slug": "time-zone-converter",
+      "status": "PASS",
+      "inputs": "{\"tzTime\":\"2026-11-21T12:00\",\"tzFrom\":\"UTC+0\",\"tzTo\":\"UTC+5:30\"}",
+      "expected": "UTC+0 12:00 → UTC+5:30 05:30 pm",
+      "actual": "UTC+0 12:00 → UTC+5:30 05:30 pm",
+      "note": ""
+    },
+    {
+      "id": "worldclock",
+      "slug": "world-clock",
+      "status": "PASS",
+      "inputs": "{\"wcCity\":\"Asia/Kolkata\"}",
+      "expected": "10 rows show live Intl time (±2s)",
+      "actual": "10 rows show live Intl time (±2s)",
+      "note": ""
+    },
+    {
+      "id": "elec",
+      "slug": "electricity-bill-calculator",
+      "status": "PASS",
+      "inputs": "{\"elU\":200,\"elR\":6.5,\"elF\":50}",
+      "expected": "res-value = 1350 (expected 1350)",
+      "actual": "res-value = 1350 (expected 1350)",
+      "note": ""
+    },
+    {
+      "id": "fuel",
+      "slug": "fuel-cost-calculator",
+      "status": "PASS",
+      "inputs": "{\"fuD\":300,\"fuM\":15,\"fuP\":105}",
+      "expected": "res-value = 2100 (expected 2100)",
+      "actual": "res-value = 2100 (expected 2100)",
+      "note": ""
+    },
+    {
+      "id": "rng",
+      "slug": "random-number-generator",
+      "status": "PASS",
+      "inputs": "{\"rnA\":1,\"rnB\":100,\"rnC\":5}",
+      "expected": "5 numbers in [1,100]: 20, 78, 8, 96, 7",
+      "actual": "5 numbers in [1,100]: 20, 78, 8, 96, 7",
+      "note": ""
+    },
+    {
+      "id": "pwd",
+      "slug": "password-generator",
+      "status": "PASS",
+      "inputs": "{\"pwdLen\":16,\"pwUC\":{\"checked\":true},\"pwLC\":{\"checked\":true},\"pwNM\":{\"checked\":true},\"pwSP\":{\"checked\":true}}",
+      "expected": "16 chars from full set, strength 100%",
+      "actual": "16 chars from full set, strength 100%",
+      "note": ""
+    },
+    {
+      "id": "conv",
+      "slug": "unit-currency-converter",
+      "status": "PASS",
+      "inputs": "{\"tp1\":1,\"tp2\":\"km\",\"tp3\":\"m\"}",
+      "expected": "1 km = 1000 m; 100°C = 212°F",
+      "actual": "1 km = 1000 m; 100°C = 212°F",
+      "note": ""
+    },
+    {
+      "id": "graph",
+      "slug": "graph-plotter",
+      "status": "PASS",
+      "inputs": "{\"graphFn\":\"x*x\"}",
+      "expected": "f(x)=x*x, 145 points plotted",
+      "actual": "f(x)=x*x, 145 points plotted",
+      "note": ""
+    },
+    {
+      "id": "tip",
+      "slug": "tip-calculator",
+      "status": "PASS",
+      "inputs": "{\"tipB\":1000,\"tipP\":15,\"tipS\":2}",
+      "expected": "res-value = 150 (expected 150)",
+      "actual": "res-value = 150 (expected 150)",
+      "note": ""
+    },
+    {
+      "id": "qr",
+      "slug": "qr-code-generator",
+      "status": "PASS",
+      "inputs": "{\"qr22Input\":\"https://example.com\",\"qr22Color\":\"#000000\",\"qr22Bg\":\"#ffffff\",\"qr22Size\":\"300\"}",
+      "expected": "api.qrserver.com URL built with encoded text, 300x300 (image load needs internet)",
+      "actual": "api.qrserver.com URL built with encoded text, 300x300 (image load needs internet)",
+      "note": ""
+    },
+    {
+      "id": "qrscan",
+      "slug": "qr-code-scanner",
+      "status": "NEEDS-BROWSER",
+      "note": "Camera + BarcodeDetector/file-upload path — no DOM-runnable core; startQRScan returns early without navigator.mediaDevices.",
+      "inputs": "(n/a — camera/device)"
+    },
+    {
+      "id": "speed",
+      "slug": "speed-distance-time-calculator",
+      "status": "PASS",
+      "inputs": "{\"spSpeed\":\"\",\"spDist\":120,\"spTime\":2,\"spUnit\":\"km\"}",
+      "expected": "SDT: 120 km / 2 h = 60.00 km/h; Pace: 10 km in 50:00 = 5:00 /km",
+      "actual": "SDT: 120 km / 2 h = 60.00 km/h; Pace: 10 km in 50:00 = 5:00 /km",
+      "note": ""
+    },
+    {
+      "id": "unitprice",
+      "slug": "unit-price-calculator",
+      "status": "PASS",
+      "inputs": "{\"upPrice1\":100,\"upQty1\":1,\"upUnit1\":\"kg\",\"upPrice2\":180,\"upQty2\":2,\"upUnit2\":\"kg\"}",
+      "expected": "B wins ₹90/kg vs ₹100/kg, saves ₹10.000",
+      "actual": "B wins ₹90/kg vs ₹100/kg, saves ₹10.000",
+      "note": ""
+    },
+    {
+      "id": "stats",
+      "slug": "statistics-calculator",
+      "status": "PASS",
+      "inputs": "{\"statsInp\":\"1,2,3,4,5\"}",
+      "expected": "mean 3.000, median 3, mode None, range 4, variance 2.000, stddev 1.414",
+      "actual": "mean 3.000, median 3, mode None, range 4, variance 2.000, stddev 1.414",
+      "note": ""
+    },
+    {
+      "id": "split19",
+      "slug": "split-bill-calculator",
+      "status": "PASS",
+      "inputs": "{\"v19SplitTotal\":1000,\"v19SplitPeople\":4,\"v19SplitTip\":10}",
+      "expected": "each pays ₹275.00",
+      "actual": "each pays ₹275.00",
+      "note": ""
+    },
+    {
+      "id": "area",
+      "slug": "area-calculator",
+      "status": "PASS",
+      "inputs": "{\"arS\":\"Rectangle\",\"arA\":10,\"arB\":5}",
+      "expected": "res-value = 50 (expected 50)",
+      "actual": "res-value = 50 (expected 50)",
+      "note": ""
+    },
+    {
+      "id": "numera",
+      "slug": "numerology-calculator",
+      "status": "PASS",
+      "inputs": "{\"numDob\":\"1990-01-01\",\"numName\":\"RAM\"}",
+      "expected": "Life Path 3 (1990-01-01 → 21 → 3), Name 7 (RAM = 2+1+4)",
+      "actual": "Life Path 3 (1990-01-01 → 21 → 3), Name 7 (RAM = 2+1+4)",
+      "note": ""
+    },
+    {
+      "id": "love",
+      "slug": "love-compatibility-calculator",
+      "status": "PASS",
+      "inputs": "{\"loveName1\":\"Rahul\",\"loveName2\":\"Priya\"}",
+      "expected": "FLAMES = Marriage (independently computed)",
+      "actual": "FLAMES = Marriage (independently computed)",
+      "note": ""
+    },
+    {
+      "id": "sci",
+      "slug": "scientific-calculator",
+      "status": "PASS",
+      "inputs": "{\"sciExpr\":\"(45+15)*3-100/4\"}",
+      "expected": "expr (45+15)*3-100/4 = 155; keypad bracketed = 155; keypad unparenthesised = 65 (JS precedence); sin(30°) = 0.5",
+      "actual": "expr (45+15)*3-100/4 = 155; keypad bracketed = 155; keypad unparenthesised = 65 (JS precedence); sin(30°) = 0.5",
+      "note": ""
+    }
+  ]
+}

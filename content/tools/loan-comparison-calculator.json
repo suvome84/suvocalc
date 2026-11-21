@@ -1,0 +1,45 @@
+{
+  "slug": "loan-comparison-calculator",
+  "intro": "The Loan Comparison Calculator places two loan offers side by side using the same loan amount, and shows each one's EMI, total payment, and total interest so you can see which offer costs less overall.",
+  "uses": "It is used to compare two home loan or car loan offers with different rates or tenures, to test whether a lower EMI is really cheaper, and to see how much money the better offer saves you.",
+  "formula": "Each loan's EMI is calculated as EMI = P × r × (1+r)^n / ((1+r)^n − 1), where P is the loan amount, r is the monthly rate, and n is the tenure in months. Total payment = EMI × n. Total interest = Total payment − P. The loan with the lower total payment is marked better.",
+  "example": "Inputs: Loan Amount = ₹10,00,000. Loan 1: Rate 8.5%, Tenure 240 months. Loan 2: Rate 9%, Tenure 180 months. Step 1: Loan 1 EMI = ₹8,678, total payment = ₹20,82,776, interest = ₹10,82,776. Step 2: Loan 2 EMI = ₹10,143, total payment = ₹18,25,680, interest = ₹8,25,680. Step 3: Loan 2 costs ₹2,57,096 less in total, even though its monthly EMI is higher — the shorter tenure saves the interest.",
+  "howTo": [
+    "Step 1: Enter the amount you want to borrow in the \"Loan Amount (₹)\" field — both loans use this same amount.",
+    "Step 2: Enter the first offer's rate in \"Loan 1 Rate (%)\" and its tenure in \"Loan 1 Tenure (months)\".",
+    "Step 3: Enter the second offer's rate in \"Loan 2 Rate (%)\" and its tenure in \"Loan 2 Tenure (months)\".",
+    "Step 4: Tap Calculate to see both EMIs, totals, and interest side by side.",
+    "Step 5: Read which loan is marked better and how much it saves you in total payment."
+  ],
+  "tips": [
+    "Judge a loan by its total payment, not by its EMI — a lower EMI over a longer tenure usually costs much more in interest.",
+    "A slightly higher rate with a shorter tenure can still be the cheaper loan, as the example above shows.",
+    "Compare offers with the same loan amount so the comparison is fair.",
+    "Ask about processing fees and prepayment charges too — they are not included in this comparison."
+  ],
+  "mistakes": [
+    "Comparing loans with different amounts, which makes the EMIs meaningless next to each other.",
+    "Entering the tenure in years instead of months — this calculator expects months for both loans.",
+    "Choosing the loan with the lowest EMI without checking the total interest.",
+    "Ignoring that a shorter tenure means a higher EMI, which must still fit your monthly budget."
+  ],
+  "faqs": [
+    {
+      "q": "Is a lower EMI always the better loan?",
+      "a": "No. A lower EMI usually comes from a longer tenure, and the extra months of interest can make the loan much more expensive overall. Compare the total payment, not just the EMI."
+    },
+    {
+      "q": "How do I compare two home loans with different rates and tenures?",
+      "a": "Enter the same loan amount for both, then each offer's rate and tenure in months. The calculator shows both EMIs, total payments, and total interest, and marks the cheaper one."
+    },
+    {
+      "q": "Why can a loan with a higher interest rate cost less in total?",
+      "a": "Because the tenure matters as much as the rate. A shorter tenure means fewer months of interest, which can outweigh a higher rate — in the worked example, the 9% loan over 15 years costs ₹2,57,096 less than the 8.5% loan over 20 years."
+    }
+  ],
+  "related": [
+    "emi-calculator",
+    "loan-eligibility-calculator",
+    "loan-affordability-calculator"
+  ]
+}

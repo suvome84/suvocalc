@@ -1,0 +1,44 @@
+{
+  "slug": "percentage-calculator",
+  "intro": "The Percentage Calculator finds what a percentage of any number is — for example, what 15% of 200 is — and also shows the value after that percentage is added or taken away.",
+  "uses": "It is used for everyday maths: working out discounts while shopping, calculating tax or a tip, finding marks as a percentage, and checking percentage increases or decreases.",
+  "formula": "Result = Percentage ÷ 100 × Value. After an increase: Value + Result. After a decrease: Value − Result.",
+  "example": "Inputs: Percentage (%) = 15, Of Value = 200. Step 1: 15 ÷ 100 = 0.15. Step 2: 0.15 × 200 = 30. So 15% of 200 is ₹30. After a 15% increase the value is 200 + 30 = ₹230, and after a 15% decrease it is 200 − 30 = ₹170.",
+  "howTo": [
+    "Step 1: Enter the percentage in the \"Percentage (%)\" field — for example, 15.",
+    "Step 2: Enter the number you want the percentage of in the \"Of Value\" field — for example, 200.",
+    "Step 3: Tap Calculate to see the result.",
+    "Step 4: Read the main result (15% of 200 = 30) and the extra lines showing the value after an increase and after a decrease."
+  ],
+  "tips": [
+    "To find a percentage increase, add the result to the original value; to find a discount, subtract it.",
+    "To work out what percentage one number is of another, divide the part by the whole and multiply by 100.",
+    "Remember that 50% is a half, 25% is a quarter, and 10% is a tenth — useful for quick mental checks.",
+    "When comparing two sale prices, always compare the final price after discount, not just the discount percentage."
+  ],
+  "mistakes": [
+    "Mixing up the two fields — entering the value in the percentage box and the percentage in the value box.",
+    "Forgetting that a percentage is out of 100, so 15% of 200 is 30, not 15 × 200.",
+    "Applying a discount percentage to the already-discounted price instead of the original price.",
+    "Confusing \"15% off\" (pay 85%) with \"pay 15%\" — they are opposite amounts."
+  ],
+  "faqs": [
+    {
+      "q": "How do I calculate 15% of 200?",
+      "a": "Divide 15 by 100 to get 0.15, then multiply by 200. The answer is 30. You can do the same in this calculator by entering 15 in \"Percentage (%)\" and 200 in \"Of Value\"."
+    },
+    {
+      "q": "What is the difference between percentage increase and percentage decrease?",
+      "a": "A percentage increase adds the percentage amount to the original value, while a percentage decrease subtracts it. For example, 200 increased by 15% is 230, and 200 decreased by 15% is 170."
+    },
+    {
+      "q": "How do I find what percentage 30 is of 200?",
+      "a": "Divide 30 by 200 and multiply by 100: (30 ÷ 200) × 100 = 15%. So 30 is 15% of 200."
+    }
+  ],
+  "related": [
+    "emi-calculator",
+    "discount-calculator",
+    "compound-interest-calculator"
+  ]
+}

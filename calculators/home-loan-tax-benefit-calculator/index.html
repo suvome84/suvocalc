@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Home Loan Tax Benefit Calculator | SuvoCalc v31</title>
+<meta name="description" content="Calculate annual tax savings on your home loan under Section 24(b) (interest) and Section 80C (principal). India focused.">
+<link rel="canonical" href="https://suvocalc.com/calculators/home-loan-tax-benefit-calculator/">
+<script>
+/* Apply saved theme before CSS loads to avoid a flash. No other logic here. */
+(function () {
+  try {
+    var t = localStorage.getItem('sc_theme');
+    if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+  } catch (e) { /* storage unavailable: keep light default */ }
+})();
+</script>
+<link rel="stylesheet" href="../../assets/css/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Home Loan Tax Benefit Calculator | SuvoCalc","url":"https://suvocalc.com/calculators/home-loan-tax-benefit-calculator/","applicationCategory":"CalculatorApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate annual tax savings on your home loan under Section 24(b) (interest) and Section 80C (principal). India focused."}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://suvocalc.com/"},{"@type":"ListItem","position":2,"name":"Tax & Business","item":"https://suvocalc.com/categories/tax-business/"},{"@type":"ListItem","position":3,"name":"Home Loan Tax Benefit Calculator","item":"https://suvocalc.com/calculators/home-loan-tax-benefit-calculator/"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much home loan interest can I claim as a tax deduction?","acceptedAnswer":{"@type":"Answer","text":"Under Section 24(b), you can claim up to ₹2,00,000 of interest per year on a home loan for a self-occupied house. Interest above that limit cannot be deducted."}},{"@type":"Question","name":"How much principal repayment can I claim under Section 80C?","acceptedAnswer":{"@type":"Answer","text":"Up to ₹1,50,000 per year of principal repaid on a home loan can be claimed under Section 80C, but this limit is shared with other 80C investments such as PPF and ELSS."}},{"@type":"Question","name":"Are home loan tax benefits available in the new tax regime?","acceptedAnswer":{"@type":"Answer","text":"No. The new regime does not allow the Section 24(b) interest deduction or the Section 80C principal deduction. These benefits are available under the old regime, so compare both regimes before choosing."}}]}
+</script>
+
+</head>
+<body data-active-nav="tools" data-tool-url-prefix="../../" data-tool-slug="home-loan-tax-benefit-calculator" data-tool-title="Home Loan Tax Benefit Calculator">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="../../index.html" aria-label="SuvoCalc home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="11" x2="8" y2="11.01"/><line x1="12" y1="11" x2="12" y2="11.01"/><line x1="16" y1="11" x2="16" y2="11.01"/><line x1="8" y1="15" x2="8" y2="15.01"/><line x1="12" y1="15" x2="12" y2="15.01"/><line x1="16" y1="15" x2="16" y2="15.01"/></svg>
+      </span>
+      <span class="brand-name">SuvoCalc</span>
+      <span class="brand-version">v31</span>
+    </a>
+
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+      <a class="nav-link" data-nav="home" href="../../index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Home</span>
+      </a>
+      <a class="nav-link" data-nav="tools" href="../../tools/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        <span>All Tools</span>
+      </a>
+      <a class="nav-link" data-nav="categories" href="../../tools/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+        <span>Categories</span>
+      </a>
+      <a class="nav-link" data-nav="blog" href="../../blog/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        <span>Blog/Guides</span>
+      </a>
+      <a class="nav-link" data-nav="about" href="../../about/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        <span>About</span>
+      </a>
+      <a class="nav-link" data-nav="contact" href="../../contact/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span>Contact</span>
+      </a>
+    </nav>
+
+    <div class="header-actions">
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch between light and dark theme">
+        <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <span class="theme-toggle-label">Theme</span>
+      </button>
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="page-main">
+<nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/categories/tax-business/">Tax &amp; Business</a></li><li><span aria-current="page">Home Loan Tax Benefit Calculator</span></li></ol></nav>
+  <h1 class="page-title">Home Loan Tax Benefit Calculator</h1>
+<p class="lead">The Home Loan Tax Benefit Calculator estimates the annual income tax you can save on a home loan under Section 24(b) for interest paid and Section 80C for principal repaid.</p>
+<section class="content-block"><h2>What it is used for</h2><p>It is used by home buyers to see how much of the EMI comes back as a tax saving each year, and to compare the first-year saving at different tax slabs.</p></section>
+<section class="calc-card" aria-label="Home Loan Tax Benefit Calculator calculator">
+<form id="calc-form" class="calc-form">
+<div class="field"><label for="hlLoan">Loan Amount (₹)</label><input type="number" id="hlLoan" name="hlLoan" placeholder="e.g. 5000000"></div>
+<div class="field"><label for="hlRate">Interest Rate (% p.a.)</label><input type="number" id="hlRate" name="hlRate" placeholder="e.g. 8.5"></div>
+<div class="field"><label for="hlTenure">Tenure (Years)</label><input type="number" id="hlTenure" name="hlTenure" placeholder="e.g. 20"></div>
+<div class="field"><label for="hlIncome">Annual Income (₹)</label><input type="number" id="hlIncome" name="hlIncome" placeholder="e.g. 1200000"></div>
+<div class="field"><label for="hlSlab">Tax Slab (%)</label><select id="hlSlab" name="hlSlab"><option value="5%">5%</option><option value="20%">20%</option><option value="30%">30%</option></select></div>
+<button type="submit" id="calc-btn" class="btn btn-primary btn-block">Calculate</button>
+</form>
+<div class="tool-outputs"><div id="homeloanRes" class="tool-output"></div></div>
+<p class="result-error" id="res-error" hidden></p>
+</section>
+<section class="content-block"><h2>Formula</h2><p class="formula-box">Year 1 interest claimed = the lower of (Loan × Rate ÷ 100) and ₹2,00,000 under Section 24(b). Year 1 principal claimed = the lower of (EMI × 12 − interest claimed) and ₹1,50,000 under Section 80C. Tax saved = (interest claimed + principal claimed) × tax slab %. EMI = Loan × r × (1+r)^n ÷ ((1+r)^n − 1), with r the monthly rate and n the tenure in months.</p></section>
+<section class="content-block"><h2>Worked example</h2><p>Inputs: Loan Amount = ₹50,00,000, Interest Rate = 8.5% per year, Tenure = 20 years, Annual Income = ₹12,00,000, Tax Slab = 30%. Step 1: monthly EMI = ₹43,391. Step 2: first-year interest = 50,00,000 × 8.5% = ₹4,25,000, capped at ₹2,00,000 under Section 24(b), saving 2,00,000 × 30% = ₹60,000. Step 3: first-year principal = 43,391 × 12 − 2,00,000 = ₹3,20,692, capped at ₹1,50,000 under Section 80C, saving 1,50,000 × 30% = ₹45,000. Step 4: total annual tax saving = 60,000 + 45,000 = ₹1,05,000. These are first-year values.</p></section>
+<section class="content-block"><h2>How to use</h2><ol class="steps"><li>Step 1: Enter the home loan amount in the &quot;Loan Amount (₹)&quot; field.</li><li>Step 2: Enter the annual interest rate in the &quot;Interest Rate (% p.a.)&quot; field.</li><li>Step 3: Enter the repayment period in the &quot;Tenure (Years)&quot; field.</li><li>Step 4: Enter your annual income in the &quot;Annual Income (₹)&quot; field.</li><li>Step 5: Choose your tax slab from the &quot;Tax Slab (%)&quot; dropdown, then tap Calculate to see the annual tax saving and the EMI.</li></ol></section>
+<section class="content-block"><h2>Tips</h2><ul><li>Section 24(b) allows up to ₹2,00,000 of interest per year for a self-occupied house; Section 80C allows up to ₹1,50,000 of principal per year.</li><li>These deductions are available under the old tax regime — the new regime does not allow them, so the saving is zero if you use the new regime.</li><li>The saving is highest in the early years, when the interest part of the EMI is largest; it falls as the loan ages.</li><li>The calculator shows first-year values, so treat the result as an estimate for the first year, not for every year of the loan.</li></ul></section>
+<section class="content-block"><h2>Common mistakes</h2><ul><li>Claiming the full interest paid instead of the ₹2,00,000 cap under Section 24(b).</li><li>Claiming the full principal repaid instead of the ₹1,50,000 cap under Section 80C.</li><li>Forgetting that these deductions do not apply under the new tax regime.</li><li>Using the wrong tax slab — the saving is the deduction multiplied by your actual slab rate.</li></ul></section>
+<section class="content-block faq-list"><h2>Frequently asked questions</h2><details><summary>How much home loan interest can I claim as a tax deduction?</summary><p>Under Section 24(b), you can claim up to ₹2,00,000 of interest per year on a home loan for a self-occupied house. Interest above that limit cannot be deducted.</p></details><details><summary>How much principal repayment can I claim under Section 80C?</summary><p>Up to ₹1,50,000 per year of principal repaid on a home loan can be claimed under Section 80C, but this limit is shared with other 80C investments such as PPF and ELSS.</p></details><details><summary>Are home loan tax benefits available in the new tax regime?</summary><p>No. The new regime does not allow the Section 24(b) interest deduction or the Section 80C principal deduction. These benefits are available under the old regime, so compare both regimes before choosing.</p></details></section>
+<section class="content-block"><h2>Related calculators</h2><ul class="related-list"><li><a href="../../calculators/gst-calculator/">GST Calculator (India) / জিএসটি ক্যালকুলেটর (ভারত)</a></li><li><a href="../../calculators/income-tax-calculator/">Income Tax Calculator (India)</a></li><li><a href="../../calculators/hra-exemption-calculator/">HRA Exemption Calculator</a></li></ul></section>
+<div class="disclaimer-box"><p>Results are a guide based on the numbers you enter. For loan, tax or investment decisions, check the figures with the bank, the official tax portal, or a qualified adviser.</p></div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-copy">&copy; 2026 SuvoCalc &mdash; v31 &middot; 57 free calculators</p>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="../../privacy/index.html">Privacy</a>
+      <a href="../../terms/index.html">Terms</a>
+      <a href="../../disclaimer/index.html">Disclaimer</a>
+      <a href="../../about/index.html">About</a>
+      <a href="../../contact/index.html">Contact</a>
+      <a href="../../faq/index.html">FAQ</a>
+    </nav>
+  </div>
+</footer>
+
+<nav class="bottom-nav" aria-label="Mobile navigation">
+  <a class="bottom-nav-link" data-nav="home" href="../../index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    <span>Home</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="tools" href="../../tools/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+    <span>Tools</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="categories" href="../../tools/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+    <span>Categories</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="blog" href="../../blog/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+    <span>Guides</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="about" href="../../about/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+    <span>About</span>
+  </a>
+</nav>
+
+<div class="cookie-banner" id="cookie-banner" hidden>
+  <p>SuvoCalc uses local storage on your device to remember your theme and recently used calculators. No account, no tracking.</p>
+  <button type="button" class="btn btn-primary btn-small" id="cookie-accept">Got it</button>
+</div>
+
+<script src="../../assets/js/calc.js"></script>
+<script src="../../assets/js/main.js"></script>
+<script>
+/* v31 no-op stubs: the verbatim v30 calc bodies call these legacy
+   helpers (toast, usage tracking, streaks, haptics, gauge). v31 has
+   none of those systems; the stubs keep a calculation from throwing
+   after it has written its result. */
+function toast(){}
+function trackTool(){}
+function bumpStreak(){}
+function checkMilestone(){}
+function v21Haptic(){}
+function injectBMIGauge(){}
+/* renderH: the sci history UI does not exist in v31; pushH() still
+   records to localStorage, renderH() just has nothing to paint. */
+function renderH(){}
+/* V30 compatibility (source L24628-24642): V30 calc bodies call
+   v30ShowResult()/v30Fmt() instead of setRes()/getId(). */
+window.v30Fmt = function(n){
+  if(isNaN(n)) return '0';
+  return Math.round(n).toLocaleString('en-IN');
+};
+
+window.v30ShowResult = function(elId, html, type){
+  var el = document.getElementById(elId);
+  /* FIX: renderTools renders v30 tools with the standard res-<id> box, not <id>Res — fall back to it so the result is actually shown */
+  if(!el) el = document.getElementById('res-' + elId.replace(/Res$/, ''));
+  if(!el) return;
+  el.innerHTML = html;
+  el.className = 'tres v30-result' + (type==='error' ? ' v30-err' : '');
+  el.classList.add('pop');
+  setTimeout(function(){ el.classList.remove('pop'); }, 400);
+};
+function runToolCalc(){
+
+  var loan = parseFloat(document.getElementById('hlLoan').value)||0;
+  var rate = parseFloat(document.getElementById('hlRate').value)||0;
+  var tenure = parseFloat(document.getElementById('hlTenure').value)||0;
+  var income = parseFloat(document.getElementById('hlIncome').value)||0;
+  var slabEl = document.getElementById('hlSlab');
+  var slab = slabEl ? parseFloat(slabEl.value) : 30;
+  if(!loan||!rate||!tenure){ v30ShowResult('homeloanRes','Fill loan details.','error'); return; }
+  var r = rate/(12*100);
+  var n = tenure*12;
+  var emi = loan * r * Math.pow(1+r,n) / (Math.pow(1+r,n)-1);
+  var yr1Interest = Math.min(loan*rate/100, 200000); // year 1 approx
+  var yr1Principal = Math.min(emi*12 - yr1Interest, 150000); // capped at 1.5L
+  var sec24Saving = yr1Interest * slab/100;
+  var sec80cSaving = yr1Principal * slab/100;
+  var totalSaving = sec24Saving + sec80cSaving;
+  var sym = (window.SC_GL && window.SC_GL.L) ? window.SC_GL.L.sym : '₹';
+  v30ShowResult('homeloanRes',
+    '<div class="v30-res-main"><span class="v30-rlbl">Annual Tax Saving</span><span class="v30-rnum" style="color:var(--gr)">'+sym+' '+v30Fmt(totalSaving)+'</span></div>'+
+    '<div class="v30-res-row"><span>Monthly EMI</span><span>'+sym+' '+v30Fmt(emi)+'</span></div>'+
+    '<div class="v30-res-row"><span>Sec 24(b) — Interest (max ₹2L)</span><span style="color:var(--p2)">'+sym+' '+v30Fmt(sec24Saving)+' saved</span></div>'+
+    '<div class="v30-res-row"><span>Sec 80C — Principal (max ₹1.5L)</span><span style="color:var(--p2)">'+sym+' '+v30Fmt(sec80cSaving)+' saved</span></div>'+
+    '<div class="v30-res-note">Estimate based on '+slab+'% tax slab. First year values.</div>'
+  );
+
+}
+(function(){
+try{
+var form=document.getElementById("calc-form");
+if(form){ form.addEventListener("submit",function(ev){ ev.preventDefault(); try{ runToolCalc(); }catch(err){ var e=document.getElementById("res-error"); if(e){ e.textContent="Could not calculate. Please check your numbers and try again."; e.hidden=false; } } }); }
+
+}catch(e){}
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,901 @@
+{
+  "blog_related": {
+    "age-calculator-find-your-exact-age-in-days-hours": {
+      "source": [
+        "age-calculator",
+        "bmi-calculator",
+        "pregnancy-due-date-calculator"
+      ],
+      "generated": [
+        "age-calculator",
+        "bmi-calculator",
+        "pregnancy-due-date-calculator"
+      ],
+      "match": true,
+      "has_related_section": true
+    },
+    "bmi-calculator-what-your-number-really-means": {
+      "source": [
+        "age-calculator",
+        "bmi-calculator",
+        "calorie-calculator"
+      ],
+      "generated": [
+        "age-calculator",
+        "bmi-calculator",
+        "calorie-calculator"
+      ],
+      "match": true,
+      "has_related_section": true
+    },
+    "cgpa-to-percentage-every-university-formula": {
+      "source": [
+        "cgpa-calculator",
+        "grade-calculator",
+        "percentage-calculator"
+      ],
+      "generated": [
+        "cgpa-calculator",
+        "grade-calculator",
+        "percentage-calculator"
+      ],
+      "match": true,
+      "has_related_section": true
+    },
+    "electricity-bill-calculator-stop-overpaying": {
+      "source": [
+        "electricity-bill-calculator",
+        "fuel-cost-calculator",
+        "unit-currency-converter"
+      ],
+      "generated": [
+        "electricity-bill-calculator",
+        "fuel-cost-calculator",
+        "unit-currency-converter"
+      ],
+      "match": true,
+      "has_related_section": true
+    },
+    "emi-calculator-everything-about-home-car-loans": {
+      "source": [
+        "emi-calculator",
+        "loan-eligibility-calculator",
+        "sip-calculator"
+      ],
+      "generated": [
+        "emi-calculator",
+        "loan-eligibility-calculator",
+        "sip-calculator"
+      ],
+      "match": true,
+      "has_related_section": true
+    },
+    "gst-calculator-how-gst-works-in-india": {
+      "source": [
+        "gst-calculator",
+        "income-tax-calculator",
+        "percentage-calculator"
+      ],
+      "generated": [
+        "gst-calculator",
+        "income-tax-calculator",
+        "percentage-calculator"
+      ],
+      "match": true,
+      "has_related_section": true
+    },
+    "how-to-use-the-scientific-calculator-like-a-pro": {
+      "source": [
+        "graph-plotter",
+        "percentage-calculator",
+        "scientific-calculator"
+      ],
+      "generated": [
+        "graph-plotter",
+        "percentage-calculator",
+        "scientific-calculator"
+      ],
+      "match": true,
+      "has_related_section": true
+    },
+    "income-tax-india-2025-26-budget-2025-new-vs-old-regime": {
+      "source": [
+        "gst-calculator",
+        "income-tax-calculator",
+        "sip-calculator"
+      ],
+      "generated": [
+        "gst-calculator",
+        "income-tax-calculator",
+        "sip-calculator"
+      ],
+      "match": true,
+      "has_related_section": true
+    },
+    "install-suvocalc-as-a-free-app-no-app-store-needed": {
+      "source": [],
+      "generated": [],
+      "match": true,
+      "has_related_section": false
+    },
+    "loan-eligibility-how-much-can-you-borrow": {
+      "source": [
+        "emi-calculator",
+        "loan-eligibility-calculator",
+        "sip-calculator"
+      ],
+      "generated": [
+        "emi-calculator",
+        "loan-eligibility-calculator",
+        "sip-calculator"
+      ],
+      "match": true,
+      "has_related_section": true
+    },
+    "password-generator-create-unbreakable-passwords": {
+      "source": [
+        "password-generator",
+        "random-number-generator"
+      ],
+      "generated": [
+        "password-generator",
+        "random-number-generator"
+      ],
+      "match": true,
+      "has_related_section": true
+    },
+    "percentage-7-everyday-uses-you-must-know": {
+      "source": [
+        "discount-calculator",
+        "gst-calculator",
+        "percentage-calculator"
+      ],
+      "generated": [
+        "discount-calculator",
+        "gst-calculator",
+        "percentage-calculator"
+      ],
+      "match": true,
+      "has_related_section": true
+    },
+    "pomodoro-technique-study-4x-more-effectively": {
+      "source": [
+        "cgpa-calculator",
+        "grade-calculator",
+        "pomodoro-study-timer"
+      ],
+      "generated": [
+        "cgpa-calculator",
+        "grade-calculator",
+        "pomodoro-study-timer"
+      ],
+      "match": true,
+      "has_related_section": true
+    },
+    "sip-calculator-build-1-crore-with-5000-per-month": {
+      "source": [
+        "emi-calculator",
+        "sip-calculator",
+        "stock-profit-calculator"
+      ],
+      "generated": [
+        "emi-calculator",
+        "sip-calculator",
+        "stock-profit-calculator"
+      ],
+      "match": true,
+      "has_related_section": true
+    },
+    "stock-profit-calculator-know-your-real-returns": {
+      "source": [
+        "crypto-calculator",
+        "sip-calculator",
+        "stock-profit-calculator"
+      ],
+      "generated": [
+        "crypto-calculator",
+        "sip-calculator",
+        "stock-profit-calculator"
+      ],
+      "match": true,
+      "has_related_section": true
+    }
+  },
+  "blog_mismatches": [],
+  "tools_cards": {
+    "card_class_hits": 57,
+    "article_tool_card_count": 57,
+    "data_title_count": 57,
+    "data_title_distinct": 57,
+    "data_titles_match_counted_registry": false,
+    "missing_titles": [
+      "Unit & Currency Converter"
+    ],
+    "extra_titles": [
+      "Unit &amp; Currency Converter"
+    ]
+  },
+  "banned_summary": {
+    "6.0 substring | A-computed-number": 2,
+    "6.2 substring | A-computed-number": 5,
+    "69 substring | A-computed-number": 16,
+    "v21 substring | B-code-identifier (v21Haptic stub name)": 60,
+    "v23 substring | B-code-identifier (v23-qr-scan-line class)": 1
+  },
+  "banned_real_claims": [],
+  "banned_unclassified": [],
+  "banned_all_hits": [
+    {
+      "page": "blog/cgpa-to-percentage-every-university-formula/index.html",
+      "line": 84,
+      "pattern": "6.0 substring",
+      "match": "6.0",
+      "context": ".0</td><td>66.5%</td><td>B+</td></tr><tr><td>6.0</td><td>57%</td><td>B</td></tr></table><h2>U",
+      "class": "A-computed-number"
+    },
+    {
+      "page": "blog/electricity-bill-calculator-stop-overpaying/index.html",
+      "line": 84,
+      "pattern": "6.0 substring",
+      "match": "6.0",
+      "context": "unit</td></tr><tr><td>Chennai</td><td>\u20b91.50\u2013\u20b96.00/unit</td></tr></table><h2>Top Power Guzzler",
+      "class": "A-computed-number"
+    },
+    {
+      "page": "calculators/age-calculator/index.html",
+      "line": 164,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/area-calculator/index.html",
+      "line": 166,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/attendance-calculator/index.html",
+      "line": 166,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/bmi-calculator/index.html",
+      "line": 165,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/body-fat-calculator/index.html",
+      "line": 168,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/break-even-calculator/index.html",
+      "line": 167,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/budget-calculator/index.html",
+      "line": 166,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/cagr-calculator/index.html",
+      "line": 161,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/calorie-calculator/index.html",
+      "line": 168,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/calorie-calculator/index.html",
+      "line": 105,
+      "pattern": "6.2 substring",
+      "match": "6.2",
+      "context": "\"formula-box\">BMR (men) = 10 \u00d7 weight (kg) + 6.25 \u00d7 height (cm) \u2212 5 \u00d7 age + 5. BMR (women) =",
+      "class": "A-computed-number"
+    },
+    {
+      "page": "calculators/calorie-calculator/index.html",
+      "line": 105,
+      "pattern": "6.2 substring",
+      "match": "6.2",
+      "context": "\u00d7 age + 5. BMR (women) = 10 \u00d7 weight (kg) + 6.25 \u00d7 height (cm) \u2212 5 \u00d7 age \u2212 161. TDEE = BMR \u00d7",
+      "class": "A-computed-number"
+    },
+    {
+      "page": "calculators/calorie-calculator/index.html",
+      "line": 106,
+      "pattern": "6.2 substring",
+      "match": "6.2",
+      "context": "ate (3\u20135 days/week). Step 1: BMR = 10 \u00d7 70 + 6.25 \u00d7 170 \u2212 5 \u00d7 25 + 5 = 700 + 1062.5 \u2212 125 + 5",
+      "class": "A-computed-number"
+    },
+    {
+      "page": "calculators/calorie-calculator/index.html",
+      "line": 180,
+      "pattern": "6.2 substring",
+      "match": "6.2",
+      "context": "if(g==='Male')bmr=10*w+6.25*h-5*age+5;",
+      "class": "A-computed-number"
+    },
+    {
+      "page": "calculators/calorie-calculator/index.html",
+      "line": 181,
+      "pattern": "6.2 substring",
+      "match": "6.2",
+      "context": "else bmr=10*w+6.25*h-5*age-161;",
+      "class": "A-computed-number"
+    },
+    {
+      "page": "calculators/cgpa-calculator/index.html",
+      "line": 167,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/compound-interest-calculator/index.html",
+      "line": 105,
+      "pattern": "69 substring",
+      "match": "69",
+      "context": "00,000 \u00d7 (1 + 0.08)^5. Step 2: (1.08)^5 = 1.4693. Step 3: A = 1,00,000 \u00d7 1.4693 = \u20b91,46,933.",
+      "class": "A-computed-number"
+    },
+    {
+      "page": "calculators/compound-interest-calculator/index.html",
+      "line": 105,
+      "pattern": "69 substring",
+      "match": "69",
+      "context": "(1.08)^5 = 1.4693. Step 3: A = 1,00,000 \u00d7 1.4693 = \u20b91,46,933. Step 4: interest earned = 1,46",
+      "class": "A-computed-number"
+    },
+    {
+      "page": "calculators/compound-interest-calculator/index.html",
+      "line": 167,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/crypto-calculator/index.html",
+      "line": 167,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/date-difference-calculator/index.html",
+      "line": 165,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/discount-calculator/index.html",
+      "line": 165,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/electricity-bill-calculator/index.html",
+      "line": 166,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/emi-calculator/index.html",
+      "line": 166,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/fixed-deposit-calculator/index.html",
+      "line": 162,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/fuel-cost-calculator/index.html",
+      "line": 166,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/grade-calculator/index.html",
+      "line": 26,
+      "pattern": "69 substring",
+      "match": "69",
+      "context": "s: 90% and above A+, 80\u201389% A, 70\u201379% B+, 60\u201369% B, 50\u201359% C, 40\u201349% D, below 40% F. Schools",
+      "class": "A-computed-number"
+    },
+    {
+      "page": "calculators/grade-calculator/index.html",
+      "line": 103,
+      "pattern": "69 substring",
+      "match": "69",
+      "context": "y the tool: 90%+ A+, 80\u201389% A, 70\u201379% B+, 60\u201369% B, 50\u201359% C, 40\u201349% D, below 40% F. Approxi",
+      "class": "A-computed-number"
+    },
+    {
+      "page": "calculators/grade-calculator/index.html",
+      "line": 108,
+      "pattern": "69 substring",
+      "match": "69",
+      "context": "s: 90% and above A+, 80\u201389% A, 70\u201379% B+, 60\u201369% B, 50\u201359% C, 40\u201349% D, below 40% F. Schools",
+      "class": "A-computed-number"
+    },
+    {
+      "page": "calculators/grade-calculator/index.html",
+      "line": 166,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/graph-plotter/index.html",
+      "line": 161,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/gst-calculator/index.html",
+      "line": 168,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/heart-rate-calculator/index.html",
+      "line": 103,
+      "pattern": "69 substring",
+      "match": "69",
+      "context": "130\u2013143 (Recovery), 143\u2013156 (Fat Burn), 156\u2013169 (Cardio), and 169\u2013182 (Peak). This is a gene",
+      "class": "A-computed-number"
+    },
+    {
+      "page": "calculators/heart-rate-calculator/index.html",
+      "line": 103,
+      "pattern": "69 substring",
+      "match": "69",
+      "context": ", 143\u2013156 (Fat Burn), 156\u2013169 (Cardio), and 169\u2013182 (Peak). This is a general fitness guide,",
+      "class": "A-computed-number"
+    },
+    {
+      "page": "calculators/heart-rate-calculator/index.html",
+      "line": 165,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/home-loan-tax-benefit-calculator/index.html",
+      "line": 101,
+      "pattern": "69 substring",
+      "match": "69",
+      "context": "r principal = 43,391 \u00d7 12 \u2212 2,00,000 = \u20b93,20,692, capped at \u20b91,50,000 under Section 80C, sav",
+      "class": "A-computed-number"
+    },
+    {
+      "page": "calculators/home-loan-tax-benefit-calculator/index.html",
+      "line": 163,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/hra-exemption-calculator/index.html",
+      "line": 163,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/income-tax-calculator/index.html",
+      "line": 165,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/loan-affordability-calculator/index.html",
+      "line": 162,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/loan-comparison-calculator/index.html",
+      "line": 169,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/loan-eligibility-calculator/index.html",
+      "line": 167,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/love-compatibility-calculator/index.html",
+      "line": 160,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/matrix-calculator/index.html",
+      "line": 173,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/net-worth-calculator/index.html",
+      "line": 165,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/numerology-calculator/index.html",
+      "line": 160,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/overtime-pay-calculator/index.html",
+      "line": 167,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/password-generator/index.html",
+      "line": 166,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/percentage-calculator/index.html",
+      "line": 165,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/pomodoro-study-timer/index.html",
+      "line": 162,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/ppf-calculator/index.html",
+      "line": 166,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/pregnancy-due-date-calculator/index.html",
+      "line": 165,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/qr-code-generator/index.html",
+      "line": 172,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/qr-code-generator/index.html",
+      "line": 394,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "v21Haptic&&v21Haptic(8);",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/qr-code-generator/index.html",
+      "line": 394,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "v21Haptic&&v21Haptic(8);",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/qr-code-scanner/index.html",
+      "line": 162,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/qr-code-scanner/index.html",
+      "line": 240,
+      "pattern": "v23 substring",
+      "match": "v23",
+      "context": "scanLine.className='v23-qr-scan-line';",
+      "class": "B-code-identifier (v23-qr-scan-line class)"
+    },
+    {
+      "page": "calculators/random-number-generator/index.html",
+      "line": 166,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/retirement-calculator/index.html",
+      "line": 168,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/salary-calculator/index.html",
+      "line": 166,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/savings-goal-calculator/index.html",
+      "line": 168,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/scientific-calculator/index.html",
+      "line": 172,
+      "pattern": "69 substring",
+      "match": "69",
+      "context": "98, 5909-5910, 5911-5917, 5918, 5919-5923, 5969-5970, 6002-6007). See companions.json. */",
+      "class": "A-computed-number"
+    },
+    {
+      "page": "calculators/scientific-calculator/index.html",
+      "line": 166,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/simple-interest-calculator/index.html",
+      "line": 166,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/sip-calculator/index.html",
+      "line": 26,
+      "pattern": "69 substring",
+      "match": "69",
+      "context": ", a \u20b95,000 monthly SIP grows to about \u20b911,61,695 in 10 years. You invest \u20b96,00,000 and the g",
+      "class": "A-computed-number"
+    },
+    {
+      "page": "calculators/sip-calculator/index.html",
+      "line": 26,
+      "pattern": "69 substring",
+      "match": "69",
+      "context": "invest \u20b96,00,000 and the gain is about \u20b95,61,695. Real returns vary, so this is a projection",
+      "class": "A-computed-number"
+    },
+    {
+      "page": "calculators/sip-calculator/index.html",
+      "line": 104,
+      "pattern": "69 substring",
+      "match": "69",
+      "context": "3004, so FV = 5,000 \u00d7 230.04 \u00d7 1.01 = \u20b911,61,695. Step 4: total invested = 5,000 \u00d7 120 = \u20b96,",
+      "class": "A-computed-number"
+    },
+    {
+      "page": "calculators/sip-calculator/index.html",
+      "line": 104,
+      "pattern": "69 substring",
+      "match": "69",
+      "context": "0 = \u20b96,00,000. Step 5: wealth gained = 11,61,695 \u2212 6,00,000 = \u20b95,61,695.</p></section>",
+      "class": "A-computed-number"
+    },
+    {
+      "page": "calculators/sip-calculator/index.html",
+      "line": 104,
+      "pattern": "69 substring",
+      "match": "69",
+      "context": "wealth gained = 11,61,695 \u2212 6,00,000 = \u20b95,61,695.</p></section>",
+      "class": "A-computed-number"
+    },
+    {
+      "page": "calculators/sip-calculator/index.html",
+      "line": 108,
+      "pattern": "69 substring",
+      "match": "69",
+      "context": ", a \u20b95,000 monthly SIP grows to about \u20b911,61,695 in 10 years. You invest \u20b96,00,000 and the g",
+      "class": "A-computed-number"
+    },
+    {
+      "page": "calculators/sip-calculator/index.html",
+      "line": 108,
+      "pattern": "69 substring",
+      "match": "69",
+      "context": "invest \u20b96,00,000 and the gain is about \u20b95,61,695. Real returns vary, so this is a projection",
+      "class": "A-computed-number"
+    },
+    {
+      "page": "calculators/sip-calculator/index.html",
+      "line": 166,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/sleep-cycle-calculator/index.html",
+      "line": 161,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/speed-distance-time-calculator/index.html",
+      "line": 167,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/split-bill-calculator/index.html",
+      "line": 167,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/statistics-calculator/index.html",
+      "line": 165,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/stock-profit-calculator/index.html",
+      "line": 167,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/time-zone-converter/index.html",
+      "line": 161,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/tip-calculator/index.html",
+      "line": 166,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/unit-currency-converter/index.html",
+      "line": 164,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/unit-price-calculator/index.html",
+      "line": 164,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/water-intake-calculator/index.html",
+      "line": 167,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    },
+    {
+      "page": "calculators/world-clock/index.html",
+      "line": 159,
+      "pattern": "v21 substring",
+      "match": "v21",
+      "context": "function v21Haptic(){}",
+      "class": "B-code-identifier (v21Haptic stub name)"
+    }
+  ]
+}

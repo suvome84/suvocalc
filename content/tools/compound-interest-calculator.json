@@ -1,0 +1,45 @@
+{
+  "slug": "compound-interest-calculator",
+  "intro": "The Compound Interest Calculator shows how an investment or deposit grows when the interest earned each period is added to the principal and itself starts earning interest.",
+  "uses": "It is used to project the maturity value of deposits and investments, to compare different interest rates and compounding frequencies, and to see how much of the final amount is interest earned.",
+  "formula": "Maturity Amount A = P × (1 + r/n)^(n×t), where P is the principal, r is the annual rate as a decimal, n is the number of compounding periods per year (1 yearly, 2 half-yearly, 4 quarterly, 12 monthly), and t is the number of years. Interest earned = A − P.",
+  "example": "Inputs: Principal = ₹1,00,000, Annual Rate = 8%, Years = 5, Compounding = Yearly. Step 1: A = 1,00,000 × (1 + 0.08)^5. Step 2: (1.08)^5 = 1.4693. Step 3: A = 1,00,000 × 1.4693 = ₹1,46,933. Step 4: interest earned = 1,46,933 − 1,00,000 = ₹46,933. Growth over the period is about 46.9%.",
+  "howTo": [
+    "Step 1: Enter the starting amount in the \"Principal (₹)\" field.",
+    "Step 2: Enter the annual interest rate in the \"Annual Rate (%)\" field.",
+    "Step 3: Enter the number of years in the \"Years\" field.",
+    "Step 4: Choose the compounding frequency from the \"Compounding\" dropdown — Yearly, Half-Yearly, Quarterly, or Monthly.",
+    "Step 5: Tap Calculate to see the maturity amount, interest earned, and growth percentage."
+  ],
+  "tips": [
+    "More frequent compounding gives a slightly higher return — monthly compounding beats yearly compounding at the same rate.",
+    "Time matters more than rate: money left invested longer grows much faster because of compounding.",
+    "Compare the effective annual rate, not just the headline rate, when compounding frequencies differ.",
+    "Reinvesting interest instead of withdrawing it is what makes compounding work — withdrawing the interest each year turns it into simple interest."
+  ],
+  "mistakes": [
+    "Using the annual rate directly as the per-period rate when compounding is quarterly or monthly.",
+    "Forgetting to convert the percentage to a decimal (8% is 0.08 in the formula).",
+    "Comparing a yearly-compounded return with a monthly-compounded return as if they were the same.",
+    "Assuming the result is guaranteed — the calculator shows a projection at a fixed rate, and real returns can vary."
+  ],
+  "faqs": [
+    {
+      "q": "What is the difference between simple and compound interest?",
+      "a": "Simple interest is calculated only on the original principal, while compound interest is calculated on the principal plus all interest earned so far. Over the same period and rate, compound interest always gives a higher final amount."
+    },
+    {
+      "q": "Which compounding frequency gives the highest return?",
+      "a": "At the same annual rate, more frequent compounding gives a higher return: monthly beats quarterly, quarterly beats half-yearly, and half-yearly beats yearly. The difference is small over short periods and grows over long periods."
+    },
+    {
+      "q": "How much will ₹1,00,000 grow to in 5 years at 8% compounded yearly?",
+      "a": "It grows to ₹1,46,933, of which ₹46,933 is interest earned. The calculation is 1,00,000 × (1.08)^5."
+    }
+  ],
+  "related": [
+    "simple-interest-calculator",
+    "percentage-calculator",
+    "budget-calculator"
+  ]
+}

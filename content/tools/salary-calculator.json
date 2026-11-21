@@ -1,0 +1,45 @@
+{
+  "slug": "salary-calculator",
+  "intro": "The Salary Calculator works out your monthly take-home pay from your gross annual salary after deducting provident fund (PF), income tax under the Budget 2025 new regime, and professional tax.",
+  "uses": "It is used to check how much of a salary offer actually reaches your bank account each month, to compare two job offers with different CTCs, and to plan monthly spending around the real take-home figure.",
+  "formula": "PF deduction = Gross Salary × PF%. Income tax is calculated on the new regime 2025-26 slabs (0% up to ₹4 lakh, 5% to ₹8 lakh, 10% to ₹12 lakh, 15% to ₹16 lakh, 20% to ₹20 lakh, 25% to ₹24 lakh, 30% above), with zero tax up to ₹12 lakh under Section 87A. Take-home = Gross − PF − Income Tax (plus 4% cess) − Professional Tax. Monthly take-home = Annual take-home ÷ 12.",
+  "example": "Inputs: Gross Annual Salary = ₹6,00,000, PF Contribution = 12%, Professional Tax = ₹2,400 per year. Step 1: PF = 6,00,000 × 12% = ₹72,000. Step 2: income tax = ₹0, because ₹6,00,000 is below the ₹12 lakh zero-tax limit under Section 87A. Step 3: annual take-home = 6,00,000 − 72,000 − 0 − 2,400 = ₹5,25,600. Step 4: monthly take-home = 5,25,600 ÷ 12 = ₹43,800.",
+  "howTo": [
+    "Step 1: Enter your total yearly salary in the \"Gross Annual Salary (₹)\" field.",
+    "Step 2: Enter your PF contribution rate in the \"PF Contribution (%)\" field — 12% is the usual rate.",
+    "Step 3: Enter your yearly professional tax in the \"Professional Tax (₹/year)\" field — ₹2,400 is common in many states.",
+    "Step 4: Tap Calculate to see your monthly take-home pay.",
+    "Step 5: Read the breakdown: annual CTC, PF deduction, income tax, professional tax, and annual take-home."
+  ],
+  "tips": [
+    "CTC and take-home pay are different — PF, tax, and professional tax are deducted before the money reaches you, so always budget from the take-home figure.",
+    "Under the Budget 2025 new regime there is zero income tax up to ₹12 lakh of income because of the Section 87A rebate.",
+    "Your PF deduction is not lost money — it is your own long-term saving, plus your employer contributes too.",
+    "Professional tax varies by state and is often ₹2,400 per year, but some states charge less or nothing."
+  ],
+  "mistakes": [
+    "Treating the CTC as the monthly salary — CTC is annual, and the monthly take-home is much lower after deductions.",
+    "Forgetting that the tax shown uses the new regime 2025-26 slabs; the old regime gives a different result.",
+    "Entering the PF as a rupee amount instead of a percentage.",
+    "Ignoring professional tax and other small deductions when planning monthly expenses."
+  ],
+  "faqs": [
+    {
+      "q": "What is the take-home salary on a ₹6,00,000 annual salary?",
+      "a": "With 12% PF (₹72,000) and ₹2,400 professional tax, and zero income tax under the new regime up to ₹12 lakh, the annual take-home is ₹5,25,600, which is ₹43,800 per month."
+    },
+    {
+      "q": "Why is my take-home pay less than my CTC?",
+      "a": "CTC includes your employer's contributions and benefits, while take-home pay is what remains after your PF contribution, income tax, and professional tax are deducted from your gross salary."
+    },
+    {
+      "q": "Is there really zero income tax up to ₹12 lakh?",
+      "a": "Yes, under the Budget 2025 new regime for FY 2025-26, the Section 87A rebate makes the tax zero for total income up to ₹12 lakh. Income above that is taxed at the new regime slab rates."
+    }
+  ],
+  "related": [
+    "budget-calculator",
+    "overtime-pay-calculator",
+    "percentage-calculator"
+  ]
+}

@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Retirement Calculator | SuvoCalc v31</title>
+<meta name="description" content="Plan your retirement — calculate corpus needed and monthly savings required.">
+<link rel="canonical" href="https://suvocalc.com/calculators/retirement-calculator/">
+<script>
+/* Apply saved theme before CSS loads to avoid a flash. No other logic here. */
+(function () {
+  try {
+    var t = localStorage.getItem('sc_theme');
+    if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+  } catch (e) { /* storage unavailable: keep light default */ }
+})();
+</script>
+<link rel="stylesheet" href="../../assets/css/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Retirement Calculator | SuvoCalc","url":"https://suvocalc.com/calculators/retirement-calculator/","applicationCategory":"CalculatorApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Plan your retirement — calculate corpus needed and monthly savings required."}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://suvocalc.com/"},{"@type":"ListItem","position":2,"name":"Investment & Savings","item":"https://suvocalc.com/categories/investment-savings/"},{"@type":"ListItem","position":3,"name":"Retirement Calculator","item":"https://suvocalc.com/calculators/retirement-calculator/"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much money do I need to retire?","acceptedAnswer":{"@type":"Answer","text":"It depends on your expenses, the years until retirement, inflation, and the return you expect. For example, with ₹50,000 of monthly expenses today, retiring at 60 from age 30 at 6% inflation and 8% return, this calculator estimates a corpus of about ₹17.23 crore and a monthly saving of about ₹1,15,613. Change any input to see your own figure."}},{"@type":"Question","name":"Why does inflation matter so much for retirement?","acceptedAnswer":{"@type":"Answer","text":"Because prices rise every year, the same lifestyle costs much more in the future. At 6% inflation, something costing ₹50,000 a month today costs about ₹2,87,000 a month in 30 years, so the corpus must be far larger than today's expenses suggest."}},{"@type":"Question","name":"How much should I save each month for retirement?","acceptedAnswer":{"@type":"Answer","text":"It depends on your age, your target retirement age, your expenses, and the return you expect. The younger you start, the smaller the monthly amount — this calculator works out the figure for your own inputs."}}]}
+</script>
+
+</head>
+<body data-active-nav="tools" data-tool-url-prefix="../../" data-tool-slug="retirement-calculator" data-tool-title="Retirement Calculator">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="../../index.html" aria-label="SuvoCalc home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="11" x2="8" y2="11.01"/><line x1="12" y1="11" x2="12" y2="11.01"/><line x1="16" y1="11" x2="16" y2="11.01"/><line x1="8" y1="15" x2="8" y2="15.01"/><line x1="12" y1="15" x2="12" y2="15.01"/><line x1="16" y1="15" x2="16" y2="15.01"/></svg>
+      </span>
+      <span class="brand-name">SuvoCalc</span>
+      <span class="brand-version">v31</span>
+    </a>
+
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+      <a class="nav-link" data-nav="home" href="../../index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Home</span>
+      </a>
+      <a class="nav-link" data-nav="tools" href="../../tools/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        <span>All Tools</span>
+      </a>
+      <a class="nav-link" data-nav="categories" href="../../tools/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+        <span>Categories</span>
+      </a>
+      <a class="nav-link" data-nav="blog" href="../../blog/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        <span>Blog/Guides</span>
+      </a>
+      <a class="nav-link" data-nav="about" href="../../about/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        <span>About</span>
+      </a>
+      <a class="nav-link" data-nav="contact" href="../../contact/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span>Contact</span>
+      </a>
+    </nav>
+
+    <div class="header-actions">
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch between light and dark theme">
+        <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <span class="theme-toggle-label">Theme</span>
+      </button>
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="page-main">
+<nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/categories/investment-savings/">Investment &amp; Savings</a></li><li><span aria-current="page">Retirement Calculator</span></li></ol></nav>
+  <h1 class="page-title">Retirement Calculator</h1>
+<p class="lead">The Retirement Calculator estimates the retirement corpus you will need and the monthly saving required to build it, based on your current age, retirement age, monthly expenses, expected return, and inflation.</p>
+<section class="content-block"><h2>What it is used for</h2><p>It is used to set a retirement savings target, to see how delaying saving raises the monthly amount needed, and to check whether current monthly expenses are affordable after retirement.</p></section>
+<section class="calc-card" aria-label="Retirement Calculator calculator">
+<form id="calc-form" class="calc-form">
+<div class="field"><label for="rtA">Current Age</label><input type="number" id="rtA" name="rtA" placeholder="e.g. 30"></div>
+<div class="field"><label for="rtR">Retirement Age</label><input type="number" id="rtR" name="rtR" placeholder="e.g. 60"></div>
+<div class="field"><label for="rtE">Monthly Expenses (₹)</label><input type="number" id="rtE" name="rtE" placeholder="e.g. 50000"></div>
+<div class="field"><label for="rtI">Expected Return (%/yr)</label><input type="number" id="rtI" name="rtI" placeholder="e.g. 8"></div>
+<div class="field"><label for="rtF">Inflation Rate (%/yr)</label><input type="number" id="rtF" name="rtF" placeholder="e.g. 6"></div>
+<button type="submit" id="calc-btn" class="btn btn-primary btn-block">Calculate</button>
+</form>
+<div class="result-box" id="res-box">
+<p class="result-label" id="res-label">Corpus Needed</p>
+<p class="result-value" id="res-value">&mdash;</p>
+<p class="result-details" id="res-details"></p>
+<p class="result-error" id="res-error" hidden></p>
+<div class="share-row"><button type="button" class="btn btn-secondary btn-small" id="share-result">Share result</button><span class="share-status" id="share-status" role="status"></span></div>
+</div>
+</section>
+<section class="content-block"><h2>Formula</h2><p class="formula-box">Future monthly expenses = Current Monthly Expenses × (1 + Inflation)^Years to retirement. Corpus needed = Future monthly expenses × 12 ÷ ((Expected Return − Inflation) ÷ 100). Monthly saving = Corpus × r ÷ ((1+r)^n − 1), where r is the monthly return (Expected Return ÷ 12 ÷ 100) and n is the months until retirement. This is a simplified estimate that treats the corpus as funding the inflation-adjusted expenses from its real return.</p></section>
+<section class="content-block"><h2>Worked example</h2><p>Inputs: Current Age = 30, Retirement Age = 60, Monthly Expenses = ₹50,000, Expected Return = 8% per year, Inflation Rate = 6% per year. Step 1: years to retirement = 30. Step 2: future monthly expenses = 50,000 × (1.06)^30 = ₹2,87,175. Step 3: corpus needed = 2,87,175 × 12 ÷ ((8 − 6) ÷ 100) = ₹17,23,04,735, about ₹17.23 crore. Step 4: monthly saving = 17,23,04,735 × 0.006667 ÷ ((1.006667)^360 − 1) = ₹1,15,613 per month. This is a simplified estimate — real plans should be reviewed with a financial adviser.</p></section>
+<section class="content-block"><h2>How to use</h2><ol class="steps"><li>Step 1: Enter your age now in the &quot;Current Age&quot; field.</li><li>Step 2: Enter the age you want to retire at in the &quot;Retirement Age&quot; field.</li><li>Step 3: Enter what you spend each month today in the &quot;Monthly Expenses (₹)&quot; field.</li><li>Step 4: Enter the return you expect on investments in the &quot;Expected Return (%/yr)&quot; field.</li><li>Step 5: Enter the inflation rate in the &quot;Inflation Rate (%/yr)&quot; field, then tap Calculate to see the corpus needed and the monthly saving required.</li></ol></section>
+<section class="content-block"><h2>Tips</h2><ul><li>Starting early is the biggest lever — every year you delay raises the monthly saving needed, because compounding has less time to work.</li><li>Inflation is the hidden cost: at 6% inflation, ₹50,000 of monthly expenses today becomes about ₹2,87,000 in 30 years.</li><li>Review the plan every year and raise your monthly saving as your income grows.</li><li>This calculator uses a simplified formula; use the result as a planning target and review it with a qualified adviser before acting on it.</li></ul></section>
+<section class="content-block"><h2>Common mistakes</h2><ul><li>Using today&#39;s expenses as the retirement expenses without adjusting for inflation — the real figure is several times higher.</li><li>Assuming a very high return such as 15% every year for 30 years, which makes the monthly saving look unrealistically small.</li><li>Setting the expected return below the inflation rate, which makes the corpus formula meaningless.</li><li>Treating the corpus figure as exact — it is an estimate based on the rates you entered.</li></ul></section>
+<section class="content-block faq-list"><h2>Frequently asked questions</h2><details><summary>How much money do I need to retire?</summary><p>It depends on your expenses, the years until retirement, inflation, and the return you expect. For example, with ₹50,000 of monthly expenses today, retiring at 60 from age 30 at 6% inflation and 8% return, this calculator estimates a corpus of about ₹17.23 crore and a monthly saving of about ₹1,15,613. Change any input to see your own figure.</p></details><details><summary>Why does inflation matter so much for retirement?</summary><p>Because prices rise every year, the same lifestyle costs much more in the future. At 6% inflation, something costing ₹50,000 a month today costs about ₹2,87,000 a month in 30 years, so the corpus must be far larger than today&#39;s expenses suggest.</p></details><details><summary>How much should I save each month for retirement?</summary><p>It depends on your age, your target retirement age, your expenses, and the return you expect. The younger you start, the smaller the monthly amount — this calculator works out the figure for your own inputs.</p></details></section>
+<section class="content-block"><h2>Related calculators</h2><ul class="related-list"><li><a href="../../calculators/sip-calculator/">SIP Calculator</a></li><li><a href="../../calculators/ppf-calculator/">PPF Calculator (India)</a></li><li><a href="../../calculators/savings-goal-calculator/">Savings Goal Planner</a></li></ul></section>
+<div class="disclaimer-box"><p>Results are a guide based on the numbers you enter. For loan, tax or investment decisions, check the figures with the bank, the official tax portal, or a qualified adviser.</p></div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-copy">&copy; 2026 SuvoCalc &mdash; v31 &middot; 57 free calculators</p>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="../../privacy/index.html">Privacy</a>
+      <a href="../../terms/index.html">Terms</a>
+      <a href="../../disclaimer/index.html">Disclaimer</a>
+      <a href="../../about/index.html">About</a>
+      <a href="../../contact/index.html">Contact</a>
+      <a href="../../faq/index.html">FAQ</a>
+    </nav>
+  </div>
+</footer>
+
+<nav class="bottom-nav" aria-label="Mobile navigation">
+  <a class="bottom-nav-link" data-nav="home" href="../../index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    <span>Home</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="tools" href="../../tools/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+    <span>Tools</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="categories" href="../../tools/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+    <span>Categories</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="blog" href="../../blog/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+    <span>Guides</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="about" href="../../about/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+    <span>About</span>
+  </a>
+</nav>
+
+<div class="cookie-banner" id="cookie-banner" hidden>
+  <p>SuvoCalc uses local storage on your device to remember your theme and recently used calculators. No account, no tracking.</p>
+  <button type="button" class="btn btn-primary btn-small" id="cookie-accept">Got it</button>
+</div>
+
+<script src="../../assets/js/calc.js"></script>
+<script src="../../assets/js/main.js"></script>
+<script>
+/* v31 no-op stubs: the verbatim v30 calc bodies call these legacy
+   helpers (toast, usage tracking, streaks, haptics, gauge). v31 has
+   none of those systems; the stubs keep a calculation from throwing
+   after it has written its result. */
+function toast(){}
+function trackTool(){}
+function bumpStreak(){}
+function checkMilestone(){}
+function v21Haptic(){}
+function injectBMIGauge(){}
+/* renderH: the sci history UI does not exist in v31; pushH() still
+   records to localStorage, renderH() just has nothing to paint. */
+function renderH(){}
+function runToolCalc(){
+
+     const ca=parseInt(getId('rtA'))||30,ra=parseInt(getId('rtR'))||60,exp=parseFloat(getId('rtE'))||50000;
+     const ret=parseFloat(getId('rtI'))||8,inf=parseFloat(getId('rtF'))||6;
+     const yrs=ra-ca;const months=yrs*12;
+     const futureExp=exp*Math.pow(1+inf/100,yrs);
+     const corpusNeeded=futureExp*12/((ret-inf)/100); // simplified perpetuity
+     const r=ret/12/100;const n=months;
+     const monthlySave=corpusNeeded*r/(Math.pow(1+r,n)-1);
+     setRes('retire',SYM()+fmt(Math.round(corpusNeeded),true),'Corpus Needed',`Years to retire: ${yrs}<br>Monthly expenses today: ${SYM()}${fmt(exp,true)}<br>Inflation-adjusted expenses at ${ra}: ${SYM()}${fmt(Math.round(futureExp),true)}/mo<br>Monthly saving needed: ${SYM()}${fmt(Math.round(monthlySave),true)}<br>Start saving NOW — every year delayed costs more!`);
+   
+}
+(function(){
+try{
+var form=document.getElementById("calc-form");
+if(form){ form.addEventListener("submit",function(ev){ ev.preventDefault(); try{ runToolCalc(); }catch(err){ var e=document.getElementById("res-error"); if(e){ e.textContent="Could not calculate. Please check your numbers and try again."; e.hidden=false; } } }); }
+
+}catch(e){}
+})();
+</script>
+</body>
+</html>

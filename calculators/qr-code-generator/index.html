@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QR Code Generator | SuvoCalc v31</title>
+<meta name="description" content="Generate QR codes instantly for any URL, text, UPI ID, or contact.">
+<link rel="canonical" href="https://suvocalc.com/calculators/qr-code-generator/">
+<script>
+/* Apply saved theme before CSS loads to avoid a flash. No other logic here. */
+(function () {
+  try {
+    var t = localStorage.getItem('sc_theme');
+    if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+  } catch (e) { /* storage unavailable: keep light default */ }
+})();
+</script>
+<link rel="stylesheet" href="../../assets/css/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"QR Code Generator | SuvoCalc","url":"https://suvocalc.com/calculators/qr-code-generator/","applicationCategory":"CalculatorApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Generate QR codes instantly for any URL, text, UPI ID, or contact."}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://suvocalc.com/"},{"@type":"ListItem","position":2,"name":"Daily Utilities","item":"https://suvocalc.com/categories/daily-utilities/"},{"@type":"ListItem","position":3,"name":"QR Code Generator","item":"https://suvocalc.com/calculators/qr-code-generator/"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does a QR code store?","acceptedAnswer":{"@type":"Answer","text":"A QR code stores the text you type, such as a link, a UPI ID, or a message. Anyone who scans it sees that text or is offered the link. Check what you typed before sharing the code."}},{"@type":"Question","name":"Can I make a QR code for my website?","acceptedAnswer":{"@type":"Answer","text":"Yes. Choose the URL template, type the website address, and generate the code. People who scan it can open the site."}},{"@type":"Question","name":"Is the QR code private?","acceptedAnswer":{"@type":"Answer","text":"The tool creates the code in your browser and does not send your text anywhere. But once you share the image, anyone with it can read what it contains."}}]}
+</script>
+
+</head>
+<body data-active-nav="tools" data-tool-url-prefix="../../" data-tool-slug="qr-code-generator" data-tool-title="QR Code Generator">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="../../index.html" aria-label="SuvoCalc home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="11" x2="8" y2="11.01"/><line x1="12" y1="11" x2="12" y2="11.01"/><line x1="16" y1="11" x2="16" y2="11.01"/><line x1="8" y1="15" x2="8" y2="15.01"/><line x1="12" y1="15" x2="12" y2="15.01"/><line x1="16" y1="15" x2="16" y2="15.01"/></svg>
+      </span>
+      <span class="brand-name">SuvoCalc</span>
+      <span class="brand-version">v31</span>
+    </a>
+
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+      <a class="nav-link" data-nav="home" href="../../index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Home</span>
+      </a>
+      <a class="nav-link" data-nav="tools" href="../../tools/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        <span>All Tools</span>
+      </a>
+      <a class="nav-link" data-nav="categories" href="../../tools/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+        <span>Categories</span>
+      </a>
+      <a class="nav-link" data-nav="blog" href="../../blog/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        <span>Blog/Guides</span>
+      </a>
+      <a class="nav-link" data-nav="about" href="../../about/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        <span>About</span>
+      </a>
+      <a class="nav-link" data-nav="contact" href="../../contact/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span>Contact</span>
+      </a>
+    </nav>
+
+    <div class="header-actions">
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch between light and dark theme">
+        <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <span class="theme-toggle-label">Theme</span>
+      </button>
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="page-main">
+<nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/categories/daily-utilities/">Daily Utilities</a></li><li><span aria-current="page">QR Code Generator</span></li></ol></nav>
+  <h1 class="page-title">QR Code Generator</h1>
+<p class="lead">The QR Code Generator turns any URL, text, UPI ID, or contact into a QR code that a phone camera can scan.</p>
+<section class="content-block"><h2>What it is used for</h2><p>It is used to make scannable codes for website links, payment IDs, contact cards, Wi-Fi details, and short messages, so people can open them with one scan instead of typing.</p></section>
+<section class="calc-card" aria-label="QR Code Generator calculator">
+<form id="calc-form" class="calc-form">
+<div class="field"><label for="qr22Template">Quick Template</label><select id="qr22Template" name="qr22Template"><option value="Website">Website</option><option value="UPI Pay">UPI Pay</option><option value="WiFi">WiFi</option><option value="Contact">Contact</option><option value="Email">Email</option><option value="Text">Text</option><option value="Location">Location</option><option value="App Download">App Download</option></select></div>
+<div class="field"><label for="qr22Input" id="qr22InputLabel">Website URL</label><input type="text" id="qr22Input" name="qr22Input" placeholder="https://example.com"></div>
+<div class="field"><label for="qr22Color">QR Color</label><input type="color" id="qr22Color" name="qr22Color" value="#1a1a2e"></div>
+<div class="field"><label for="qr22Bg">Background</label><input type="color" id="qr22Bg" name="qr22Bg" value="#ffffff"></div>
+<div class="field"><label for="qr22Size">Size (px)</label><select id="qr22Size" name="qr22Size"><option value="200">200</option><option value="300" selected>300</option><option value="400">400</option><option value="500">500</option></select></div>
+<div class="field"><label for="qr22LogoFile">Logo Inside QR (optional)</label><input type="file" id="qr22LogoFile" name="qr22LogoFile"></div>
+<button type="submit" id="calc-btn" class="btn btn-primary btn-block">Calculate</button>
+</form>
+<div class="tool-outputs"><div id="qr22Result" class="tool-output"></div>
+<img id="qr22Img" class="tool-qr-img" alt="Generated QR code">
+<div id="qr22ImgWrap" class="tool-output"></div>
+<div id="qr22Info" class="tool-output"></div>
+<div id="qr22UrlDisplay" class="tool-output"></div>
+<div id="qr22LogoDisplay" class="tool-output"></div>
+<div id="qr22HistorySection" class="tool-output"></div>
+<div id="qr22HistList" class="tool-output"></div></div>
+<div class="share-row"><button type="button" class="btn btn-secondary btn-small" onclick="qr22Download('png')">Download PNG</button><button type="button" class="btn btn-secondary btn-small" onclick="qr22CopyURL()">Copy URL</button><button type="button" class="btn btn-secondary btn-small" onclick="qr22Share()">Share</button></div>
+<p class="result-error" id="res-error" hidden></p>
+</section>
+<section class="content-block"><h2>Formula</h2><p class="formula-box">Method: the tool encodes the text you enter — a URL, plain text, a UPI ID, or contact details — into a square QR pattern using the standard QR encoding rules. Scanning the pattern with a camera reads back exactly the text that was encoded.</p></section>
+<section class="content-block"><h2>Worked example</h2><p>Use case: a QR code for a short piece of text. Step 1: choose the Text template and type the text, for example &#39;Hello, SuvoCalc!&#39; Step 2: tap Generate — the tool draws the QR code for exactly that text. Step 3: scan it with any phone camera to see the same text appear. Final result: a QR code that, when scanned, shows &#39;Hello, SuvoCalc!&#39;. The same steps work for a website address, a UPI ID, or contact details — the code stores exactly what you typed.</p></section>
+<section class="content-block"><h2>How to use</h2><ol class="steps"><li>Pick a template: URL, text, UPI ID, or contact.</li><li>Type the exact text or address you want the code to hold.</li><li>Tap Generate to create the QR code.</li><li>Check the preview looks complete and uncut.</li><li>Share or download the code, and test it once by scanning it yourself before printing it.</li></ol></section>
+<section class="content-block"><h2>Tips</h2><ul><li>Always scan your own code once before sharing or printing it.</li><li>Print QR codes at least 2 cm across so phone cameras can read them easily.</li><li>For payment codes, double-check the UPI ID character by character.</li><li>Keep a high-contrast black-on-white code for the most reliable scanning.</li></ul></section>
+<section class="content-block"><h2>Common mistakes</h2><ul><li>Typing the web address wrong, so the QR code opens a broken or wrong page.</li><li>Printing the code too small for a camera to read reliably.</li><li>Sharing a QR code that holds private information without thinking about who can scan it.</li><li>Using a low-contrast printout that phones struggle to read.</li></ul></section>
+<section class="content-block faq-list"><h2>Frequently asked questions</h2><details><summary>What does a QR code store?</summary><p>A QR code stores the text you type, such as a link, a UPI ID, or a message. Anyone who scans it sees that text or is offered the link. Check what you typed before sharing the code.</p></details><details><summary>Can I make a QR code for my website?</summary><p>Yes. Choose the URL template, type the website address, and generate the code. People who scan it can open the site.</p></details><details><summary>Is the QR code private?</summary><p>The tool creates the code in your browser and does not send your text anywhere. But once you share the image, anyone with it can read what it contains.</p></details></section>
+<section class="content-block"><h2>Related calculators</h2><ul class="related-list"><li><a href="../../calculators/qr-code-scanner/">QR Code Scanner</a></li><li><a href="../../calculators/password-generator/">Password Generator</a></li><li><a href="../../calculators/unit-currency-converter/">Unit &amp; Currency Converter</a></li></ul></section>
+<div class="disclaimer-box"><p>Results are a guide based on the numbers you enter. For loan, tax or investment decisions, check the figures with the bank, the official tax portal, or a qualified adviser.</p></div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-copy">&copy; 2026 SuvoCalc &mdash; v31 &middot; 57 free calculators</p>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="../../privacy/index.html">Privacy</a>
+      <a href="../../terms/index.html">Terms</a>
+      <a href="../../disclaimer/index.html">Disclaimer</a>
+      <a href="../../about/index.html">About</a>
+      <a href="../../contact/index.html">Contact</a>
+      <a href="../../faq/index.html">FAQ</a>
+    </nav>
+  </div>
+</footer>
+
+<nav class="bottom-nav" aria-label="Mobile navigation">
+  <a class="bottom-nav-link" data-nav="home" href="../../index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    <span>Home</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="tools" href="../../tools/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+    <span>Tools</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="categories" href="../../tools/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+    <span>Categories</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="blog" href="../../blog/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+    <span>Guides</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="about" href="../../about/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+    <span>About</span>
+  </a>
+</nav>
+
+<div class="cookie-banner" id="cookie-banner" hidden>
+  <p>SuvoCalc uses local storage on your device to remember your theme and recently used calculators. No account, no tracking.</p>
+  <button type="button" class="btn btn-primary btn-small" id="cookie-accept">Got it</button>
+</div>
+
+<script src="../../assets/js/calc.js"></script>
+<script src="../../assets/js/main.js"></script>
+<script>
+/* v31 no-op stubs: the verbatim v30 calc bodies call these legacy
+   helpers (toast, usage tracking, streaks, haptics, gauge). v31 has
+   none of those systems; the stubs keep a calculation from throwing
+   after it has written its result. */
+function toast(){}
+function trackTool(){}
+function bumpStreak(){}
+function checkMilestone(){}
+function v21Haptic(){}
+function injectBMIGauge(){}
+/* renderH: the sci history UI does not exist in v31; pushH() still
+   records to localStorage, renderH() just has nothing to paint. */
+function renderH(){}
+/* Companion functions/state, verbatim from the v30 source
+   (7899-7902, 7904-7913, 7915-7930, 7932-7947, 7994-8013, 8015-8045, 8047-8054, 8056-8065, 8067-8079, 8081-8086, 8088-8093, 8095-8107, 8109-8115). See companions.json. */
+let qr22_logoData=null;
+let qr22_lastURL=null;
+let qr22_history=[];
+let qr22_debTimer=null;
+
+const QR22_TEMPLATES={
+  url:{label:'Website URL',placeholder:'https://example.com',prefix:''},
+  upi:{label:'UPI ID or Amount',placeholder:'name@okhdfcbank or upi://pay?pa=name@upi&am=100',prefix:''},
+  wifi:{label:'WiFi (SSID:Password)',placeholder:'MyWiFi:MyPassword',prefix:'WIFI:S:{val};;',isWifi:true},
+  phone:{label:'Phone Number',placeholder:'+91 9876543210',prefix:'tel:'},
+  email:{label:'Email Address',placeholder:'you@example.com',prefix:'mailto:'},
+  text:{label:'Plain Text',placeholder:'Hello, World!',prefix:''},
+  location:{label:'Google Maps URL or lat,lng',placeholder:'https://maps.google.com/?q=... or 28.6139,77.2090',prefix:''},
+  apk:{label:'App Download URL',placeholder:'https://yoursite.com/app.apk',prefix:''}
+};
+
+function qr22SetTemplate(tpl){
+  const cfg=QR22_TEMPLATES[tpl]||QR22_TEMPLATES.url;
+  const lbl=document.getElementById('qr22InputLabel');
+  const inp=document.getElementById('qr22Input');
+  if(lbl)lbl.textContent=cfg.label;
+  if(inp){inp.placeholder=cfg.placeholder;inp.value='';}
+  document.querySelectorAll('.qr22-tpl').forEach(b=>{
+    b.classList.toggle('active',b.getAttribute('data-tpl')===tpl);
+  });
+  window._qr22tpl=tpl;
+}
+
+function qr22Debounce(){
+  clearTimeout(qr22_debTimer);
+  qr22_debTimer=setTimeout(qr22Generate,700);
+}
+
+function qr22BuildText(){
+  const inp=document.getElementById('qr22Input');
+  if(!inp)return'';
+  let val=inp.value.trim();
+  if(!val)return'';
+  const tpl=window._qr22tpl||'url';
+  const cfg=QR22_TEMPLATES[tpl]||QR22_TEMPLATES.url;
+  if(cfg.isWifi){
+    const parts=val.split(':');
+    const ssid=parts[0]||val;const pwd=parts.slice(1).join(':')||'';
+    return`WIFI:T:WPA;S:${ssid};P:${pwd};;`;
+  }
+  if(cfg.prefix&&!val.startsWith(cfg.prefix)&&!val.startsWith('http')&&!val.startsWith('upi')&&!val.startsWith('mailto')&&!val.startsWith('tel'))
+    return cfg.prefix+val;
+  return val;
+}
+
+function qr22OverlayLogo(imgEl,size){
+  /* Draw QR + logo on canvas, replace img src */
+  const canvas=document.createElement('canvas');
+  const s=Math.min(size,280);
+  canvas.width=s;canvas.height=s;
+  const ctx=canvas.getContext('2d');
+  ctx.drawImage(imgEl,0,0,s,s);
+  const logo=new Image();
+  logo.crossOrigin='anonymous';
+  logo.onload=function(){
+    const ls=s*0.22;
+    const lx=(s-ls)/2;const ly=(s-ls)/2;
+    ctx.fillStyle='#fff';
+    ctx.beginPath();ctx.roundRect(lx-4,ly-4,ls+8,ls+8,8);ctx.fill();
+    ctx.drawImage(logo,lx,ly,ls,ls);
+    imgEl.src=canvas.toDataURL('image/png');
+    window._qr22canvasPNG=canvas.toDataURL('image/png');
+  };
+  logo.src=qr22_logoData;
+}
+
+function qr22Download(fmt){
+  if(!qr22_lastURL){toast('⬆ Generate a QR first');return;}
+  if(fmt==='svg'){
+    /* Build SVG QR via qrserver */
+    const text=qr22BuildText();
+    const color=document.getElementById('qr22Color')?document.getElementById('qr22Color').value.replace('#',''):'000000';
+    const bg=document.getElementById('qr22Bg')?document.getElementById('qr22Bg').value.replace('#',''):'ffffff';
+    const svgURL=`https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=${encodeURIComponent(text)}&color=${color}&bgcolor=${bg}&margin=10&format=svg`;
+    const a=document.createElement('a');a.href=svgURL;a.download='SuvoCalc-QR.svg';a.target='_blank';a.click();
+    toast('📥 SVG downloading…');return;
+  }
+  /* PNG — use canvas if logo overlay was done */
+  if(window._qr22canvasPNG){
+    const a=document.createElement('a');a.href=window._qr22canvasPNG;a.download='SuvoCalc-QR.png';a.click();
+    toast('📥 PNG downloaded!');return;
+  }
+  /* Direct fetch & download */
+  fetch(qr22_lastURL)
+    .then(r=>r.blob())
+    .then(blob=>{
+      const url=URL.createObjectURL(blob);
+      const a=document.createElement('a');a.href=url;a.download='SuvoCalc-QR.png';a.click();
+      setTimeout(()=>URL.revokeObjectURL(url),3000);
+      toast('📥 PNG downloaded!');
+    })
+    .catch(()=>{
+      /* Last resort: open in new tab */
+      window.open(qr22_lastURL,'_blank');
+      toast('📥 Right-click → Save image');
+    });
+}
+
+function qr22CopyURL(){
+  const inp=document.getElementById('qr22Input');
+  const val=inp?inp.value.trim():'';
+  if(!val){toast('Nothing to copy');return;}
+  navigator.clipboard&&navigator.clipboard.writeText(val)
+    .then(()=>toast('📋 URL copied!'))
+    .catch(()=>toast('Copy failed'));
+}
+
+function qr22Share(){
+  if(!qr22_lastURL){toast('Generate a QR first');return;}
+  const text=qr22BuildText();
+  if(navigator.share){
+    navigator.share({title:'QR Code – SuvoCalc',text:'QR Code generated with SuvoCalc',url:text}).catch(()=>{});
+  } else {
+    navigator.clipboard&&navigator.clipboard.writeText(text)
+      .then(()=>toast('📋 Link copied to share!'));
+  }
+}
+
+function qr22LogoSelected(input){
+  const file=input&&input.files&&input.files[0];
+  if(!file)return;
+  const reader=new FileReader();
+  reader.onload=function(e){
+    qr22_logoData=e.target.result;
+    window._qr22canvasPNG=null;
+    const d=document.getElementById('qr22LogoDisplay');
+    if(d)d.innerHTML='✅ Logo loaded: <strong>'+file.name.slice(0,24)+'</strong> — <span style="color:var(--re);cursor:pointer" onclick="qr22ClearLogo()">Remove</span>';
+    toast('🖼 Logo loaded! Regenerate QR to apply.');
+  };
+  reader.readAsDataURL(file);
+}
+
+function qr22ClearLogo(){
+  qr22_logoData=null;window._qr22canvasPNG=null;
+  const d=document.getElementById('qr22LogoDisplay');
+  if(d)d.innerHTML='🖼 Tap to upload logo (PNG/JPG) — will appear in center';
+  toast('Logo removed');
+}
+
+function qr22AddHistory(text,tpl,imgUrl){
+  const tplEmoji={url:'🌐',upi:'💳',wifi:'📶',phone:'📞',email:'✉️',text:'📝',location:'📍',apk:'📦'};
+  qr22_history.unshift({text,tpl,imgUrl,time:new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})});
+  if(qr22_history.length>6)qr22_history.pop();
+  qr22RenderHistory();
+}
+
+function qr22RenderHistory(){
+  const sec=document.getElementById('qr22HistorySection');
+  const list=document.getElementById('qr22HistList');
+  if(!sec||!list||!qr22_history.length)return;
+  sec.style.display='block';
+  const tplEmoji={url:'🌐',upi:'💳',wifi:'📶',phone:'📞',email:'✉️',text:'📝',location:'📍',apk:'📦'};
+  list.innerHTML=qr22_history.map((h,i)=>`
+    <div class="qr22-hist-item" onclick="qr22RestoreHistory(${i})">
+      <span class="qr22-hist-ico">${tplEmoji[h.tpl]||'▦'}</span>
+      <span class="qr22-hist-txt">${h.text.length>40?h.text.slice(0,37)+'…':h.text}</span>
+      <span class="qr22-hist-time">${h.time}</span>
+    </div>`).join('');
+}
+
+function qr22RestoreHistory(i){
+  const h=qr22_history[i];if(!h)return;
+  qr22SetTemplate(h.tpl);
+  const inp=document.getElementById('qr22Input');
+  if(inp)inp.value=h.text;
+  qr22Generate();
+}
+function qr22Generate(){
+
+  const text=qr22BuildText();
+  if(!text){toast('⬆ Enter content first');return;}
+  const color=document.getElementById('qr22Color')?document.getElementById('qr22Color').value.replace('#',''):'000000';
+  const bg=document.getElementById('qr22Bg')?document.getElementById('qr22Bg').value.replace('#',''):'ffffff';
+  const size=parseInt(document.getElementById('qr22Size')?document.getElementById('qr22Size').value:300)||300;
+
+  /* Build QR URL — using api.qrserver.com for color support */
+  const apiURL=`https://api.qrserver.com/v1/create-qr-code/?size=${size}x${size}&data=${encodeURIComponent(text)}&color=${color}&bgcolor=${bg}&margin=10&format=png`;
+  qr22_lastURL=apiURL;
+
+  const result=document.getElementById('qr22Result');
+  const img=document.getElementById('qr22Img');
+  const wrap=document.getElementById('qr22ImgWrap');
+  const info=document.getElementById('qr22Info');
+  const urlDisp=document.getElementById('qr22UrlDisplay');
+
+  if(!result||!img)return;
+
+  img.src=apiURL;
+  img.width=Math.min(size,280);img.height=Math.min(size,280);
+  img.onload=function(){
+    /* If logo selected, draw on canvas */
+    if(qr22_logoData){qr22OverlayLogo(img,size);}
+    result.classList.add('visible');
+  };
+  img.onerror=function(){
+    /* Fallback to Google Charts */
+    const fallback=`https://chart.googleapis.com/chart?cht=qr&chs=${size}x${size}&chl=${encodeURIComponent(text)}&choe=UTF-8`;
+    img.src=fallback;qr22_lastURL=fallback;
+    result.classList.add('visible');
+  };
+
+  /* Info chips */
+  const tpl=window._qr22tpl||'url';
+  const tplEmoji={url:'🌐',upi:'💳',wifi:'📶',phone:'📞',email:'✉️',text:'📝',location:'📍',apk:'📦'};
+  if(info)info.innerHTML=`<span class="qr22-info-chip">${tplEmoji[tpl]||'▦'} ${tpl.toUpperCase()}</span><span class="qr22-info-chip">📐 ${size}×${size}px</span><span class="qr22-info-chip">🎨 Custom Color</span>`;
+  if(urlDisp)urlDisp.textContent=text.length>80?text.slice(0,77)+'…':text;
+
+  /* Save to history */
+  qr22AddHistory(text,tpl,apiURL);
+  toast('✅ QR Code ready!');
+  v21Haptic&&v21Haptic(8);
+
+}
+function runToolCalc(){ qr22Generate(); }
+(function(){
+try{
+var form=document.getElementById("calc-form");
+if(form){ form.addEventListener("submit",function(ev){ ev.preventDefault(); try{ runToolCalc(); }catch(err){ var e=document.getElementById("res-error"); if(e){ e.textContent="Could not calculate. Please check your numbers and try again."; e.hidden=false; } } }); }
+var qt=document.getElementById("qr22Template");
+if(qt){ var QR_MAP={Website:"url","UPI Pay":"upi",WiFi:"wifi",Contact:"phone",Email:"email",Text:"text",Location:"location","App Download":"apk"}; qt.addEventListener("change",function(){ qr22SetTemplate(QR_MAP[qt.value]||"url"); }); }
+var qi=document.getElementById("qr22Input"); if(qi){ qi.addEventListener("input",qr22Debounce); }
+var ql=document.getElementById("qr22LogoFile"); if(ql){ ql.addEventListener("change",function(){ qr22LogoSelected(ql); }); }
+}catch(e){}
+})();
+</script>
+</body>
+</html>

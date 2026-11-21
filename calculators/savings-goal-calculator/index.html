@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Savings Goal Planner | SuvoCalc v31</title>
+<meta name="description" content="Set a savings goal and find out how long it will take, or how much to save per month to reach it.">
+<link rel="canonical" href="https://suvocalc.com/calculators/savings-goal-calculator/">
+<script>
+/* Apply saved theme before CSS loads to avoid a flash. No other logic here. */
+(function () {
+  try {
+    var t = localStorage.getItem('sc_theme');
+    if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+  } catch (e) { /* storage unavailable: keep light default */ }
+})();
+</script>
+<link rel="stylesheet" href="../../assets/css/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Savings Goal Planner | SuvoCalc","url":"https://suvocalc.com/calculators/savings-goal-calculator/","applicationCategory":"CalculatorApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Set a savings goal and find out how long it will take, or how much to save per month to reach it."}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://suvocalc.com/"},{"@type":"ListItem","position":2,"name":"Investment & Savings","item":"https://suvocalc.com/categories/investment-savings/"},{"@type":"ListItem","position":3,"name":"Savings Goal Planner","item":"https://suvocalc.com/calculators/savings-goal-calculator/"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How long will it take to save ₹5,00,000 at ₹10,000 a month?","acceptedAnswer":{"@type":"Answer","text":"At a 4% annual return and starting from zero, it takes 47 months — 3 years and 11 months. You pay in ₹4,70,000 and the rest comes from interest."}},{"@type":"Question","name":"How much must I save each month to reach ₹5,00,000 in 24 months?","acceptedAnswer":{"@type":"Answer","text":"At a 4% annual return and starting from zero, you need to save about ₹20,046 per month. You would pay in about ₹4,81,099 and earn the rest as interest."}},{"@type":"Question","name":"Should I fill in Monthly Savings or Target Months?","acceptedAnswer":{"@type":"Answer","text":"Fill in only one. If you know what you can save each month, enter that to find how long the goal takes. If you have a deadline, enter the months to find how much you must save each month."}}]}
+</script>
+
+</head>
+<body data-active-nav="tools" data-tool-url-prefix="../../" data-tool-slug="savings-goal-calculator" data-tool-title="Savings Goal Planner">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="../../index.html" aria-label="SuvoCalc home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="11" x2="8" y2="11.01"/><line x1="12" y1="11" x2="12" y2="11.01"/><line x1="16" y1="11" x2="16" y2="11.01"/><line x1="8" y1="15" x2="8" y2="15.01"/><line x1="12" y1="15" x2="12" y2="15.01"/><line x1="16" y1="15" x2="16" y2="15.01"/></svg>
+      </span>
+      <span class="brand-name">SuvoCalc</span>
+      <span class="brand-version">v31</span>
+    </a>
+
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+      <a class="nav-link" data-nav="home" href="../../index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Home</span>
+      </a>
+      <a class="nav-link" data-nav="tools" href="../../tools/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        <span>All Tools</span>
+      </a>
+      <a class="nav-link" data-nav="categories" href="../../tools/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+        <span>Categories</span>
+      </a>
+      <a class="nav-link" data-nav="blog" href="../../blog/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        <span>Blog/Guides</span>
+      </a>
+      <a class="nav-link" data-nav="about" href="../../about/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        <span>About</span>
+      </a>
+      <a class="nav-link" data-nav="contact" href="../../contact/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span>Contact</span>
+      </a>
+    </nav>
+
+    <div class="header-actions">
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch between light and dark theme">
+        <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <span class="theme-toggle-label">Theme</span>
+      </button>
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="page-main">
+<nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/categories/investment-savings/">Investment &amp; Savings</a></li><li><span aria-current="page">Savings Goal Planner</span></li></ol></nav>
+  <h1 class="page-title">Savings Goal Planner</h1>
+<p class="lead">The Savings Goal Planner works out how to reach a savings target: either how long it will take at a monthly saving amount you choose, or how much you must save each month to reach the goal by a date you choose.</p>
+<section class="content-block"><h2>What it is used for</h2><p>It is used to plan for a specific goal such as a bike, a phone, a course fee, or a house deposit, and to see how interest on the savings shortens the time or lowers the monthly amount needed.</p></section>
+<section class="calc-card" aria-label="Savings Goal Planner calculator">
+<form id="calc-form" class="calc-form">
+<div class="field"><label for="sgGoal">Goal Amount (₹)</label><input type="number" id="sgGoal" name="sgGoal" placeholder="e.g. 500000"></div>
+<div class="field"><label for="sgSaved">Already Saved (₹)</label><input type="number" id="sgSaved" name="sgSaved" placeholder="e.g. 0"></div>
+<div class="field"><label for="sgMonthly">Monthly Savings (₹)</label><input type="number" id="sgMonthly" name="sgMonthly" placeholder="Leave blank to find monthly amount"></div>
+<div class="field"><label for="sgMonths">Target Months</label><input type="number" id="sgMonths" name="sgMonths" placeholder="Leave blank to find time needed"></div>
+<div class="field"><label for="sgRate">Annual Return % (savings)</label><input type="number" id="sgRate" name="sgRate" placeholder="4 (default savings rate)"></div>
+<button type="submit" id="calc-btn" class="btn btn-primary btn-block">Calculate</button>
+</form>
+<div class="result-box" id="res-box">
+<p class="result-label" id="res-label">Time to Reach Goal</p>
+<p class="result-value" id="res-value">&mdash;</p>
+<p class="result-details" id="res-details"></p>
+<p class="result-error" id="res-error" hidden></p>
+<div class="share-row"><button type="button" class="btn btn-secondary btn-small" id="share-result">Share result</button><span class="share-status" id="share-status" role="status"></span></div>
+</div>
+</section>
+<section class="content-block"><h2>Formula</h2><p class="formula-box">Fill in either Monthly Savings or Target Months, not both. With a monthly amount, the balance grows month by month as Balance = Balance × (1 + monthly rate) + Monthly Savings, until it reaches the goal. With a target number of months, the calculator finds the monthly amount that reaches the goal in that time, allowing for the same monthly interest. Remaining amount = Goal Amount − Already Saved.</p></section>
+<section class="content-block"><h2>Worked example</h2><p>Inputs: Goal Amount = ₹5,00,000, Already Saved = ₹0, Monthly Savings = ₹10,000, Target Months = (left blank), Annual Return = 4%. Step 1: remaining amount = 5,00,000 − 0 = ₹5,00,000. Step 2: monthly rate = 4 ÷ 12 ÷ 100 = 0.003333. Step 3: growing the balance by ₹10,000 a month with interest, it reaches ₹5,00,000 after 47 months. Step 4: that is 3 years and 11 months, with ₹4,70,000 paid in by you and the rest earned as interest.</p></section>
+<section class="content-block"><h2>How to use</h2><ol class="steps"><li>Step 1: Enter the total amount you want to save in the &quot;Goal Amount (₹)&quot; field.</li><li>Step 2: Enter what you have already saved in the &quot;Already Saved (₹)&quot; field.</li><li>Step 3: To find the time needed, enter your monthly saving in the &quot;Monthly Savings (₹)&quot; field and leave &quot;Target Months&quot; blank.</li><li>Step 4: To find the monthly amount needed, enter the number of months in the &quot;Target Months&quot; field and leave &quot;Monthly Savings&quot; blank.</li><li>Step 5: Enter the interest your savings earn in the &quot;Annual Return % (savings)&quot; field — 4% is the default — then tap Calculate.</li></ol></section>
+<section class="content-block"><h2>Tips</h2><ul><li>Fill in either the monthly saving or the target months, not both — the calculator needs one of them to work out the other.</li><li>Already-saved money shortens the time a lot, because it starts earning interest from day one.</li><li>A small increase in the monthly saving cuts the time more than you might expect, because the extra money also earns interest.</li><li>Keep the goal in a separate savings account so everyday spending does not eat into it.</li></ul></section>
+<section class="content-block"><h2>Common mistakes</h2><ul><li>Filling in both Monthly Savings and Target Months — the calculator will ask you to fill only one.</li><li>Forgetting the money already saved, which makes the time or monthly amount look larger than it needs to be.</li><li>Using an unrealistic return rate, such as 12% for a savings account, which makes the plan look easier than it is.</li><li>Setting the goal amount without checking what the thing actually costs, including taxes and fees.</li></ul></section>
+<section class="content-block faq-list"><h2>Frequently asked questions</h2><details><summary>How long will it take to save ₹5,00,000 at ₹10,000 a month?</summary><p>At a 4% annual return and starting from zero, it takes 47 months — 3 years and 11 months. You pay in ₹4,70,000 and the rest comes from interest.</p></details><details><summary>How much must I save each month to reach ₹5,00,000 in 24 months?</summary><p>At a 4% annual return and starting from zero, you need to save about ₹20,046 per month. You would pay in about ₹4,81,099 and earn the rest as interest.</p></details><details><summary>Should I fill in Monthly Savings or Target Months?</summary><p>Fill in only one. If you know what you can save each month, enter that to find how long the goal takes. If you have a deadline, enter the months to find how much you must save each month.</p></details></section>
+<section class="content-block"><h2>Related calculators</h2><ul class="related-list"><li><a href="../../calculators/net-worth-calculator/">Net Worth Calculator</a></li><li><a href="../../calculators/sip-calculator/">SIP Calculator</a></li><li><a href="../../calculators/ppf-calculator/">PPF Calculator (India)</a></li></ul></section>
+<div class="disclaimer-box"><p>Results are a guide based on the numbers you enter. For loan, tax or investment decisions, check the figures with the bank, the official tax portal, or a qualified adviser.</p></div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-copy">&copy; 2026 SuvoCalc &mdash; v31 &middot; 57 free calculators</p>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="../../privacy/index.html">Privacy</a>
+      <a href="../../terms/index.html">Terms</a>
+      <a href="../../disclaimer/index.html">Disclaimer</a>
+      <a href="../../about/index.html">About</a>
+      <a href="../../contact/index.html">Contact</a>
+      <a href="../../faq/index.html">FAQ</a>
+    </nav>
+  </div>
+</footer>
+
+<nav class="bottom-nav" aria-label="Mobile navigation">
+  <a class="bottom-nav-link" data-nav="home" href="../../index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    <span>Home</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="tools" href="../../tools/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+    <span>Tools</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="categories" href="../../tools/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+    <span>Categories</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="blog" href="../../blog/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+    <span>Guides</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="about" href="../../about/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+    <span>About</span>
+  </a>
+</nav>
+
+<div class="cookie-banner" id="cookie-banner" hidden>
+  <p>SuvoCalc uses local storage on your device to remember your theme and recently used calculators. No account, no tracking.</p>
+  <button type="button" class="btn btn-primary btn-small" id="cookie-accept">Got it</button>
+</div>
+
+<script src="../../assets/js/calc.js"></script>
+<script src="../../assets/js/main.js"></script>
+<script>
+/* v31 no-op stubs: the verbatim v30 calc bodies call these legacy
+   helpers (toast, usage tracking, streaks, haptics, gauge). v31 has
+   none of those systems; the stubs keep a calculation from throwing
+   after it has written its result. */
+function toast(){}
+function trackTool(){}
+function bumpStreak(){}
+function checkMilestone(){}
+function v21Haptic(){}
+function injectBMIGauge(){}
+/* renderH: the sci history UI does not exist in v31; pushH() still
+   records to localStorage, renderH() just has nothing to paint. */
+function renderH(){}
+function runToolCalc(){
+
+      const goal = parseFloat(document.getElementById('sgGoal')&&document.getElementById('sgGoal').value)||0;
+      const saved = parseFloat(document.getElementById('sgSaved')&&document.getElementById('sgSaved').value)||0;
+      const monthly = parseFloat(document.getElementById('sgMonthly')&&document.getElementById('sgMonthly').value)||0;
+      const months = parseFloat(document.getElementById('sgMonths')&&document.getElementById('sgMonths').value)||0;
+      const rate = (parseFloat(document.getElementById('sgRate')&&document.getElementById('sgRate').value)||4)/12/100;
+      const sym = (typeof SYM==='function')?SYM():'₹';
+      const fmt2 = v => v>=1e7?(v/1e7).toFixed(2)+' Cr':v>=1e5?(v/1e5).toFixed(2)+' L':Math.round(v).toLocaleString('en-IN');
+      if (!goal) { setRes('savgoal','—','Enter goal amount',''); return; }
+      const rem = goal - saved;
+      if (monthly > 0 && months === 0) {
+        // Find months needed (with interest)
+        let bal = saved, m = 0;
+        while (bal < goal && m < 600) { bal = bal * (1 + rate) + monthly; m++; }
+        const yrs = Math.floor(m/12), mos = m%12;
+        setRes('savgoal', `${yrs > 0 ? yrs+'y ' : ''}${mos}m`, 'Time to reach goal',
+          `Goal: ${sym}${fmt2(goal)}<br>Monthly: ${sym}${fmt2(monthly)}<br>Already saved: ${sym}${fmt2(saved)}<br>Remaining: ${sym}${fmt2(rem)}<br>Total invested: ${sym}${fmt2(monthly*m)}`);
+      } else if (months > 0 && monthly === 0) {
+        // Find monthly amount needed
+        let lo = 1, hi = goal, mo = 0;
+        for (let iter = 0; iter < 50; iter++) {
+          mo = (lo + hi) / 2;
+          let bal = saved;
+          for (let i = 0; i < months; i++) bal = bal * (1 + rate) + mo;
+          if (bal < goal) lo = mo; else hi = mo;
+        }
+        setRes('savgoal', sym + fmt2(mo), 'Monthly Savings Needed',
+          `Goal: ${sym}${fmt2(goal)}<br>Time: ${months} months (${(months/12).toFixed(1)} yrs)<br>Total invested: ${sym}${fmt2(mo*months)}<br>Interest earned: ${sym}${fmt2(goal - mo*months - saved)}`);
+      } else {
+        setRes('savgoal','—','Fill either Monthly Savings OR Target Months (not both)','');
+        return;
+      }
+      if (typeof bumpStreak==='function') bumpStreak();
+      if (typeof checkMilestone==='function') checkMilestone();
+    
+}
+(function(){
+try{
+var form=document.getElementById("calc-form");
+if(form){ form.addEventListener("submit",function(ev){ ev.preventDefault(); try{ runToolCalc(); }catch(err){ var e=document.getElementById("res-error"); if(e){ e.textContent="Could not calculate. Please check your numbers and try again."; e.hidden=false; } } }); }
+
+}catch(e){}
+})();
+</script>
+</body>
+</html>

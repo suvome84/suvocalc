@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>World Clock | SuvoCalc v31</title>
+<meta name="description" content="Check current time in major cities worldwide. Compare time zones instantly.">
+<link rel="canonical" href="https://suvocalc.com/calculators/world-clock/">
+<script>
+/* Apply saved theme before CSS loads to avoid a flash. No other logic here. */
+(function () {
+  try {
+    var t = localStorage.getItem('sc_theme');
+    if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+  } catch (e) { /* storage unavailable: keep light default */ }
+})();
+</script>
+<link rel="stylesheet" href="../../assets/css/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"World Clock | SuvoCalc","url":"https://suvocalc.com/calculators/world-clock/","applicationCategory":"CalculatorApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Check current time in major cities worldwide. Compare time zones instantly."}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://suvocalc.com/"},{"@type":"ListItem","position":2,"name":"Date & Time","item":"https://suvocalc.com/categories/date-time/"},{"@type":"ListItem","position":3,"name":"World Clock","item":"https://suvocalc.com/calculators/world-clock/"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which cities does the World Clock show?","acceptedAnswer":{"@type":"Answer","text":"Ten: New York, London, Dubai, Kolkata, Dhaka, Singapore, Tokyo, Sydney, Los Angeles, and Paris."}},{"@type":"Question","name":"Does it update live?","acceptedAnswer":{"@type":"Answer","text":"Yes. The times refresh every second, so the clock keeps moving while the tool is open."}},{"@type":"Question","name":"What happens during daylight saving time?","acceptedAnswer":{"@type":"Answer","text":"During daylight saving time, London, New York, and Los Angeles shift by an hour. The tool reads your device's time-zone data, so it follows the current rules for each city."}}]}
+</script>
+
+</head>
+<body data-active-nav="tools" data-tool-url-prefix="../../" data-tool-slug="world-clock" data-tool-title="World Clock">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="../../index.html" aria-label="SuvoCalc home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="11" x2="8" y2="11.01"/><line x1="12" y1="11" x2="12" y2="11.01"/><line x1="16" y1="11" x2="16" y2="11.01"/><line x1="8" y1="15" x2="8" y2="15.01"/><line x1="12" y1="15" x2="12" y2="15.01"/><line x1="16" y1="15" x2="16" y2="15.01"/></svg>
+      </span>
+      <span class="brand-name">SuvoCalc</span>
+      <span class="brand-version">v31</span>
+    </a>
+
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+      <a class="nav-link" data-nav="home" href="../../index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Home</span>
+      </a>
+      <a class="nav-link" data-nav="tools" href="../../tools/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        <span>All Tools</span>
+      </a>
+      <a class="nav-link" data-nav="categories" href="../../tools/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+        <span>Categories</span>
+      </a>
+      <a class="nav-link" data-nav="blog" href="../../blog/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        <span>Blog/Guides</span>
+      </a>
+      <a class="nav-link" data-nav="about" href="../../about/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        <span>About</span>
+      </a>
+      <a class="nav-link" data-nav="contact" href="../../contact/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span>Contact</span>
+      </a>
+    </nav>
+
+    <div class="header-actions">
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch between light and dark theme">
+        <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <span class="theme-toggle-label">Theme</span>
+      </button>
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="page-main">
+<nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/categories/date-time/">Date &amp; Time</a></li><li><span aria-current="page">World Clock</span></li></ol></nav>
+  <h1 class="page-title">World Clock</h1>
+<p class="lead">The World Clock shows the live current time in 10 major cities around the world, updating every second.</p>
+<section class="content-block"><h2>What it is used for</h2><p>It is used to see the current time in major world cities at a glance, before calling, messaging, or scheduling across countries.</p></section>
+<section class="calc-card" aria-label="World Clock calculator">
+<form id="calc-form" class="calc-form">
+<div class="field"><label for="wcCity">City</label><select id="wcCity" name="wcCity"><option value="New York">New York</option><option value="London">London</option><option value="Dubai">Dubai</option><option value="Kolkata">Kolkata</option><option value="Dhaka">Dhaka</option><option value="Singapore">Singapore</option><option value="Tokyo">Tokyo</option><option value="Sydney">Sydney</option><option value="Los Angeles">Los Angeles</option><option value="Paris">Paris</option></select></div>
+<button type="submit" id="calc-btn" class="btn btn-primary btn-block">Calculate</button>
+</form>
+<div class="wc-list"><div class="wc-row" data-city="New York"><span class="wc-city">New York</span><span class="wc-time" data-tz="America/New_York">--:--</span></div><div class="wc-row" data-city="London"><span class="wc-city">London</span><span class="wc-time" data-tz="Europe/London">--:--</span></div><div class="wc-row" data-city="Dubai"><span class="wc-city">Dubai</span><span class="wc-time" data-tz="Asia/Dubai">--:--</span></div><div class="wc-row" data-city="Kolkata"><span class="wc-city">Kolkata</span><span class="wc-time" data-tz="Asia/Kolkata">--:--</span></div><div class="wc-row" data-city="Dhaka"><span class="wc-city">Dhaka</span><span class="wc-time" data-tz="Asia/Dhaka">--:--</span></div><div class="wc-row" data-city="Singapore"><span class="wc-city">Singapore</span><span class="wc-time" data-tz="Asia/Singapore">--:--</span></div><div class="wc-row" data-city="Tokyo"><span class="wc-city">Tokyo</span><span class="wc-time" data-tz="Asia/Tokyo">--:--</span></div><div class="wc-row" data-city="Sydney"><span class="wc-city">Sydney</span><span class="wc-time" data-tz="Australia/Sydney">--:--</span></div><div class="wc-row" data-city="Los Angeles"><span class="wc-city">Los Angeles</span><span class="wc-time" data-tz="America/Los_Angeles">--:--</span></div><div class="wc-row" data-city="Paris"><span class="wc-city">Paris</span><span class="wc-time" data-tz="Europe/Paris">--:--</span></div></div>
+<p class="result-error" id="res-error" hidden></p>
+</section>
+<section class="content-block"><h2>Formula</h2><p class="formula-box">Method: the clock takes the current moment and displays it in each city&#39;s time zone, using the device&#39;s time-zone database. Each city&#39;s time = the current UTC time + that city&#39;s current offset from UTC.</p></section>
+<section class="content-block"><h2>Worked example</h2><p>Example reading: when it is 15:30 in Kolkata (IST, UTC+5:30), the clock shows 10:00 in London (GMT, UTC+0), 05:00 in New York (EST, UTC−5), and 02:00 in Los Angeles (PST, UTC−8). Step 1: subtract 5 hours 30 minutes from 15:30 to get 10:00 UTC. Step 2: New York is 5 hours behind UTC in standard time, so 10:00 − 5:00 = 05:00. Step 3: Los Angeles is 8 hours behind UTC, so 10:00 − 8:00 = 02:00. Final result: the same moment reads 15:30 in Kolkata, 10:00 in London, 05:00 in New York, and 02:00 in Los Angeles.</p></section>
+<section class="content-block"><h2>How to use</h2><ol class="steps"><li>Open the World Clock tool — no inputs are needed.</li><li>Find your city in the list of 10 major cities.</li><li>Compare its time with the city you need.</li><li>Remember the day can differ: a city ahead of you may already be on tomorrow.</li><li>Refresh or reopen the tool if you need the latest time after a long gap.</li></ol></section>
+<section class="content-block"><h2>Tips</h2><ul><li>For a quick meeting check, find both cities in the list and read the hour difference directly.</li><li>Kolkata (IST) is 5 hours 30 minutes ahead of UTC and never changes for daylight saving.</li><li>If a city is 10 or more hours ahead, the other person may already be on the next day.</li><li>Use the Time Zone Converter when you need to convert one specific meeting time rather than just seeing the current time.</li></ul></section>
+<section class="content-block"><h2>Common mistakes</h2><ul><li>Forgetting that the date can be different in another city, not just the hour.</li><li>Using the clock to schedule a meeting without checking whether the other city is on daylight saving time.</li><li>Assuming all cities in one country share a time — the USA alone has several zones.</li><li>Reading a stale screenshot of the clock instead of opening it live.</li></ul></section>
+<section class="content-block faq-list"><h2>Frequently asked questions</h2><details><summary>Which cities does the World Clock show?</summary><p>Ten: New York, London, Dubai, Kolkata, Dhaka, Singapore, Tokyo, Sydney, Los Angeles, and Paris.</p></details><details><summary>Does it update live?</summary><p>Yes. The times refresh every second, so the clock keeps moving while the tool is open.</p></details><details><summary>What happens during daylight saving time?</summary><p>During daylight saving time, London, New York, and Los Angeles shift by an hour. The tool reads your device&#39;s time-zone data, so it follows the current rules for each city.</p></details></section>
+<section class="content-block"><h2>Related calculators</h2><ul class="related-list"><li><a href="../../calculators/time-zone-converter/">Time Zone Converter</a></li><li><a href="../../calculators/date-difference-calculator/">Date Difference Calculator</a></li><li><a href="../../calculators/pomodoro-study-timer/">Pomodoro Study Timer</a></li></ul></section>
+<div class="disclaimer-box"><p>Results are a guide based on the numbers you enter. For loan, tax or investment decisions, check the figures with the bank, the official tax portal, or a qualified adviser.</p></div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-copy">&copy; 2026 SuvoCalc &mdash; v31 &middot; 57 free calculators</p>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="../../privacy/index.html">Privacy</a>
+      <a href="../../terms/index.html">Terms</a>
+      <a href="../../disclaimer/index.html">Disclaimer</a>
+      <a href="../../about/index.html">About</a>
+      <a href="../../contact/index.html">Contact</a>
+      <a href="../../faq/index.html">FAQ</a>
+    </nav>
+  </div>
+</footer>
+
+<nav class="bottom-nav" aria-label="Mobile navigation">
+  <a class="bottom-nav-link" data-nav="home" href="../../index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    <span>Home</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="tools" href="../../tools/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+    <span>Tools</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="categories" href="../../tools/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+    <span>Categories</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="blog" href="../../blog/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+    <span>Guides</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="about" href="../../about/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+    <span>About</span>
+  </a>
+</nav>
+
+<div class="cookie-banner" id="cookie-banner" hidden>
+  <p>SuvoCalc uses local storage on your device to remember your theme and recently used calculators. No account, no tracking.</p>
+  <button type="button" class="btn btn-primary btn-small" id="cookie-accept">Got it</button>
+</div>
+
+<script src="../../assets/js/calc.js"></script>
+<script src="../../assets/js/main.js"></script>
+<script>
+/* v31 no-op stubs: the verbatim v30 calc bodies call these legacy
+   helpers (toast, usage tracking, streaks, haptics, gauge). v31 has
+   none of those systems; the stubs keep a calculation from throwing
+   after it has written its result. */
+function toast(){}
+function trackTool(){}
+function bumpStreak(){}
+function checkMilestone(){}
+function v21Haptic(){}
+function injectBMIGauge(){}
+/* renderH: the sci history UI does not exist in v31; pushH() still
+   records to localStorage, renderH() just has nothing to paint. */
+function renderH(){}
+/* Companion functions/state, verbatim from the v30 source
+   (19770-19771). See companions.json. */
+setInterval(updateWorldClock, 1000);
+updateWorldClock();
+function updateWorldClock(){
+
+  document.querySelectorAll('.wc-time').forEach(function(el){
+    var tz = el.getAttribute('data-tz');
+    if(!tz) return;
+    try {
+      var time = new Intl.DateTimeFormat('en-US',{hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false,timeZone:tz}).format(new Date());
+      el.textContent = time;
+    } catch(e) { el.textContent = '--:--'; }
+  });
+
+}
+function runToolCalc(){ updateWorldClock(); }
+(function(){
+try{
+var form=document.getElementById("calc-form");
+if(form){ form.addEventListener("submit",function(ev){ ev.preventDefault(); try{ runToolCalc(); }catch(err){ var e=document.getElementById("res-error"); if(e){ e.textContent="Could not calculate. Please check your numbers and try again."; e.hidden=false; } } }); }
+var wc=document.getElementById("wcCity"); if(wc){ wc.addEventListener("change",function(){ document.querySelectorAll(".wc-row").forEach(function(r){ r.classList.toggle("wc-active",r.getAttribute("data-city")===wc.value); }); var a=document.querySelector(".wc-row.wc-active"); if(a)a.scrollIntoView({block:"nearest"}); }); }
+}catch(e){}
+})();
+</script>
+</body>
+</html>

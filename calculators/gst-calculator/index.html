@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GST Calculator (India) / জিএসটি ক্যালকুলেটর (ভারত) | SuvoCalc v31</title>
+<meta name="description" content="Calculate GST for 0%, 5%, 18%, 40% tax slabs (GST 2.0, from 22 Sep 2025). Get GST amount, total price, and CGST/SGST or IGST split.">
+<link rel="canonical" href="https://suvocalc.com/calculators/gst-calculator/">
+<script>
+/* Apply saved theme before CSS loads to avoid a flash. No other logic here. */
+(function () {
+  try {
+    var t = localStorage.getItem('sc_theme');
+    if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+  } catch (e) { /* storage unavailable: keep light default */ }
+})();
+</script>
+<link rel="stylesheet" href="../../assets/css/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"GST Calculator (India) / জিএসটি ক্যালকুলেটর (ভারত) | SuvoCalc","url":"https://suvocalc.com/calculators/gst-calculator/","applicationCategory":"CalculatorApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate GST for 0%, 5%, 18%, 40% tax slabs (GST 2.0, from 22 Sep 2025). Get GST amount, total price, and CGST/SGST or IGST split."}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://suvocalc.com/"},{"@type":"ListItem","position":2,"name":"Tax & Business","item":"https://suvocalc.com/categories/tax-business/"},{"@type":"ListItem","position":3,"name":"GST Calculator (India) / জিএসটি ক্যালকুলেটর (ভারত)","item":"https://suvocalc.com/calculators/gst-calculator/"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are the GST slabs in India now?","acceptedAnswer":{"@type":"Answer","text":"Under GST 2.0, in force from 22 September 2025, the slabs are 0%, 5%, 18%, and 40%. The old 12% and 28% slabs were abolished. The 40% rate is a demerit rate for luxury cars, tobacco, pan masala, and aerated drinks."}},{"@type":"Question","name":"How much GST is charged on ₹1,000 at 18%?","acceptedAnswer":{"@type":"Answer","text":"The GST is 1,000 × 18 ÷ 100 = ₹180, so the total is ₹1,180. Within a state this splits into CGST of ₹90 and SGST of ₹90; between states it is ₹180 of IGST."}},{"@type":"Question","name":"What is the difference between CGST, SGST, and IGST?","acceptedAnswer":{"@type":"Answer","text":"CGST and SGST apply to sales within one state, with the tax split equally between the central and state governments. IGST applies to sales between two states, where the whole tax is collected as one integrated tax."}},{"@type":"Question","name":"How do I find the price before GST from a total that includes it?","acceptedAnswer":{"@type":"Answer","text":"Use the \"Remove GST\" mode. Divide the total by (1 + rate ÷ 100). For example, a total of ₹1,180 at 18% gives a base price of 1,180 ÷ 1.18 = ₹1,000, and the GST is ₹180."}}]}
+</script>
+
+</head>
+<body data-active-nav="tools" data-tool-url-prefix="../../" data-tool-slug="gst-calculator" data-tool-title="GST Calculator (India) / জিএসটি ক্যালকুলেটর (ভারত)">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="../../index.html" aria-label="SuvoCalc home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="11" x2="8" y2="11.01"/><line x1="12" y1="11" x2="12" y2="11.01"/><line x1="16" y1="11" x2="16" y2="11.01"/><line x1="8" y1="15" x2="8" y2="15.01"/><line x1="12" y1="15" x2="12" y2="15.01"/><line x1="16" y1="15" x2="16" y2="15.01"/></svg>
+      </span>
+      <span class="brand-name">SuvoCalc</span>
+      <span class="brand-version">v31</span>
+    </a>
+
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+      <a class="nav-link" data-nav="home" href="../../index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Home</span>
+      </a>
+      <a class="nav-link" data-nav="tools" href="../../tools/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        <span>All Tools</span>
+      </a>
+      <a class="nav-link" data-nav="categories" href="../../tools/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+        <span>Categories</span>
+      </a>
+      <a class="nav-link" data-nav="blog" href="../../blog/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        <span>Blog/Guides</span>
+      </a>
+      <a class="nav-link" data-nav="about" href="../../about/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        <span>About</span>
+      </a>
+      <a class="nav-link" data-nav="contact" href="../../contact/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span>Contact</span>
+      </a>
+    </nav>
+
+    <div class="header-actions">
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch between light and dark theme">
+        <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <span class="theme-toggle-label">Theme</span>
+      </button>
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="page-main">
+<nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/categories/tax-business/">Tax &amp; Business</a></li><li><span aria-current="page">GST Calculator (India) / জিএসটি ক্যালকুলেটর (ভারত)</span></li></ol></nav>
+  <h1 class="page-title">GST Calculator (India) / জিএসটি ক্যালকুলেটর (ভারত)</h1>
+<p class="lead">The GST Calculator works out Goods and Services Tax on a price in India, using the GST 2.0 slabs of 0%, 5%, 18%, and 40% in force from 22 September 2025. It can add GST to a base price or remove GST from a price that already includes it.</p>
+<section class="content-block"><h2>What it is used for</h2><p>It is used by shopkeepers, freelancers, and small businesses to quote prices with tax, to find the pre-tax price from an invoice total, and to split the tax into CGST and SGST for sales within a state or IGST for sales between states.</p></section>
+<section class="calc-card" aria-label="GST Calculator (India) / জিএসটি ক্যালকুলেটর (ভারত) calculator">
+<form id="calc-form" class="calc-form">
+<div class="field"><label for="gA">Amount (₹) / টাকার পরিমাণ</label><input type="number" id="gA" name="gA" placeholder="e.g. 1000"></div>
+<div class="field"><label for="gR">GST Rate / জিএসটির হার</label><select id="gR" name="gR"><option value="0">0</option><option value="5">5</option><option value="18">18</option><option value="40">40</option></select></div>
+<div class="field"><label for="gM">Mode / মোড</label><select id="gM" name="gM"><option value="Add GST">Add GST</option><option value="Remove GST">Remove GST</option></select></div>
+<div class="field"><label for="gT">Transaction Type / লেনদেনের ধরন</label><select id="gT" name="gT"><option value="Within state (CGST + SGST)">Within state (CGST + SGST)</option><option value="Between states (IGST)">Between states (IGST)</option></select></div>
+<button type="submit" id="calc-btn" class="btn btn-primary btn-block">Calculate</button>
+</form>
+<div class="result-box" id="res-box">
+<p class="result-label" id="res-label">GST Amount</p>
+<p class="result-value" id="res-value">&mdash;</p>
+<p class="result-details" id="res-details"></p>
+<p class="result-error" id="res-error" hidden></p>
+<div class="share-row"><button type="button" class="btn btn-secondary btn-small" id="share-result">Share result</button><span class="share-status" id="share-status" role="status"></span></div>
+</div>
+</section>
+<section class="content-block"><h2>Formula</h2><p class="formula-box">Add GST: GST = Price × Rate ÷ 100; Total = Price + GST. Remove GST: Base Price = Total ÷ (1 + Rate ÷ 100); GST = Total − Base Price. Within a state, the GST is split equally into CGST and SGST; between states, the whole amount is IGST.</p></section>
+<section class="content-block"><h2>Notes &amp; sources</h2><p>Formula: GST = Price × Rate ÷ 100 · Total = Price + GST · Remove GST: Base = Total ÷ (1 + Rate/100)<br>Sources: CBIC (cbic.gov.in) · GST Council<br>Last reviewed: 21 November 2026 · Educational estimate only — not financial advice.</p></section>
+<section class="content-block"><h2>Worked example</h2><p>Inputs: Amount = ₹1,000, GST Rate = 18%, Mode = Add GST, Transaction Type = Within state (CGST + SGST). Step 1: GST = 1,000 × 18 ÷ 100 = ₹180. Step 2: total = 1,000 + 180 = ₹1,180. Step 3: the GST splits equally, so CGST = ₹90 and SGST = ₹90. If the sale were between states, the same ₹180 would be charged as IGST instead.</p></section>
+<section class="content-block"><h2>How to use</h2><ol class="steps"><li>Step 1: Enter the amount in the &quot;Amount (₹) / টাকার পরিমাণ&quot; field.</li><li>Step 2: Choose the GST rate from the &quot;GST Rate / জিএসটির হার&quot; dropdown — 0, 5, 18, or 40.</li><li>Step 3: Choose &quot;Add GST&quot; if your amount excludes tax, or &quot;Remove GST&quot; if your amount already includes it.</li><li>Step 4: Choose the transaction type — &quot;Within state (CGST + SGST)&quot; or &quot;Between states (IGST)&quot;.</li><li>Step 5: Tap Calculate to see the GST amount, the base price, the total, and the CGST/SGST or IGST split.</li></ol></section>
+<section class="content-block"><h2>Tips</h2><ul><li>The GST 2.0 slabs are 0%, 5%, 18%, and 40% from 22 September 2025 — the old 12% and 28% slabs were abolished, so do not use them.</li><li>The 40% rate is a demerit rate for goods such as luxury cars, tobacco, pan masala, and aerated drinks.</li><li>Use &quot;Remove GST&quot; when a customer&#39;s invoice total already includes tax and you need the pre-tax price for your books.</li><li>Within one state the tax splits equally into CGST and SGST; across state borders the whole amount is IGST — the total tax is the same either way.</li><li>Sources: CBIC (cbic.gov.in) and the GST Council. Last reviewed: 21 November 2026.</li></ul></section>
+<section class="content-block"><h2>Common mistakes</h2><ul><li>Using the old 12% or 28% slabs, which no longer exist under GST 2.0.</li><li>Applying &quot;Add GST&quot; to a price that already includes GST, which taxes the tax.</li><li>Splitting GST into CGST and SGST for an inter-state sale, where the correct split is IGST.</li><li>Forgetting that the 40% demerit rate applies only to specific goods, not to ordinary items.</li></ul></section>
+<section class="content-block faq-list"><h2>Frequently asked questions</h2><details><summary>What are the GST slabs in India now?</summary><p>Under GST 2.0, in force from 22 September 2025, the slabs are 0%, 5%, 18%, and 40%. The old 12% and 28% slabs were abolished. The 40% rate is a demerit rate for luxury cars, tobacco, pan masala, and aerated drinks.</p></details><details><summary>How much GST is charged on ₹1,000 at 18%?</summary><p>The GST is 1,000 × 18 ÷ 100 = ₹180, so the total is ₹1,180. Within a state this splits into CGST of ₹90 and SGST of ₹90; between states it is ₹180 of IGST.</p></details><details><summary>What is the difference between CGST, SGST, and IGST?</summary><p>CGST and SGST apply to sales within one state, with the tax split equally between the central and state governments. IGST applies to sales between two states, where the whole tax is collected as one integrated tax.</p></details><details><summary>How do I find the price before GST from a total that includes it?</summary><p>Use the &quot;Remove GST&quot; mode. Divide the total by (1 + rate ÷ 100). For example, a total of ₹1,180 at 18% gives a base price of 1,180 ÷ 1.18 = ₹1,000, and the GST is ₹180.</p></details></section>
+<section class="content-block"><h2>Related calculators</h2><ul class="related-list"><li><a href="../../calculators/income-tax-calculator/">Income Tax Calculator (India)</a></li><li><a href="../../calculators/hra-exemption-calculator/">HRA Exemption Calculator</a></li><li><a href="../../calculators/home-loan-tax-benefit-calculator/">Home Loan Tax Benefit Calculator</a></li></ul></section>
+<div class="disclaimer-box"><p>Results are a guide based on the numbers you enter. For loan, tax or investment decisions, check the figures with the bank, the official tax portal, or a qualified adviser.</p></div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-copy">&copy; 2026 SuvoCalc &mdash; v31 &middot; 57 free calculators</p>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="../../privacy/index.html">Privacy</a>
+      <a href="../../terms/index.html">Terms</a>
+      <a href="../../disclaimer/index.html">Disclaimer</a>
+      <a href="../../about/index.html">About</a>
+      <a href="../../contact/index.html">Contact</a>
+      <a href="../../faq/index.html">FAQ</a>
+    </nav>
+  </div>
+</footer>
+
+<nav class="bottom-nav" aria-label="Mobile navigation">
+  <a class="bottom-nav-link" data-nav="home" href="../../index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    <span>Home</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="tools" href="../../tools/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+    <span>Tools</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="categories" href="../../tools/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+    <span>Categories</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="blog" href="../../blog/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+    <span>Guides</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="about" href="../../about/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+    <span>About</span>
+  </a>
+</nav>
+
+<div class="cookie-banner" id="cookie-banner" hidden>
+  <p>SuvoCalc uses local storage on your device to remember your theme and recently used calculators. No account, no tracking.</p>
+  <button type="button" class="btn btn-primary btn-small" id="cookie-accept">Got it</button>
+</div>
+
+<script src="../../assets/js/calc.js"></script>
+<script src="../../assets/js/main.js"></script>
+<script>
+/* v31 no-op stubs: the verbatim v30 calc bodies call these legacy
+   helpers (toast, usage tracking, streaks, haptics, gauge). v31 has
+   none of those systems; the stubs keep a calculation from throwing
+   after it has written its result. */
+function toast(){}
+function trackTool(){}
+function bumpStreak(){}
+function checkMilestone(){}
+function v21Haptic(){}
+function injectBMIGauge(){}
+/* renderH: the sci history UI does not exist in v31; pushH() still
+   records to localStorage, renderH() just has nothing to paint. */
+function renderH(){}
+function runToolCalc(){
+const a=parseFloat(getId('gA'))||0,_r=parseFloat(getId('gR')),r=isNaN(_r)?18:_r;
+     const mode=getId('gM')||'Add GST';
+     const intra=(getId('gT')||'Within state (CGST + SGST)').indexOf('Between')!==0;
+     if(a<=0){showValError('gst','Amount must be greater than 0');return;}
+     if(a>1e10){showValError('gst','Amount seems too large — please check');return;}
+     let base,gstAmt,total;
+     if(mode==='Remove GST'){base=a/((100+r)/100);gstAmt=a-base;total=a;}
+     else{base=a;gstAmt=a*r/100;total=a+gstAmt;}
+     const split=intra?`CGST: ${SYM()}${fmt(gstAmt/2,true)}<br>SGST: ${SYM()}${fmt(gstAmt/2,true)}`:`IGST: ${SYM()}${fmt(gstAmt,true)}`;
+     setRes('gst',SYM()+fmt(gstAmt,true),`GST @ ${r}%${mode==='Remove GST'?' (included)':''}`,`Base Price: ${SYM()}${fmt(base,true)}<br>GST Amount: ${SYM()}${fmt(gstAmt,true)}<br>Total (incl. GST): ${SYM()}${fmt(total,true)}<br>${split}`);
+}
+(function(){
+try{
+var form=document.getElementById("calc-form");
+if(form){ form.addEventListener("submit",function(ev){ ev.preventDefault(); try{ runToolCalc(); }catch(err){ var e=document.getElementById("res-error"); if(e){ e.textContent="Could not calculate. Please check your numbers and try again."; e.hidden=false; } } }); }
+
+}catch(e){}
+})();
+</script>
+</body>
+</html>

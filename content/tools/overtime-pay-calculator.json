@@ -1,0 +1,45 @@
+{
+  "slug": "overtime-pay-calculator",
+  "intro": "The Overtime Pay Calculator works out your total pay for a period, combining regular hours at your normal hourly rate with overtime hours paid at a higher multiplier.",
+  "uses": "It is used by hourly workers and their employers to check a payslip, to estimate weekly or monthly earnings when extra hours are worked, and to compare overtime rates such as 1.5× and 2×.",
+  "formula": "Regular Pay = Hourly Rate × Regular Hours. Overtime Pay = Hourly Rate × Overtime Multiplier × Overtime Hours. Total Pay = Regular Pay + Overtime Pay. Overtime hourly rate = Hourly Rate × Multiplier.",
+  "example": "Inputs: Hourly Rate = ₹500, Regular Hours Worked = 40, Overtime Hours = 10, Overtime Multiplier = 1.5. Step 1: regular pay = 500 × 40 = ₹20,000. Step 2: overtime rate = 500 × 1.5 = ₹750 per hour. Step 3: overtime pay = 750 × 10 = ₹7,500. Step 4: total pay = 20,000 + 7,500 = ₹27,500 for 50 hours worked.",
+  "howTo": [
+    "Step 1: Enter your normal pay per hour in the \"Hourly Rate (₹)\" field.",
+    "Step 2: Enter your normal working hours in the \"Regular Hours Worked\" field.",
+    "Step 3: Enter the extra hours in the \"Overtime Hours\" field.",
+    "Step 4: Enter the overtime multiplier in the \"Overtime Multiplier\" field — 1.5 is common, 2 is double time.",
+    "Step 5: Tap Calculate to see your regular pay, overtime pay, overtime rate, and total pay."
+  ],
+  "tips": [
+    "Confirm your overtime multiplier with your employer before calculating — 1.5× is common, but some jobs pay 2× on Sundays or public holidays.",
+    "Keep a simple record of your overtime hours each week so you can check the payslip against this calculator.",
+    "Overtime pay is taxable income, so the amount you take home will be less than the gross total shown here.",
+    "If your employer pays a flat overtime amount per hour instead of a multiplier, divide that amount by your hourly rate to find the equivalent multiplier."
+  ],
+  "mistakes": [
+    "Counting overtime hours as regular hours as well, which double-counts them.",
+    "Using the monthly salary instead of the hourly rate — divide your monthly pay by your monthly working hours first.",
+    "Using the wrong multiplier, such as 1.5 when your employer pays double time.",
+    "Forgetting that the multiplier must be between 1 and 5 in this calculator."
+  ],
+  "faqs": [
+    {
+      "q": "What does a 1.5× overtime multiplier mean?",
+      "a": "It means each overtime hour is paid at one-and-a-half times your normal hourly rate. At ₹500 per hour, overtime pays ₹750 per hour."
+    },
+    {
+      "q": "How is overtime pay calculated in India?",
+      "a": "Under the Factories Act, overtime is generally paid at twice the ordinary rate for hours worked beyond the legal limit, but many employers and contracts use 1.5×. Check your employment contract or company policy for the rate that applies to you."
+    },
+    {
+      "q": "If I work 40 regular hours and 10 overtime hours at ₹500 with a 1.5× multiplier, what is my total pay?",
+      "a": "Regular pay is ₹20,000 and overtime pay is ₹7,500, so the total is ₹27,500."
+    }
+  ],
+  "related": [
+    "salary-calculator",
+    "budget-calculator",
+    "percentage-calculator"
+  ]
+}

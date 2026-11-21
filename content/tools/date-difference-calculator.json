@@ -1,0 +1,45 @@
+{
+  "example": "Inputs: Start Date 1 January 2026, End Date 21 November 2026. Step 1: count the days between the two dates: 324 days. Step 2: whole weeks: 324 ÷ 7 = 46 weeks with 2 days left over. Step 3: months: 10 months. Step 4: business days (approx): 324 × 5 ÷ 7 ≈ 231. Final result: 324 days, 10 months, 46 weeks, about 231 business days.",
+  "faqs": [
+    {
+      "a": "It counts the number of days between the two dates. Changing the order does not change the answer, because the tool uses the absolute difference.",
+      "q": "Does the order of the two dates matter?"
+    },
+    {
+      "a": "The business-day figure is an estimate: total days × 5 ÷ 7. It does not remove public holidays, so treat it as approximate.",
+      "q": "How are business days counted?"
+    },
+    {
+      "a": "No, the tool only accepts dates from the date picker, which keeps the month lengths and leap years correct automatically.",
+      "q": "Can I enter a date like 31 February?"
+    }
+  ],
+  "formula": "Days = absolute difference between the two dates, in whole days. Weeks = days ÷ 7. Years and months = calendar difference between the two dates. Business days (approx) = days × 5 ÷ 7.",
+  "howTo": [
+    "Tap the Start Date field and pick the first date from the calendar.",
+    "Tap the End Date field and pick the second date.",
+    "Tap Calculate to see the difference.",
+    "Read the result in days, years and months, and total weeks.",
+    "Use the approximate business-days figure when you need a working-days estimate."
+  ],
+  "intro": "The Date Difference Calculator finds the exact number of days, weeks, and months between any two dates.",
+  "mistakes": [
+    "Entering the dates the wrong way round and thinking the result is negative — the tool always gives a positive difference.",
+    "Counting the start and end days twice when adding the difference to a deadline.",
+    "Treating the approximate business-days figure as exact when holidays fall in between.",
+    "Forgetting leap years when counting long gaps by hand."
+  ],
+  "related": [
+    "time-zone-converter",
+    "world-clock",
+    "age-calculator"
+  ],
+  "slug": "date-difference-calculator",
+  "tips": [
+    "Use it to count days to a deadline, an exam, or a birthday.",
+    "For project planning, use the business-days figure for work estimates and the total days for calendar dates.",
+    "If you need the difference including both the start and end day, add 1 to the result.",
+    "Check the year first if the answer looks far too large or too small."
+  ],
+  "uses": "It is used to count the days, weeks, or months between two dates — for deadlines, countdowns, age gaps, project planning, and leave calculations."
+}

@@ -1,0 +1,2337 @@
+{
+  "site": {
+    "name": "SuvoCalc",
+    "version": "31",
+    "versionLabel": "v31",
+    "toolCount": 57,
+    "baseUrl": "https://suvocalc.com"
+  },
+  "categories": [
+    {
+      "slug": "finance",
+      "name": "Finance & Money"
+    },
+    {
+      "slug": "tax-business",
+      "name": "Tax & Business"
+    },
+    {
+      "slug": "investment-savings",
+      "name": "Investment & Savings"
+    },
+    {
+      "slug": "health-fitness",
+      "name": "Health & Fitness"
+    },
+    {
+      "slug": "education-students",
+      "name": "Education & Students"
+    },
+    {
+      "slug": "date-time",
+      "name": "Date & Time"
+    },
+    {
+      "slug": "daily-utilities",
+      "name": "Daily Utilities"
+    }
+  ],
+  "tools": [
+    {
+      "id": "pct",
+      "slug": "percentage-calculator",
+      "title": "Percentage Calculator",
+      "category": "finance",
+      "icon": "fa-percent",
+      "description": "Calculate percentages instantly — what is X% of Y, percentage change, reverse percentage.",
+      "featured": false,
+      "popular": true,
+      "fields": [
+        {
+          "id": "pA",
+          "label": "Percentage (%)",
+          "type": "number",
+          "placeholder": "e.g. 15"
+        },
+        {
+          "id": "pB",
+          "label": "Of Value",
+          "type": "number",
+          "placeholder": "e.g. 200"
+        }
+      ],
+      "calc": "const a=parseFloat(getId('pA')),b=parseFloat(getId('pB'));\n     if(isNaN(a)||isNaN(b)){showValError('pct','Please enter both Percentage and Value');return;}\n     if(isNaN(a)||!isFinite(a)){showValError('pct','Please enter a valid percentage');return;}\n     if(isNaN(b)||!isFinite(b)){showValError('pct','Please enter a valid value');return;}\n     const r=a/100*b;setRes('pct',fmt(r,true),`${a}% of ${b}`,`You save: ${fmt(b-r,true)} (${100-a}% remains)<br>After ${a}% increase: ${fmt(b+r,true)}<br>After ${a}% decrease: ${fmt(b-r,true)}`);",
+      "resultLabel": "Percentage Result"
+    },
+    {
+      "id": "emi",
+      "slug": "emi-calculator",
+      "title": "EMI / Loan Calculator",
+      "category": "finance",
+      "icon": "fa-coins",
+      "description": "Calculate monthly EMI for home loan, car loan, personal loan. Get total payment and interest.",
+      "featured": false,
+      "popular": true,
+      "fields": [
+        {
+          "id": "eP",
+          "label": "Loan Amount (₹)",
+          "type": "number",
+          "placeholder": "e.g. 500000"
+        },
+        {
+          "id": "eR",
+          "label": "Annual Interest Rate (%)",
+          "type": "number",
+          "placeholder": "e.g. 8.5"
+        },
+        {
+          "id": "eN",
+          "label": "Tenure (Months)",
+          "type": "number",
+          "placeholder": "e.g. 60"
+        }
+      ],
+      "calc": "const P=parseFloat(getId('eP'))||0,r=(parseFloat(getId('eR'))||8.5)/12/100,n=parseInt(getId('eN'))||60;\n     if(P<=0){showValError('emi','Loan amount must be greater than 0');return;}\n     if(r<=0){showValError('emi','Interest rate must be greater than 0');return;}\n     if(n<=0){showValError('emi','Tenure must be greater than 0 months');return;}\n     const emi=P*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);\n     if(!isValidNum(emi)){showValError('emi','Invalid values — please check inputs');return;}\n     setRes('emi',SYM()+fmt(Math.round(emi),true),'Monthly EMI',`Total Payment: ${SYM()}${fmt(Math.round(emi*n),true)}<br>Total Interest: ${SYM()}${fmt(Math.round(emi*n-P),true)}<br>Principal: ${SYM()}${fmt(P,true)}<br>Interest %: ${fmt((emi*n-P)/P*100)}%`);",
+      "resultLabel": "Monthly EMI"
+    },
+    {
+      "id": "disc",
+      "slug": "discount-calculator",
+      "title": "Discount Calculator",
+      "category": "finance",
+      "icon": "fa-tag",
+      "description": "Calculate final price after discount, savings amount, and effective discount percentage.",
+      "featured": false,
+      "popular": false,
+      "fields": [
+        {
+          "id": "dO",
+          "label": "Original Price (₹)",
+          "type": "number",
+          "placeholder": "e.g. 1200"
+        },
+        {
+          "id": "dP",
+          "label": "Discount (%)",
+          "type": "number",
+          "placeholder": "e.g. 25"
+        }
+      ],
+      "calc": "const o=parseFloat(getId('dO'))||0,p=parseFloat(getId('dP'))||0;\n     if(o<=0){showValError('disc','Original price must be greater than 0');return;}\n     if(p<0||p>100){showValError('disc','Discount must be between 0 and 100%');return;}\n     const d=o*p/100;setRes('disc',SYM()+fmt(o-d,true),'Sale Price',`You Save: ${SYM()}${fmt(d,true)} (${p}% off)<br>Original: ${SYM()}${fmt(o,true)}<br>Final Price: ${SYM()}${fmt(o-d,true)}`);",
+      "resultLabel": "Sale Price"
+    },
+    {
+      "id": "ci",
+      "slug": "compound-interest-calculator",
+      "title": "Compound Interest Calculator",
+      "category": "finance",
+      "icon": "fa-chart-line",
+      "description": "Calculate compound interest growth for investments and savings.",
+      "featured": false,
+      "popular": true,
+      "fields": [
+        {
+          "id": "ciP",
+          "label": "Principal (₹)",
+          "type": "number",
+          "placeholder": "e.g. 100000"
+        },
+        {
+          "id": "ciR",
+          "label": "Annual Rate (%)",
+          "type": "number",
+          "placeholder": "e.g. 8"
+        },
+        {
+          "id": "ciN",
+          "label": "Years",
+          "type": "number",
+          "placeholder": "e.g. 5"
+        },
+        {
+          "id": "ciC",
+          "label": "Compounding",
+          "type": "select",
+          "placeholder": "",
+          "opts": [
+            "Yearly",
+            "Half-Yearly",
+            "Quarterly",
+            "Monthly"
+          ]
+        }
+      ],
+      "calc": "const P=parseFloat(getId('ciP'))||0,r=parseFloat(getId('ciR'))||8,n=parseFloat(getId('ciN'))||5;\n     if(P<=0){showValError('ci','Principal must be greater than 0');return;}\n     if(r<=0||r>100){showValError('ci','Rate must be between 0.1% and 100%');return;}\n     if(n<=0||n>100){showValError('ci','Years must be between 1 and 100');return;}\n     const compMap={'Yearly':1,'Half-Yearly':2,'Quarterly':4,'Monthly':12};const comp=compMap[getId('ciC')]||1;const A=P*Math.pow(1+r/(comp*100),comp*n);\n     if(!isValidNum(A)){showValError('ci','Invalid values — please check inputs');return;}\n     setRes('ci',SYM()+fmt(Math.round(A),true),'Maturity Amount',`Principal: ${SYM()}${fmt(P,true)}<br>Interest Earned: ${SYM()}${fmt(Math.round(A-P),true)}<br>Growth: ${fmt((A/P-1)*100)}%<br>Effective Rate: ${fmt(r)}% p.a.`);",
+      "resultLabel": "Maturity Amount"
+    },
+    {
+      "id": "si",
+      "slug": "simple-interest-calculator",
+      "title": "Simple Interest Calculator",
+      "category": "finance",
+      "icon": "fa-percent",
+      "description": "Calculate simple interest on any principal amount.",
+      "featured": false,
+      "popular": false,
+      "fields": [
+        {
+          "id": "siP",
+          "label": "Principal (₹)",
+          "type": "number",
+          "placeholder": "e.g. 50000"
+        },
+        {
+          "id": "siRate",
+          "label": "Rate (% per year)",
+          "type": "number",
+          "placeholder": "e.g. 7"
+        },
+        {
+          "id": "siT",
+          "label": "Time (Years)",
+          "type": "number",
+          "placeholder": "e.g. 3"
+        }
+      ],
+      "calc": "const P=parseFloat(getId('siP'))||0,R=parseFloat(getId('siRate'))||0,T=parseFloat(getId('siT'))||0;\n     if(P<=0){showValError('si','Principal must be greater than 0');return;}\n     if(R<=0){showValError('si','Rate must be greater than 0%');return;}\n     if(T<=0){showValError('si','Time must be greater than 0 years');return;}\n     const SI=P*R*T/100;setRes('si',SYM()+fmt(SI,true),'Simple Interest',`Principal: ${SYM()}${fmt(P,true)}<br>Total Amount: ${SYM()}${fmt(P+SI,true)}<br>Interest Rate: ${R}% per year<br>Time: ${T} years`);",
+      "resultLabel": "Simple Interest"
+    },
+    {
+      "id": "sal",
+      "slug": "salary-calculator",
+      "title": "Salary Calculator",
+      "category": "finance",
+      "icon": "fa-money-bill-wave",
+      "description": "Calculate take-home salary after tax (Budget 2025), PF, and deductions.",
+      "featured": false,
+      "popular": false,
+      "fields": [
+        {
+          "id": "salG",
+          "label": "Gross Annual Salary (₹)",
+          "type": "number",
+          "placeholder": "e.g. 600000"
+        },
+        {
+          "id": "salPF1",
+          "label": "PF Contribution (%)",
+          "type": "number",
+          "placeholder": "e.g. 12"
+        },
+        {
+          "id": "salT",
+          "label": "Professional Tax (₹/year)",
+          "type": "number",
+          "placeholder": "e.g. 2400"
+        }
+      ],
+      "calc": "const g=parseFloat(getId('salG'))||0,pf=(parseFloat(getId('salPF1'))||12)/100,pt=parseFloat(getId('salT'))||0;\n     if(g<=0){showValError('sal','Gross salary must be greater than 0');return;}\n     if(g>1e8){showValError('sal','Salary seems too large — please check');return;}\n     const pfPct=pf*100;\n     if(pfPct<0||pfPct>100){showValError('sal','PF contribution must be between 0% and 100%');return;}const pfAmt=g*pf;let tax=0;if(g>400000)tax=Math.min(g-400000,400000)*.05;if(g>800000)tax+=Math.min(g-800000,400000)*.10;if(g>1200000)tax+=Math.min(g-1200000,400000)*.15;if(g>1600000)tax+=Math.min(g-1600000,400000)*.20;if(g>2000000)tax+=Math.min(g-2000000,400000)*.25;if(g>2400000)tax+=(g-2400000)*.30;if(g<=1200000)tax=0;const cess=tax*.04;const net=g-pfAmt-pt-tax-cess;setRes('sal',SYM()+fmt(Math.round(net/12),true),'Monthly Take-Home',`Annual CTC: ${SYM()}${fmt(g,true)}<br>PF Deduction: ${SYM()}${fmt(Math.round(pfAmt),true)}<br>Income Tax (Budget 2025): ${SYM()}${fmt(Math.round(tax+cess),true)}<br>Professional Tax: ${SYM()}${fmt(pt,true)}<br>Annual Take-Home: ${SYM()}${fmt(Math.round(net),true)}`);",
+      "resultLabel": "Monthly Take-Home"
+    },
+    {
+      "id": "budget",
+      "slug": "budget-calculator",
+      "title": "Budget Planner (50/30/20)",
+      "category": "finance",
+      "icon": "fa-wallet",
+      "description": "Plan your monthly budget using the popular 50/30/20 rule — Needs, Wants, and Savings.",
+      "featured": false,
+      "popular": false,
+      "fields": [
+        {
+          "id": "budInc",
+          "label": "Monthly Income (₹)",
+          "type": "number",
+          "placeholder": "e.g. 50000"
+        },
+        {
+          "id": "budExp",
+          "label": "Current Monthly Expenses (₹)",
+          "type": "number",
+          "placeholder": "e.g. 35000"
+        },
+        {
+          "id": "budSave",
+          "label": "Current Monthly Savings (₹)",
+          "type": "number",
+          "placeholder": "e.g. 5000"
+        }
+      ],
+      "calc": "\n     const inc=parseFloat(getId('budInc'))||0;\n     const exp=parseFloat(getId('budExp'))||0;\n     const save=parseFloat(getId('budSave'))||0;\n     const needs=inc*0.5,wants=inc*0.3,savings=inc*0.2;\n     const surplus=inc-exp-save;\n     const savePct=inc>0?(save/inc*100).toFixed(1):0;\n     const grade=savePct>=20?'🟢 Excellent':savePct>=10?'🟡 Good':savePct>=5?'🟠 Fair':'🔴 Needs Improvement';\n     setRes('budget',SYM()+fmt(Math.round(savings),true),'Recommended Monthly Savings',`50/30/20 Rule for ${SYM()}${fmt(inc,true)}:<br>🏠 Needs (50%): ${SYM()}${fmt(needs,true)}/mo<br>🎉 Wants (30%): ${SYM()}${fmt(wants,true)}/mo<br>💰 Savings (20%): ${SYM()}${fmt(savings,true)}/mo<br>─────────────────<br>Your savings rate: ${savePct}% — ${grade}<br>Monthly surplus: ${SYM()}${fmt(Math.round(surplus),true)}`);\n   ",
+      "resultLabel": "Recommended Monthly Savings"
+    },
+    {
+      "id": "loan",
+      "slug": "loan-eligibility-calculator",
+      "title": "Loan Eligibility Calculator",
+      "category": "finance",
+      "icon": "fa-house",
+      "description": "Find out how much home loan, car loan or personal loan you are eligible for based on your income.",
+      "featured": false,
+      "popular": false,
+      "fields": [
+        {
+          "id": "lnI",
+          "label": "Monthly Income (₹)",
+          "type": "number",
+          "placeholder": "e.g. 50000"
+        },
+        {
+          "id": "lnE",
+          "label": "Monthly EMI Obligations (₹)",
+          "type": "number",
+          "placeholder": "e.g. 5000"
+        },
+        {
+          "id": "lnR",
+          "label": "Annual Interest Rate (%)",
+          "type": "number",
+          "placeholder": "e.g. 8.5"
+        },
+        {
+          "id": "lnT",
+          "label": "Loan Tenure (Years)",
+          "type": "number",
+          "placeholder": "e.g. 20"
+        }
+      ],
+      "calc": "\n     const inc=parseFloat(getId('lnI'))||0,emi=parseFloat(getId('lnE'))||0,r=(parseFloat(getId('lnR'))||8.5)/12/100,n=(parseFloat(getId('lnT'))||20)*12;\n     if(inc<=0){showValError('loan','Monthly income must be greater than 0');return;}\n     if(emi<0){showValError('loan','EMI obligations cannot be negative');return;}\n     if(n<=0){showValError('loan','Tenure must be greater than 0 years');return;}\n     const maxEmi=inc*0.5-emi;\n     if(maxEmi<=0){setRes('loan','❌ Not Eligible','Loan Eligibility','Your existing EMIs exceed 50% of income.<br>Try reducing current loans or increasing income.');return;}\n     const eligible=maxEmi*(Math.pow(1+r,n)-1)/(r*Math.pow(1+r,n));\n     setRes('loan',SYM()+fmt(Math.round(eligible),true),'Max Loan Amount',`Based on 50% FOIR rule<br>Monthly Income: ${SYM()}${fmt(inc,true)}<br>Max EMI allowed: ${SYM()}${fmt(Math.round(maxEmi),true)}<br>Existing EMIs: ${SYM()}${fmt(emi,true)}<br>New EMI capacity: ${SYM()}${fmt(Math.round(maxEmi),true)}`);\n   ",
+      "resultLabel": "Max Loan Amount"
+    },
+    {
+      "id": "emi2",
+      "slug": "loan-affordability-calculator",
+      "title": "Loan Affordability Calculator",
+      "category": "finance",
+      "icon": "fa-credit-card",
+      "description": "Find out the maximum loan amount you can afford based on your monthly income and existing obligations. Uses 50% FOIR rule.",
+      "featured": false,
+      "popular": false,
+      "fields": [
+        {
+          "id": "emi2Inc",
+          "label": "Monthly Net Income (₹)",
+          "type": "number",
+          "placeholder": "e.g. 60000"
+        },
+        {
+          "id": "emi2Emi",
+          "label": "Existing EMIs (₹/month)",
+          "type": "number",
+          "placeholder": "e.g. 5000"
+        },
+        {
+          "id": "emi2Rate",
+          "label": "Expected Interest Rate (%)",
+          "type": "number",
+          "placeholder": "e.g. 9"
+        },
+        {
+          "id": "emi2Ten",
+          "label": "Desired Tenure (Years)",
+          "type": "number",
+          "placeholder": "e.g. 20"
+        }
+      ],
+      "calc": "\n  var inc = parseFloat(document.getElementById('emi2Inc').value)||0;\n  var existEmi = parseFloat(document.getElementById('emi2Emi').value)||0;\n  var rate = parseFloat(document.getElementById('emi2Rate').value)||9;\n  var tenure = parseFloat(document.getElementById('emi2Ten').value)||20;\n  if(!inc){ v30ShowResult('emi2Res','Enter monthly income.','error'); return; }\n  var foir = 0.5;\n  var maxEmi = inc * foir - existEmi;\n  if(maxEmi <= 0){ v30ShowResult('emi2Res','Existing EMIs exceed 50% of income. Loan may not be approved.','error'); return; }\n  var r = rate/(12*100);\n  var n = tenure*12;\n  var maxLoan = maxEmi * (Math.pow(1+r,n)-1) / (r * Math.pow(1+r,n));\n  var sym = (window.SC_GL && window.SC_GL.L) ? window.SC_GL.L.sym : '₹';\n  v30ShowResult('emi2Res',\n    '<div class=\"v30-res-main\"><span class=\"v30-rlbl\">Max Loan Eligibility</span><span class=\"v30-rnum\">'+sym+' '+v30Fmt(maxLoan)+'</span></div>'+\n    '<div class=\"v30-res-row\"><span>Max EMI you can afford</span><span>'+sym+' '+v30Fmt(maxEmi)+'</span></div>'+\n    '<div class=\"v30-res-row\"><span>50% FOIR limit</span><span>'+sym+' '+v30Fmt(inc*foir)+'</span></div>'+\n    '<div class=\"v30-res-note\">Based on 50% FOIR (Fixed Obligation to Income Ratio) used by most Indian banks.</div>'\n  );\n",
+      "resultLabel": "Max Loan Eligibility"
+    },
+    {
+      "id": "overtime",
+      "slug": "overtime-pay-calculator",
+      "title": "Overtime Pay Calculator",
+      "category": "finance",
+      "icon": "fa-clock",
+      "description": "Calculate overtime earnings based on regular pay rate, hours worked, and overtime multiplier.",
+      "featured": false,
+      "popular": false,
+      "fields": [
+        {
+          "id": "otRate",
+          "label": "Hourly Rate (₹)",
+          "type": "number",
+          "placeholder": "e.g. 500"
+        },
+        {
+          "id": "otHours",
+          "label": "Regular Hours Worked",
+          "type": "number",
+          "placeholder": "e.g. 40"
+        },
+        {
+          "id": "otOTHours",
+          "label": "Overtime Hours",
+          "type": "number",
+          "placeholder": "e.g. 10"
+        },
+        {
+          "id": "otMulti",
+          "label": "Overtime Multiplier",
+          "type": "number",
+          "placeholder": "e.g. 1.5"
+        }
+      ],
+      "calc": "\n     const rate=parseFloat(getId('otRate'))||0;\n     const regH=parseFloat(getId('otHours'))||0;\n     const otH=parseFloat(getId('otOTHours'))||0;\n     const mult=parseFloat(getId('otMulti'))||1.5;\n     if(rate<=0){showValError('overtime','Hourly rate must be greater than 0');return;}\n     if(regH<0||otH<0){showValError('overtime','Hours cannot be negative');return;}\n     if(mult<=0||mult>5){showValError('overtime','Multiplier must be between 1 and 5');return;}\n     const regPay=rate*regH;\n     const otPay=rate*mult*otH;\n     const total=regPay+otPay;\n     const otRate=rate*mult;\n     setRes('overtime',SYM()+fmt(Math.round(total),true),'Total Pay (Regular + Overtime)',`Regular Pay: ${SYM()}${fmt(Math.round(regPay),true)} (${regH} hrs × ${SYM()}${fmt(rate)})<br>Overtime Pay: ${SYM()}${fmt(Math.round(otPay),true)} (${otH} hrs × ${SYM()}${fmt(otRate)})<br>Overtime Rate: ${SYM()}${fmt(otRate)}/hr (${mult}× regular)<br>Total Hours: ${regH+otH} hrs`);\n   ",
+      "resultLabel": "Total Pay (Regular + Overtime)"
+    },
+    {
+      "id": "lcomp",
+      "slug": "loan-comparison-calculator",
+      "title": "Loan Comparison Calculator",
+      "category": "finance",
+      "icon": "fa-scale-balanced",
+      "description": "Compare two loan options side by side — different rates, tenures or amounts. Find which loan saves you more.",
+      "featured": false,
+      "popular": false,
+      "fields": [
+        {
+          "id": "lcP",
+          "label": "Loan Amount (₹)",
+          "type": "number",
+          "placeholder": "e.g. 1000000"
+        },
+        {
+          "id": "lcR1",
+          "label": "Loan 1 Rate (%)",
+          "type": "number",
+          "placeholder": "e.g. 8.5"
+        },
+        {
+          "id": "lcN1",
+          "label": "Loan 1 Tenure (months)",
+          "type": "number",
+          "placeholder": "e.g. 240"
+        },
+        {
+          "id": "lcR2",
+          "label": "Loan 2 Rate (%)",
+          "type": "number",
+          "placeholder": "e.g. 9.0"
+        },
+        {
+          "id": "lcN2",
+          "label": "Loan 2 Tenure (months)",
+          "type": "number",
+          "placeholder": "e.g. 180"
+        }
+      ],
+      "calc": "\n            var P=safeNum(document.getElementById('lcP')&&document.getElementById('lcP').value);\n            var r1=safeNum(document.getElementById('lcR1')&&document.getElementById('lcR1').value)/12/100;\n            var n1=safeNum(document.getElementById('lcN1')&&document.getElementById('lcN1').value);\n            var r2=safeNum(document.getElementById('lcR2')&&document.getElementById('lcR2').value)/12/100;\n            var n2=safeNum(document.getElementById('lcN2')&&document.getElementById('lcN2').value);\n            if(!P||!r1||!n1||!r2||!n2){setRes('lcomp','—','Enter all values','');return;}\n            var emi1=P*r1*Math.pow(1+r1,n1)/(Math.pow(1+r1,n1)-1);\n            var emi2=P*r2*Math.pow(1+r2,n2)/(Math.pow(1+r2,n2)-1);\n            var total1=emi1*n1,total2=emi2*n2;\n            var int1=total1-P,int2=total2-P;\n            var better=total1<total2?1:2;\n            var res=document.getElementById('res-lcomp');\n            if(res)res.innerHTML='<div class=\"loan-compare-grid\">' +\n                '<div class=\"lc-card'+(better===1?' lc-better':'')+'\"><div class=\"lc-head\">Loan 1'+(better===1?'<span class=\"lc-better-badge\">BETTER</span>':'')+'</div>' +\n                '<div class=\"lc-val\">'+SYM()+Math.round(emi1).toLocaleString('en-IN')+'</div><div class=\"lc-sub\">Monthly EMI</div>' +\n                '<div style=\"margin-top:8px;font-size:11px;color:var(--tx3)\">Total: '+SYM()+Math.round(total1).toLocaleString('en-IN')+'<br>Interest: ₹'+Math.round(int1).toLocaleString('en-IN')+'</div></div>' +\n                '<div class=\"lc-card'+(better===2?' lc-better':'')+'\"><div class=\"lc-head\">Loan 2'+(better===2?'<span class=\"lc-better-badge\">BETTER</span>':'')+'</div>' +\n                '<div class=\"lc-val\">'+SYM()+Math.round(emi2).toLocaleString('en-IN')+'</div><div class=\"lc-sub\">Monthly EMI</div>' +\n                '<div style=\"margin-top:8px;font-size:11px;color:var(--tx3)\">Total: '+SYM()+Math.round(total2).toLocaleString('en-IN')+'<br>Interest: ₹'+Math.round(int2).toLocaleString('en-IN')+'</div></div>' +\n                '</div>' +\n                '<div style=\"margin-top:10px;padding:9px 11px;background:var(--g2);border-radius:8px;font-size:12px;color:var(--tx2);\">'+\n                (better===1?'Loan 1':'Loan 2')+' saves you <strong style=\\\"color:var(--gr)\\\">'+Math.abs(Math.round(total1-total2)).toLocaleString('en-IN')+'</strong> in total payment.</div>';\n        ",
+      "resultLabel": "Monthly EMI"
+    },
+    {
+      "id": "gst",
+      "slug": "gst-calculator",
+      "title": "GST Calculator (India) / জিএসটি ক্যালকুলেটর (ভারত)",
+      "category": "tax-business",
+      "icon": "fa-receipt",
+      "description": "Calculate GST for 0%, 5%, 18%, 40% tax slabs (GST 2.0, from 22 Sep 2025). Get GST amount, total price, and CGST/SGST or IGST split.",
+      "featured": true,
+      "popular": true,
+      "fields": [
+        {
+          "id": "gA",
+          "label": "Amount (₹) / টাকার পরিমাণ",
+          "type": "number",
+          "placeholder": "e.g. 1000"
+        },
+        {
+          "id": "gR",
+          "label": "GST Rate / জিএসটির হার",
+          "type": "select",
+          "placeholder": "",
+          "opts": [
+            "0",
+            "5",
+            "18",
+            "40"
+          ]
+        },
+        {
+          "id": "gM",
+          "label": "Mode / মোড",
+          "type": "select",
+          "placeholder": "",
+          "opts": [
+            "Add GST",
+            "Remove GST"
+          ]
+        },
+        {
+          "id": "gT",
+          "label": "Transaction Type / লেনদেনের ধরন",
+          "type": "select",
+          "placeholder": "",
+          "opts": [
+            "Within state (CGST + SGST)",
+            "Between states (IGST)"
+          ]
+        }
+      ],
+      "calc": "const a=parseFloat(getId('gA'))||0,_r=parseFloat(getId('gR')),r=isNaN(_r)?18:_r;\n     const mode=getId('gM')||'Add GST';\n     const intra=(getId('gT')||'Within state (CGST + SGST)').indexOf('Between')!==0;\n     if(a<=0){showValError('gst','Amount must be greater than 0');return;}\n     if(a>1e10){showValError('gst','Amount seems too large — please check');return;}\n     let base,gstAmt,total;\n     if(mode==='Remove GST'){base=a/((100+r)/100);gstAmt=a-base;total=a;}\n     else{base=a;gstAmt=a*r/100;total=a+gstAmt;}\n     const split=intra?`CGST: ${SYM()}${fmt(gstAmt/2,true)}<br>SGST: ${SYM()}${fmt(gstAmt/2,true)}`:`IGST: ${SYM()}${fmt(gstAmt,true)}`;\n     setRes('gst',SYM()+fmt(gstAmt,true),`GST @ ${r}%${mode==='Remove GST'?' (included)':''}`,`Base Price: ${SYM()}${fmt(base,true)}<br>GST Amount: ${SYM()}${fmt(gstAmt,true)}<br>Total (incl. GST): ${SYM()}${fmt(total,true)}<br>${split}`);",
+      "resultLabel": "GST Amount",
+      "note": "Formula: GST = Price × Rate ÷ 100 · Total = Price + GST · Remove GST: Base = Total ÷ (1 + Rate/100)<br>Sources: CBIC (cbic.gov.in) · GST Council<br>Last reviewed: 21 November 2026 · Educational estimate only — not financial advice."
+    },
+    {
+      "id": "tax",
+      "slug": "income-tax-calculator",
+      "title": "Income Tax Calculator (India)",
+      "category": "tax-business",
+      "icon": "fa-file-invoice",
+      "description": "Calculate income tax — Budget 2025 New Regime (FY 2025-26). Zero tax up to ₹12 Lakh!",
+      "featured": false,
+      "popular": true,
+      "fields": [
+        {
+          "id": "txI",
+          "label": "Annual Income (₹)",
+          "type": "number",
+          "placeholder": "e.g. 1000000"
+        },
+        {
+          "id": "txR",
+          "label": "Tax Regime",
+          "type": "select",
+          "placeholder": "",
+          "opts": [
+            "New Regime 2025-26",
+            "New Regime 2024-25",
+            "Old Regime"
+          ]
+        }
+      ],
+      "calc": "\n     const inc=parseFloat(getId('txI'))||0;const regime=getId('txR')||'New Regime 2025-26';\n     let tax=0,cess,steps='';\n     if(regime==='New Regime 2025-26'){\n       // Budget 2025 — New slabs effective FY 2025-26\n       if(inc<=400000)tax=0;\n       else if(inc<=800000)tax=(inc-400000)*.05;\n       else if(inc<=1200000)tax=20000+(inc-800000)*.10;\n       else if(inc<=1600000)tax=60000+(inc-1200000)*.15;\n       else if(inc<=2000000)tax=120000+(inc-1600000)*.20;\n       else if(inc<=2400000)tax=200000+(inc-2000000)*.25;\n       else tax=300000+(inc-2400000)*.30;\n       if(inc<=1200000)tax=0; // Section 87A rebate: zero tax up to ₹12L\n       steps='✅ Budget 2025 | New Regime FY 2025-26 | Zero tax ≤ ₹12L (Sec 87A)';\n     } else if(regime==='New Regime 2024-25'){\n       if(inc<=300000)tax=0;else if(inc<=700000)tax=(inc-300000)*.05;\n       else if(inc<=1000000)tax=20000+(inc-700000)*.10;\n       else if(inc<=1200000)tax=50000+(inc-1000000)*.15;\n       else if(inc<=1500000)tax=80000+(inc-1200000)*.20;\n       else tax=140000+(inc-1500000)*.30;\n       if(inc<=700000)tax=0;\n       steps='New Tax Regime FY 2024-25';\n     } else {\n       if(inc<=250000)tax=0;else if(inc<=500000)tax=(inc-250000)*.05;\n       else if(inc<=1000000)tax=12500+(inc-500000)*.20;\n       else tax=112500+(inc-1000000)*.30;\n       steps='Old Tax Regime slabs';\n     }\n     cess=tax*.04;\n     setRes('tax',SYM()+fmt(Math.round(tax+cess),true),'Annual Tax (incl. 4% cess)',`Tax Before Cess: ${SYM()}${fmt(Math.round(tax),true)}<br>Health & Education Cess: ${SYM()}${fmt(Math.round(cess),true)}<br>Monthly Tax: ${SYM()}${fmt(Math.round((tax+cess)/12),true)}<br>${steps}`);\n   ",
+      "resultLabel": "Annual Tax (incl. 4% cess)"
+    },
+    {
+      "id": "hra",
+      "slug": "hra-exemption-calculator",
+      "title": "HRA Exemption Calculator",
+      "category": "tax-business",
+      "icon": "fa-house-chimney",
+      "description": "Calculate your HRA tax exemption under Section 10(13A). Find out how much HRA is tax-free for metro and non-metro cities.",
+      "featured": false,
+      "popular": false,
+      "fields": [
+        {
+          "id": "hraSal",
+          "label": "Basic Salary (₹/month)",
+          "type": "number",
+          "placeholder": "e.g. 40000"
+        },
+        {
+          "id": "hraDA",
+          "label": "DA (₹/month, if applicable)",
+          "type": "number",
+          "placeholder": "0"
+        },
+        {
+          "id": "hraRcv",
+          "label": "HRA Received (₹/month)",
+          "type": "number",
+          "placeholder": "e.g. 16000"
+        },
+        {
+          "id": "hraRent",
+          "label": "Rent Paid (₹/month)",
+          "type": "number",
+          "placeholder": "e.g. 18000"
+        },
+        {
+          "id": "hraCity",
+          "label": "City Type",
+          "type": "select",
+          "placeholder": "",
+          "opts": [
+            "Metro (Delhi/Mumbai/Chennai/Kolkata)",
+            "Non-Metro"
+          ]
+        }
+      ],
+      "calc": "\n  var basic = parseFloat(document.getElementById('hraSal').value)||0;\n  var da = parseFloat(document.getElementById('hraDA').value)||0;\n  var hraRcv = parseFloat(document.getElementById('hraRcv').value)||0;\n  var rent = parseFloat(document.getElementById('hraRent').value)||0;\n  var cityEl = document.getElementById('hraCity');\n  var metro = cityEl ? cityEl.value.includes('Metro') : true;\n  if(!basic||!hraRcv){ v30ShowResult('hraRes','Enter Basic Salary and HRA received.','error'); return; }\n  var basicDA = basic + da;\n  var pct = metro ? 0.5 : 0.4;\n  var c1 = hraRcv;\n  var c2 = pct * basicDA;\n  var c3 = Math.max(0, rent - 0.1 * basicDA);\n  var exempt = Math.min(c1, c2, c3);\n  var taxable = hraRcv - exempt;\n  var sym = (window.SC_GL && window.SC_GL.L) ? window.SC_GL.L.sym : '₹';\n  v30ShowResult('hraRes',\n    '<div class=\"v30-res-main\"><span class=\"v30-rlbl\">HRA Exemption / month</span><span class=\"v30-rnum\" style=\"color:var(--gr)\">'+sym+' '+v30Fmt(exempt)+'</span></div>'+\n    '<div class=\"v30-res-row\"><span>Taxable HRA</span><span style=\"color:var(--re)\">'+sym+' '+v30Fmt(taxable)+'</span></div>'+\n    '<div class=\"v30-res-row\"><span>Annual Exemption</span><span>'+sym+' '+v30Fmt(exempt*12)+'</span></div>'+\n    '<div class=\"v30-res-note\">Least of: HRA received ('+sym+v30Fmt(c1)+'), '+Math.round(pct*100)+'% of Basic+DA ('+sym+v30Fmt(c2)+'), Rent−10% Basic+DA ('+sym+v30Fmt(c3)+')</div>'\n  );\n",
+      "resultLabel": "HRA Exemption / month"
+    },
+    {
+      "id": "homeloan",
+      "slug": "home-loan-tax-benefit-calculator",
+      "title": "Home Loan Tax Benefit Calculator",
+      "category": "tax-business",
+      "icon": "fa-house-circle-check",
+      "description": "Calculate annual tax savings on your home loan under Section 24(b) (interest) and Section 80C (principal). India focused.",
+      "featured": false,
+      "popular": false,
+      "fields": [
+        {
+          "id": "hlLoan",
+          "label": "Loan Amount (₹)",
+          "type": "number",
+          "placeholder": "e.g. 5000000"
+        },
+        {
+          "id": "hlRate",
+          "label": "Interest Rate (% p.a.)",
+          "type": "number",
+          "placeholder": "e.g. 8.5"
+        },
+        {
+          "id": "hlTenure",
+          "label": "Tenure (Years)",
+          "type": "number",
+          "placeholder": "e.g. 20"
+        },
+        {
+          "id": "hlIncome",
+          "label": "Annual Income (₹)",
+          "type": "number",
+          "placeholder": "e.g. 1200000"
+        },
+        {
+          "id": "hlSlab",
+          "label": "Tax Slab (%)",
+          "type": "select",
+          "placeholder": "",
+          "opts": [
+            "5%",
+            "20%",
+            "30%"
+          ]
+        }
+      ],
+      "calc": "\n  var loan = parseFloat(document.getElementById('hlLoan').value)||0;\n  var rate = parseFloat(document.getElementById('hlRate').value)||0;\n  var tenure = parseFloat(document.getElementById('hlTenure').value)||0;\n  var income = parseFloat(document.getElementById('hlIncome').value)||0;\n  var slabEl = document.getElementById('hlSlab');\n  var slab = slabEl ? parseFloat(slabEl.value) : 30;\n  if(!loan||!rate||!tenure){ v30ShowResult('homeloanRes','Fill loan details.','error'); return; }\n  var r = rate/(12*100);\n  var n = tenure*12;\n  var emi = loan * r * Math.pow(1+r,n) / (Math.pow(1+r,n)-1);\n  var yr1Interest = Math.min(loan*rate/100, 200000); // year 1 approx\n  var yr1Principal = Math.min(emi*12 - yr1Interest, 150000); // capped at 1.5L\n  var sec24Saving = yr1Interest * slab/100;\n  var sec80cSaving = yr1Principal * slab/100;\n  var totalSaving = sec24Saving + sec80cSaving;\n  var sym = (window.SC_GL && window.SC_GL.L) ? window.SC_GL.L.sym : '₹';\n  v30ShowResult('homeloanRes',\n    '<div class=\"v30-res-main\"><span class=\"v30-rlbl\">Annual Tax Saving</span><span class=\"v30-rnum\" style=\"color:var(--gr)\">'+sym+' '+v30Fmt(totalSaving)+'</span></div>'+\n    '<div class=\"v30-res-row\"><span>Monthly EMI</span><span>'+sym+' '+v30Fmt(emi)+'</span></div>'+\n    '<div class=\"v30-res-row\"><span>Sec 24(b) — Interest (max ₹2L)</span><span style=\"color:var(--p2)\">'+sym+' '+v30Fmt(sec24Saving)+' saved</span></div>'+\n    '<div class=\"v30-res-row\"><span>Sec 80C — Principal (max ₹1.5L)</span><span style=\"color:var(--p2)\">'+sym+' '+v30Fmt(sec80cSaving)+' saved</span></div>'+\n    '<div class=\"v30-res-note\">Estimate based on '+slab+'% tax slab. First year values.</div>'\n  );\n",
+      "resultLabel": "Annual Tax Saving"
+    },
+    {
+      "id": "breakeven",
+      "slug": "break-even-calculator",
+      "title": "Break-Even Calculator",
+      "category": "tax-business",
+      "icon": "fa-chart-bar",
+      "description": "Find the break-even point for your business — units needed to cover all costs and start profiting.",
+      "featured": false,
+      "popular": false,
+      "fields": [
+        {
+          "id": "beFixed",
+          "label": "Fixed Costs (₹/month)",
+          "type": "number",
+          "placeholder": "e.g. 50000"
+        },
+        {
+          "id": "bePrice",
+          "label": "Selling Price per Unit (₹)",
+          "type": "number",
+          "placeholder": "e.g. 500"
+        },
+        {
+          "id": "beVar",
+          "label": "Variable Cost per Unit (₹)",
+          "type": "number",
+          "placeholder": "e.g. 200"
+        },
+        {
+          "id": "beUnits",
+          "label": "Current Units Sold/Month",
+          "type": "number",
+          "placeholder": "e.g. 150"
+        }
+      ],
+      "calc": "\n     const fixed=parseFloat(getId('beFixed'))||0;\n     const price=parseFloat(getId('bePrice'))||0;\n     const varCost=parseFloat(getId('beVar'))||0;\n     const units=parseFloat(getId('beUnits'))||0;\n     if(fixed<0){showValError('breakeven','Fixed costs cannot be negative');return;}\n     if(price<=0){showValError('breakeven','Selling price must be greater than 0');return;}\n     if(varCost<0){showValError('breakeven','Variable cost cannot be negative');return;}\n     if(price<=varCost){showValError('breakeven','Selling price must be higher than variable cost');return;}\n     const contrib=price-varCost;\n     const bep=Math.ceil(fixed/contrib);\n     const margin=(contrib/price*100).toFixed(1);\n     const currentProfit=units*contrib-fixed;\n     const status=units>=bep?'✅ Profitable':'⚠️ Below break-even';\n     setRes('breakeven',bep.toLocaleString('en-IN')+' units','Break-Even Point',`Contribution Margin: ${SYM()}${fmt(contrib)}/unit (${margin}%)<br>Fixed Cost Recovery: ${SYM()}${fmt(Math.round(fixed),true)}<br>Break-Even Revenue: ${SYM()}${fmt(Math.round(bep*price),true)}<br>Current Monthly Profit: ${SYM()}${fmt(Math.round(currentProfit),true)} — ${status}`);\n   ",
+      "resultLabel": "Break-Even Point"
+    },
+    {
+      "id": "sip",
+      "slug": "sip-calculator",
+      "title": "SIP Calculator",
+      "category": "investment-savings",
+      "icon": "fa-chart-line",
+      "description": "Calculate SIP (Systematic Investment Plan) returns. Plan your mutual fund investments.",
+      "featured": false,
+      "popular": true,
+      "fields": [
+        {
+          "id": "siM",
+          "label": "Monthly Investment (₹)",
+          "type": "number",
+          "placeholder": "e.g. 5000"
+        },
+        {
+          "id": "siR",
+          "label": "Expected Annual Return (%)",
+          "type": "number",
+          "placeholder": "e.g. 12"
+        },
+        {
+          "id": "siY",
+          "label": "Investment Period (Years)",
+          "type": "number",
+          "placeholder": "e.g. 10"
+        }
+      ],
+      "calc": "const m=parseFloat(getId('siM'))||0,r=(parseFloat(getId('siR'))||12)/12/100,n=(parseFloat(getId('siY'))||10)*12;\n     if(m<=0){showValError('sip','Monthly investment must be greater than 0');return;}\n     if(r<=0){showValError('sip','Return rate must be greater than 0%');return;}\n     if(n<=0){showValError('sip','Investment period must be greater than 0 years');return;}\n     const fv=m*((Math.pow(1+r,n)-1)/r)*(1+r);const inv=m*n;\n     if(!isValidNum(fv)){showValError('sip','Invalid values — please check inputs');return;}\n     setRes('sip',SYM()+fmt(Math.round(fv),true),'Maturity Value',`Total Invested: ${SYM()}${fmt(inv,true)}<br>Wealth Gained: ${SYM()}${fmt(Math.round(fv-inv),true)}<br>Growth: ${fmt((fv/inv-1)*100)}%<br>Monthly: ${SYM()}${fmt(m,true)} for ${n} months`);",
+      "resultLabel": "Maturity Value"
+    },
+    {
+      "id": "stock",
+      "slug": "stock-profit-calculator",
+      "title": "Stock Profit Calculator",
+      "category": "investment-savings",
+      "icon": "fa-arrow-trend-up",
+      "description": "Calculate stock investment profit, loss, return percentage and CAGR.",
+      "featured": false,
+      "popular": false,
+      "fields": [
+        {
+          "id": "stB",
+          "label": "Buy Price (₹)",
+          "type": "number",
+          "placeholder": "e.g. 500"
+        },
+        {
+          "id": "stQ",
+          "label": "Quantity (shares)",
+          "type": "number",
+          "placeholder": "e.g. 100"
+        },
+        {
+          "id": "stS",
+          "label": "Sell Price (₹)",
+          "type": "number",
+          "placeholder": "e.g. 650"
+        },
+        {
+          "id": "stY",
+          "label": "Holding Period (Years)",
+          "type": "number",
+          "placeholder": "e.g. 2"
+        }
+      ],
+      "calc": "\n     const b=parseFloat(getId('stB'))||0,q=parseFloat(getId('stQ'))||0,s=parseFloat(getId('stS'))||0,y=parseFloat(getId('stY'))||1;\n     if(b<=0){showValError('stock','Buy price must be greater than 0');return;}\n     if(q<=0){showValError('stock','Quantity must be at least 1 share');return;}\n     if(s<=0){showValError('stock','Sell price must be greater than 0');return;}\n     const invested=b*q,received=s*q,profit=received-invested;\n     const pctReturn=(profit/invested)*100;\n     const cagr=y>0?(Math.pow(received/invested,1/y)-1)*100:0;\n     if(!isValidNum(cagr)){showValError('stock','Invalid values — please check inputs');return;}\n     const prefix=profit>=0?'✅ Profit':'❌ Loss';\n     setRes('stock',SYM()+fmt(Math.abs(profit),true),`${prefix}`,`Invested: ${SYM()}${fmt(invested,true)}<br>Received: ${SYM()}${fmt(received,true)}<br>Return: ${fmt(pctReturn)}%<br>CAGR: ${fmt(cagr)}% per year<br>${profit>=0?'Profit':'Loss'}: ${SYM()}${fmt(Math.abs(profit),true)}`);\n   ",
+      "resultLabel": "Profit / Loss"
+    },
+    {
+      "id": "crypto",
+      "slug": "crypto-calculator",
+      "title": "Crypto Calculator",
+      "category": "investment-savings",
+      "icon": "fa-bitcoin-sign",
+      "description": "Calculate crypto investment value, profit/loss and break-even price.",
+      "featured": false,
+      "popular": false,
+      "fields": [
+        {
+          "id": "crC",
+          "label": "Cryptocurrency",
+          "type": "select",
+          "placeholder": "",
+          "opts": [
+            "Bitcoin (BTC)",
+            "Ethereum (ETH)",
+            "BNB",
+            "Solana (SOL)",
+            "Other"
+          ]
+        },
+        {
+          "id": "crI",
+          "label": "Investment Amount (₹)",
+          "type": "number",
+          "placeholder": "e.g. 10000"
+        },
+        {
+          "id": "crB",
+          "label": "Buy Price (₹ per coin)",
+          "type": "number",
+          "placeholder": "e.g. 5000000"
+        },
+        {
+          "id": "crN",
+          "label": "Current/Target Price (₹)",
+          "type": "number",
+          "placeholder": "e.g. 6000000"
+        }
+      ],
+      "calc": "\n     const inv=parseFloat(getId('crI'))||0,buy=parseFloat(getId('crB'))||1,now=parseFloat(getId('crN'))||1;\n     if(inv<=0){showValError('crypto','Investment amount must be greater than 0');return;}\n     if(buy<=0){showValError('crypto','Buy price must be greater than 0');return;}\n     if(now<=0){showValError('crypto','Current price must be greater than 0');return;}\n     const coins=inv/buy;const currentValue=coins*now;const profit=currentValue-inv;const pct=(profit/inv)*100;\n     const breakEven=buy;\n     setRes('crypto',fmt(coins,false),'Coins Purchased',`Invested: ${SYM()}${fmt(inv,true)}<br>Current Value: ${SYM()}${fmt(Math.round(currentValue),true)}<br>${profit>=0?'Profit':'Loss'}: ${SYM()}${fmt(Math.abs(Math.round(profit)),true)} (${fmt(Math.abs(pct))}%)<br>Break-even: ${SYM()}${fmt(buy,true)} per coin`);\n   ",
+      "resultLabel": "Coins Purchased"
+    },
+    {
+      "id": "retire",
+      "slug": "retirement-calculator",
+      "title": "Retirement Calculator",
+      "category": "investment-savings",
+      "icon": "fa-piggy-bank",
+      "description": "Plan your retirement — calculate corpus needed and monthly savings required.",
+      "featured": false,
+      "popular": false,
+      "fields": [
+        {
+          "id": "rtA",
+          "label": "Current Age",
+          "type": "number",
+          "placeholder": "e.g. 30"
+        },
+        {
+          "id": "rtR",
+          "label": "Retirement Age",
+          "type": "number",
+          "placeholder": "e.g. 60"
+        },
+        {
+          "id": "rtE",
+          "label": "Monthly Expenses (₹)",
+          "type": "number",
+          "placeholder": "e.g. 50000"
+        },
+        {
+          "id": "rtI",
+          "label": "Expected Return (%/yr)",
+          "type": "number",
+          "placeholder": "e.g. 8"
+        },
+        {
+          "id": "rtF",
+          "label": "Inflation Rate (%/yr)",
+          "type": "number",
+          "placeholder": "e.g. 6"
+        }
+      ],
+      "calc": "\n     const ca=parseInt(getId('rtA'))||30,ra=parseInt(getId('rtR'))||60,exp=parseFloat(getId('rtE'))||50000;\n     const ret=parseFloat(getId('rtI'))||8,inf=parseFloat(getId('rtF'))||6;\n     const yrs=ra-ca;const months=yrs*12;\n     const futureExp=exp*Math.pow(1+inf/100,yrs);\n     const corpusNeeded=futureExp*12/((ret-inf)/100); // simplified perpetuity\n     const r=ret/12/100;const n=months;\n     const monthlySave=corpusNeeded*r/(Math.pow(1+r,n)-1);\n     setRes('retire',SYM()+fmt(Math.round(corpusNeeded),true),'Corpus Needed',`Years to retire: ${yrs}<br>Monthly expenses today: ${SYM()}${fmt(exp,true)}<br>Inflation-adjusted expenses at ${ra}: ${SYM()}${fmt(Math.round(futureExp),true)}/mo<br>Monthly saving needed: ${SYM()}${fmt(Math.round(monthlySave),true)}<br>Start saving NOW — every year delayed costs more!`);\n   ",
+      "resultLabel": "Corpus Needed"
+    },
+    {
+      "id": "ppf",
+      "slug": "ppf-calculator",
+      "title": "PPF Calculator (India)",
+      "category": "investment-savings",
+      "icon": "fa-piggy-bank",
+      "description": "Calculate Public Provident Fund (PPF) maturity amount with 7.1% interest over 15 years.",
+      "featured": false,
+      "popular": false,
+      "fields": [
+        {
+          "id": "ppfY",
+          "label": "Annual Deposit (₹)",
+          "type": "number",
+          "placeholder": "e.g. 150000"
+        },
+        {
+          "id": "ppfR",
+          "label": "Interest Rate (%)",
+          "type": "number",
+          "placeholder": "e.g. 7.1"
+        },
+        {
+          "id": "ppfT",
+          "label": "Tenure (years)",
+          "type": "number",
+          "placeholder": "15 (max 15)"
+        }
+      ],
+      "calc": "\n     const y=Math.min(parseFloat(getId('ppfY'))||150000,150000);\n     const r=(parseFloat(getId('ppfR'))||7.1)/100;\n     const t=Math.min(parseInt(getId('ppfT'))||15,15);\n     let bal=0,totalInvested=0;\n     const rows=[];\n     for(let i=1;i<=t;i++){\n       bal=(bal+y)*(1+r);\n       totalInvested+=y;\n       if(i===t||i<=3||i%5===0)rows.push(`Yr ${i}: ${SYM()}${fmt(Math.round(bal),true)}`);\n     }\n     const interest=bal-totalInvested;\n     setRes('ppf',SYM()+fmt(Math.round(bal),true),'PPF Maturity Amount',`Total Invested: ${SYM()}${fmt(totalInvested,true)}<br>Interest Earned: ${SYM()}${fmt(Math.round(interest),true)}<br>Tax Status: ✅ EEE (completely tax-free)<br>Rate: ${(parseFloat(getId('ppfR'))||7.1)}% | Tenure: ${t} yrs<br><small>${rows.slice(-3).join(' → ')}</small>`);\n   ",
+      "resultLabel": "PPF Maturity Amount"
+    },
+    {
+      "id": "fd",
+      "slug": "fixed-deposit-calculator",
+      "title": "Fixed Deposit Calculator",
+      "category": "investment-savings",
+      "icon": "fa-piggy-bank",
+      "description": "Calculate FD maturity amount, interest earned, and effective yield. Supports simple & compound interest with quarterly/monthly compounding.",
+      "featured": false,
+      "popular": false,
+      "fields": [
+        {
+          "id": "fdP",
+          "label": "Principal Amount (₹)",
+          "type": "number",
+          "placeholder": "e.g. 100000"
+        },
+        {
+          "id": "fdR",
+          "label": "Interest Rate (% p.a.)",
+          "type": "number",
+          "placeholder": "e.g. 7.5"
+        },
+        {
+          "id": "fdT",
+          "label": "Tenure (Years)",
+          "type": "number",
+          "placeholder": "e.g. 3"
+        },
+        {
+          "id": "fdFreq",
+          "label": "Compounding",
+          "type": "select",
+          "placeholder": "",
+          "opts": [
+            "Quarterly",
+            "Monthly",
+            "Half-Yearly",
+            "Annually",
+            "Simple Interest"
+          ]
+        }
+      ],
+      "calc": "\n  var P = parseFloat(document.getElementById('fdP').value);\n  var R = parseFloat(document.getElementById('fdR').value);\n  var T = parseFloat(document.getElementById('fdT').value);\n  var freq = document.getElementById('fdFreq') ? document.getElementById('fdFreq').value : 'Quarterly';\n  if(!P||!R||!T){ v30ShowResult('fdRes','Please fill all fields.','error'); return; }\n  var maturity, interest;\n  if(freq === 'Simple Interest'){\n    interest = P * R * T / 100;\n    maturity = P + interest;\n  } else {\n    var n = freq==='Monthly'?12 : freq==='Quarterly'?4 : freq==='Half-Yearly'?2 : 1;\n    maturity = P * Math.pow(1 + R/(n*100), n*T);\n    interest = maturity - P;\n  }\n  var effectiveRate = (Math.pow(maturity/P, 1/T) - 1) * 100;\n  var sym = (window.SC_GL && window.SC_GL.L) ? window.SC_GL.L.sym : '₹';\n  v30ShowResult('fdRes',\n    '<div class=\"v30-res-main\"><span class=\"v30-rlbl\">Maturity Amount</span><span class=\"v30-rnum\">'+sym+' '+v30Fmt(maturity)+'</span></div>'+\n    '<div class=\"v30-res-row\"><span>Principal</span><span>'+sym+' '+v30Fmt(P)+'</span></div>'+\n    '<div class=\"v30-res-row\"><span>Interest Earned</span><span style=\"color:var(--gr)\">'+sym+' '+v30Fmt(interest)+'</span></div>'+\n    '<div class=\"v30-res-row\"><span>Effective Yield</span><span style=\"color:var(--p2)\">'+effectiveRate.toFixed(2)+'% p.a.</span></div>'\n  );\n",
+      "resultLabel": "Maturity Amount"
+    },
+    {
+      "id": "cagr",
+      "slug": "cagr-calculator",
+      "title": "CAGR Calculator",
+      "category": "investment-savings",
+      "icon": "fa-chart-line",
+      "description": "Calculate Compound Annual Growth Rate for investments, revenue, or any metric. Find beginning or ending value from CAGR.",
+      "featured": false,
+      "popular": false,
+      "fields": [
+        {
+          "id": "cagrStart",
+          "label": "Starting Value (₹)",
+          "type": "number",
+          "placeholder": "e.g. 50000"
+        },
+        {
+          "id": "cagrEnd",
+          "label": "Ending Value (₹)",
+          "type": "number",
+          "placeholder": "e.g. 120000"
+        },
+        {
+          "id": "cagrYrs",
+          "label": "Number of Years",
+          "type": "number",
+          "placeholder": "e.g. 5"
+        }
+      ],
+      "calc": "\n  var sv = parseFloat(document.getElementById('cagrStart').value);\n  var ev = parseFloat(document.getElementById('cagrEnd').value);\n  var yrs = parseFloat(document.getElementById('cagrYrs').value);\n  if(!sv||!ev||!yrs){ v30ShowResult('cagrRes','Fill all fields.','error'); return; }\n  var cagr = (Math.pow(ev/sv, 1/yrs) - 1) * 100;\n  var gain = ev - sv;\n  var absReturn = (gain/sv)*100;\n  var sym = (window.SC_GL && window.SC_GL.L) ? window.SC_GL.L.sym : '₹';\n  v30ShowResult('cagrRes',\n    '<div class=\"v30-res-main\"><span class=\"v30-rlbl\">CAGR</span><span class=\"v30-rnum\" style=\"color:var(--gr)\">'+cagr.toFixed(2)+'%</span></div>'+\n    '<div class=\"v30-res-row\"><span>Absolute Return</span><span>'+absReturn.toFixed(1)+'%</span></div>'+\n    '<div class=\"v30-res-row\"><span>Total Gain</span><span style=\"color:var(--gr)\">'+sym+' '+v30Fmt(gain)+'</span></div>'+\n    '<div class=\"v30-res-row\"><span>Period</span><span>'+yrs+' years</span></div>'\n  );\n",
+      "resultLabel": "CAGR"
+    },
+    {
+      "id": "networth",
+      "slug": "net-worth-calculator",
+      "title": "Net Worth Calculator",
+      "category": "investment-savings",
+      "icon": "fa-landmark",
+      "description": "Calculate your total net worth by adding assets and subtracting liabilities. Track cash, investments, property vs loans.",
+      "featured": false,
+      "popular": false,
+      "fields": [
+        {
+          "id": "nwCash",
+          "label": "Cash & Savings (₹)",
+          "type": "number",
+          "placeholder": "e.g. 200000"
+        },
+        {
+          "id": "nwInvest",
+          "label": "Investments & Stocks (₹)",
+          "type": "number",
+          "placeholder": "e.g. 500000"
+        },
+        {
+          "id": "nwProperty",
+          "label": "Property Value (₹)",
+          "type": "number",
+          "placeholder": "e.g. 3000000"
+        },
+        {
+          "id": "nwOther",
+          "label": "Other Assets (₹)",
+          "type": "number",
+          "placeholder": "e.g. 50000"
+        },
+        {
+          "id": "nwHomeLoan",
+          "label": "Home Loan Outstanding (₹)",
+          "type": "number",
+          "placeholder": "e.g. 2000000"
+        },
+        {
+          "id": "nwPersonal",
+          "label": "Personal / Car Loans (₹)",
+          "type": "number",
+          "placeholder": "e.g. 300000"
+        },
+        {
+          "id": "nwCC",
+          "label": "Credit Card Dues (₹)",
+          "type": "number",
+          "placeholder": "e.g. 50000"
+        }
+      ],
+      "calc": "\n  var cash = parseFloat(document.getElementById('nwCash').value)||0;\n  var invest = parseFloat(document.getElementById('nwInvest').value)||0;\n  var prop = parseFloat(document.getElementById('nwProperty').value)||0;\n  var other = parseFloat(document.getElementById('nwOther').value)||0;\n  var homeLoan = parseFloat(document.getElementById('nwHomeLoan').value)||0;\n  var personal = parseFloat(document.getElementById('nwPersonal').value)||0;\n  var cc = parseFloat(document.getElementById('nwCC').value)||0;\n  var assets = cash + invest + prop + other;\n  var liabilities = homeLoan + personal + cc;\n  var netWorth = assets - liabilities;\n  var ratio = assets > 0 ? (liabilities/assets*100) : 0;\n  var sym = (window.SC_GL && window.SC_GL.L) ? window.SC_GL.L.sym : '₹';\n  var color = netWorth >= 0 ? 'var(--gr)' : 'var(--re)';\n  v30ShowResult('networthRes',\n    '<div class=\"v30-res-main\"><span class=\"v30-rlbl\">Net Worth</span><span class=\"v30-rnum\" style=\"color:'+color+'\">'+sym+' '+v30Fmt(netWorth)+'</span></div>'+\n    '<div class=\"v30-res-row\"><span>Total Assets</span><span style=\"color:var(--gr)\">'+sym+' '+v30Fmt(assets)+'</span></div>'+\n    '<div class=\"v30-res-row\"><span>Total Liabilities</span><span style=\"color:var(--re)\">'+sym+' '+v30Fmt(liabilities)+'</span></div>'+\n    '<div class=\"v30-res-row\"><span>Debt-to-Asset Ratio</span><span>'+ratio.toFixed(1)+'%</span></div>'+\n    '<div class=\"v30-res-note\">'+(netWorth>=0?'💚 Positive net worth — you own more than you owe!':'🔴 Negative net worth — focus on reducing liabilities.')+'</div>'\n  );\n",
+      "resultLabel": "Net Worth"
+    },
+    {
+      "id": "savgoal",
+      "slug": "savings-goal-calculator",
+      "title": "Savings Goal Planner",
+      "category": "investment-savings",
+      "icon": "fa-bullseye",
+      "description": "Set a savings goal and find out how long it will take, or how much to save per month to reach it.",
+      "featured": false,
+      "popular": false,
+      "fields": [
+        {
+          "id": "sgGoal",
+          "label": "Goal Amount (₹)",
+          "type": "number",
+          "placeholder": "e.g. 500000"
+        },
+        {
+          "id": "sgSaved",
+          "label": "Already Saved (₹)",
+          "type": "number",
+          "placeholder": "e.g. 0"
+        },
+        {
+          "id": "sgMonthly",
+          "label": "Monthly Savings (₹)",
+          "type": "number",
+          "placeholder": "Leave blank to find monthly amount"
+        },
+        {
+          "id": "sgMonths",
+          "label": "Target Months",
+          "type": "number",
+          "placeholder": "Leave blank to find time needed"
+        },
+        {
+          "id": "sgRate",
+          "label": "Annual Return % (savings)",
+          "type": "number",
+          "placeholder": "4 (default savings rate)"
+        }
+      ],
+      "calc": "\n      const goal = parseFloat(document.getElementById('sgGoal')&&document.getElementById('sgGoal').value)||0;\n      const saved = parseFloat(document.getElementById('sgSaved')&&document.getElementById('sgSaved').value)||0;\n      const monthly = parseFloat(document.getElementById('sgMonthly')&&document.getElementById('sgMonthly').value)||0;\n      const months = parseFloat(document.getElementById('sgMonths')&&document.getElementById('sgMonths').value)||0;\n      const rate = (parseFloat(document.getElementById('sgRate')&&document.getElementById('sgRate').value)||4)/12/100;\n      const sym = (typeof SYM==='function')?SYM():'₹';\n      const fmt2 = v => v>=1e7?(v/1e7).toFixed(2)+' Cr':v>=1e5?(v/1e5).toFixed(2)+' L':Math.round(v).toLocaleString('en-IN');\n      if (!goal) { setRes('savgoal','—','Enter goal amount',''); return; }\n      const rem = goal - saved;\n      if (monthly > 0 && months === 0) {\n        // Find months needed (with interest)\n        let bal = saved, m = 0;\n        while (bal < goal && m < 600) { bal = bal * (1 + rate) + monthly; m++; }\n        const yrs = Math.floor(m/12), mos = m%12;\n        setRes('savgoal', `${yrs > 0 ? yrs+'y ' : ''}${mos}m`, 'Time to reach goal',\n          `Goal: ${sym}${fmt2(goal)}<br>Monthly: ${sym}${fmt2(monthly)}<br>Already saved: ${sym}${fmt2(saved)}<br>Remaining: ${sym}${fmt2(rem)}<br>Total invested: ${sym}${fmt2(monthly*m)}`);\n      } else if (months > 0 && monthly === 0) {\n        // Find monthly amount needed\n        let lo = 1, hi = goal, mo = 0;\n        for (let iter = 0; iter < 50; iter++) {\n          mo = (lo + hi) / 2;\n          let bal = saved;\n          for (let i = 0; i < months; i++) bal = bal * (1 + rate) + mo;\n          if (bal < goal) lo = mo; else hi = mo;\n        }\n        setRes('savgoal', sym + fmt2(mo), 'Monthly Savings Needed',\n          `Goal: ${sym}${fmt2(goal)}<br>Time: ${months} months (${(months/12).toFixed(1)} yrs)<br>Total invested: ${sym}${fmt2(mo*months)}<br>Interest earned: ${sym}${fmt2(goal - mo*months - saved)}`);\n      } else {\n        setRes('savgoal','—','Fill either Monthly Savings OR Target Months (not both)','');\n        return;\n      }\n      if (typeof bumpStreak==='function') bumpStreak();\n      if (typeof checkMilestone==='function') checkMilestone();\n    ",
+      "resultLabel": "Time to Reach Goal"
+    },
+    {
+      "id": "bmi",
+      "slug": "bmi-calculator",
+      "title": "BMI Calculator",
+      "category": "health-fitness",
+      "icon": "fa-weight-scale",
+      "description": "Calculate Body Mass Index — find your healthy weight range based on height and weight.",
+      "featured": false,
+      "popular": true,
+      "fields": [
+        {
+          "id": "bH",
+          "label": "Height (cm)",
+          "type": "number",
+          "placeholder": "e.g. 170"
+        },
+        {
+          "id": "bW",
+          "label": "Weight (kg)",
+          "type": "number",
+          "placeholder": "e.g. 65"
+        }
+      ],
+      "calc": "const h=(parseFloat(getId('bH'))||0)/100,w=parseFloat(getId('bW'))||0;\n     if(h<=0||h>3){showValError('bmi','Height must be between 50–300 cm');return;}\n     if(w<=0||w>500){showValError('bmi','Weight must be between 1–500 kg');return;}\n     const bmi=w/(h*h),cat=bmi<18.5?'⚠️ Underweight':bmi<25?'✅ Normal weight':bmi<30?'⚠️ Overweight':'❌ Obese';setRes('bmi',fmt(bmi),'BMI Score',`Category: <strong>${cat}</strong><br>Healthy range: ${fmt(18.5*h*h)}–${fmt(24.9*h*h)} kg<br>Your height: ${Math.round(h*100)} cm`);setTimeout(()=>injectBMIGauge(bmi),50);",
+      "resultLabel": "BMI Score"
+    },
+    {
+      "id": "age",
+      "slug": "age-calculator",
+      "title": "Age Calculator",
+      "category": "health-fitness",
+      "icon": "fa-cake-candles",
+      "description": "Calculate exact age in years, months, and days from date of birth.",
+      "featured": false,
+      "popular": true,
+      "fields": [
+        {
+          "id": "aD",
+          "label": "Date of Birth",
+          "type": "date",
+          "placeholder": ""
+        }
+      ],
+      "calc": "\n     const d=new Date(getId('aD'));const now=new Date();if(isNaN(d)||!getId('aD')){setRes('age','—','Enter your date of birth','');return;}\n     if(d>now){showValError('age','Date of birth cannot be in the future');return;}\n     if(now.getFullYear()-d.getFullYear()>150){showValError('age','Please enter a valid date of birth');return;}\n     let y=now.getFullYear()-d.getFullYear(),mo=now.getMonth()-d.getMonth(),da=now.getDate()-d.getDate();\n     if(da<0){mo--;da+=new Date(now.getFullYear(),now.getMonth(),0).getDate();}\n     if(mo<0){y--;mo+=12;}\n     const days=Math.floor((now-d)/86400000);\n     const next=new Date(now.getFullYear(),d.getMonth(),d.getDate());if(next<now)next.setFullYear(next.getFullYear()+1);\n     const dob=Math.ceil((next-now)/86400000);\n     setRes('age',`${y} yrs`,'Your Age',`${y} years, ${mo} months, ${da} days<br>Total days lived: ${days.toLocaleString('en-IN')}<br>Total weeks: ${Math.floor(days/7).toLocaleString('en-IN')}<br>Next birthday in: ${dob} days`);\n   ",
+      "resultLabel": "Your Age"
+    },
+    {
+      "id": "preg",
+      "slug": "pregnancy-due-date-calculator",
+      "title": "Pregnancy Due Date Calculator",
+      "category": "health-fitness",
+      "icon": "fa-heart",
+      "description": "Calculate estimated due date (EDD) and pregnancy week from last menstrual period.",
+      "featured": false,
+      "popular": false,
+      "fields": [
+        {
+          "id": "prD",
+          "label": "Last Menstrual Period (LMP)",
+          "type": "date",
+          "placeholder": ""
+        },
+        {
+          "id": "prC",
+          "label": "Cycle Length (days)",
+          "type": "number",
+          "placeholder": "e.g. 28"
+        }
+      ],
+      "calc": "\n     const lmp=new Date(getId('prD'));if(isNaN(lmp)){setRes('preg','—','Enter LMP','');return;}\n     const cycle=parseInt(getId('prC'))||28;const edd=new Date(lmp);edd.setDate(edd.getDate()+280+(cycle-28));\n     const now=new Date();const days=Math.floor((now-lmp)/86400000);const weeks=Math.floor(days/7);const dayR=days%7;\n     const trimester=weeks<13?'1st':weeks<27?'2nd':'3rd';const rem=Math.ceil((edd-now)/86400000);\n     setRes('preg',edd.toDateString(),'Estimated Due Date',`Current: Week ${weeks}, Day ${dayR}<br>Trimester: ${trimester}<br>Days remaining: ${rem>0?rem:'Past due date'}<br>Days pregnant: ${days}`);\n   ",
+      "resultLabel": "Estimated Due Date"
+    },
+    {
+      "id": "calorie",
+      "slug": "calorie-calculator",
+      "title": "Calorie / TDEE Calculator",
+      "category": "health-fitness",
+      "icon": "fa-fire-flame-curved",
+      "description": "Calculate daily calorie needs (TDEE) and calories to lose or gain weight.",
+      "featured": false,
+      "popular": false,
+      "fields": [
+        {
+          "id": "clA",
+          "label": "Age",
+          "type": "number",
+          "placeholder": "e.g. 25"
+        },
+        {
+          "id": "clW",
+          "label": "Weight (kg)",
+          "type": "number",
+          "placeholder": "e.g. 70"
+        },
+        {
+          "id": "clH",
+          "label": "Height (cm)",
+          "type": "number",
+          "placeholder": "e.g. 170"
+        },
+        {
+          "id": "clG",
+          "label": "Gender",
+          "type": "select",
+          "placeholder": "",
+          "opts": [
+            "Male",
+            "Female"
+          ]
+        },
+        {
+          "id": "clAc",
+          "label": "Activity Level",
+          "type": "select",
+          "placeholder": "",
+          "opts": [
+            "Sedentary (desk job)",
+            "Light (1-3 days/wk)",
+            "Moderate (3-5 days/wk)",
+            "Active (6-7 days/wk)",
+            "Very Active (athlete)"
+          ]
+        }
+      ],
+      "calc": "\n     const age=parseFloat(getId('clA'))||25,w=parseFloat(getId('clW'))||70,h=parseFloat(getId('clH'))||170,g=getId('clG'),ac=getId('clAc');\n     if(age<1||age>120){showValError('calorie','Age must be between 1 and 120');return;}\n     if(w<=0||w>500){showValError('calorie','Weight must be between 1 and 500 kg');return;}\n     if(h<=0||h>300){showValError('calorie','Height must be between 50 and 300 cm');return;}\n     let bmr;\n     if(g==='Male')bmr=10*w+6.25*h-5*age+5;\n     else bmr=10*w+6.25*h-5*age-161;\n     const actMap={'Sedentary (desk job)':1.2,'Light (1-3 days/wk)':1.375,'Moderate (3-5 days/wk)':1.55,'Active (6-7 days/wk)':1.725,'Very Active (athlete)':1.9};\n     const mult=actMap[ac]||1.55;const tdee=Math.round(bmr*mult);\n     setRes('calorie',tdee+' kcal','Daily Calories (TDEE)',`BMR (at rest): ${Math.round(bmr)} kcal<br>To lose 0.5kg/week: ${tdee-500} kcal/day<br>To gain 0.5kg/week: ${tdee+500} kcal/day<br>Protein target: ${Math.round(w*1.8)}g/day`);\n   ",
+      "resultLabel": "Daily Calories (TDEE)"
+    },
+    {
+      "id": "bodyfat",
+      "slug": "body-fat-calculator",
+      "title": "Body Fat % Calculator",
+      "category": "health-fitness",
+      "icon": "fa-person",
+      "description": "Estimate body fat percentage using US Navy formula (waist, neck, height).",
+      "featured": false,
+      "popular": false,
+      "fields": [
+        {
+          "id": "bfG",
+          "label": "Gender",
+          "type": "select",
+          "placeholder": "",
+          "opts": [
+            "Male",
+            "Female"
+          ]
+        },
+        {
+          "id": "bfH",
+          "label": "Height (cm)",
+          "type": "number",
+          "placeholder": "e.g. 175"
+        },
+        {
+          "id": "bfW",
+          "label": "Waist (cm)",
+          "type": "number",
+          "placeholder": "e.g. 85"
+        },
+        {
+          "id": "bfN",
+          "label": "Neck (cm)",
+          "type": "number",
+          "placeholder": "e.g. 38"
+        },
+        {
+          "id": "bfHp",
+          "label": "Hip (cm — Women only)",
+          "type": "number",
+          "placeholder": "e.g. 95"
+        }
+      ],
+      "calc": "\n     const g=getId('bfG'),h=parseFloat(getId('bfH'))||175,w=parseFloat(getId('bfW'))||85,n=parseFloat(getId('bfN'))||38,hp=parseFloat(getId('bfHp'))||95;\n     let bf;\n     if(g==='Male'){bf=495/(1.0324-0.19077*Math.log10(w-n)+0.15456*Math.log10(h))-450;}\n     else{bf=495/(1.29579-0.35004*Math.log10(w+hp-n)+0.22100*Math.log10(h))-450;}\n     bf=Math.max(3,bf);\n     const cat=g==='Male'?(bf<6?'Essential Fat':bf<14?'Athlete':bf<18?'Fitness':bf<25?'Average':'Obese'):(bf<14?'Essential Fat':bf<21?'Athlete':bf<25?'Fitness':bf<32?'Average':'Obese');\n     const lm=((100-bf)/100)*(parseFloat(getId('bfW'))||0);\n     setRes('bodyfat',fmt(bf,false)+'%','Body Fat %',`Category: <strong>${cat}</strong><br>Gender: ${g}<br>Lean Mass: ${fmt(lm)} kg (approx)<br><small>US Navy formula — estimated value</small>`);\n   ",
+      "resultLabel": "Body Fat %"
+    },
+    {
+      "id": "wtr",
+      "slug": "water-intake-calculator",
+      "title": "Water Intake Calculator",
+      "category": "health-fitness",
+      "icon": "fa-droplet",
+      "description": "Calculate your daily water intake recommendation based on weight, activity, and climate.",
+      "featured": false,
+      "popular": false,
+      "fields": [
+        {
+          "id": "wtrW",
+          "label": "Body Weight (kg)",
+          "type": "number",
+          "placeholder": "e.g. 70"
+        },
+        {
+          "id": "wtrA",
+          "label": "Activity Level",
+          "type": "select",
+          "opts": [
+            "Sedentary (office/desk)",
+            "Lightly Active (1–3 days/wk)",
+            "Moderately Active (3–5 days/wk)",
+            "Very Active (6–7 days/wk)",
+            "Athlete / Hard Training"
+          ]
+        },
+        {
+          "id": "wtrC",
+          "label": "Climate",
+          "type": "select",
+          "opts": [
+            "Temperate / Normal",
+            "Hot / Humid",
+            "Cold"
+          ]
+        }
+      ],
+      "calc": "\n  const w=parseFloat(document.getElementById('wtrW')&&document.getElementById('wtrW').value)||0;\n  if(!w||w<=0){\n    const el=document.getElementById('res-wtr');\n    if(el)el.innerHTML='<div class=\"tres-empty\" style=\"color:var(--re);\"><i class=\"fa-solid fa-triangle-exclamation\"></i>Please enter a valid weight</div>';\n    return;\n  }\n  const actEl=document.getElementById('wtrA');\n  const climEl=document.getElementById('wtrC');\n  const actMap={'Sedentary (office/desk)':30,'Lightly Active (1–3 days/wk)':33,'Moderately Active (3–5 days/wk)':36,'Very Active (6–7 days/wk)':39,'Athlete / Hard Training':44};\n  const climMap={'Temperate / Normal':0,'Hot / Humid':500,'Cold':-100};\n  const actVal=actEl?actEl.value:'Sedentary (office/desk)';\n  const climVal=climEl?climEl.value:'Temperate / Normal';\n  const base=w*(actMap[actVal]||30);\n  const clim=climMap[climVal]||0;\n  const totalMl=Math.round(base+clim);\n  const cups=Math.round(totalMl/240);\n  const glasses=Math.round(totalMl/250);\n  const intakePerHr=Math.round(totalMl/16/10)*10; // awake ~16hrs\n  const pct=Math.min(100,Math.round((totalMl/3500)*100));\n  const barColor=pct<50?'var(--re)':pct<75?'var(--am)':'var(--t)';\n  const el=document.getElementById('res-wtr');\n  if(!el)return;\n  el.innerHTML=`<div class=\"v7res\">\n    <div class=\"v7res-header\">\n      <div class=\"v7res-main\">\n        <div class=\"v7res-lbl\">Daily Water Intake</div>\n        <div class=\"v7res-num\" style=\"color:var(--t);\">${(totalMl/1000).toFixed(1)} L</div>\n      </div>\n      <div class=\"v7res-ico\"><i class=\"fa-solid fa-droplet\"></i></div>\n    </div>\n    <div style=\"margin:10px 0 6px;\">\n      <div style=\"display:flex;justify-content:space-between;font-size:10px;color:var(--tx3);margin-bottom:4px;\"><span>Hydration Level</span><span>${pct}%</span></div>\n      <div style=\"height:7px;border-radius:99px;background:var(--g2);overflow:hidden;\">\n        <div style=\"height:100%;width:${pct}%;background:${barColor};border-radius:99px;transition:width .5s ease;\"></div>\n      </div>\n    </div>\n    <div class=\"v7res-chips\">\n      <div class=\"v7res-chip\"><span class=\"v7res-chip-v\">${totalMl} ml</span><span class=\"v7res-chip-l\">Per Day</span></div>\n      <div class=\"v7res-chip\"><span class=\"v7res-chip-v\">${cups}</span><span class=\"v7res-chip-l\">Cups (240ml)</span></div>\n      <div class=\"v7res-chip\"><span class=\"v7res-chip-v\">${glasses}</span><span class=\"v7res-chip-l\">Glasses (250ml)</span></div>\n      <div class=\"v7res-chip\"><span class=\"v7res-chip-v\">${intakePerHr} ml</span><span class=\"v7res-chip-l\">Per Hour (awake)</span></div>\n    </div>\n    <div style=\"font-size:11px;color:var(--tx3);margin-top:8px;\">💡 Drink 500ml first thing in the morning · Carry a 1L bottle and refill twice</div>\n  </div>`;\n  trackTool('wtr');bumpStreak();checkMilestone();\n",
+      "resultLabel": "Daily Water Intake"
+    },
+    {
+      "id": "sleep",
+      "slug": "sleep-cycle-calculator",
+      "title": "Sleep Cycle Calculator",
+      "category": "health-fitness",
+      "icon": "fa-moon",
+      "description": "Calculate the best times to wake up or go to sleep based on 90-minute sleep cycles.",
+      "featured": false,
+      "popular": false,
+      "fields": [
+        {
+          "id": "sleepMode",
+          "label": "Mode",
+          "type": "select",
+          "opts": [
+            "I want to wake at…",
+            "I want to sleep at…"
+          ]
+        },
+        {
+          "id": "sleepTime",
+          "label": "Wake-up Time",
+          "type": "time",
+          "default": "06:30"
+        }
+      ],
+      "calc": "\n  const t=document.getElementById('sleepTime');\n  if(!t||!t.value){toast('⚠️ Please enter a time');return;}\n  const [h,m]=t.value.split(':').map(Number);\n  const base=h*60+m;\n  const fallAsleep=14; // avg min to fall asleep\n  const cycleMin=90;\n  const el=document.getElementById('res-sleep');\n  if(!el)return;\n  let slots='';\n  if(_sleepMode==='wake'){\n    // Given wake time, find best sleep times (6 or 5 or 4 cycles back)\n    const times=[];\n    for(let c=6;c>=4;c--){\n      const sleepMin=((base-(c*cycleMin+fallAsleep))+1440)%1440;\n      const sh=Math.floor(sleepMin/60).toString().padStart(2,'0');\n      const sm=(sleepMin%60).toString().padStart(2,'0');\n      times.push({t:`${sh}:${sm}`,c,best:c===6});\n    }\n    slots=times.map(x=>`<div class=\"sleep-slot${x.best?' best':''}\">${x.best?'⭐ ':''}${x.t} (${x.c} cycles)</div>`).join('');\n    el.innerHTML=`<div class=\"rnum\">Go to sleep at…</div><div class=\"rsub\">To wake at ${t.value} feeling refreshed:</div><div class=\"sleep-slots\">${slots}</div><div style=\"font-size:11px;color:var(--tx3);margin-top:8px;\">⭐ = Ideal (6 cycles = ~9 hrs). Each cycle = 90 min.</div>`;\n  } else {\n    // Given sleep time, find best wake times (4, 5, 6 cycles forward)\n    const times=[];\n    for(let c=4;c<=6;c++){\n      const wakeMin=((base+c*cycleMin+fallAsleep)+1440)%1440;\n      const wh=Math.floor(wakeMin/60).toString().padStart(2,'0');\n      const wm=(wakeMin%60).toString().padStart(2,'0');\n      times.push({t:`${wh}:${wm}`,c,best:c===6});\n    }\n    slots=times.map(x=>`<div class=\"sleep-slot${x.best?' best':''}\">${x.best?'⭐ ':''}${x.t} (${x.c} cycles)</div>`).join('');\n    el.innerHTML=`<div class=\"rnum\">Wake up at…</div><div class=\"rsub\">If sleeping at ${t.value}, good wake times:</div><div class=\"sleep-slots\">${slots}</div><div style=\"font-size:11px;color:var(--tx3);margin-top:8px;\">⭐ = Ideal (6 cycles). Rise at cycle end to feel fresh.</div>`;\n  }\n  trackTool('sleep');bumpStreak();checkMilestone();\n",
+      "resultLabel": "Sleep Times"
+    },
+    {
+      "id": "heartrate",
+      "slug": "heart-rate-calculator",
+      "title": "Heart Rate / Max HR Zone",
+      "category": "health-fitness",
+      "icon": "fa-heart-pulse",
+      "description": "Calculate maximum heart rate and training zones based on age. Optimize your workout intensity.",
+      "featured": false,
+      "popular": false,
+      "fields": [
+        {
+          "id": "hrAge",
+          "label": "Age (years)",
+          "type": "number",
+          "placeholder": "e.g. 25"
+        },
+        {
+          "id": "hrRest",
+          "label": "Resting Heart Rate (bpm)",
+          "type": "number",
+          "placeholder": "e.g. 65 (optional)"
+        }
+      ],
+      "calc": "\n     var age=parseFloat(document.getElementById('hrAge')&&document.getElementById('hrAge').value)||0;\n     var rhr=parseFloat(document.getElementById('hrRest')&&document.getElementById('hrRest').value)||65;\n     if(age<10||age>120){setRes('heartrate','—','Enter valid age (10-120)','');return;}\n     var maxHR=220-age;\n     var hrr=maxHR-rhr;\n     var z1=Math.round(rhr+hrr*0.5)+'-'+Math.round(rhr+hrr*0.6);\n     var z2=Math.round(rhr+hrr*0.6)+'-'+Math.round(rhr+hrr*0.7);\n     var z3=Math.round(rhr+hrr*0.7)+'-'+Math.round(rhr+hrr*0.8);\n     var z4=Math.round(rhr+hrr*0.8)+'-'+Math.round(rhr+hrr*0.9);\n     setRes('heartrate',maxHR+' bpm','Max Heart Rate (220-age)',\n       'Zone 1 Recovery: '+z1+' bpm<br>Zone 2 Fat Burn: '+z2+' bpm<br>Zone 3 Cardio: '+z3+' bpm<br>Zone 4 Peak: '+z4+' bpm<br>Resting HR: '+rhr+' bpm');\n   ",
+      "resultLabel": "Max Heart Rate (220-age)"
+    },
+    {
+      "id": "cgpa",
+      "slug": "cgpa-calculator",
+      "title": "CGPA / GPA Calculator",
+      "category": "education-students",
+      "icon": "fa-graduation-cap",
+      "description": "Calculate CGPA from semester grades. Convert CGPA to percentage.",
+      "featured": false,
+      "popular": false,
+      "fields": [
+        {
+          "id": "cgS1",
+          "label": "Sem 1 SGPA",
+          "type": "number",
+          "placeholder": "e.g. 8.5"
+        },
+        {
+          "id": "cgS2",
+          "label": "Sem 2 SGPA",
+          "type": "number",
+          "placeholder": "e.g. 8.2"
+        },
+        {
+          "id": "cgS3",
+          "label": "Sem 3 SGPA",
+          "type": "number",
+          "placeholder": "e.g. 8.7"
+        },
+        {
+          "id": "cgS4",
+          "label": "Sem 4 SGPA (optional)",
+          "type": "number",
+          "placeholder": "e.g. 9.0"
+        }
+      ],
+      "calc": "const rawSems=[getId('cgS1'),getId('cgS2'),getId('cgS3'),getId('cgS4')].map(Number);\n     const badSem=rawSems.find(x=>x!==0&&(x<0||x>10));\n     if(badSem!==undefined&&badSem!==0){showValError('cgpa','SGPA must be between 0 and 10');return;}\n     const sems=rawSems.filter(x=>x>0&&x<=10);if(!sems.length){setRes('cgpa','—','Enter at least one SGPA','');return;}const cgpa=sems.reduce((a,b)=>a+b,0)/sems.length;const pct=cgpa*9.5;setRes('cgpa',fmt(cgpa),'CGPA',`Percentage: ${fmt(pct)}%<br>Semesters counted: ${sems.length}<br>Grade (approx): ${cgpa>=9?'O (Outstanding)':cgpa>=8?'A+ (Excellent)':cgpa>=7?'A (Very Good)':cgpa>=6?'B+ (Good)':'B (Average)'}`);",
+      "resultLabel": "CGPA"
+    },
+    {
+      "id": "grade",
+      "slug": "grade-calculator",
+      "title": "Grade Calculator",
+      "category": "education-students",
+      "icon": "fa-star",
+      "description": "Calculate your grade and percentage from marks. Supports multiple subjects.",
+      "featured": false,
+      "popular": false,
+      "fields": [
+        {
+          "id": "grM",
+          "label": "Marks Obtained",
+          "type": "number",
+          "placeholder": "e.g. 78"
+        },
+        {
+          "id": "grT",
+          "label": "Total Marks",
+          "type": "number",
+          "placeholder": "e.g. 100"
+        },
+        {
+          "id": "grM2",
+          "label": "Subject 2 (optional)",
+          "type": "number",
+          "placeholder": "e.g. 85/100"
+        }
+      ],
+      "calc": "const m=parseFloat(getId('grM'))||0,t=parseFloat(getId('grT'))||100;\n     if(t<=0){showValError('grade','Total marks must be greater than 0');return;}\n     if(m<0){showValError('grade','Marks obtained cannot be negative');return;}\n     if(m>t){showValError('grade','Marks obtained cannot exceed total marks');return;}\n     const pct=m/t*100;const grade=pct>=90?'A+':pct>=80?'A':pct>=70?'B+':pct>=60?'B':pct>=50?'C':pct>=40?'D':'F';setRes('grade',grade,'Grade',`Percentage: ${fmt(pct)}%<br>Marks: ${m} / ${t}<br>CGPA (approx): ${fmt(pct/9.5)}<br>Result: ${pct>=35?'✅ Pass':'❌ Fail'}`);",
+      "resultLabel": "Grade"
+    },
+    {
+      "id": "matrix",
+      "slug": "matrix-calculator",
+      "title": "Matrix Calculator",
+      "category": "education-students",
+      "icon": "fa-table-cells",
+      "description": "Add, subtract, multiply 2×2 and 3×3 matrices. Calculate determinant.",
+      "featured": false,
+      "popular": false,
+      "fields": [
+        {
+          "id": "ma00",
+          "label": "Matrix A [0,0]",
+          "type": "number",
+          "placeholder": "",
+          "default": 1
+        },
+        {
+          "id": "ma01",
+          "label": "Matrix A [0,1]",
+          "type": "number",
+          "placeholder": "",
+          "default": 0
+        },
+        {
+          "id": "ma10",
+          "label": "Matrix A [1,0]",
+          "type": "number",
+          "placeholder": "",
+          "default": 0
+        },
+        {
+          "id": "ma11",
+          "label": "Matrix A [1,1]",
+          "type": "number",
+          "placeholder": "",
+          "default": 1
+        },
+        {
+          "id": "mb00",
+          "label": "Matrix B [0,0]",
+          "type": "number",
+          "placeholder": "",
+          "default": 1
+        },
+        {
+          "id": "mb01",
+          "label": "Matrix B [0,1]",
+          "type": "number",
+          "placeholder": "",
+          "default": 0
+        },
+        {
+          "id": "mb10",
+          "label": "Matrix B [1,0]",
+          "type": "number",
+          "placeholder": "",
+          "default": 0
+        },
+        {
+          "id": "mb11",
+          "label": "Matrix B [1,1]",
+          "type": "number",
+          "placeholder": "",
+          "default": 1
+        }
+      ],
+      "calc": "\n  function getM(p){const g=(id)=>{const e=document.getElementById(p+id);return parseFloat(e&&e.value)||0;};return[[g('00'),g('01')],[g('10'),g('11')]];}\n  const A=getM('ma'),B=getM('mb'),el=document.getElementById('matResult');if(!el)return;\n  let res='';\n  if(op==='add'){res=`A + B =\\n[${A[0][0]+B[0][0]}, ${A[0][1]+B[0][1]}]\\n[${A[1][0]+B[1][0]}, ${A[1][1]+B[1][1]}]`;}\n  else if(op==='sub'){res=`A - B =\\n[${A[0][0]-B[0][0]}, ${A[0][1]-B[0][1]}]\\n[${A[1][0]-B[1][0]}, ${A[1][1]-B[1][1]}]`;}\n  else if(op==='mul'){res=`A × B =\\n[${A[0][0]*B[0][0]+A[0][1]*B[1][0]}, ${A[0][0]*B[0][1]+A[0][1]*B[1][1]}]\\n[${A[1][0]*B[0][0]+A[1][1]*B[1][0]}, ${A[1][0]*B[0][1]+A[1][1]*B[1][1]}]`;}\n  else if(op==='det'){const d=A[0][0]*A[1][1]-A[0][1]*A[1][0];res=`det(A) = ${d}\\n\\n(ad - bc formula)`;}\n  el.textContent=res;\n",
+      "resultLabel": "Result"
+    },
+    {
+      "id": "pomo",
+      "slug": "pomodoro-study-timer",
+      "title": "Pomodoro Study Timer",
+      "category": "education-students",
+      "icon": "fa-clock",
+      "description": "Classic Pomodoro technique timer. Focus 25 min, break 5 min. Boost study productivity.",
+      "featured": false,
+      "popular": false,
+      "fields": [
+        {
+          "id": "pomMode",
+          "label": "Mode",
+          "type": "select",
+          "opts": [
+            "Pomodoro (25 min)",
+            "Short Break (5 min)",
+            "Long Break (15 min)"
+          ]
+        }
+      ],
+      "calc": "\n  if(pomRunning){clearInterval(pomInterval);pomRunning=false;const st=document.getElementById('pomStatus');if(st)st.textContent='Paused';return;}\n  pomRunning=true;const st=document.getElementById('pomStatus');if(st)st.textContent='🎯 Focus!';\n  pomInterval=setInterval(()=>{\n    pomLeft--;updatePomDisplay();\n    if(pomLeft<=0){\n      clearInterval(pomInterval);pomRunning=false;pomSessions++;\n      const cnt=document.getElementById('pomCount');if(cnt)cnt.textContent=pomSessions;\n      const sts=document.getElementById('pomStatus');if(sts)sts.textContent='✅ Session complete!';\n      try{new Audio('data:audio/wav;base64,UklGRl9vT19XQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YU'+Array(100).join('A')).play();}catch(e){}\n      toast('🍅 Pomodoro complete! Take a break.');\n    }\n  },1000);\n",
+      "resultLabel": "Timer"
+    },
+    {
+      "id": "attend",
+      "slug": "attendance-calculator",
+      "title": "Attendance Calculator",
+      "category": "education-students",
+      "icon": "fa-calendar-check",
+      "description": "Check if you meet the required attendance %, how many classes you can miss, or how many you must attend.",
+      "featured": false,
+      "popular": false,
+      "fields": [
+        {
+          "id": "attTotal",
+          "label": "Total Classes Held",
+          "type": "number",
+          "placeholder": "e.g. 80"
+        },
+        {
+          "id": "attAttended",
+          "label": "Classes Attended",
+          "type": "number",
+          "placeholder": "e.g. 55"
+        },
+        {
+          "id": "attReq",
+          "label": "Required % (default 75)",
+          "type": "number",
+          "placeholder": "75"
+        }
+      ],
+      "calc": "\n      const total = parseFloat(document.getElementById('attTotal')&&document.getElementById('attTotal').value)||0;\n      const attended = parseFloat(document.getElementById('attAttended')&&document.getElementById('attAttended').value)||0;\n      const req = parseFloat(document.getElementById('attReq')&&document.getElementById('attReq').value)||75;\n      if (!total || attended > total) { setRes('attend','—','Enter valid values',''); return; }\n      const curPct = (attended/total*100).toFixed(1);\n      const status = curPct >= req ? '✅ SAFE' : '❌ SHORTAGE';\n      const color = curPct >= req ? 'var(--gr)' : 'var(--re)';\n      // How many more classes can be missed and still meet req\n      let canMiss = 0, needAttend = 0;\n      if (curPct >= req) {\n        // Max classes can miss: attended + future - req*(total+future) >= 0 → solve\n        // canMiss: (attended - req*(total+canMiss)) / (1-req) ≤ 0 ... binary approach\n        for (let m = 0; m <= 200; m++) {\n          if ((attended / (total + m)) * 100 < req) { canMiss = m - 1; break; }\n          if (m === 200) canMiss = 200;\n        }\n      } else {\n        // How many consecutive classes to attend\n        for (let a = 0; a <= 500; a++) {\n          if (((attended + a) / (total + a)) * 100 >= req) { needAttend = a; break; }\n          if (a === 500) needAttend = -1;\n        }\n      }\n      const sub = curPct >= req\n        ? `Current: ${attended}/${total}<br>Required: ${req}%<br>Can miss: ${canMiss} more classes<br>Status: Safe zone ✅`\n        : `Current: ${attended}/${total}<br>Required: ${req}%<br>Must attend next: ${needAttend} classes<br>Status: Shortage ❌`;\n      setRes('attend', curPct + '%', 'Your Attendance — ' + status, sub);\n      if (typeof bumpStreak==='function') bumpStreak();\n      if (typeof checkMilestone==='function') checkMilestone();\n    ",
+      "resultLabel": "Your Attendance"
+    },
+    {
+      "id": "date",
+      "slug": "date-difference-calculator",
+      "title": "Date Difference Calculator",
+      "category": "date-time",
+      "icon": "fa-calendar-days",
+      "description": "Calculate exact days, weeks, months between any two dates.",
+      "featured": false,
+      "popular": false,
+      "fields": [
+        {
+          "id": "dd1",
+          "label": "Start Date",
+          "type": "date",
+          "placeholder": ""
+        },
+        {
+          "id": "dd2",
+          "label": "End Date",
+          "type": "date",
+          "placeholder": ""
+        }
+      ],
+      "calc": "const d1=new Date(getId('dd1')),d2=new Date(getId('dd2'));if(isNaN(d1)||isNaN(d2)){setRes('date','—','Enter Dates','');return;}const diff=Math.abs(d2-d1);const days=Math.floor(diff/86400000);const weeks=Math.floor(days/7);let y=0,mo=0;const s=d1<d2?d1:d2,e=d1<d2?d2:d1;y=e.getFullYear()-s.getFullYear();mo=e.getMonth()-s.getMonth();if(mo<0){y--;mo+=12;}setRes('date',`${days} days`,`Date Difference`,`${y} years, ${mo} months<br>Total days: ${days.toLocaleString('en-IN')}<br>Total weeks: ${weeks}<br>Business days (approx): ${Math.round(days*5/7)}`);",
+      "resultLabel": "Date Difference"
+    },
+    {
+      "id": "tzc",
+      "slug": "time-zone-converter",
+      "title": "Time Zone Converter",
+      "category": "date-time",
+      "icon": "fa-clock",
+      "description": "Convert time between major world time zones instantly.",
+      "featured": false,
+      "popular": false,
+      "fields": [
+        {
+          "id": "tzTime",
+          "label": "Your Time",
+          "type": "datetime-local",
+          "placeholder": ""
+        },
+        {
+          "id": "tzFrom",
+          "label": "From Zone",
+          "type": "select",
+          "opts": [
+            {
+              "value": "UTC+0",
+              "label": "UTC (UTC+0)"
+            },
+            {
+              "value": "UTC+5:30",
+              "label": "IST (UTC+5:30)"
+            },
+            {
+              "value": "UTC-5",
+              "label": "EST (UTC-5)"
+            },
+            {
+              "value": "UTC-8",
+              "label": "PST (UTC-8)"
+            },
+            {
+              "value": "UTC-6",
+              "label": "CST (UTC-6)"
+            },
+            {
+              "value": "UTC+0",
+              "label": "GMT (UTC+0)"
+            },
+            {
+              "value": "UTC+1",
+              "label": "CET (UTC+1)"
+            },
+            {
+              "value": "UTC+9",
+              "label": "JST (UTC+9)"
+            },
+            {
+              "value": "UTC+10",
+              "label": "AEST (UTC+10)"
+            },
+            {
+              "value": "UTC+6",
+              "label": "BDT (UTC+6)"
+            },
+            {
+              "value": "UTC+5",
+              "label": "PKT (UTC+5)"
+            },
+            {
+              "value": "UTC-7",
+              "label": "MST (UTC-7)"
+            },
+            {
+              "value": "UTC+1",
+              "label": "BST (UTC+1)"
+            },
+            {
+              "value": "UTC+8",
+              "label": "SGT (UTC+8)"
+            },
+            {
+              "value": "UTC+8",
+              "label": "HKT (UTC+8)"
+            }
+          ]
+        },
+        {
+          "id": "tzTo",
+          "label": "To Zone",
+          "type": "select",
+          "opts": [
+            {
+              "value": "UTC+0",
+              "label": "UTC (UTC+0)"
+            },
+            {
+              "value": "UTC+5:30",
+              "label": "IST (UTC+5:30)"
+            },
+            {
+              "value": "UTC-5",
+              "label": "EST (UTC-5)"
+            },
+            {
+              "value": "UTC-8",
+              "label": "PST (UTC-8)"
+            },
+            {
+              "value": "UTC-6",
+              "label": "CST (UTC-6)"
+            },
+            {
+              "value": "UTC+0",
+              "label": "GMT (UTC+0)"
+            },
+            {
+              "value": "UTC+1",
+              "label": "CET (UTC+1)"
+            },
+            {
+              "value": "UTC+9",
+              "label": "JST (UTC+9)"
+            },
+            {
+              "value": "UTC+10",
+              "label": "AEST (UTC+10)"
+            },
+            {
+              "value": "UTC+6",
+              "label": "BDT (UTC+6)"
+            },
+            {
+              "value": "UTC+5",
+              "label": "PKT (UTC+5)"
+            },
+            {
+              "value": "UTC-7",
+              "label": "MST (UTC-7)"
+            },
+            {
+              "value": "UTC+1",
+              "label": "BST (UTC+1)"
+            },
+            {
+              "value": "UTC+8",
+              "label": "SGT (UTC+8)"
+            },
+            {
+              "value": "UTC+8",
+              "label": "HKT (UTC+8)"
+            }
+          ]
+        }
+      ],
+      "calc": "\n  try{\n    const t=(document.getElementById('tzTime')&&document.getElementById('tzTime').value);if(!t)return;\n    const from=(document.getElementById('tzFrom')&&document.getElementById('tzFrom').value||'UTC+0');const to=(document.getElementById('tzTo')&&document.getElementById('tzTo').value||'UTC+5:30');\n    const ms=new Date(t).getTime();const fromOff=(tzOffsets[from]||0)*3600000;const toOff=(tzOffsets[to]||0)*3600000;\n    const converted=new Date(ms-fromOff+toOff);const el=document.getElementById('res-tzc');\n    if(el)el.innerHTML=`<div class=\"rnum\">${converted.toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit'})}</div><div class=\"rlbl\">${to}</div><div class=\"rsub\">${converted.toDateString()}<br>From ${from} → To ${to}<br>Difference: ${((tzOffsets[to]||0)-(tzOffsets[from]||0)).toFixed(1)} hours</div>`;\n  }catch(e){}\n",
+      "resultLabel": "Converted Time"
+    },
+    {
+      "id": "worldclock",
+      "slug": "world-clock",
+      "title": "World Clock",
+      "category": "date-time",
+      "icon": "fa-earth-asia",
+      "description": "Check current time in major cities worldwide. Compare time zones instantly.",
+      "featured": false,
+      "popular": false,
+      "fields": [
+        {
+          "id": "wcCity",
+          "label": "City",
+          "type": "select",
+          "opts": [
+            "New York",
+            "London",
+            "Dubai",
+            "Kolkata",
+            "Dhaka",
+            "Singapore",
+            "Tokyo",
+            "Sydney",
+            "Los Angeles",
+            "Paris"
+          ]
+        }
+      ],
+      "calc": "\n  document.querySelectorAll('.wc-time').forEach(function(el){\n    var tz = el.getAttribute('data-tz');\n    if(!tz) return;\n    try {\n      var time = new Intl.DateTimeFormat('en-US',{hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false,timeZone:tz}).format(new Date());\n      el.textContent = time;\n    } catch(e) { el.textContent = '--:--'; }\n  });\n",
+      "resultLabel": "Current Time"
+    },
+    {
+      "id": "elec",
+      "slug": "electricity-bill-calculator",
+      "title": "Electricity Bill Calculator",
+      "category": "daily-utilities",
+      "icon": "fa-bolt",
+      "description": "Calculate monthly electricity bill based on units consumed and rate per unit.",
+      "featured": false,
+      "popular": false,
+      "fields": [
+        {
+          "id": "elU",
+          "label": "Units Consumed (kWh)",
+          "type": "number",
+          "placeholder": "e.g. 250"
+        },
+        {
+          "id": "elR",
+          "label": "Rate per Unit (₹)",
+          "type": "number",
+          "placeholder": "e.g. 6.5"
+        },
+        {
+          "id": "elF",
+          "label": "Fixed Charges (₹)",
+          "type": "number",
+          "placeholder": "e.g. 100"
+        }
+      ],
+      "calc": "const u=parseFloat(getId('elU'))||0,r=parseFloat(getId('elR'))||6.5,f=parseFloat(getId('elF'))||0;\n     if(u<0){showValError('elec','Units consumed cannot be negative');return;}\n     if(r<=0){showValError('elec','Rate per unit must be greater than 0');return;}\n     if(u>100000){showValError('elec','Units seem too high — please check');return;}\n     const bill=u*r+f;\n     if(!isValidNum(bill)){showValError('elec','Invalid values — please check inputs');return;}\n     setRes('elec',SYM()+fmt(bill,true),'Monthly Bill',`Units: ${u} kWh × ${SYM()}${r} = ${SYM()}${fmt(u*r,true)}<br>Fixed Charges: ${SYM()}${fmt(f,true)}<br>Daily avg: ${fmt(u/30)} kWh/day<br>Daily cost: ${SYM()}${fmt(bill/30)}/day`);",
+      "resultLabel": "Monthly Bill"
+    },
+    {
+      "id": "fuel",
+      "slug": "fuel-cost-calculator",
+      "title": "Fuel Cost Calculator",
+      "category": "daily-utilities",
+      "icon": "fa-gas-pump",
+      "description": "Calculate trip fuel cost and mileage efficiency.",
+      "featured": false,
+      "popular": false,
+      "fields": [
+        {
+          "id": "fuD",
+          "label": "Distance (km)",
+          "type": "number",
+          "placeholder": "e.g. 300"
+        },
+        {
+          "id": "fuM",
+          "label": "Mileage (km/L)",
+          "type": "number",
+          "placeholder": "e.g. 18"
+        },
+        {
+          "id": "fuP",
+          "label": "Fuel Price (₹/L)",
+          "type": "number",
+          "placeholder": "e.g. 105"
+        }
+      ],
+      "calc": "const d=parseFloat(getId('fuD'))||0,m=parseFloat(getId('fuM'))||1,p=parseFloat(getId('fuP'))||105;\n     if(d<=0){showValError('fuel','Distance must be greater than 0 km');return;}\n     if(m<=0){showValError('fuel','Mileage must be greater than 0 km/L');return;}\n     if(p<=0){showValError('fuel','Fuel price must be greater than 0');return;}\n     const liters=d/m;const cost=liters*p;\n     setRes('fuel',SYM()+fmt(cost,true),'Trip Cost',`Distance: ${d} km<br>Fuel needed: ${fmt(liters)} litres<br>Mileage: ${m} km/L<br>Cost/km: ${SYM()}${fmt(cost/d)}`);",
+      "resultLabel": "Trip Cost"
+    },
+    {
+      "id": "rng",
+      "slug": "random-number-generator",
+      "title": "Random Number Generator",
+      "category": "daily-utilities",
+      "icon": "fa-dice",
+      "description": "Generate random numbers, passwords, dice rolls, and more.",
+      "featured": false,
+      "popular": false,
+      "fields": [
+        {
+          "id": "rnA",
+          "label": "Minimum",
+          "type": "number",
+          "placeholder": "e.g. 1"
+        },
+        {
+          "id": "rnB",
+          "label": "Maximum",
+          "type": "number",
+          "placeholder": "e.g. 100"
+        },
+        {
+          "id": "rnC",
+          "label": "Count",
+          "type": "number",
+          "placeholder": "e.g. 1"
+        }
+      ],
+      "calc": "const a=parseInt(getId('rnA'))||1,b=parseInt(getId('rnB'))||100,c=Math.min(parseInt(getId('rnC'))||1,10);const nums=Array.from({length:c},()=>Math.floor(Math.random()*(b-a+1))+a);setRes('rng',nums.join(', '),`Random (${a}–${b})`,`Count: ${c} numbers<br>Min: ${a} | Max: ${b}<br>Sum: ${nums.reduce((x,y)=>x+y,0)}<br>Average: ${fmt(nums.reduce((x,y)=>x+y,0)/c)}`);",
+      "resultLabel": "Random Numbers"
+    },
+    {
+      "id": "pwd",
+      "slug": "password-generator",
+      "title": "Password Generator",
+      "category": "daily-utilities",
+      "icon": "fa-key",
+      "description": "Generate strong, secure passwords with custom length and character options.",
+      "featured": false,
+      "popular": false,
+      "fields": [
+        {
+          "id": "pwdLen",
+          "label": "Password Length",
+          "type": "range",
+          "min": 8,
+          "max": 64,
+          "default": 16
+        },
+        {
+          "id": "pwUC",
+          "label": "Uppercase (A-Z)",
+          "type": "checkbox",
+          "checked": true
+        },
+        {
+          "id": "pwLC",
+          "label": "Lowercase (a-z)",
+          "type": "checkbox",
+          "checked": true
+        },
+        {
+          "id": "pwNM",
+          "label": "Numbers (0-9)",
+          "type": "checkbox",
+          "checked": true
+        },
+        {
+          "id": "pwSP",
+          "label": "Symbols (!@#$)",
+          "type": "checkbox",
+          "checked": true
+        }
+      ],
+      "calc": "\n  const len=parseInt((document.getElementById('pwdLen')&&document.getElementById('pwdLen').value))||16;\n  const uc=(document.getElementById('pwUC')&&document.getElementById('pwUC').checked);const lc=(document.getElementById('pwLC')&&document.getElementById('pwLC').checked);\n  const nm=(document.getElementById('pwNM')&&document.getElementById('pwNM').checked);const sp=(document.getElementById('pwSP')&&document.getElementById('pwSP').checked);\n  let chars='';\n  if(uc)chars+='ABCDEFGHIJKLMNOPQRSTUVWXYZ';if(lc)chars+='abcdefghijklmnopqrstuvwxyz';\n  if(nm)chars+='0123456789';if(sp)chars+='!@#$%^&*()_+-=[]{}|;:,.<>?';\n  if(!chars)chars='abcdefghijklmnopqrstuvwxyz';\n  let pwd='';for(let i=0;i<len;i++)pwd+=chars[Math.floor(Math.random()*chars.length)];\n  const out=document.getElementById('pwdOut');if(out)out.textContent=pwd;\n  const str=document.getElementById('pwStr');if(str){\n    const strength=(!uc||!lc?0:1)+(!nm?0:1)+(!sp?0:1)+(len>=16?1:0);\n    const colors=['#ef4444','#f97316','#f59e0b','#22c55e'];const widths=['25%','50%','75%','100%'];\n    str.style.background=colors[strength-1]||colors[0];str.style.width=widths[strength-1]||'25%';\n  }\n",
+      "resultLabel": "Generated Password"
+    },
+    {
+      "id": "conv",
+      "slug": "unit-currency-converter",
+      "title": "Unit & Currency Converter",
+      "category": "daily-utilities",
+      "icon": "fa-arrows-rotate",
+      "description": "Convert length, weight, temperature, area, volume, and currency.",
+      "featured": false,
+      "popular": false,
+      "fields": [
+        {
+          "id": "tpTab",
+          "label": "Convert",
+          "type": "select",
+          "opts": [
+            "Currency",
+            "Length",
+            "Weight",
+            "Temperature"
+          ]
+        },
+        {
+          "id": "tp1",
+          "label": "Value",
+          "type": "number",
+          "placeholder": "e.g. 1"
+        },
+        {
+          "id": "tp2",
+          "label": "From",
+          "type": "select",
+          "opts": [
+            "USD",
+            "BDT",
+            "INR",
+            "EUR",
+            "GBP",
+            "JPY",
+            "AED",
+            "SAR",
+            "CAD",
+            "AUD",
+            "CNY",
+            "SGD"
+          ]
+        },
+        {
+          "id": "tp3",
+          "label": "To",
+          "type": "select",
+          "opts": [
+            "USD",
+            "BDT",
+            "INR",
+            "EUR",
+            "GBP",
+            "JPY",
+            "AED",
+            "SAR",
+            "CAD",
+            "AUD",
+            "CNY",
+            "SGD"
+          ]
+        }
+      ],
+      "calc": "\n  try{\n    const v=parseFloat(document.getElementById('tp1').value)||0,f=document.getElementById('tp2').value,t=document.getElementById('tp3').value,c=cvCfg[tpM];\n    let res;\n    if(tpM==='tmp'){if(f==='°C'&&t==='°F')res=v*9/5+32;else if(f==='°F'&&t==='°C')res=(v-32)*5/9;else if(f==='°C'&&t==='K')res=v+273.15;else if(f==='K'&&t==='°C')res=v-273.15;else if(f==='°F'&&t==='K')res=(v-32)*5/9+273.15;else if(f==='K'&&t==='°F')res=(v-273.15)*9/5+32;else res=v;}\n    else res=v/c.r[f]*c.r[t];\n    document.getElementById('tpO').textContent=fmt(res)+' '+t;\n  }catch(e){}\n",
+      "resultLabel": "Converted Value"
+    },
+    {
+      "id": "graph",
+      "slug": "graph-plotter",
+      "title": "Graph Plotter",
+      "category": "daily-utilities",
+      "icon": "fa-chart-area",
+      "description": "Plot any mathematical function — sin(x), x², polynomials and more.",
+      "featured": false,
+      "popular": false,
+      "fields": [
+        {
+          "id": "graphFn",
+          "label": "Function f(x)",
+          "type": "text",
+          "placeholder": "e.g. x*x or Math.sin(x)"
+        }
+      ],
+      "calc": "\n  const canvas=document.getElementById('graphCanvas');if(!canvas)return;\n  const fn=(document.getElementById('graphFn')&&document.getElementById('graphFn').value||'x*x');\n  const info=document.getElementById('graphInfo');\n  const ctx=canvas.getContext('2d');\n  const W=canvas.offsetWidth||300;const H=260;\n  canvas.width=W;canvas.height=H;\n  const cx=W/2,cy=H/2,scale=W/22;\n  ctx.clearRect(0,0,W,H);\n  // background\n  ctx.fillStyle='#000b1a';ctx.fillRect(0,0,W,H);\n  // grid\n  ctx.strokeStyle='rgba(37,99,235,0.12)';ctx.lineWidth=1;\n  for(let x=0;x<=W;x+=scale){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke();}\n  for(let y=0;y<=H;y+=scale){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke();}\n  // axes\n  ctx.strokeStyle='rgba(96,165,250,0.5)';ctx.lineWidth=1.5;\n  ctx.beginPath();ctx.moveTo(0,cy);ctx.lineTo(W,cy);ctx.stroke();\n  ctx.beginPath();ctx.moveTo(cx,0);ctx.lineTo(cx,H);ctx.stroke();\n  // labels\n  ctx.fillStyle='rgba(122,138,171,0.7)';ctx.font='9px JetBrains Mono,monospace';\n  for(let i=-10;i<=10;i+=2){\n    if(i!==0){\n      ctx.fillText(i,cx+i*scale-3,cy+11);\n      ctx.fillText(-i,cx+2,cy-i*scale+3);\n    }\n  }\n  // plot\n  let safeF;\n  try{safeF=new Function('x','return '+fn);}catch(e){if(info)info.textContent='⚠️ Invalid function syntax';return;}\n  ctx.strokeStyle='#60a5fa';ctx.lineWidth=2.5;ctx.beginPath();\n  let first=true;let pointsDrawn=0;\n  for(let px=0;px<W;px++){\n    const x=(px-cx)/scale;\n    let y;\n    try{y=safeF(x);}catch(e){first=true;continue;}\n    if(!isFinite(y)||isNaN(y)){first=true;continue;}\n    const py=cy-y*scale;\n    if(py<-H||py>2*H){first=true;continue;}\n    if(first){ctx.moveTo(px,py);first=false;}else{ctx.lineTo(px,py);}\n    pointsDrawn++;\n  }\n  ctx.stroke();\n  if(info)info.textContent=`f(x) = ${fn} | ${pointsDrawn} points plotted`;\n",
+      "resultLabel": "Function Plot"
+    },
+    {
+      "id": "tip",
+      "slug": "tip-calculator",
+      "title": "Tip Calculator",
+      "category": "daily-utilities",
+      "icon": "fa-hand-holding-dollar",
+      "description": "Calculate tip amount, total bill, and split between friends.",
+      "featured": false,
+      "popular": false,
+      "fields": [
+        {
+          "id": "tipB",
+          "label": "Bill Amount (₹)",
+          "type": "number",
+          "placeholder": "e.g. 1200"
+        },
+        {
+          "id": "tipP",
+          "label": "Tip Percentage (%)",
+          "type": "number",
+          "placeholder": "e.g. 15"
+        },
+        {
+          "id": "tipS",
+          "label": "Split Between (people)",
+          "type": "number",
+          "placeholder": "e.g. 4"
+        }
+      ],
+      "calc": "const b=parseFloat(getId('tipB'))||0,p=parseFloat(getId('tipP'))||15,s=parseInt(getId('tipS'))||1;const tip=b*p/100;const total=b+tip;setRes('tip',SYM()+fmt(tip,true),'Tip Amount',`Bill: ${SYM()}${fmt(b,true)}<br>Tip (${p}%): ${SYM()}${fmt(tip,true)}<br>Total: ${SYM()}${fmt(total,true)}<br>Per person: ${SYM()}${fmt(total/s,true)} (split by ${s})`);",
+      "resultLabel": "Tip Amount"
+    },
+    {
+      "id": "qr",
+      "slug": "qr-code-generator",
+      "title": "QR Code Generator",
+      "category": "daily-utilities",
+      "icon": "fa-qrcode",
+      "description": "Generate QR codes instantly for any URL, text, UPI ID, or contact.",
+      "featured": false,
+      "popular": false,
+      "fields": [
+        {
+          "id": "qr22Template",
+          "label": "Quick Template",
+          "type": "select",
+          "opts": [
+            "Website",
+            "UPI Pay",
+            "WiFi",
+            "Contact",
+            "Email",
+            "Text",
+            "Location",
+            "App Download"
+          ]
+        },
+        {
+          "id": "qr22Input",
+          "label": "Website URL",
+          "type": "text",
+          "placeholder": "https://example.com"
+        },
+        {
+          "id": "qr22Color",
+          "label": "QR Color",
+          "type": "color",
+          "default": "#1a1a2e"
+        },
+        {
+          "id": "qr22Bg",
+          "label": "Background",
+          "type": "color",
+          "default": "#ffffff"
+        },
+        {
+          "id": "qr22Size",
+          "label": "Size (px)",
+          "type": "select",
+          "opts": [
+            "200",
+            "300",
+            "400",
+            "500"
+          ],
+          "default": "300"
+        },
+        {
+          "id": "qr22LogoFile",
+          "label": "Logo Inside QR (optional)",
+          "type": "file"
+        }
+      ],
+      "calc": "\n  const text=qr22BuildText();\n  if(!text){toast('⬆ Enter content first');return;}\n  const color=document.getElementById('qr22Color')?document.getElementById('qr22Color').value.replace('#',''):'000000';\n  const bg=document.getElementById('qr22Bg')?document.getElementById('qr22Bg').value.replace('#',''):'ffffff';\n  const size=parseInt(document.getElementById('qr22Size')?document.getElementById('qr22Size').value:300)||300;\n\n  /* Build QR URL — using api.qrserver.com for color support */\n  const apiURL=`https://api.qrserver.com/v1/create-qr-code/?size=${size}x${size}&data=${encodeURIComponent(text)}&color=${color}&bgcolor=${bg}&margin=10&format=png`;\n  qr22_lastURL=apiURL;\n\n  const result=document.getElementById('qr22Result');\n  const img=document.getElementById('qr22Img');\n  const wrap=document.getElementById('qr22ImgWrap');\n  const info=document.getElementById('qr22Info');\n  const urlDisp=document.getElementById('qr22UrlDisplay');\n\n  if(!result||!img)return;\n\n  img.src=apiURL;\n  img.width=Math.min(size,280);img.height=Math.min(size,280);\n  img.onload=function(){\n    /* If logo selected, draw on canvas */\n    if(qr22_logoData){qr22OverlayLogo(img,size);}\n    result.classList.add('visible');\n  };\n  img.onerror=function(){\n    /* Fallback to Google Charts */\n    const fallback=`https://chart.googleapis.com/chart?cht=qr&chs=${size}x${size}&chl=${encodeURIComponent(text)}&choe=UTF-8`;\n    img.src=fallback;qr22_lastURL=fallback;\n    result.classList.add('visible');\n  };\n\n  /* Info chips */\n  const tpl=window._qr22tpl||'url';\n  const tplEmoji={url:'🌐',upi:'💳',wifi:'📶',phone:'📞',email:'✉️',text:'📝',location:'📍',apk:'📦'};\n  if(info)info.innerHTML=`<span class=\"qr22-info-chip\">${tplEmoji[tpl]||'▦'} ${tpl.toUpperCase()}</span><span class=\"qr22-info-chip\">📐 ${size}×${size}px</span><span class=\"qr22-info-chip\">🎨 Custom Color</span>`;\n  if(urlDisp)urlDisp.textContent=text.length>80?text.slice(0,77)+'…':text;\n\n  /* Save to history */\n  qr22AddHistory(text,tpl,apiURL);\n  toast('✅ QR Code ready!');\n  v21Haptic&&v21Haptic(8);\n",
+      "resultLabel": "QR Code"
+    },
+    {
+      "id": "qrscan",
+      "slug": "qr-code-scanner",
+      "title": "QR Code Scanner",
+      "category": "daily-utilities",
+      "icon": "fa-camera",
+      "description": "Scan QR codes directly from your camera. Decode URLs, text, contacts and more instantly.",
+      "featured": false,
+      "popular": false,
+      "fields": [
+        {
+          "id": "qrFileInp",
+          "label": "Or upload QR image",
+          "type": "file"
+        }
+      ],
+      "calc": "\n  if(!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia){\n    if(typeof toast==='function') toast('❌ Camera not supported on this device');\n    return;\n  }\n  var video = document.getElementById('qrVideo');\n  var frame = document.getElementById('qrFrame');\n  if(!video) return;\n  navigator.mediaDevices.getUserMedia({video:{facingMode:'environment'}}).then(function(stream){\n    _qrStream = stream;\n    video.srcObject = stream;\n    video.style.display='block';\n    if(frame) frame.style.display='none';\n    video.play();\n    if(typeof toast==='function') toast('📷 Camera started — point at QR code');\n    // Add scan line animation\n    var scanLine = document.createElement('div');\n    scanLine.className='v23-qr-scan-line';\n    scanLine.id='qrScanLine';\n    if(frame){ frame.style.display='block'; frame.style.position='relative'; frame.appendChild(scanLine); }\n    // Try BarcodeDetector API\n    if(window.BarcodeDetector){\n      var detector = new BarcodeDetector({formats:['qr_code']});\n      _qrInterval = setInterval(function(){\n        detector.detect(video).then(function(codes){\n          if(codes.length>0){ showQRResult(codes[0].rawValue); stopQRScan(); }\n        }).catch(function(){});\n      }, 500);\n    } else {\n      if(typeof toast==='function') toast('ℹ️ BarcodeDetector not supported. Use file upload instead.');\n    }\n  }).catch(function(err){\n    if(typeof toast==='function') toast('❌ Camera access denied: '+err.message);\n  });\n",
+      "resultLabel": "QR Code Detected"
+    },
+    {
+      "id": "speed",
+      "slug": "speed-distance-time-calculator",
+      "title": "Speed / Distance / Time",
+      "category": "daily-utilities",
+      "icon": "fa-gauge-high",
+      "description": "Solve any of the three: Speed = Distance ÷ Time. Leave one field blank to calculate it.",
+      "featured": false,
+      "popular": false,
+      "fields": [
+        {
+          "id": "spSpeed",
+          "label": "Speed (km/h)",
+          "type": "number",
+          "placeholder": "Leave blank to calculate"
+        },
+        {
+          "id": "spDist",
+          "label": "Distance (km)",
+          "type": "number",
+          "placeholder": "Leave blank to calculate"
+        },
+        {
+          "id": "spTime",
+          "label": "Time (hours)",
+          "type": "number",
+          "placeholder": "Leave blank to calculate"
+        },
+        {
+          "id": "spUnit",
+          "label": "Unit System",
+          "type": "select",
+          "opts": [
+            {
+              "value": "km",
+              "label": "Metric (km, km/h)"
+            },
+            {
+              "value": "mi",
+              "label": "Imperial (miles, mph)"
+            }
+          ]
+        },
+        {
+          "id": "paceRace",
+          "label": "Race Distance",
+          "type": "select",
+          "opts": [
+            {
+              "value": "5",
+              "label": "5 km"
+            },
+            {
+              "value": "10",
+              "label": "10 km"
+            },
+            {
+              "value": "21.0975",
+              "label": "Half Marathon (21.1 km)"
+            },
+            {
+              "value": "42.195",
+              "label": "Marathon (42.2 km)"
+            },
+            {
+              "value": "custom",
+              "label": "Custom (km)"
+            }
+          ]
+        },
+        {
+          "id": "paceCustomKm",
+          "label": "Custom Distance (km)",
+          "type": "number",
+          "placeholder": "e.g. 15"
+        },
+        {
+          "id": "paceTime",
+          "label": "Target Finish Time (hh:mm:ss)",
+          "type": "text",
+          "placeholder": "e.g. 00:25:00"
+        }
+      ],
+      "calc": "\n  const el=document.getElementById('res-speed');\n  if(!el)return;\n\n  // ── PACE MODE ──\n  if(_speedMode==='pace'){\n    const raceEl=document.getElementById('paceRace');\n    const timeEl=document.getElementById('paceTime');\n    if(!raceEl||!timeEl){return;}\n    let distKm=raceEl.value==='custom'?parseFloat(document.getElementById('paceCustomKm')&&document.getElementById('paceCustomKm').value)||0:parseFloat(raceEl.value);\n    if(!distKm||distKm<=0){el.innerHTML='<div class=\"tres-empty\" style=\"color:var(--re);\"><i class=\"fa-solid fa-triangle-exclamation\"></i>Enter a valid distance</div>';return;}\n    const tv=timeEl.value.trim();\n    const parts=tv.split(':').map(Number);\n    let totalSec=0;\n    if(parts.length===3)totalSec=parts[0]*3600+parts[1]*60+parts[2];\n    else if(parts.length===2)totalSec=parts[0]*60+parts[1];\n    else totalSec=parseFloat(tv)*60||0;\n    if(!totalSec||totalSec<=0){el.innerHTML='<div class=\"tres-empty\" style=\"color:var(--re);\"><i class=\"fa-solid fa-triangle-exclamation\"></i>Enter time as hh:mm:ss</div>';return;}\n    const secPerKm=totalSec/distKm;\n    const paceMin=Math.floor(secPerKm/60);const paceSec=Math.round(secPerKm%60);\n    const paceStr=`${paceMin}:${String(paceSec).padStart(2,'0')} /km`;\n    const speedKmh=distKm/(totalSec/3600);\n    const distMi=distKm*0.621371;\n    const secPerMi=totalSec/distMi;\n    const paceMinMi=Math.floor(secPerMi/60);const paceSecMi=Math.round(secPerMi%60);\n    const paceStrMi=`${paceMinMi}:${String(paceSecMi).padStart(2,'0')} /mi`;\n    // Effort zone\n    const zone=secPerKm<240?'🔴 Race Pace':secPerKm<270?'🟠 Threshold':secPerKm<330?'🟡 Tempo':secPerKm<390?'🟢 Easy':'🔵 Recovery';\n    el.innerHTML=`<div class=\"v7res\">\n      <div class=\"v7res-header\">\n        <div class=\"v7res-main\">\n          <div class=\"v7res-lbl\">Running Pace</div>\n          <div class=\"v7res-num\" style=\"color:var(--or);\">${paceStr}</div>\n        </div>\n        <div class=\"v7res-ico\"><i class=\"fa-solid fa-person-running\"></i></div>\n      </div>\n      <div class=\"v7res-chips\">\n        <div class=\"v7res-chip\"><span class=\"v7res-chip-v\">${paceStrMi}</span><span class=\"v7res-chip-l\">Pace (per mile)</span></div>\n        <div class=\"v7res-chip\"><span class=\"v7res-chip-v\">${speedKmh.toFixed(2)} km/h</span><span class=\"v7res-chip-l\">Avg Speed</span></div>\n        <div class=\"v7res-chip\" style=\"grid-column:span 2;\"><span class=\"v7res-chip-v\">${zone}</span><span class=\"v7res-chip-l\">Effort Zone</span></div>\n      </div>\n    </div>`;\n    trackTool('speed');bumpStreak();checkMilestone();\n    return;\n  }\n\n  // ── SDT MODE ──\n  const s=document.getElementById('spSpeed');\n  const d=document.getElementById('spDist');\n  const ti=document.getElementById('spTime');\n  const unit=(document.getElementById('spUnit')&&document.getElementById('spUnit').value)||'km';\n  const u=unit==='km'?'km':'mi';\n  const sv=s&&s.value!==''?parseFloat(s.value):null;\n  const dv=d&&d.value!==''?parseFloat(d.value):null;\n  const tv=ti&&ti.value!==''?parseFloat(ti.value):null;\n  let result,label,sub;\n  if(sv===null&&dv!==null&&tv!==null){\n    result=dv/tv;label=`Speed = ${result.toFixed(2)} ${u}/h`;\n    sub=`Distance: ${dv} ${u} ÷ Time: ${tv} hrs<br>= ${(result*1000/3600).toFixed(2)} m/s`;\n  } else if(dv===null&&sv!==null&&tv!==null){\n    result=sv*tv;label=`Distance = ${result.toFixed(2)} ${u}`;\n    sub=`Speed: ${sv} ${u}/h × Time: ${tv} hrs`;\n  } else if(tv===null&&sv!==null&&dv!==null){\n    result=dv/sv;const hrs=Math.floor(result);const mins=Math.round((result-hrs)*60);\n    label=`Time = ${hrs}h ${mins}min`;\n    sub=`Distance: ${dv} ${u} ÷ Speed: ${sv} ${u}/h<br>= ${result.toFixed(3)} hours`;\n  } else {\n    el.innerHTML='<div class=\"tres-empty\"><i class=\"fa-solid fa-triangle-exclamation\"></i>Leave exactly ONE field blank</div>';return;\n  }\n  el.innerHTML=`<div class=\"rnum\">${label}</div><div class=\"rlbl\">Calculated</div><div class=\"rsub\">${sub}</div>`;\n  trackTool('speed');bumpStreak();checkMilestone();\n",
+      "resultLabel": "Calculated Result"
+    },
+    {
+      "id": "unitprice",
+      "slug": "unit-price-calculator",
+      "title": "Unit Price Comparator",
+      "category": "daily-utilities",
+      "icon": "fa-scale-balanced",
+      "description": "Compare price-per-unit of two products to find the better deal. Great for grocery and shopping decisions.",
+      "featured": false,
+      "popular": false,
+      "fields": [
+        {
+          "id": "upPrice1",
+          "label": "Product A — Price (₹)",
+          "type": "number",
+          "placeholder": "e.g. 120"
+        },
+        {
+          "id": "upQty1",
+          "label": "Product A — Quantity",
+          "type": "number",
+          "placeholder": "e.g. 500"
+        },
+        {
+          "id": "upUnit1",
+          "label": "Product A — Unit",
+          "type": "text",
+          "placeholder": "g / ml / pcs"
+        },
+        {
+          "id": "upPrice2",
+          "label": "Product B — Price (₹)",
+          "type": "number",
+          "placeholder": "e.g. 200"
+        },
+        {
+          "id": "upQty2",
+          "label": "Product B — Quantity",
+          "type": "number",
+          "placeholder": "e.g. 1000"
+        },
+        {
+          "id": "upUnit2",
+          "label": "Product B — Unit",
+          "type": "text",
+          "placeholder": "g / ml / pcs"
+        }
+      ],
+      "calc": "\n  var p1 = parseFloat(document.getElementById('upPrice1').value);\n  var q1 = parseFloat(document.getElementById('upQty1').value);\n  var p2 = parseFloat(document.getElementById('upPrice2').value);\n  var q2 = parseFloat(document.getElementById('upQty2').value);\n  if(!p1||!q1||!p2||!q2){ v30ShowResult('unitpriceRes','Fill all price and quantity fields.','error'); return; }\n  var u1 = p1/q1, u2 = p2/q2;\n  var winner = u1 < u2 ? 'A' : u2 < u1 ? 'B' : 'Equal';\n  var saving = Math.abs(u1-u2);\n  var sym = (window.SC_GL && window.SC_GL.L) ? window.SC_GL.L.sym : '₹';\n  var u1El = document.getElementById('upUnit1');\n  var unit = u1El ? (u1El.value||'unit') : 'unit';\n  v30ShowResult('unitpriceRes',\n    '<div class=\"v30-res-main\"><span class=\"v30-rlbl\">Better Deal</span><span class=\"v30-rnum\" style=\"color:var(--gr)\">Product '+winner+' 🏆</span></div>'+\n    '<div class=\"v30-res-row\"><span>Product A price/'+unit+'</span><span '+(u1<u2?'style=\"color:var(--gr)\"':'')+'\">'+sym+' '+u1.toFixed(3)+'</span></div>'+\n    '<div class=\"v30-res-row\"><span>Product B price/'+unit+'</span><span '+(u2<u1?'style=\"color:var(--gr)\"':'')+'\">'+sym+' '+u2.toFixed(3)+'</span></div>'+\n    (winner!=='Equal'?'<div class=\"v30-res-row\"><span>You save</span><span style=\"color:var(--gr)\">'+sym+' '+saving.toFixed(3)+' per '+unit+'</span></div>':'')\n  );\n",
+      "resultLabel": "Better Deal"
+    },
+    {
+      "id": "stats",
+      "slug": "statistics-calculator",
+      "title": "Statistics Calculator",
+      "category": "daily-utilities",
+      "icon": "fa-chart-simple",
+      "description": "Calculate mean, median, mode, range, variance and standard deviation for any set of numbers.",
+      "featured": false,
+      "popular": false,
+      "fields": [
+        {
+          "id": "statsInp",
+          "label": "Numbers (comma-separated)",
+          "type": "text",
+          "placeholder": "e.g. 4, 8, 15, 16, 23, 42"
+        }
+      ],
+      "calc": "\n    var raw = (document.getElementById('statsInp')&&document.getElementById('statsInp').value)||'';\n    var nums = raw.split(/[,;\\s]+/).map(parseFloat).filter(function(n){return!isNaN(n);});\n    if(nums.length < 2){setRes('stats','—','Enter at least 2 numbers','');return;}\n    nums.sort(function(a,b){return a-b;});\n    var n=nums.length;\n    var sum=nums.reduce(function(a,b){return a+b;},0);\n    var mean=sum/n;\n    var median=n%2===0?(nums[n/2-1]+nums[n/2])/2:nums[Math.floor(n/2)];\n    var variance=nums.reduce(function(a,b){return a+Math.pow(b-mean,2);},0)/n;\n    var stddev=Math.sqrt(variance);\n    var range=nums[n-1]-nums[0];\n    // Mode\n    var freq={};nums.forEach(function(x){freq[x]=(freq[x]||0)+1;});\n    var maxF=Math.max.apply(null,Object.values(freq));\n    var modes=Object.keys(freq).filter(function(k){return freq[k]===maxF;});\n    var mode=maxF>1?modes.join(', '):'None';\n    var res=document.getElementById('res-stats');\n    if(res)res.innerHTML='<div class=\"salary-breakdown\">'+\n        '<div class=\"sb-item\"><div class=\"sb-val\">'+mean.toFixed(3)+'</div><div class=\"sb-lbl\">Mean (Avg)</div></div>'+\n        '<div class=\"sb-item\"><div class=\"sb-val\">'+median+'</div><div class=\"sb-lbl\">Median</div></div>'+\n        '<div class=\"sb-item\"><div class=\"sb-val\">'+mode+'</div><div class=\"sb-lbl\">Mode</div></div>'+\n        '<div class=\"sb-item\"><div class=\"sb-val\">'+range+'</div><div class=\"sb-lbl\">Range</div></div>'+\n        '<div class=\"sb-item\"><div class=\"sb-val\">'+variance.toFixed(3)+'</div><div class=\"sb-lbl\">Variance</div></div>'+\n        '<div class=\"sb-item\"><div class=\"sb-val\">'+stddev.toFixed(3)+'</div><div class=\"sb-lbl\">Std Dev (σ)</div></div>'+\n        '</div><div style=\"padding:8px 0 0;font-size:11px;color:var(--tx3);\">Count: '+n+' | Sum: '+sum+' | Min: '+nums[0]+' | Max: '+nums[n-1]+'</div>';\n",
+      "resultLabel": "Mean (Avg)"
+    },
+    {
+      "id": "split19",
+      "slug": "split-bill-calculator",
+      "title": "Split Bill",
+      "category": "daily-utilities",
+      "icon": "fa-utensils",
+      "description": "Split restaurant bills equally with tip calculation.",
+      "featured": false,
+      "popular": false,
+      "fields": [
+        {
+          "id": "v19SplitTotal",
+          "label": "Total Bill (₹)",
+          "type": "number",
+          "placeholder": "e.g. 1200"
+        },
+        {
+          "id": "v19SplitPeople",
+          "label": "Number of People",
+          "type": "number",
+          "placeholder": "e.g. 4"
+        },
+        {
+          "id": "v19SplitTip",
+          "label": "Tip (%)",
+          "type": "number",
+          "placeholder": "e.g. 10",
+          "default": 10
+        }
+      ],
+      "calc": "\n  const total = parseFloat(document.getElementById('v19SplitTotal')?.value) || 0;\n  const people = parseInt(document.getElementById('v19SplitPeople')?.value) || 0;\n  const tip = parseFloat(document.getElementById('v19SplitTip')?.value) || 0;\n  const res = document.getElementById('v19SplitRes');\n  if (!res) return;\n  if (!total || !people || people <= 0) {\n    res.innerHTML = '<div style=\"color:var(--tx3);font-size:12px;text-align:center;padding:12px;\">Fill all fields</div>'; return;\n  }\n  const tipAmt = total * tip / 100;\n  const grandTotal = total + tipAmt;\n  const perPerson = grandTotal / people;\n  const tipPerPerson = tipAmt / people;\n  res.innerHTML = `<div class=\"v7res\" style=\"border:1px solid rgba(16,185,129,.2);\">\n    <div class=\"v7res-header\" style=\"background:linear-gradient(135deg,rgba(16,185,129,.12),rgba(16,185,129,.04));\">\n      <div class=\"v7res-main\">\n        <div class=\"v7res-lbl\">EACH PERSON PAYS</div>\n        <div class=\"v7res-num\" style=\"color:#10b981;\">₹${perPerson.toFixed(2)}</div>\n      </div>\n      <div class=\"v7res-ico\" style=\"background:rgba(16,185,129,.12);\">🍽️</div>\n    </div>\n    <div class=\"v7res-body\"><div class=\"v7res-grid\">\n      <div class=\"v7res-chip\"><span class=\"v7res-chip-v\">₹${total.toFixed(2)}</span><span class=\"v7res-chip-l\">Bill Amount</span></div>\n      <div class=\"v7res-chip\"><span class=\"v7res-chip-v\">₹${tipAmt.toFixed(2)}</span><span class=\"v7res-chip-l\">Tip (${tip}%)</span></div>\n      <div class=\"v7res-chip\"><span class=\"v7res-chip-v\">₹${grandTotal.toFixed(2)}</span><span class=\"v7res-chip-l\">Grand Total</span></div>\n      <div class=\"v7res-chip\"><span class=\"v7res-chip-v\">₹${tipPerPerson.toFixed(2)}</span><span class=\"v7res-chip-l\">Tip / Person</span></div>\n    </div></div>\n  </div>`;\n",
+      "resultLabel": "Each Person Pays"
+    },
+    {
+      "id": "area",
+      "slug": "area-calculator",
+      "title": "Area Calculator",
+      "category": "daily-utilities",
+      "icon": "fa-draw-polygon",
+      "description": "Calculate area of circle, square, rectangle, triangle, and more shapes.",
+      "featured": false,
+      "popular": false,
+      "fields": [
+        {
+          "id": "arS",
+          "label": "Shape",
+          "type": "select",
+          "placeholder": "",
+          "opts": [
+            "Square",
+            "Rectangle",
+            "Triangle",
+            "Circle",
+            "Trapezoid"
+          ]
+        },
+        {
+          "id": "arA",
+          "label": "Side / Length / Radius (a)",
+          "type": "number",
+          "placeholder": "e.g. 10"
+        },
+        {
+          "id": "arB",
+          "label": "Width / Height / Top-Width (b)",
+          "type": "number",
+          "placeholder": "e.g. 5"
+        }
+      ],
+      "calc": "const shape=getId('arS'),a=parseFloat(getId('arA'))||0,b=parseFloat(getId('arB'))||0;let area=0,perim=0,note='';\n     if(a<=0){showValError('area','First dimension must be greater than 0');return;}\n     if(shape!=='Square'&&shape!=='Circle'&&b<=0){showValError('area','Second dimension must be greater than 0');return;}\n     if(shape==='Square'){area=a*a;perim=4*a;note=`Side = ${a}`;}\n     else if(shape==='Rectangle'){area=a*b;perim=2*(a+b);note=`L=${a}, W=${b}`;}\n     else if(shape==='Triangle'){area=.5*a*b;perim=a+b+Math.sqrt(a*a+b*b);note=`Base=${a}, Height=${b}`;}\n     else if(shape==='Circle'){area=Math.PI*a*a;perim=2*Math.PI*a;note=`Radius=${a}`;}\n     else if(shape==='Trapezoid'){area=.5*(a+b)*b;note=`Parallel sides: a=${a}, top-width=${b}, height=${b} (use b as height)`;}\n     setRes('area',fmt(area),`Area (${shape})`,`Perimeter/Circumference: ${fmt(perim)}<br>${note}<br>Area = ${fmt(area)} sq units`);",
+      "resultLabel": "Area"
+    },
+    {
+      "id": "numera",
+      "slug": "numerology-calculator",
+      "title": "Numerology / Life Path Calculator",
+      "category": "daily-utilities",
+      "icon": "fa-infinity",
+      "description": "Calculate your Numerology Life Path Number and Name Number from your date of birth and full name.",
+      "featured": false,
+      "popular": false,
+      "fields": [
+        {
+          "id": "numDob",
+          "label": "Date of Birth",
+          "type": "date",
+          "placeholder": ""
+        },
+        {
+          "id": "numName",
+          "label": "Full Name",
+          "type": "text",
+          "placeholder": "e.g. Rahul Sharma"
+        }
+      ],
+      "calc": "\n  var dob = document.getElementById('numDob').value;\n  var name = (document.getElementById('numName').value||'').toUpperCase().replace(/[^A-Z]/g,'');\n  if(!dob && !name){ v30ShowResult('numeraRes','Enter date of birth or name.','error'); return; }\n  var lifeNum = '', nameNum = '';\n  var lifeDesc = '', nameDesc = '';\n  var meanings = {\n    1:'Leader, Independent, Ambitious',2:'Diplomat, Sensitive, Cooperative',\n    3:'Creative, Expressive, Optimistic',4:'Practical, Reliable, Hard-working',\n    5:'Adventurous, Free-spirited, Versatile',6:'Nurturing, Responsible, Harmonious',\n    7:'Analytical, Introspective, Spiritual',8:'Ambitious, Business-minded, Authoritative',\n    9:'Humanitarian, Compassionate, Wise',11:'Master number — Intuitive, Inspirational',\n    22:'Master number — Visionary, Powerful builder'\n  };\n  function reduce(n){ while(n>9&&n!==11&&n!==22){var s=0;String(n).split('').forEach(function(d){s+=parseInt(d);});n=s;} return n; }\n  if(dob){\n    var digits = dob.replace(/\\D/g,'');\n    var sum = digits.split('').reduce(function(a,c){return a+parseInt(c);},0);\n    lifeNum = reduce(sum);\n    lifeDesc = meanings[lifeNum]||'Unique path';\n  }\n  if(name){\n    var val = {A:1,B:2,C:3,D:4,E:5,F:8,G:3,H:5,I:1,J:1,K:2,L:3,M:4,N:5,O:7,P:8,Q:1,R:2,S:3,T:4,U:6,V:6,W:6,X:5,Y:1,Z:7};\n    var nSum = name.split('').reduce(function(a,c){return a+(val[c]||0);},0);\n    nameNum = reduce(nSum);\n    nameDesc = meanings[nameNum]||'';\n  }\n  v30ShowResult('numeraRes',\n    (lifeNum?'<div class=\"v30-res-main\"><span class=\"v30-rlbl\">Life Path Number</span><span class=\"v30-rnum\" style=\"color:var(--pu)\">'+lifeNum+'</span></div><div class=\"v30-res-note\">'+lifeDesc+'</div>':'')+\n    (nameNum?'<div class=\"v30-res-main\" style=\"margin-top:10px\"><span class=\"v30-rlbl\">Name Number</span><span class=\"v30-rnum\" style=\"color:var(--pi)\">'+nameNum+'</span></div><div class=\"v30-res-note\">'+nameDesc+'</div>':'')\n  );\n",
+      "resultLabel": "Life Path Number"
+    },
+    {
+      "id": "love",
+      "slug": "love-compatibility-calculator",
+      "title": "Love Compatibility Calculator",
+      "category": "daily-utilities",
+      "icon": "fa-heart",
+      "description": "A fun compatibility score based on names using the classic FLAMES algorithm. Just for fun!",
+      "featured": false,
+      "popular": false,
+      "fields": [
+        {
+          "id": "loveName1",
+          "label": "Your Name",
+          "type": "text",
+          "placeholder": "e.g. Rahul"
+        },
+        {
+          "id": "loveName2",
+          "label": "Partner's Name",
+          "type": "text",
+          "placeholder": "e.g. Priya"
+        }
+      ],
+      "calc": "\n  var n1 = (document.getElementById('loveName1').value||'').toLowerCase().replace(/\\s/g,'');\n  var n2 = (document.getElementById('loveName2').value||'').toLowerCase().replace(/\\s/g,'');\n  if(!n1||!n2){ v30ShowResult('loveRes','Enter both names.','error'); return; }\n  var s1=n1.split(''), s2=n2.split('');\n  // Remove common letters\n  var a=s1.slice(), b=s2.slice();\n  for(var i=0;i<a.length;i++){\n    var j=b.indexOf(a[i]);\n    if(j!==-1){a[i]=null;b[j]=null;}\n  }\n  var count = a.filter(function(x){return x!==null;}).length + b.filter(function(x){return x!==null;}).length;\n  var flames=['Friends','Love','Affection','Marriage','Enemies','Siblings'];\n  var arr=flames.slice();\n  var idx=0;\n  while(arr.length>1){\n    idx=(idx+count-1)%arr.length;\n    arr.splice(idx,1);\n    if(idx>=arr.length)idx=0;\n  }\n  var result=arr[0];\n  var emojis={Friends:'🤝',Love:'❤️',Affection:'🥰',Marriage:'💍',Enemies:'⚔️',Siblings:'👫'};\n  var colors={Friends:'var(--p2)',Love:'var(--re)',Affection:'var(--pi)',Marriage:'var(--am)',Enemies:'var(--re)',Siblings:'var(--t)'};\n  var msgs={Friends:'You two make great friends!',Love:'There\\'s a spark between you! ❤️',Affection:'Strong affectionate bond!',Marriage:'Wedding bells! 💍',Enemies:'Opposites attract... or clash!',Siblings:'Like brothers and sisters!'};\n  v30ShowResult('loveRes',\n    '<div class=\"v30-res-main\"><span class=\"v30-rlbl\">FLAMES Result</span><span class=\"v30-rnum\" style=\"color:'+colors[result]+'\">'+emojis[result]+' '+result+'</span></div>'+\n    '<div class=\"v30-res-note\">'+msgs[result]+'</div>'+\n    '<div class=\"v30-res-note\" style=\"font-size:10px;color:var(--tx3);margin-top:5px;\">Just for fun! 😄 FLAMES = Friends, Love, Affection, Marriage, Enemies, Siblings</div>'\n  );\n",
+      "resultLabel": "FLAMES Result"
+    },
+    {
+      "id": "sci",
+      "slug": "scientific-calculator",
+      "title": "Scientific Calculator",
+      "category": "daily-utilities",
+      "icon": "fa-calculator",
+      "description": "Full scientific calculator — sin, cos, tan, log, square root, powers, factorial, memory and live results.",
+      "featured": false,
+      "popular": false,
+      "fields": [
+        {
+          "id": "sciExpr",
+          "label": "Expression",
+          "type": "text",
+          "placeholder": "e.g. 2+3×4"
+        }
+      ],
+      "calc": "\n  if(navigator.vibrate)navigator.vibrate(6);\n  switch(a){\n    case'ac':buf='';cur='0';setD('0','');dSteps.textContent='';break;\n    case'back':\n      if(buf&&(cur==='0'||cur===''))buf=buf.slice(0,-1);\n      else cur=cur.length>1?cur.slice(0,-1):'0';\n      {let r=safe(fullE());setD(r!==null?fmt(r):cur,fullE(),r!==null?'prev':'');}break;\n    case'sign':cur=cur.startsWith('-')?cur.slice(1):'-'+cur;setD(cur,fullE());break;\n    case'pct':cur=fmt(parseFloat(cur)/100);setD(cur,fullE());break;\n    case'dot':if(!cur.includes('.'))cur+='.';setD(cur,fullE());break;\n    case'num':if(cur==='0'||cur==='-0')cur=v;else cur+=v;{let r=safe(fullE());setD(r!==null?fmt(r):cur,fullE(),r!==null?'prev':'');}break;\n    case'div':buf+=cur+'/';cur='0';setD('0',fullE());break;\n    case'mul':buf+=cur+'*';cur='0';setD('0',fullE());break;\n    case'sub':buf+=cur+'-';cur='0';setD('0',fullE());break;\n    case'add':buf+=cur+'+';cur='0';setD('0',fullE());break;\n    case'ob':buf+='(';setD(cur,fullE());break;\n    case'cb2':buf+=cur+')';cur='';{let r=safe(fullE());setD(r!==null?fmt(r):fullE(),fullE(),r!==null?'prev':'');}break;\n    case'eq':{\n      let f=fullE(),r=safe(f);\n      if(r===null){setD('Error',f,'err');dNum.classList.add('shake');setTimeout(()=>dNum.classList.remove('shake'),400);return;}\n      const step=`${f} = ${fmt(r,true)}`;\n      if(showSteps)dSteps.textContent='Step: '+step;\n      pushH(f,fmt(r));cur=fmt(r);buf='';setD(fmt(r,true),f+' =');if(typeof checkMilestone==='function')checkMilestone();break;}\n    case'sin':{let n=parseFloat(cur),r=Math.sin(n*Math.PI/180);if(showSteps)dSteps.textContent=`sin(${n}°) = ${fmt(r)}`;pushH('sin('+n+')',fmt(r));cur=fmt(r);setD(cur);}break;\n    case'cos':{let n=parseFloat(cur),r=Math.cos(n*Math.PI/180);if(showSteps)dSteps.textContent=`cos(${n}°) = ${fmt(r)}`;pushH('cos('+n+')',fmt(r));cur=fmt(r);setD(cur);}break;\n    case'tan':{let n=parseFloat(cur),r=Math.tan(n*Math.PI/180);if(showSteps)dSteps.textContent=`tan(${n}°) = ${fmt(r)}`;pushH('tan('+n+')',fmt(r));cur=fmt(r);setD(cur);}break;\n    case'log':{let n=parseFloat(cur),r=Math.log10(n);if(showSteps)dSteps.textContent=`log₁₀(${n}) = ${fmt(r)}`;pushH('log('+n+')',fmt(r));cur=fmt(r);setD(cur);}break;\n    case'ln':{let n=parseFloat(cur),r=Math.log(n);if(showSteps)dSteps.textContent=`ln(${n}) = ${fmt(r)}`;pushH('ln('+n+')',fmt(r));cur=fmt(r);setD(cur);}break;\n    case'sqrt':{let n=parseFloat(cur),r=Math.sqrt(n);if(showSteps)dSteps.textContent=`√(${n}) = ${fmt(r)}`;pushH('√('+n+')',fmt(r));cur=fmt(r);setD(cur);}break;\n    case'sq':{let n=parseFloat(cur),r=n*n;if(showSteps)dSteps.textContent=`${n}² = ${fmt(r)}`;pushH(n+'²',fmt(r));cur=fmt(r);setD(cur);}break;\n    case'pow':buf+=cur+'**';cur='0';setD('0',fullE());break;\n    case'pi':cur=fmt(Math.PI);if(showSteps)dSteps.textContent='π ≈ 3.14159265358979';setD(cur,'π');break;\n    case'eul':cur=fmt(Math.E);if(showSteps)dSteps.textContent='e ≈ 2.71828182845905';setD(cur,'e');break;\n    case'fact':{let n=Math.floor(Math.abs(parseFloat(cur)));let r=1;if(n>170)r=Infinity;else for(let i=2;i<=n;i++)r*=i;if(showSteps)dSteps.textContent=`${n}! = ${fmt(r)}`;pushH(n+'!',fmt(r));cur=fmt(r);setD(cur);}break;\n    case'abs':{let n=parseFloat(cur),r=Math.abs(n);pushH('|'+n+'|',fmt(r));cur=fmt(r);setD(cur);}break;\n    case'inv':{let n=parseFloat(cur),r=1/n;pushH('1/'+n,fmt(r));cur=fmt(r);setD(cur);}break;\n    case'ms':mem=parseFloat(cur)||0;updMem();toast('💾 Memory Saved');break;\n    case'mr':cur=fmt(mem);setD(cur,fullE());break;\n    case'mc':mem=0;updMem();toast('🗑️ Memory Cleared');break;\n    case'mplus':mem+=parseFloat(cur)||0;updMem();toast('M+ = '+fmt(mem));break;\n    case'mminus':mem-=parseFloat(cur)||0;updMem();toast('M− = '+fmt(mem));break;\n  }\n  try{localStorage.setItem('sc_mem',mem);}catch(e){}\n",
+      "resultLabel": "Result",
+      "counted": false,
+      "extra": "scientific"
+    }
+  ]
+}

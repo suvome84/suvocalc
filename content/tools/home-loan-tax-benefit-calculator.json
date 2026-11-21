@@ -1,0 +1,45 @@
+{
+  "slug": "home-loan-tax-benefit-calculator",
+  "intro": "The Home Loan Tax Benefit Calculator estimates the annual income tax you can save on a home loan under Section 24(b) for interest paid and Section 80C for principal repaid.",
+  "uses": "It is used by home buyers to see how much of the EMI comes back as a tax saving each year, and to compare the first-year saving at different tax slabs.",
+  "formula": "Year 1 interest claimed = the lower of (Loan × Rate ÷ 100) and ₹2,00,000 under Section 24(b). Year 1 principal claimed = the lower of (EMI × 12 − interest claimed) and ₹1,50,000 under Section 80C. Tax saved = (interest claimed + principal claimed) × tax slab %. EMI = Loan × r × (1+r)^n ÷ ((1+r)^n − 1), with r the monthly rate and n the tenure in months.",
+  "example": "Inputs: Loan Amount = ₹50,00,000, Interest Rate = 8.5% per year, Tenure = 20 years, Annual Income = ₹12,00,000, Tax Slab = 30%. Step 1: monthly EMI = ₹43,391. Step 2: first-year interest = 50,00,000 × 8.5% = ₹4,25,000, capped at ₹2,00,000 under Section 24(b), saving 2,00,000 × 30% = ₹60,000. Step 3: first-year principal = 43,391 × 12 − 2,00,000 = ₹3,20,692, capped at ₹1,50,000 under Section 80C, saving 1,50,000 × 30% = ₹45,000. Step 4: total annual tax saving = 60,000 + 45,000 = ₹1,05,000. These are first-year values.",
+  "howTo": [
+    "Step 1: Enter the home loan amount in the \"Loan Amount (₹)\" field.",
+    "Step 2: Enter the annual interest rate in the \"Interest Rate (% p.a.)\" field.",
+    "Step 3: Enter the repayment period in the \"Tenure (Years)\" field.",
+    "Step 4: Enter your annual income in the \"Annual Income (₹)\" field.",
+    "Step 5: Choose your tax slab from the \"Tax Slab (%)\" dropdown, then tap Calculate to see the annual tax saving and the EMI."
+  ],
+  "tips": [
+    "Section 24(b) allows up to ₹2,00,000 of interest per year for a self-occupied house; Section 80C allows up to ₹1,50,000 of principal per year.",
+    "These deductions are available under the old tax regime — the new regime does not allow them, so the saving is zero if you use the new regime.",
+    "The saving is highest in the early years, when the interest part of the EMI is largest; it falls as the loan ages.",
+    "The calculator shows first-year values, so treat the result as an estimate for the first year, not for every year of the loan."
+  ],
+  "mistakes": [
+    "Claiming the full interest paid instead of the ₹2,00,000 cap under Section 24(b).",
+    "Claiming the full principal repaid instead of the ₹1,50,000 cap under Section 80C.",
+    "Forgetting that these deductions do not apply under the new tax regime.",
+    "Using the wrong tax slab — the saving is the deduction multiplied by your actual slab rate."
+  ],
+  "faqs": [
+    {
+      "q": "How much home loan interest can I claim as a tax deduction?",
+      "a": "Under Section 24(b), you can claim up to ₹2,00,000 of interest per year on a home loan for a self-occupied house. Interest above that limit cannot be deducted."
+    },
+    {
+      "q": "How much principal repayment can I claim under Section 80C?",
+      "a": "Up to ₹1,50,000 per year of principal repaid on a home loan can be claimed under Section 80C, but this limit is shared with other 80C investments such as PPF and ELSS."
+    },
+    {
+      "q": "Are home loan tax benefits available in the new tax regime?",
+      "a": "No. The new regime does not allow the Section 24(b) interest deduction or the Section 80C principal deduction. These benefits are available under the old regime, so compare both regimes before choosing."
+    }
+  ],
+  "related": [
+    "gst-calculator",
+    "income-tax-calculator",
+    "hra-exemption-calculator"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "slug": "crypto-calculator",
+  "intro": "The Crypto Calculator works out how many coins an investment buys, what the holding is worth at a current or target price, and the profit or loss on the investment.",
+  "uses": "It is used to check the value of a crypto holding, to see the gain or loss at a target price before selling, and to find the break-even price at which the investment neither gains nor loses.",
+  "formula": "Coins purchased = Investment Amount ÷ Buy Price per coin. Current value = Coins × Current or Target Price. Profit or Loss = Current value − Investment Amount. Return % = Profit ÷ Investment × 100. Break-even price = Buy Price per coin.",
+  "example": "Inputs: Cryptocurrency = Bitcoin (BTC), Investment Amount = ₹10,000, Buy Price = ₹50,00,000 per coin, Current/Target Price = ₹60,00,000 per coin. Step 1: coins = 10,000 ÷ 50,00,000 = 0.002 BTC. Step 2: current value = 0.002 × 60,00,000 = ₹12,000. Step 3: profit = 12,000 − 10,000 = ₹2,000, which is a 20% return. Step 4: break-even price = ₹50,00,000 per coin.",
+  "howTo": [
+    "Step 1: Choose the cryptocurrency from the \"Cryptocurrency\" dropdown — Bitcoin (BTC), Ethereum (ETH), BNB, Solana (SOL), or Other.",
+    "Step 2: Enter the amount you invested in the \"Investment Amount (₹)\" field.",
+    "Step 3: Enter the price you bought at in the \"Buy Price (₹ per coin)\" field.",
+    "Step 4: Enter the current price, or the price you are targeting, in the \"Current/Target Price (₹)\" field.",
+    "Step 5: Tap Calculate to see the coins purchased, the current value, and the profit or loss."
+  ],
+  "tips": [
+    "Crypto prices move fast — a result based on a price from an hour ago may already be out of date, so use the latest price.",
+    "The break-even price is simply your buy price, so any price above it is a gain and any price below it is a loss.",
+    "This calculator ignores exchange fees and taxes, which reduce the real profit.",
+    "Never invest money you cannot afford to lose — crypto is far more volatile than a fixed deposit or a savings account."
+  ],
+  "mistakes": [
+    "Entering the price of one coin in the wrong currency or unit, which makes the coin count wildly wrong.",
+    "Using an old price as the current price and believing the profit shown.",
+    "Forgetting that buying and selling on an exchange involves fees that eat into the profit.",
+    "Confusing the total investment with the price per coin — the two fields are different."
+  ],
+  "faqs": [
+    {
+      "q": "How many Bitcoins do I get for ₹10,000 if Bitcoin costs ₹50,00,000?",
+      "a": "You get 10,000 ÷ 50,00,000 = 0.002 BTC. If the price rises to ₹60,00,000, that holding is worth ₹12,000, a profit of ₹2,000 or 20%."
+    },
+    {
+      "q": "What is the break-even price in crypto?",
+      "a": "It is the price at which your holding is worth exactly what you invested — the same as your buy price per coin. Above it you are in profit; below it you are in loss."
+    },
+    {
+      "q": "Does this calculator include exchange fees?",
+      "a": "No. It calculates from the investment amount and the buy and sell prices only. Exchange fees and taxes are not included, so your real profit will be slightly lower."
+    }
+  ],
+  "related": [
+    "stock-profit-calculator",
+    "cagr-calculator",
+    "sip-calculator"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "slug": "gst-calculator",
+  "intro": "The GST Calculator works out Goods and Services Tax on a price in India, using the GST 2.0 slabs of 0%, 5%, 18%, and 40% in force from 22 September 2025. It can add GST to a base price or remove GST from a price that already includes it.",
+  "uses": "It is used by shopkeepers, freelancers, and small businesses to quote prices with tax, to find the pre-tax price from an invoice total, and to split the tax into CGST and SGST for sales within a state or IGST for sales between states.",
+  "formula": "Add GST: GST = Price × Rate ÷ 100; Total = Price + GST. Remove GST: Base Price = Total ÷ (1 + Rate ÷ 100); GST = Total − Base Price. Within a state, the GST is split equally into CGST and SGST; between states, the whole amount is IGST.",
+  "example": "Inputs: Amount = ₹1,000, GST Rate = 18%, Mode = Add GST, Transaction Type = Within state (CGST + SGST). Step 1: GST = 1,000 × 18 ÷ 100 = ₹180. Step 2: total = 1,000 + 180 = ₹1,180. Step 3: the GST splits equally, so CGST = ₹90 and SGST = ₹90. If the sale were between states, the same ₹180 would be charged as IGST instead.",
+  "howTo": [
+    "Step 1: Enter the amount in the \"Amount (₹) / টাকার পরিমাণ\" field.",
+    "Step 2: Choose the GST rate from the \"GST Rate / জিএসটির হার\" dropdown — 0, 5, 18, or 40.",
+    "Step 3: Choose \"Add GST\" if your amount excludes tax, or \"Remove GST\" if your amount already includes it.",
+    "Step 4: Choose the transaction type — \"Within state (CGST + SGST)\" or \"Between states (IGST)\".",
+    "Step 5: Tap Calculate to see the GST amount, the base price, the total, and the CGST/SGST or IGST split."
+  ],
+  "tips": [
+    "The GST 2.0 slabs are 0%, 5%, 18%, and 40% from 22 September 2025 — the old 12% and 28% slabs were abolished, so do not use them.",
+    "The 40% rate is a demerit rate for goods such as luxury cars, tobacco, pan masala, and aerated drinks.",
+    "Use \"Remove GST\" when a customer's invoice total already includes tax and you need the pre-tax price for your books.",
+    "Within one state the tax splits equally into CGST and SGST; across state borders the whole amount is IGST — the total tax is the same either way.",
+    "Sources: CBIC (cbic.gov.in) and the GST Council. Last reviewed: 21 November 2026."
+  ],
+  "mistakes": [
+    "Using the old 12% or 28% slabs, which no longer exist under GST 2.0.",
+    "Applying \"Add GST\" to a price that already includes GST, which taxes the tax.",
+    "Splitting GST into CGST and SGST for an inter-state sale, where the correct split is IGST.",
+    "Forgetting that the 40% demerit rate applies only to specific goods, not to ordinary items."
+  ],
+  "faqs": [
+    {
+      "q": "What are the GST slabs in India now?",
+      "a": "Under GST 2.0, in force from 22 September 2025, the slabs are 0%, 5%, 18%, and 40%. The old 12% and 28% slabs were abolished. The 40% rate is a demerit rate for luxury cars, tobacco, pan masala, and aerated drinks."
+    },
+    {
+      "q": "How much GST is charged on ₹1,000 at 18%?",
+      "a": "The GST is 1,000 × 18 ÷ 100 = ₹180, so the total is ₹1,180. Within a state this splits into CGST of ₹90 and SGST of ₹90; between states it is ₹180 of IGST."
+    },
+    {
+      "q": "What is the difference between CGST, SGST, and IGST?",
+      "a": "CGST and SGST apply to sales within one state, with the tax split equally between the central and state governments. IGST applies to sales between two states, where the whole tax is collected as one integrated tax."
+    },
+    {
+      "q": "How do I find the price before GST from a total that includes it?",
+      "a": "Use the \"Remove GST\" mode. Divide the total by (1 + rate ÷ 100). For example, a total of ₹1,180 at 18% gives a base price of 1,180 ÷ 1.18 = ₹1,000, and the GST is ₹180."
+    }
+  ],
+  "related": [
+    "income-tax-calculator",
+    "hra-exemption-calculator",
+    "home-loan-tax-benefit-calculator"
+  ]
+}

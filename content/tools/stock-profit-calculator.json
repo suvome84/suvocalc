@@ -1,0 +1,45 @@
+{
+  "slug": "stock-profit-calculator",
+  "intro": "The Stock Profit Calculator works out the profit or loss on a stock trade from the buy price, the number of shares, the sell price, and the holding period, including the return percentage and the CAGR.",
+  "uses": "It is used to check the result of a completed trade, to compare two trades by return and by annualised return, and to see whether a gain is really as large as it looks once the holding period is considered.",
+  "formula": "Invested = Buy Price × Quantity. Received = Sell Price × Quantity. Profit or Loss = Received − Invested. Return % = Profit ÷ Invested × 100. CAGR = (Received ÷ Invested)^(1 ÷ Years) − 1, shown as a percentage.",
+  "example": "Inputs: Buy Price = ₹500, Quantity = 100 shares, Sell Price = ₹650, Holding Period = 2 years. Step 1: invested = 500 × 100 = ₹50,000. Step 2: received = 650 × 100 = ₹65,000. Step 3: profit = 65,000 − 50,000 = ₹15,000. Step 4: return = 15,000 ÷ 50,000 × 100 = 30%. Step 5: CAGR = (65,000 ÷ 50,000)^(1 ÷ 2) − 1 = 14.02% per year.",
+  "howTo": [
+    "Step 1: Enter the price you bought at in the \"Buy Price (₹)\" field.",
+    "Step 2: Enter how many shares you bought in the \"Quantity (shares)\" field.",
+    "Step 3: Enter the price you sold at in the \"Sell Price (₹)\" field.",
+    "Step 4: Enter how long you held the shares in the \"Holding Period (Years)\" field.",
+    "Step 5: Tap Calculate to see the profit or loss, the return percentage, and the CAGR."
+  ],
+  "tips": [
+    "Compare trades by CAGR, not by total return — a 30% gain in 2 years is very different from a 30% gain in 6 years.",
+    "This calculator does not include brokerage, taxes, or other charges, so your real profit will be a little lower.",
+    "A profit in rupees can look large while the percentage return is small — always check the return on the amount invested.",
+    "A loss shown as a negative return is normal to see — record it honestly so you can learn from the trade."
+  ],
+  "mistakes": [
+    "Forgetting brokerage and taxes, which reduce the real profit.",
+    "Comparing a one-year gain with a five-year gain by percentage alone instead of by CAGR.",
+    "Entering the total amount invested instead of the per-share buy price.",
+    "Counting a paper gain as a profit before actually selling the shares."
+  ],
+  "faqs": [
+    {
+      "q": "How do I calculate profit on a stock trade?",
+      "a": "Multiply the buy price by the number of shares to get the amount invested, multiply the sell price by the same number of shares to get the amount received, and subtract. For example, buying 100 shares at ₹500 and selling at ₹650 gives a profit of ₹15,000."
+    },
+    {
+      "q": "What is CAGR in stock investing?",
+      "a": "CAGR is the Compound Annual Growth Rate — the steady yearly rate that would turn your starting amount into your ending amount over the holding period. A 30% total return over 2 years is a CAGR of about 14.02% per year."
+    },
+    {
+      "q": "Does this calculator include brokerage and taxes?",
+      "a": "No. It calculates profit from the buy and sell prices only. Brokerage, exchange charges, and taxes on the gain are extra costs that reduce your real profit."
+    }
+  ],
+  "related": [
+    "cagr-calculator",
+    "crypto-calculator",
+    "sip-calculator"
+  ]
+}

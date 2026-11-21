@@ -1,0 +1,10 @@
+{
+  "checked": 150,
+  "failures": [],
+  "jsFiles": [
+    "build.js",
+    "assets/js/main.js",
+    "assets/js/calc.js"
+  ],
+  "inlineScripts": 147
+}

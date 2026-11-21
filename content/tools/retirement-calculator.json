@@ -1,0 +1,45 @@
+{
+  "slug": "retirement-calculator",
+  "intro": "The Retirement Calculator estimates the retirement corpus you will need and the monthly saving required to build it, based on your current age, retirement age, monthly expenses, expected return, and inflation.",
+  "uses": "It is used to set a retirement savings target, to see how delaying saving raises the monthly amount needed, and to check whether current monthly expenses are affordable after retirement.",
+  "formula": "Future monthly expenses = Current Monthly Expenses × (1 + Inflation)^Years to retirement. Corpus needed = Future monthly expenses × 12 ÷ ((Expected Return − Inflation) ÷ 100). Monthly saving = Corpus × r ÷ ((1+r)^n − 1), where r is the monthly return (Expected Return ÷ 12 ÷ 100) and n is the months until retirement. This is a simplified estimate that treats the corpus as funding the inflation-adjusted expenses from its real return.",
+  "example": "Inputs: Current Age = 30, Retirement Age = 60, Monthly Expenses = ₹50,000, Expected Return = 8% per year, Inflation Rate = 6% per year. Step 1: years to retirement = 30. Step 2: future monthly expenses = 50,000 × (1.06)^30 = ₹2,87,175. Step 3: corpus needed = 2,87,175 × 12 ÷ ((8 − 6) ÷ 100) = ₹17,23,04,735, about ₹17.23 crore. Step 4: monthly saving = 17,23,04,735 × 0.006667 ÷ ((1.006667)^360 − 1) = ₹1,15,613 per month. This is a simplified estimate — real plans should be reviewed with a financial adviser.",
+  "howTo": [
+    "Step 1: Enter your age now in the \"Current Age\" field.",
+    "Step 2: Enter the age you want to retire at in the \"Retirement Age\" field.",
+    "Step 3: Enter what you spend each month today in the \"Monthly Expenses (₹)\" field.",
+    "Step 4: Enter the return you expect on investments in the \"Expected Return (%/yr)\" field.",
+    "Step 5: Enter the inflation rate in the \"Inflation Rate (%/yr)\" field, then tap Calculate to see the corpus needed and the monthly saving required."
+  ],
+  "tips": [
+    "Starting early is the biggest lever — every year you delay raises the monthly saving needed, because compounding has less time to work.",
+    "Inflation is the hidden cost: at 6% inflation, ₹50,000 of monthly expenses today becomes about ₹2,87,000 in 30 years.",
+    "Review the plan every year and raise your monthly saving as your income grows.",
+    "This calculator uses a simplified formula; use the result as a planning target and review it with a qualified adviser before acting on it."
+  ],
+  "mistakes": [
+    "Using today's expenses as the retirement expenses without adjusting for inflation — the real figure is several times higher.",
+    "Assuming a very high return such as 15% every year for 30 years, which makes the monthly saving look unrealistically small.",
+    "Setting the expected return below the inflation rate, which makes the corpus formula meaningless.",
+    "Treating the corpus figure as exact — it is an estimate based on the rates you entered."
+  ],
+  "faqs": [
+    {
+      "q": "How much money do I need to retire?",
+      "a": "It depends on your expenses, the years until retirement, inflation, and the return you expect. For example, with ₹50,000 of monthly expenses today, retiring at 60 from age 30 at 6% inflation and 8% return, this calculator estimates a corpus of about ₹17.23 crore and a monthly saving of about ₹1,15,613. Change any input to see your own figure."
+    },
+    {
+      "q": "Why does inflation matter so much for retirement?",
+      "a": "Because prices rise every year, the same lifestyle costs much more in the future. At 6% inflation, something costing ₹50,000 a month today costs about ₹2,87,000 a month in 30 years, so the corpus must be far larger than today's expenses suggest."
+    },
+    {
+      "q": "How much should I save each month for retirement?",
+      "a": "It depends on your age, your target retirement age, your expenses, and the return you expect. The younger you start, the smaller the monthly amount — this calculator works out the figure for your own inputs."
+    }
+  ],
+  "related": [
+    "sip-calculator",
+    "ppf-calculator",
+    "savings-goal-calculator"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "slug": "sip-calculator",
+  "intro": "The SIP Calculator projects how much a Systematic Investment Plan in a mutual fund can grow when you invest a fixed amount every month at an expected annual return.",
+  "uses": "It is used to plan monthly investing, to see the maturity value of a SIP over several years, and to compare how a higher monthly amount, a higher return, or a longer period changes the final amount.",
+  "formula": "Maturity Value FV = P × ((1+i)^n − 1) ÷ i × (1+i), where P is the monthly investment, i is the monthly return (expected annual return ÷ 12 ÷ 100), and n is the number of months. Total invested = P × n. Wealth gained = FV − Total invested.",
+  "example": "Inputs: Monthly Investment = ₹5,000, Expected Annual Return = 12%, Investment Period = 10 years. Step 1: monthly return i = 12 ÷ 12 ÷ 100 = 0.01, n = 120 months. Step 2: FV = 5,000 × ((1.01)^120 − 1) ÷ 0.01 × 1.01. Step 3: (1.01)^120 = 3.3004, so FV = 5,000 × 230.04 × 1.01 = ₹11,61,695. Step 4: total invested = 5,000 × 120 = ₹6,00,000. Step 5: wealth gained = 11,61,695 − 6,00,000 = ₹5,61,695.",
+  "howTo": [
+    "Step 1: Enter the amount you will invest each month in the \"Monthly Investment (₹)\" field.",
+    "Step 2: Enter the return you expect per year in the \"Expected Annual Return (%)\" field.",
+    "Step 3: Enter how many years you will keep investing in the \"Investment Period (Years)\" field.",
+    "Step 4: Tap Calculate to see the maturity value.",
+    "Step 5: Read the breakdown: total invested, wealth gained, growth percentage, and the monthly amount with the number of months."
+  ],
+  "tips": [
+    "Starting early matters more than investing a large amount late — the extra years of compounding do most of the work.",
+    "The expected return is an assumption, not a promise — mutual fund returns vary, so try 10% and 12% to see a range of outcomes.",
+    "Increasing your monthly SIP a little every year (a step-up SIP) can raise the final amount a lot over a long period.",
+    "Staying invested through market falls matters more than timing the market — SIPs work by buying through ups and downs."
+  ],
+  "mistakes": [
+    "Treating the projected maturity value as guaranteed — it depends on the return you entered, and real returns change every year.",
+    "Stopping the SIP during a market fall, which removes the benefit of buying units at lower prices.",
+    "Entering the annual return as a monthly return, which makes the projection far too high.",
+    "Comparing SIPs only by the final amount without checking the total invested — the gain is the final amount minus what you put in."
+  ],
+  "faqs": [
+    {
+      "q": "How much will ₹5,000 per month grow to in 10 years at 12%?",
+      "a": "At a steady 12% annual return, a ₹5,000 monthly SIP grows to about ₹11,61,695 in 10 years. You invest ₹6,00,000 and the gain is about ₹5,61,695. Real returns vary, so this is a projection, not a guarantee."
+    },
+    {
+      "q": "What is a SIP?",
+      "a": "A SIP, or Systematic Investment Plan, is a way to invest a fixed amount in a mutual fund every month. It spreads your investment over time, so you buy units at different prices, and your money benefits from compounding."
+    },
+    {
+      "q": "Is the return on a SIP guaranteed?",
+      "a": "No. SIPs invest in market-linked mutual funds, so returns go up and down with the market. The calculator shows what would happen at the return rate you enter — use it as a plan, not a promise."
+    }
+  ],
+  "related": [
+    "retirement-calculator",
+    "ppf-calculator",
+    "fixed-deposit-calculator"
+  ]
+}

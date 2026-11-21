@@ -1,0 +1,44 @@
+{
+  "slug": "simple-interest-calculator",
+  "intro": "The Simple Interest Calculator works out the interest earned or payable on a principal amount at a fixed annual rate over a number of years, where interest is charged only on the original principal.",
+  "uses": "It is used for short-term loans, fixed deposits that pay simple interest, and quick interest estimates where the interest does not itself earn interest.",
+  "formula": "Simple Interest SI = P × R × T ÷ 100, where P is the principal, R is the annual rate in percent, and T is the time in years. Total Amount = P + SI.",
+  "example": "Inputs: Principal = ₹50,000, Rate = 7% per year, Time = 3 years. Step 1: SI = 50,000 × 7 × 3 ÷ 100. Step 2: 50,000 × 7 = 3,50,000. Step 3: 3,50,000 × 3 ÷ 100 = ₹10,500. Step 4: total amount = 50,000 + 10,500 = ₹60,500.",
+  "howTo": [
+    "Step 1: Enter the starting amount in the \"Principal (₹)\" field.",
+    "Step 2: Enter the annual interest rate in the \"Rate (% per year)\" field.",
+    "Step 3: Enter the duration in the \"Time (Years)\" field.",
+    "Step 4: Tap Calculate to see the simple interest, the principal, and the total amount."
+  ],
+  "tips": [
+    "Simple interest is the same amount every year, so you can check the result by multiplying one year's interest by the number of years.",
+    "If the time is in months, convert it to years first (for example, 18 months is 1.5 years).",
+    "Use this calculator when interest is paid out or charged on the original amount only; use the compound interest calculator when interest is added to the balance.",
+    "For the same rate and period, simple interest is always less than compound interest."
+  ],
+  "mistakes": [
+    "Entering the time in months instead of years — the formula needs years.",
+    "Forgetting to divide by 100 when using the rate as a percentage.",
+    "Using this calculator for a loan or deposit that actually compounds — the result will understate the real interest.",
+    "Mixing up the interest amount with the total amount: the total is principal plus interest, not the interest alone."
+  ],
+  "faqs": [
+    {
+      "q": "What is the formula for simple interest?",
+      "a": "Simple Interest = Principal × Rate × Time ÷ 100, where the rate is the annual percentage rate and the time is in years. The total amount to be repaid or received is the principal plus the simple interest."
+    },
+    {
+      "q": "How much interest is earned on ₹50,000 at 7% for 3 years?",
+      "a": "The interest is 50,000 × 7 × 3 ÷ 100 = ₹10,500, and the total amount is ₹60,500."
+    },
+    {
+      "q": "When is simple interest used instead of compound interest?",
+      "a": "Simple interest is used for short-term loans, some fixed deposits, and situations where interest is paid out regularly instead of being added to the balance. Most long-term savings and loans use compound interest."
+    }
+  ],
+  "related": [
+    "compound-interest-calculator",
+    "percentage-calculator",
+    "emi-calculator"
+  ]
+}

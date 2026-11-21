@@ -1,0 +1,45 @@
+{
+  "example": "Inputs: Your Time 10:00, From Zone IST (UTC+5:30), To Zone EST (UTC−5). Step 1: the offset difference is 5.5 − (−5) = 10.5 hours. Step 2: subtract 10.5 hours from 10:00, which gives 23:30 on the previous day. Final result: 10:00 IST is 23:30 EST the previous day.",
+  "faqs": [
+    {
+      "a": "The tool uses fixed offsets for each zone, such as IST at UTC+5:30 and EST at UTC−5. It does not adjust for daylight saving time, so zones that observe DST can be off by an hour during part of the year.",
+      "q": "Does it handle daylight saving time?"
+    },
+    {
+      "a": "The tool lists 15 zones: UTC, IST, EST, PST, CST, GMT, CET, JST, AEST, BDT, PKT, MST, BST, SGT, and HKT.",
+      "q": "Which time zones can I choose?"
+    },
+    {
+      "a": "The converted time may fall on a different date. Read the full result, which shows the date change when it happens.",
+      "q": "Can the converted time be on a different day?"
+    }
+  ],
+  "formula": "Converted time = your time + (offset of the To zone − offset of the From zone). Offsets used by the tool: UTC+0, IST +5:30, EST −5, PST −8, CST −6, GMT +0, CET +1, JST +9, AEST +10, BDT +6, PKT +5, MST −7, BST +1, SGT +8, HKT +8.",
+  "howTo": [
+    "Enter your date and time in the Your Time field.",
+    "Choose the starting zone in the From Zone dropdown, for example IST (UTC+5:30).",
+    "Choose the target zone in the To Zone dropdown, for example EST (UTC−5).",
+    "Tap Convert to see the time in the other zone.",
+    "Check the date as well as the time — the result can fall on the previous or next day."
+  ],
+  "intro": "The Time Zone Converter converts a date and time between 15 major world time zones, using their fixed UTC offsets.",
+  "mistakes": [
+    "Forgetting that zones with daylight saving time shift by an hour in summer — the tool uses fixed offsets only.",
+    "Mixing up AM and PM when entering the time.",
+    "Assuming the date stays the same when the converted time crosses midnight.",
+    "Choosing the wrong zone, for example CST (US Central) instead of IST, when the abbreviations look similar."
+  ],
+  "related": [
+    "date-difference-calculator",
+    "world-clock",
+    "unit-currency-converter"
+  ],
+  "slug": "time-zone-converter",
+  "tips": [
+    "For meetings, confirm the time with the other person in their own local time to avoid DST surprises.",
+    "IST is always UTC+5:30 and never changes, which makes it a reliable anchor zone.",
+    "When the converted time crosses midnight, note the new date clearly in your message.",
+    "For exact scheduling with DST zones, cross-check with a clock that knows the current DST rules."
+  ],
+  "uses": "It is used to convert meeting times, flight times, and call times between time zones, so everyone joins at the right local hour."
+}

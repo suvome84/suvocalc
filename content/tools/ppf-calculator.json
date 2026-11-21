@@ -1,0 +1,48 @@
+{
+  "slug": "ppf-calculator",
+  "intro": "The PPF Calculator projects the maturity amount of a Public Provident Fund account in India, with yearly deposits, interest compounded annually, and a 15-year tenure.",
+  "uses": "It is used to plan long-term tax-free saving, to see how much a yearly deposit grows over 15 years, and to compare the interest earned with the total amount deposited.",
+  "formula": "Each year the balance grows as Balance = (Balance + Yearly Deposit) × (1 + Rate ÷ 100), repeated for the tenure. The calculator caps the yearly deposit at ₹1,50,000 and the tenure at 15 years, matching the PPF rules. Interest earned = Maturity amount − Total deposited.",
+  "example": "Inputs: Annual Deposit = ₹1,50,000, Interest Rate = 7.1%, Tenure = 15 years. Step 1: deposit ₹1,50,000 each year for 15 years, so total invested = ₹22,50,000. Step 2: applying the yearly formula 15 times, the balance grows to ₹40,68,209. Step 3: interest earned = 40,68,209 − 22,50,000 = ₹18,18,209. The calculator uses a 7.1% rate; PPF interest rates are revised by the government — check the current rate.",
+  "howTo": [
+    "Step 1: Enter the amount you will deposit each year in the \"Annual Deposit (₹)\" field — the maximum is ₹1,50,000.",
+    "Step 2: Enter the interest rate in the \"Interest Rate (%)\" field — the calculator defaults to 7.1%.",
+    "Step 3: Enter the tenure in the \"Tenure (years)\" field — 15 years is the standard PPF term.",
+    "Step 4: Tap Calculate to see the maturity amount, the total invested, and the interest earned."
+  ],
+  "tips": [
+    "PPF has EEE tax status: the deposit, the interest, and the maturity amount are all tax-free, which makes it one of the most tax-efficient savings options in India.",
+    "Depositing early in the financial year earns more interest, because PPF interest is calculated on the lowest balance between the 5th and the end of each month.",
+    "The maximum deposit is ₹1,50,000 per year — depositing more does not earn interest on the extra amount.",
+    "After 15 years the account can be extended in blocks of 5 years, with or without further deposits."
+  ],
+  "mistakes": [
+    "Entering a deposit above ₹1,50,000 per year — the extra amount does not earn interest.",
+    "Using an old interest rate as if it were fixed — the PPF rate is reviewed by the government and changes over time, so check the current rate.",
+    "Expecting to withdraw freely before maturity — partial withdrawals are allowed only from the 7th year and under conditions.",
+    "Confusing the 15-year tenure with a lock-in that can be shortened — the account matures after 15 years."
+  ],
+  "faqs": [
+    {
+      "q": "What is the current PPF interest rate?",
+      "a": "The calculator uses 7.1%, which was the rate when it was built. PPF interest rates are revised by the government — check the current rate before planning, and enter it in the \"Interest Rate (%)\" field."
+    },
+    {
+      "q": "How much will I get if I deposit ₹1,50,000 every year for 15 years?",
+      "a": "At 7.1% interest, the maturity amount is about ₹40,68,209. You deposit ₹22,50,000 in total and earn about ₹18,18,209 in interest, all tax-free."
+    },
+    {
+      "q": "Is PPF tax-free?",
+      "a": "Yes. PPF has EEE status: deposits qualify for deduction under Section 80C, the interest earned is tax-free, and the maturity amount is tax-free."
+    },
+    {
+      "q": "What is the maximum I can deposit in PPF each year?",
+      "a": "The maximum is ₹1,50,000 per financial year. You can deposit it in one go or in instalments, but the total for the year must not exceed ₹1,50,000."
+    }
+  ],
+  "related": [
+    "fixed-deposit-calculator",
+    "sip-calculator",
+    "retirement-calculator"
+  ]
+}

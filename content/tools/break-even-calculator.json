@@ -1,0 +1,45 @@
+{
+  "slug": "break-even-calculator",
+  "intro": "The Break-Even Calculator finds how many units a business must sell each month to cover all its costs — the point where it stops losing money and starts making a profit.",
+  "uses": "It is used by small business owners and shopkeepers to set a sales target, to test whether a price covers costs, and to see the monthly profit or loss at the current level of sales.",
+  "formula": "Contribution margin per unit = Selling Price per Unit − Variable Cost per Unit. Break-even units = Fixed Costs ÷ Contribution margin per unit (rounded up). Break-even revenue = Break-even units × Selling Price. Contribution margin % = Contribution margin ÷ Selling Price × 100. Current monthly profit = (Current Units × Contribution margin) − Fixed Costs.",
+  "example": "Inputs: Fixed Costs = ₹50,000 per month, Selling Price per Unit = ₹500, Variable Cost per Unit = ₹200, Current Units Sold = 150 per month. Step 1: contribution margin = 500 − 200 = ₹300 per unit, which is 60% of the price. Step 2: break-even units = 50,000 ÷ 300 = 166.7, rounded up to 167 units. Step 3: break-even revenue = 167 × 500 = ₹83,500 per month. Step 4: current profit = 150 × 300 − 50,000 = −₹5,000, so the business is below break-even by 17 units.",
+  "howTo": [
+    "Step 1: Enter your monthly fixed costs — rent, salaries, electricity — in the \"Fixed Costs (₹/month)\" field.",
+    "Step 2: Enter what you charge for one item in the \"Selling Price per Unit (₹)\" field.",
+    "Step 3: Enter what one item costs you to make or buy in the \"Variable Cost per Unit (₹)\" field.",
+    "Step 4: Enter how many units you sell now in the \"Current Units Sold/Month\" field.",
+    "Step 5: Tap Calculate to see the break-even point in units, the break-even revenue, and your current monthly profit."
+  ],
+  "tips": [
+    "Fixed costs stay the same whether you sell 10 units or 1,000, while variable costs grow with every unit — keep the two separate.",
+    "Raising the price or lowering the variable cost both raise the contribution margin and bring the break-even point down.",
+    "The break-even point is a monthly target: selling 167 units in a month means the month breaks even, not that each day does.",
+    "If you are below break-even, check first whether the price, the volume, or the fixed costs are the problem — each has a different fix."
+  ],
+  "mistakes": [
+    "Putting variable costs such as raw material into the fixed costs field, which distorts the break-even point.",
+    "Setting the selling price at or below the variable cost — then every sale loses money and there is no break-even point.",
+    "Forgetting fixed costs such as rent or salaries when adding up monthly costs.",
+    "Treating the break-even point as a profit target — it is only the point where profit is zero."
+  ],
+  "faqs": [
+    {
+      "q": "What is the break-even point?",
+      "a": "It is the number of units you must sell for total revenue to exactly equal total costs. Below it you make a loss; above it you make a profit. For example, with ₹50,000 of fixed costs and a ₹300 contribution per unit, the break-even point is 167 units per month."
+    },
+    {
+      "q": "How do I calculate the break-even point?",
+      "a": "Subtract the variable cost per unit from the selling price to get the contribution margin, then divide your fixed costs by that margin. Fixed costs of ₹50,000 divided by a ₹300 margin gives 167 units."
+    },
+    {
+      "q": "What is contribution margin?",
+      "a": "It is the amount each unit sold contributes toward covering fixed costs and then profit: selling price minus variable cost per unit. A ₹500 item costing ₹200 to make has a contribution margin of ₹300, or 60%."
+    }
+  ],
+  "related": [
+    "gst-calculator",
+    "income-tax-calculator",
+    "home-loan-tax-benefit-calculator"
+  ]
+}

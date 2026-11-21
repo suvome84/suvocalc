@@ -1,0 +1,45 @@
+{
+  "slug": "savings-goal-calculator",
+  "intro": "The Savings Goal Planner works out how to reach a savings target: either how long it will take at a monthly saving amount you choose, or how much you must save each month to reach the goal by a date you choose.",
+  "uses": "It is used to plan for a specific goal such as a bike, a phone, a course fee, or a house deposit, and to see how interest on the savings shortens the time or lowers the monthly amount needed.",
+  "formula": "Fill in either Monthly Savings or Target Months, not both. With a monthly amount, the balance grows month by month as Balance = Balance × (1 + monthly rate) + Monthly Savings, until it reaches the goal. With a target number of months, the calculator finds the monthly amount that reaches the goal in that time, allowing for the same monthly interest. Remaining amount = Goal Amount − Already Saved.",
+  "example": "Inputs: Goal Amount = ₹5,00,000, Already Saved = ₹0, Monthly Savings = ₹10,000, Target Months = (left blank), Annual Return = 4%. Step 1: remaining amount = 5,00,000 − 0 = ₹5,00,000. Step 2: monthly rate = 4 ÷ 12 ÷ 100 = 0.003333. Step 3: growing the balance by ₹10,000 a month with interest, it reaches ₹5,00,000 after 47 months. Step 4: that is 3 years and 11 months, with ₹4,70,000 paid in by you and the rest earned as interest.",
+  "howTo": [
+    "Step 1: Enter the total amount you want to save in the \"Goal Amount (₹)\" field.",
+    "Step 2: Enter what you have already saved in the \"Already Saved (₹)\" field.",
+    "Step 3: To find the time needed, enter your monthly saving in the \"Monthly Savings (₹)\" field and leave \"Target Months\" blank.",
+    "Step 4: To find the monthly amount needed, enter the number of months in the \"Target Months\" field and leave \"Monthly Savings\" blank.",
+    "Step 5: Enter the interest your savings earn in the \"Annual Return % (savings)\" field — 4% is the default — then tap Calculate."
+  ],
+  "tips": [
+    "Fill in either the monthly saving or the target months, not both — the calculator needs one of them to work out the other.",
+    "Already-saved money shortens the time a lot, because it starts earning interest from day one.",
+    "A small increase in the monthly saving cuts the time more than you might expect, because the extra money also earns interest.",
+    "Keep the goal in a separate savings account so everyday spending does not eat into it."
+  ],
+  "mistakes": [
+    "Filling in both Monthly Savings and Target Months — the calculator will ask you to fill only one.",
+    "Forgetting the money already saved, which makes the time or monthly amount look larger than it needs to be.",
+    "Using an unrealistic return rate, such as 12% for a savings account, which makes the plan look easier than it is.",
+    "Setting the goal amount without checking what the thing actually costs, including taxes and fees."
+  ],
+  "faqs": [
+    {
+      "q": "How long will it take to save ₹5,00,000 at ₹10,000 a month?",
+      "a": "At a 4% annual return and starting from zero, it takes 47 months — 3 years and 11 months. You pay in ₹4,70,000 and the rest comes from interest."
+    },
+    {
+      "q": "How much must I save each month to reach ₹5,00,000 in 24 months?",
+      "a": "At a 4% annual return and starting from zero, you need to save about ₹20,046 per month. You would pay in about ₹4,81,099 and earn the rest as interest."
+    },
+    {
+      "q": "Should I fill in Monthly Savings or Target Months?",
+      "a": "Fill in only one. If you know what you can save each month, enter that to find how long the goal takes. If you have a deadline, enter the months to find how much you must save each month."
+    }
+  ],
+  "related": [
+    "net-worth-calculator",
+    "sip-calculator",
+    "ppf-calculator"
+  ]
+}

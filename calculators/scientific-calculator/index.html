@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scientific Calculator | SuvoCalc v31</title>
+<meta name="description" content="Full scientific calculator — sin, cos, tan, log, square root, powers, factorial, memory and live results.">
+<link rel="canonical" href="https://suvocalc.com/calculators/scientific-calculator/">
+<script>
+/* Apply saved theme before CSS loads to avoid a flash. No other logic here. */
+(function () {
+  try {
+    var t = localStorage.getItem('sc_theme');
+    if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+  } catch (e) { /* storage unavailable: keep light default */ }
+})();
+</script>
+<link rel="stylesheet" href="../../assets/css/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Scientific Calculator | SuvoCalc","url":"https://suvocalc.com/calculators/scientific-calculator/","applicationCategory":"CalculatorApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Full scientific calculator — sin, cos, tan, log, square root, powers, factorial, memory and live results."}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://suvocalc.com/"},{"@type":"ListItem","position":2,"name":"Daily Utilities","item":"https://suvocalc.com/categories/daily-utilities/"},{"@type":"ListItem","position":3,"name":"Scientific Calculator","item":"https://suvocalc.com/calculators/scientific-calculator/"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I use brackets in an expression?","acceptedAnswer":{"@type":"Answer","text":"Yes. Tap the bracket keys to group part of an expression, for example (45 + 15) × 3. Everything inside brackets is worked out before the rest, following standard operator precedence."}},{"@type":"Question","name":"Do sin, cos and tan use degrees or radians?","acceptedAnswer":{"@type":"Answer","text":"Trigonometric functions use degrees, so sin(30°) = 0.5. If you need radians, convert first: radians = degrees × π ÷ 180."}},{"@type":"Question","name":"How does the memory work?","acceptedAnswer":{"@type":"Answer","text":"Tap M+ to add the current result to memory, MR to recall it, and MC to clear it. The memory badge on the display shows the stored value."}},{"@type":"Question","name":"Can I see the steps of a calculation?","acceptedAnswer":{"@type":"Answer","text":"Tap the Steps button to show the steps of the last calculation. It shows the full expression and its result, which helps you check where a long calculation went wrong."}}]}
+</script>
+
+</head>
+<body data-active-nav="tools" data-tool-url-prefix="../../" data-tool-slug="scientific-calculator" data-tool-title="Scientific Calculator">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="../../index.html" aria-label="SuvoCalc home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="11" x2="8" y2="11.01"/><line x1="12" y1="11" x2="12" y2="11.01"/><line x1="16" y1="11" x2="16" y2="11.01"/><line x1="8" y1="15" x2="8" y2="15.01"/><line x1="12" y1="15" x2="12" y2="15.01"/><line x1="16" y1="15" x2="16" y2="15.01"/></svg>
+      </span>
+      <span class="brand-name">SuvoCalc</span>
+      <span class="brand-version">v31</span>
+    </a>
+
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+      <a class="nav-link" data-nav="home" href="../../index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Home</span>
+      </a>
+      <a class="nav-link" data-nav="tools" href="../../tools/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        <span>All Tools</span>
+      </a>
+      <a class="nav-link" data-nav="categories" href="../../tools/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+        <span>Categories</span>
+      </a>
+      <a class="nav-link" data-nav="blog" href="../../blog/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        <span>Blog/Guides</span>
+      </a>
+      <a class="nav-link" data-nav="about" href="../../about/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        <span>About</span>
+      </a>
+      <a class="nav-link" data-nav="contact" href="../../contact/index.html">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span>Contact</span>
+      </a>
+    </nav>
+
+    <div class="header-actions">
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch between light and dark theme">
+        <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <span class="theme-toggle-label">Theme</span>
+      </button>
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="page-main">
+<nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/categories/daily-utilities/">Daily Utilities</a></li><li><span aria-current="page">Scientific Calculator</span></li></ol></nav>
+  <h1 class="page-title">Scientific Calculator</h1>
+<p class="lead">The Scientific Calculator evaluates full mathematical expressions with brackets, powers, roots, and scientific functions — sin, cos, tan, log, ln, square root, factorial, and memory — in one place.</p>
+<section class="content-block"><h2>What it is used for</h2><p>It is used by students and anyone doing maths, physics, or engineering homework to evaluate expressions with brackets, powers, roots, and trigonometric or logarithmic functions, and to check answers that a basic calculator cannot handle.</p></section>
+<section class="calc-card" aria-label="Scientific Calculator calculator">
+<div class="sci-display-wrap" aria-live="polite"><div class="sci-expr" id="dExpr"></div><div class="dnum" id="dNum">0</div><div class="sci-steps" id="dSteps" style="display:none"></div><div class="sci-mem"><span class="mem-badge" id="memBadge">M</span> Memory: <span id="memDisp">0</span><span id="memBV" hidden>0</span></div></div><div class="share-row"><button type="button" class="btn btn-secondary btn-small" id="stepsBtn">Show steps</button></div>
+<div class="sci-keypad" id="sci-keypad"><button type="button" class="sci-key" data-a="sin">sin</button><button type="button" class="sci-key" data-a="cos">cos</button><button type="button" class="sci-key" data-a="tan">tan</button><button type="button" class="sci-key" data-a="log">log</button><button type="button" class="sci-key" data-a="ln">ln</button><button type="button" class="sci-key" data-a="sqrt">√</button><button type="button" class="sci-key" data-a="sq">x²</button><button type="button" class="sci-key key-op" data-a="pow">xʸ</button><button type="button" class="sci-key" data-a="pi">π</button><button type="button" class="sci-key" data-a="eul">e</button><button type="button" class="sci-key" data-a="fact">n!</button><button type="button" class="sci-key" data-a="inv">1/x</button><button type="button" class="sci-key" data-a="abs">|x|</button><button type="button" class="sci-key" data-a="ob">(</button><button type="button" class="sci-key" data-a="cb2">)</button><button type="button" class="sci-key key-op" data-a="back">⌫</button><button type="button" class="sci-key" data-a="ms">MS</button><button type="button" class="sci-key" data-a="mr">MR</button><button type="button" class="sci-key" data-a="mc">MC</button><button type="button" class="sci-key" data-a="mplus">M+</button><button type="button" class="sci-key" data-a="mminus">M−</button><button type="button" class="sci-key" data-a="sign">±</button><button type="button" class="sci-key" data-a="pct">%</button><button type="button" class="sci-key key-op" data-a="div">÷</button><button type="button" class="sci-key" data-a="num" data-v="7">7</button><button type="button" class="sci-key" data-a="num" data-v="8">8</button><button type="button" class="sci-key" data-a="num" data-v="9">9</button><button type="button" class="sci-key key-op" data-a="mul">×</button><button type="button" class="sci-key" data-a="num" data-v="4">4</button><button type="button" class="sci-key" data-a="num" data-v="5">5</button><button type="button" class="sci-key" data-a="num" data-v="6">6</button><button type="button" class="sci-key key-op" data-a="sub">−</button><button type="button" class="sci-key" data-a="num" data-v="1">1</button><button type="button" class="sci-key" data-a="num" data-v="2">2</button><button type="button" class="sci-key" data-a="num" data-v="3">3</button><button type="button" class="sci-key key-op" data-a="add">+</button><button type="button" class="sci-key" data-a="num" data-v="0">0</button><button type="button" class="sci-key" data-a="dot">.</button><button type="button" class="sci-key key-op" data-a="ac">C</button><button type="button" class="sci-key key-eq" data-a="eq">=</button></div>
+<form id="calc-form" class="calc-form">
+<div class="field"><label for="sciExpr">Expression</label><input type="text" id="sciExpr" name="sciExpr" placeholder="e.g. 2+3×4"></div>
+<button type="submit" id="calc-btn" class="btn btn-primary btn-block">Calculate</button>
+</form>
+<div class="result-box" id="res-box">
+<p class="result-label" id="res-label">Result</p>
+<p class="result-value" id="res-value">&mdash;</p>
+<p class="result-details" id="res-details"></p>
+<p class="result-error" id="res-error" hidden></p>
+<div class="share-row"><button type="button" class="btn btn-secondary btn-small" id="share-result">Share result</button><span class="share-status" id="share-status" role="status"></span></div>
+</div>
+</section>
+<section class="content-block"><h2>Formula</h2><p class="formula-box">Expressions are evaluated with standard operator precedence: brackets first, then powers and roots, then multiplication and division (left to right), then addition and subtraction (left to right). Functions available: sin, cos, tan (in degrees), log (base 10), ln (natural log), square root, square (x²), cube, powers (x^y), factorial, 1/x, π, and memory (M+, MR, MC).</p></section>
+<section class="content-block"><h2>Worked example</h2><p>Worked example: (45 + 15) × 3 − 100 ÷ 4. Step 1: work out the brackets first — 45 + 15 = 60. Step 2: multiply — 60 × 3 = 180. Step 3: divide — 100 ÷ 4 = 25. Step 4: subtract — 180 − 25 = 155. Final result: 155. A second example: sin(30°) = 0.5, log(100) = 2, and the square root of 144 = 12.</p></section>
+<section class="content-block"><h2>How to use</h2><ol class="steps"><li>Type or tap the digits and operators to build your expression — for example (45 + 15) × 3 − 100 ÷ 4.</li><li>Use the bracket keys to group parts that must be worked out first.</li><li>Tap a function key such as sin, cos, log, or √ to apply it to the number on screen.</li><li>Tap = to evaluate the expression and see the result.</li><li>Tap the Steps button to see the expression and result of the last calculation.</li><li>Tap AC to clear everything, or the backspace key to delete the last character.</li></ol></section>
+<section class="content-block"><h2>Tips</h2><ul><li>Use brackets liberally in long expressions — they make the order of calculation clear.</li><li>Check the steps view after a long calculation to confirm each part was evaluated as you intended.</li><li>Use memory (M+ and MR) to carry a result into your next calculation instead of retyping it.</li><li>For a quick check, test a function you know: sin(30°) should give 0.5 and log(100) should give 2.</li></ul></section>
+<section class="content-block"><h2>Common mistakes</h2><ul><li>Forgetting brackets, so 45 + 15 × 3 is worked out as 45 + 45 = 90 instead of (45 + 15) × 3 = 180.</li><li>Using sin, cos, or tan with radians in mind — this calculator works in degrees.</li><li>Typing a power as 2^3 in the wrong place instead of using the x^y key.</li><li>Tapping = too early, before the whole expression is entered.</li></ul></section>
+<section class="content-block faq-list"><h2>Frequently asked questions</h2><details><summary>Can I use brackets in an expression?</summary><p>Yes. Tap the bracket keys to group part of an expression, for example (45 + 15) × 3. Everything inside brackets is worked out before the rest, following standard operator precedence.</p></details><details><summary>Do sin, cos and tan use degrees or radians?</summary><p>Trigonometric functions use degrees, so sin(30°) = 0.5. If you need radians, convert first: radians = degrees × π ÷ 180.</p></details><details><summary>How does the memory work?</summary><p>Tap M+ to add the current result to memory, MR to recall it, and MC to clear it. The memory badge on the display shows the stored value.</p></details><details><summary>Can I see the steps of a calculation?</summary><p>Tap the Steps button to show the steps of the last calculation. It shows the full expression and its result, which helps you check where a long calculation went wrong.</p></details></section>
+<section class="content-block"><h2>Related calculators</h2><ul class="related-list"><li><a href="../../calculators/matrix-calculator/">Matrix Calculator</a></li><li><a href="../../calculators/graph-plotter/">Graph Plotter</a></li><li><a href="../../calculators/statistics-calculator/">Statistics Calculator</a></li></ul></section>
+<div class="disclaimer-box"><p>Results are a guide based on the numbers you enter. For loan, tax or investment decisions, check the figures with the bank, the official tax portal, or a qualified adviser.</p></div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-copy">&copy; 2026 SuvoCalc &mdash; v31 &middot; 57 free calculators</p>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="../../privacy/index.html">Privacy</a>
+      <a href="../../terms/index.html">Terms</a>
+      <a href="../../disclaimer/index.html">Disclaimer</a>
+      <a href="../../about/index.html">About</a>
+      <a href="../../contact/index.html">Contact</a>
+      <a href="../../faq/index.html">FAQ</a>
+    </nav>
+  </div>
+</footer>
+
+<nav class="bottom-nav" aria-label="Mobile navigation">
+  <a class="bottom-nav-link" data-nav="home" href="../../index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    <span>Home</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="tools" href="../../tools/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+    <span>Tools</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="categories" href="../../tools/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+    <span>Categories</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="blog" href="../../blog/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+    <span>Guides</span>
+  </a>
+  <a class="bottom-nav-link" data-nav="about" href="../../about/index.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+    <span>About</span>
+  </a>
+</nav>
+
+<div class="cookie-banner" id="cookie-banner" hidden>
+  <p>SuvoCalc uses local storage on your device to remember your theme and recently used calculators. No account, no tracking.</p>
+  <button type="button" class="btn btn-primary btn-small" id="cookie-accept">Got it</button>
+</div>
+
+<script src="../../assets/js/calc.js"></script>
+<script src="../../assets/js/main.js"></script>
+<script>
+/* v31 no-op stubs: the verbatim v30 calc bodies call these legacy
+   helpers (toast, usage tracking, streaks, haptics, gauge). v31 has
+   none of those systems; the stubs keep a calculation from throwing
+   after it has written its result. */
+function toast(){}
+function trackTool(){}
+function bumpStreak(){}
+function checkMilestone(){}
+function v21Haptic(){}
+function injectBMIGauge(){}
+/* renderH: the sci history UI does not exist in v31; pushH() still
+   records to localStorage, renderH() just has nothing to paint. */
+function renderH(){}
+/* Companion functions/state, verbatim from the v30 source
+   (5891-5892, 5893-5898, 5909-5910, 5911-5917, 5918, 5919-5923, 5969-5970, 6002-6007). See companions.json. */
+let cur='0',buf='',mem=0,showSteps=false;
+let hist=[];try{hist=JSON.parse(localStorage.getItem('sc_h')||'[]');}catch(e){hist=[];}
+
+const dNum=document.getElementById('dNum');
+const dExpr=document.getElementById('dExpr');
+const dSteps=document.getElementById('dSteps');
+const memBadge=document.getElementById('memBadge');
+const memDisp=document.getElementById('memDisp');
+const memBV=document.getElementById('memBV');
+
+function adjustFS(){const l=dNum.textContent.length;dNum.style.fontSize=l>18?'17px':l>14?'22px':l>10?'28px':l>7?'34px':'clamp(30px,7vw,42px)';}
+function toggleSteps(){showSteps=!showSteps;var sb=document.getElementById('stepsBtn');if(sb)sb.classList.toggle('on',showSteps);dSteps.style.display=showSteps?'block':'none';}
+
+function safe(expr){
+  let e=expr.replace(/×/g,'*').replace(/÷/g,'/').replace(/−/g,'-').replace(/π/g,'('+Math.PI+')').replace(/\be\b/g,'('+Math.E+')');
+  const cl=e.replace(/\d+\.?\d*(?:e[+\-]?\d+)?/gi,'').replace(/[+\-*/.()]/g,'').trim();
+  if(cl.length)return null;
+  let o=(e.match(/\(/g)||[]).length,c=(e.match(/\)/g)||[]).length;e+=')'.repeat(Math.max(0,o-c));
+  try{const r=Function('"use strict";return('+e+')')();return(typeof r==='number'&&!isNaN(r))?r:null;}catch{return null;}
+}
+
+function fullE(){return buf+cur;}
+
+function setD(v,expr='',cls=''){
+  dNum.className='dnum'+(cls?' '+cls:'');
+  dNum.textContent=v;dExpr.textContent=expr;adjustFS();
+  if(!cls.includes('err')){dNum.classList.add('pop');setTimeout(()=>dNum.classList.remove('pop'),180);}
+}
+
+try{const sm=localStorage.getItem('sc_mem');if(sm!==null){mem=parseFloat(sm)||0;updMem();}}catch(e){}
+function updMem(){memBV.textContent=fmt(mem);memDisp.textContent=fmt(mem);memBadge.classList.toggle('show',mem!==0);}
+
+function pushH(expr,res){
+  hist.unshift({expr,res,t:Date.now(),fav:false});
+  if(hist.length>100)hist.pop();
+  try{localStorage.setItem('sc_h',JSON.stringify(hist));}catch(e){}
+  renderH();
+}
+function act(a, v){
+
+  if(navigator.vibrate)navigator.vibrate(6);
+  switch(a){
+    case'ac':buf='';cur='0';setD('0','');dSteps.textContent='';break;
+    case'back':
+      if(buf&&(cur==='0'||cur===''))buf=buf.slice(0,-1);
+      else cur=cur.length>1?cur.slice(0,-1):'0';
+      {let r=safe(fullE());setD(r!==null?fmt(r):cur,fullE(),r!==null?'prev':'');}break;
+    case'sign':cur=cur.startsWith('-')?cur.slice(1):'-'+cur;setD(cur,fullE());break;
+    case'pct':cur=fmt(parseFloat(cur)/100);setD(cur,fullE());break;
+    case'dot':if(!cur.includes('.'))cur+='.';setD(cur,fullE());break;
+    case'num':if(cur==='0'||cur==='-0')cur=v;else cur+=v;{let r=safe(fullE());setD(r!==null?fmt(r):cur,fullE(),r!==null?'prev':'');}break;
+    case'div':buf+=cur+'/';cur='0';setD('0',fullE());break;
+    case'mul':buf+=cur+'*';cur='0';setD('0',fullE());break;
+    case'sub':buf+=cur+'-';cur='0';setD('0',fullE());break;
+    case'add':buf+=cur+'+';cur='0';setD('0',fullE());break;
+    case'ob':buf+='(';setD(cur,fullE());break;
+    case'cb2':buf+=cur+')';cur='';{let r=safe(fullE());setD(r!==null?fmt(r):fullE(),fullE(),r!==null?'prev':'');}break;
+    case'eq':{
+      let f=fullE(),r=safe(f);
+      if(r===null){setD('Error',f,'err');dNum.classList.add('shake');setTimeout(()=>dNum.classList.remove('shake'),400);return;}
+      const step=`${f} = ${fmt(r,true)}`;
+      if(showSteps)dSteps.textContent='Step: '+step;
+      pushH(f,fmt(r));cur=fmt(r);buf='';setD(fmt(r,true),f+' =');if(typeof checkMilestone==='function')checkMilestone();break;}
+    case'sin':{let n=parseFloat(cur),r=Math.sin(n*Math.PI/180);if(showSteps)dSteps.textContent=`sin(${n}°) = ${fmt(r)}`;pushH('sin('+n+')',fmt(r));cur=fmt(r);setD(cur);}break;
+    case'cos':{let n=parseFloat(cur),r=Math.cos(n*Math.PI/180);if(showSteps)dSteps.textContent=`cos(${n}°) = ${fmt(r)}`;pushH('cos('+n+')',fmt(r));cur=fmt(r);setD(cur);}break;
+    case'tan':{let n=parseFloat(cur),r=Math.tan(n*Math.PI/180);if(showSteps)dSteps.textContent=`tan(${n}°) = ${fmt(r)}`;pushH('tan('+n+')',fmt(r));cur=fmt(r);setD(cur);}break;
+    case'log':{let n=parseFloat(cur),r=Math.log10(n);if(showSteps)dSteps.textContent=`log₁₀(${n}) = ${fmt(r)}`;pushH('log('+n+')',fmt(r));cur=fmt(r);setD(cur);}break;
+    case'ln':{let n=parseFloat(cur),r=Math.log(n);if(showSteps)dSteps.textContent=`ln(${n}) = ${fmt(r)}`;pushH('ln('+n+')',fmt(r));cur=fmt(r);setD(cur);}break;
+    case'sqrt':{let n=parseFloat(cur),r=Math.sqrt(n);if(showSteps)dSteps.textContent=`√(${n}) = ${fmt(r)}`;pushH('√('+n+')',fmt(r));cur=fmt(r);setD(cur);}break;
+    case'sq':{let n=parseFloat(cur),r=n*n;if(showSteps)dSteps.textContent=`${n}² = ${fmt(r)}`;pushH(n+'²',fmt(r));cur=fmt(r);setD(cur);}break;
+    case'pow':buf+=cur+'**';cur='0';setD('0',fullE());break;
+    case'pi':cur=fmt(Math.PI);if(showSteps)dSteps.textContent='π ≈ 3.14159265358979';setD(cur,'π');break;
+    case'eul':cur=fmt(Math.E);if(showSteps)dSteps.textContent='e ≈ 2.71828182845905';setD(cur,'e');break;
+    case'fact':{let n=Math.floor(Math.abs(parseFloat(cur)));let r=1;if(n>170)r=Infinity;else for(let i=2;i<=n;i++)r*=i;if(showSteps)dSteps.textContent=`${n}! = ${fmt(r)}`;pushH(n+'!',fmt(r));cur=fmt(r);setD(cur);}break;
+    case'abs':{let n=parseFloat(cur),r=Math.abs(n);pushH('|'+n+'|',fmt(r));cur=fmt(r);setD(cur);}break;
+    case'inv':{let n=parseFloat(cur),r=1/n;pushH('1/'+n,fmt(r));cur=fmt(r);setD(cur);}break;
+    case'ms':mem=parseFloat(cur)||0;updMem();toast('💾 Memory Saved');break;
+    case'mr':cur=fmt(mem);setD(cur,fullE());break;
+    case'mc':mem=0;updMem();toast('🗑️ Memory Cleared');break;
+    case'mplus':mem+=parseFloat(cur)||0;updMem();toast('M+ = '+fmt(mem));break;
+    case'mminus':mem-=parseFloat(cur)||0;updMem();toast('M− = '+fmt(mem));break;
+  }
+  try{localStorage.setItem('sc_mem',mem);}catch(e){}
+
+}
+function runToolCalc(){
+  var expr=(document.getElementById("sciExpr")&&document.getElementById("sciExpr").value||"").trim();
+  if(!expr){ showValError("sci","Type an expression above, or use the keypad."); return; }
+  var r=safe(expr);
+  if(r===null){ showValError("sci","Could not evaluate that expression."); return; }
+  setD(fmt(r,true),expr+" =");
+  setRes("sci",fmt(r,true),"Result",expr+" = "+fmt(r));
+}
+(function(){
+try{
+var form=document.getElementById("calc-form");
+if(form){ form.addEventListener("submit",function(ev){ ev.preventDefault(); try{ runToolCalc(); }catch(err){ var e=document.getElementById("res-error"); if(e){ e.textContent="Could not calculate. Please check your numbers and try again."; e.hidden=false; } } }); }
+document.querySelectorAll(".sci-key").forEach(function(b){ b.addEventListener("click",function(){ try{ act(b.getAttribute("data-a"),b.getAttribute("data-v")||""); }catch(e){} }); });
+var sb=document.getElementById("stepsBtn"); if(sb){ sb.addEventListener("click",function(){ try{ toggleSteps(); }catch(e){} }); }
+}catch(e){}
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+{
+  "slug": "fixed-deposit-calculator",
+  "intro": "The Fixed Deposit Calculator works out the maturity amount, interest earned, and effective annual yield of a bank fixed deposit, with simple interest or compounding monthly, quarterly, half-yearly, or annually.",
+  "uses": "It is used to compare fixed deposit offers from different banks, to see how the compounding frequency changes the return, and to plan the maturity value of a lump-sum deposit.",
+  "formula": "With compounding: Maturity = P × (1 + R ÷ (n × 100))^(n×T), where P is the principal, R is the annual rate, n is the compounding frequency per year (12 monthly, 4 quarterly, 2 half-yearly, 1 annually), and T is the tenure in years. With simple interest: Interest = P × R × T ÷ 100 and Maturity = P + Interest. Effective yield = (Maturity ÷ P)^(1 ÷ T) − 1, as a percentage.",
+  "example": "Inputs: Principal Amount = ₹1,00,000, Interest Rate = 7.5% per year, Tenure = 3 years, Compounding = Quarterly. Step 1: maturity = 1,00,000 × (1 + 7.5 ÷ 400)^12. Step 2: (1.01875)^12 = 1.2497. Step 3: maturity = ₹1,24,972. Step 4: interest earned = 1,24,972 − 1,00,000 = ₹24,972. Step 5: effective yield = (1,24,972 ÷ 1,00,000)^(1 ÷ 3) − 1 = 7.71% per year. FD rates vary by bank and change over time — check the current rate.",
+  "howTo": [
+    "Step 1: Enter the deposit amount in the \"Principal Amount (₹)\" field.",
+    "Step 2: Enter the annual interest rate in the \"Interest Rate (% p.a.)\" field.",
+    "Step 3: Enter the deposit period in the \"Tenure (Years)\" field.",
+    "Step 4: Choose the compounding frequency from the \"Compounding\" dropdown — Quarterly, Monthly, Half-Yearly, Annually, or Simple Interest.",
+    "Step 5: Tap Calculate to see the maturity amount, the interest earned, and the effective yield."
+  ],
+  "tips": [
+    "Quarterly compounding is the most common for bank FDs in India; monthly compounding gives a slightly higher maturity at the same rate.",
+    "The effective yield is higher than the headline rate when interest compounds — compare effective yields, not just headline rates.",
+    "Senior citizens usually get a higher FD rate, often 0.50% more — check your bank's senior citizen rates if they apply.",
+    "Breaking an FD early usually costs a penalty of around 0.5% to 1% on the rate, so choose a tenure you can hold."
+  ],
+  "mistakes": [
+    "Using an old FD rate — rates change with the bank and over time, so always check the current rate before calculating.",
+    "Choosing \"Simple Interest\" when the bank actually compounds quarterly, which understates the maturity amount.",
+    "Forgetting that the interest is taxable income in the year it is earned, even if it is only paid at maturity.",
+    "Comparing FDs only by the headline rate without checking the compounding frequency."
+  ],
+  "faqs": [
+    {
+      "q": "How much will ₹1,00,000 grow to in 3 years at 7.5% compounded quarterly?",
+      "a": "It grows to about ₹1,24,972, earning ₹24,972 in interest. The effective yield is about 7.71% per year."
+    },
+    {
+      "q": "What is the difference between the FD rate and the effective yield?",
+      "a": "The FD rate is the nominal annual rate, while the effective yield is the actual yearly return after compounding. With quarterly compounding at 7.5%, the effective yield is 7.71%."
+    },
+    {
+      "q": "Is FD interest taxable?",
+      "a": "Yes. Fixed deposit interest is added to your income and taxed at your slab rate. Banks also deduct TDS if the interest in a year crosses the threshold."
+    }
+  ],
+  "related": [
+    "ppf-calculator",
+    "sip-calculator",
+    "cagr-calculator"
+  ]
+}
