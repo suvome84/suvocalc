@@ -1059,6 +1059,7 @@ function buildHomepage() {
     '<input type="search" class="search-input" id="home-search" placeholder="Search ' + toolCount + ' calculators&hellip;" aria-label="Search calculators" autocomplete="off">' +
     '</div><p class="search-hint">Try &ldquo;EMI&rdquo;, &ldquo;GST&rdquo;, &ldquo;BMI&rdquo; or &ldquo;SIP&rdquo;.</p></div>');
   sections.push('<div class="search-results" id="home-search-results" hidden></div>');
+  sections.push('<p class="hero-cta"><a class="btn btn-primary" href="tools/index.html">Explore All Tools</a></p>');
   sections.push('</section>');
   if (home.intro) sections.push('<p class="lead narrow">' + esc(home.intro) + '</p>');
 
@@ -1138,9 +1139,9 @@ function buildHomepage() {
   }
   groupSection('finance', 'Useful Financial Calculators',
     groupSlugs(function (s) { return s.indexOf('finance') === 0 || s.indexOf('tax') === 0; }), 6, 'All finance tools');
-  groupSection('health', 'Health &amp; Fitness',
+  groupSection('health', 'Health & Fitness',
     groupSlugs(function (s) { return s.indexOf('health') !== -1; }), 4, 'All health tools');
-  groupSection('student', 'Student &amp; Education',
+  groupSection('student', 'Student & Education',
     groupSlugs(function (s) { return s.indexOf('education') !== -1 || s.indexOf('student') !== -1; }), 4, 'All student tools');
   groupSection('utility', 'Daily Utility Tools',
     groupSlugs(function (s) { return s.indexOf('utilit') !== -1; }), 4, 'All utility tools');
