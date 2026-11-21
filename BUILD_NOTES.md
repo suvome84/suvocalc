@@ -554,3 +554,5 @@ was the new `content/tools/scientific-calculator.json` above.
    values (the earlier DOM-shim smoke test covered empty-field submits
    only).
 4. QR Generator needs internet (api.qrserver.com) — unchanged, by design.
+
+2026-11-21: GitHub Pages enabled (Deploy from a branch, main, /). Trigger push - first deployment had not appeared ~6 min after enabling.
